@@ -1,0 +1,1 @@
+In HTTP context, payload is the actual data (main data) being transmitted in the request or response body, excluding the [[metadata]]

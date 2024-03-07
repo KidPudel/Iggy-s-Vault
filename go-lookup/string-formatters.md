@@ -1,0 +1,22 @@
+- d - decimal integer
+- o - octal integer
+- O - octal integer with 0o prefix
+- b - binary integer
+- x - hexadecimal integer lowercase
+- X - hexadecimal integer uppercase
+- f - decimal floating point, lowercase
+- F - decimal floating point, uppercase
+- e - scientific notation (mantissa/exponent), lowercase
+- E - scientific notation (mantissa/exponent), uppercase
+- g - the shortest representation of %e or %f
+- G - the shortest representation of %E or %F
+- c - a character represented by the corresponding Unicode code point
+- q - a quoted character
+- U - Unicode escape sequence
+- t - the word true or false
+- s - a string
+- v - default format
+- `#v` - Go-syntax representation of the value
+- T - a Go-syntax representation of the type of the value
+- p - pointer address
+- % - a double %% prints a single %

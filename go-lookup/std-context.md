@@ -1,0 +1,2 @@
+`context` defines a `Context` type that caries cancelation signals, deadlines, and other **request** scoped values 1. across API boundaries (ends) 2. between processes.
+This is helpful in a server software, for example to be aware of a context, that the client is disconnected and we as a backend do not need response or calculate a response.

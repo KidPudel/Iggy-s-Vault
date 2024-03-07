@@ -1,0 +1,1 @@
+[ServeMux](https://pkg.go.dev/net/http#ServeMux) is a standard library [[multiplexer]] (router) that matches the incoming URL request against registered patterns and calls matched handler, so basically it is a wrapper handler around other handlers

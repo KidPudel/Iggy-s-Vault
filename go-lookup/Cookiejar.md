@@ -1,0 +1,1 @@
+Cookiejar  (Go interface) is the simple [[cookies]] manager, that automatically stores cookies from incoming request response headers.

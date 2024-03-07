@@ -1,0 +1,1 @@
+ method of augmenting or altering the web site or application with custom callbacks, they could be managed by third-party users that may be not be affiliated with the originating of a website or application
