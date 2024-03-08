@@ -55,14 +55,14 @@ log.Fatal(s.ListenAndServe())
 # Handler
 `Handler` *handles* HTTP requests that is directed via router. It's an interface that declares `ServeHTTP` function that handles requests.
 
-We can implement our custom type to have a custom dependencies (like [[std-database]] instance),  that will implement `Handler`, and navigate with [[ServeMux]] using `Handle()` function with related routes (like GET `getItems`, POST `getItems`, or if the request is simple, then we can use `HandleFunc()`
-As in [[go-design-philosophy]].
+We can implement our custom type to have a custom dependencies (like [[std database]] instance),  that will implement `Handler`, and navigate with [[ServeMux]] using `Handle()` function with related routes (like GET `getItems`, POST `getItems`, or if the request is simple, then we can use `HandleFunc()`
+As in [[go design philosophy]].
 
-> **DESIGN:** We can divide handlers by the categories, to ***reduce the amount handlers***, but ***yet not make a big handlers***, and also important, utilising the singletons with [[singleton-pattern]] to allow use of the ***same instances across different handlers***
+> **DESIGN:** We can divide handlers by the categories, to ***reduce the amount handlers***, but ***yet not make a big handlers***, and also important, utilising the singletons with [[singleton pattern]] to allow use of the ***same instances across different handlers***
 
 
 ---
-[[simple-server-example]]
+[[simple server example]]
 
 # HEAD
 

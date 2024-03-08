@@ -6,43 +6,7 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "tag:#project  ",
-      "color": {
-        "a": 1,
-        "rgb": 6021868
-      }
-    },
-    {
-      "query": "tag:#frontend",
-      "color": {
-        "a": 1,
-        "rgb": 10274672
-      }
-    },
-    {
-      "query": "tag:#backend ",
-      "color": {
-        "a": 1,
-        "rgb": 7639527
-      }
-    },
-    {
-      "query": "tag:#cli  ",
-      "color": {
-        "a": 1,
-        "rgb": 13471182
-      }
-    },
-    {
-      "query": "tag:#database  ",
-      "color": {
-        "a": 1,
-        "rgb": 5135558
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": -1.1,
@@ -53,6 +17,6 @@
   "repelStrength": 18.330078125,
   "linkStrength": 1,
   "linkDistance": 118,
-  "scale": 0.5310156978643251,
+  "scale": 0.5493859815469789,
   "close": true
 }

@@ -1,5 +1,4 @@
-JSON Wen Token
-
+JSON Web Token
 This is a secure way of communicating, passing information between two parties, because this information is digitally signed
 
 # Usage
@@ -7,7 +6,6 @@ This is a secure way of communicating, passing information between two parties, 
     
 - **Information Exchange**: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed—for example, using public/private key pairs—you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the **header** and the **payload**, you can also verify that the content hasn't been tampered with.
 
----
 # Structure
 JWT consists of 3 parts separated by dots:
 - Header

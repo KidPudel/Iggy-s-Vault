@@ -6,7 +6,7 @@ Authorization header provides a metadata about credentials that used for authent
 	- simple, but insecure *over unencrypted* connections as it transmits credentials in plaintext
 	- Format: `Authorization: Basic <credentials>`
 2. **Bearer Authentication**:
-	- Used for transmitting secure [[Authentication-authorization]] token like [[JWT]], or an OAuth access token, because of:
+	- Used for transmitting secure [[Authentication authorization]] token like [[JWT]], or an OAuth access token, because of:
 		- Separation of credentials, because of bearer token opaque nature, so tokens doesn't store credentials directly.
 		- Signed and encrypted tokens, which ensures that only intended parties can read the data of token
 	- Format: `Authorization: Bearer <credentials>`

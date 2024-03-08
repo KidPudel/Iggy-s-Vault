@@ -141,3 +141,4 @@
 - `cmd+opt+d`: hide the dock
 - `ctrl+cmd+f`: full screen
 - `ctrl + -> <-`: switch between full-screen windows
+- `ctrl+cmd+d`: view word definition

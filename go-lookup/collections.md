@@ -30,7 +30,7 @@ for i := 0; i < 2; i++ {
 # Slice (dynamically sized collection)
 > NOTE: much more common than the array
 
-[[slices-under-the-hood]]
+[[slices under the hood]]
 
 
 syntax: `[]T`  

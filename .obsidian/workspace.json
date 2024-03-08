@@ -4,24 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "68907e96c78ac946",
+        "id": "386449355c111c14",
         "type": "tabs",
         "children": [
           {
-            "id": "0bd665c190634e62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/JWT.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dc61c5bd0ad88e9f",
+            "id": "a6bb41fee827931b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,8 +19,35 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f90ff6a15c149a50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "macros.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "104833a42fa9445b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "directives in C.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +97,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.5
+    "width": 360.5,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -99,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/network/JWT.md",
+                "file": "macros.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/network/JWT.md",
+                "file": "macros.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/network/JWT.md"
+                "file": "macros.md"
               }
             }
           },
@@ -183,40 +198,40 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "0bd665c190634e62",
+  "active": "f90ff6a15c149a50",
   "lastOpenFiles": [
-    "cli/cli-tools.md",
-    "backend/network/JWT.md",
-    "Authorization header.md",
-    "backend/network/headers.md",
-    "base64-encoding.md",
-    "backend/network/hashing.md",
-    "Payload.md",
-    "[[headers]].md",
-    "backend/network/Authentication-authorization.md",
+    "preprocessor.md",
+    "macros.md",
     "projects/sg back rewrite/architecture.md",
-    "metadata.md",
-    "backend/network/claims.md",
-    "frontend/CSS-preprocessors.md",
-    "go-lookup/Cookiejar.md",
+    "directives in C.md",
+    "gamedev/concurrency.md",
+    "backend/docker/Docker basic work.md",
+    "backend/docker/docker network.md",
+    "backend/docker/Docker basics.md",
+    "docker terms.md",
+    "my obsidian anyppuccin colors.md",
+    "projects/sg back rewrite/php to go.md",
+    "projects/sg back rewrite/sg back api.md",
+    "projects/sg back rewrite/go-documentation-tool.md",
+    "base64-encoding.md",
+    "Authorization header.md",
+    "go-lookup/struct tags.md",
+    "go-lookup/string formatters.md",
+    "go-lookup/std http.md",
+    "go-lookup/std database.md",
+    "go-lookup/std context.md",
+    "go-lookup/slices under the hood.md",
+    "go-lookup/singleton pattern.md",
+    "go-lookup/simple server example.md",
     "go-lookup/context.md",
-    "go-lookup/ServeMux.md",
-    "go-lookup/go-design-philosophy.md",
-    "go-lookup/no-need-for-static?.md",
-    "backend/network/middleware.md",
-    "cookie.md",
-    "backend/network/cookies.md",
-    "backend/network/API.md",
-    "go-lookup/server-implementation.md",
-    "go-lookup/simple-server-example.md",
-    "go-lookup/std-http.md",
-    "projects/sg back rewrite/auth.md",
+    "go-lookup/no need for static?.md",
+    "go-lookup/naming convention.md",
+    "gamedev",
     "Untitled.canvas",
     "Flutter 0144d1b24f3f402d94d17e44f4f31cd0",
     "TCP",
     "public",
     "projects/sg back rewrite",
-    "Untitled",
     "backend/test1.txt",
     "cli",
     "frontend",

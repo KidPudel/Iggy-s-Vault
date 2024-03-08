@@ -1,9 +1,11 @@
 {
   "accentColor": "",
   "theme": "moonstone",
-  "cssTheme": "Obsidian Nord",
+  "cssTheme": "AnuPpuccin",
   "translucency": false,
   "interfaceFontFamily": "",
   "textFontFamily": "Lora,Brush Script MT,American Typewriter",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "showViewHeader": true,
+  "nativeMenus": true
 }

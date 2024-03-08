@@ -1,0 +1,5 @@
+As far as I’ve understood, you don’t actually need concurrency in games, in a lot of places, because basic things, like rendering on the screen one by one, input, responses, are happening in the loop that is iterating thorough those things, and then in a deeper level of project, like handling some input, like processing some data that could take some time (like network request, for the sessions, or database connection/requests, or heavy loading of the game worls(loading screen)), we can need to use concurrency, so for the conclusion, we need to use concurrency in the same places as everywhere else in software (mobile apps, websites, etc.)
+
+
+Example with jdh
+His game with robot and plants, we render a game, some inputs, logic (handlers), everything is happening in a loop, and then, when loading a game, because of that, it saves a progress in database, when loading it, we need user to show the progress (concurrency)

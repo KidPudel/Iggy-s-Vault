@@ -1,6 +1,6 @@
 | php                                                      | go                                                                 |
 | -------------------------------------------------------- | ------------------------------------------------------------------ |
-| `class pgpdo extends PDO` PHP DB (postgresql) connection | `pgx/v5/pgxpool` connection pool of postgresql [[database-driver]] |
+| `class pgpdo extends PDO` PHP DB (postgresql) connection | `pgx/v5/pgxpool` connection pool of postgresql [[database driver]] |
 | `mypdo` PHP MySQL connection                             | `mysql` connector                                                  |
 | `Redis`                                                  | `go-redis`                                                         |
 | AuthSock is init auth if not authenticated               | JWT + possible singleton                                           |

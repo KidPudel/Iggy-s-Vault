@@ -30,5 +30,6 @@
   ],
   "smartIndentList": true,
   "useTab": true,
-  "trashOption": "system"
+  "trashOption": "system",
+  "showInlineTitle": true
 }

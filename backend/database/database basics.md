@@ -38,7 +38,7 @@ CREATE TABLE wish_lists (
 );
 ```
 
-> **NOTE**: Your user may need a [[db-role]] assigned to them to create a DB
+> **NOTE**: Your user may need a [[db role]] assigned to them to create a DB
 ### altering
 
 ```sql
@@ -104,7 +104,7 @@ GROUP BY w.rate;
 ```
 
 
-# [[sql-data-types]]
+# [[sql data types]]
 
 
 #database

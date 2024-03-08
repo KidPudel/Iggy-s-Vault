@@ -1,7 +1,6 @@
 # life time
 [[API]], hosts a lot of clients, meaning **it is not a one client per usage** as a front side, meaning that global state (program scoped instances) is affecting all users.
 
----
 # authentication
 Authentication is implemented with [[JWT]]
 - with security (https, bearer authentication + jwt)

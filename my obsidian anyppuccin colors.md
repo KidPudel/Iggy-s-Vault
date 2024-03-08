@@ -1,0 +1,2 @@
+- base: `#f6f6f3`
+- mantle (accent): `#f2f1ea`

@@ -11,7 +11,7 @@
 
 
 ## drivers
-Go's standard library provides package [[database-driver]] `database/sql/driver` that defines interface to be implemented by database drivers as used (to be used) by package `sql`
+Go's standard library provides package [[database driver]] `database/sql/driver` that defines interface to be implemented by database drivers as used (to be used) by package `sql`
 
 
 [List of already implemented SQL drivers](https://go.dev/wiki/SQLDrivers)

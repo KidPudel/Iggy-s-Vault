@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "go-lookup/server-implementation.md",
+                "file": "gamedev/concurrency.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -72,6 +72,18 @@
           "type": "bookmarks",
           "state": {}
         }
+      },
+      {
+        "id": "b92b93e280166052",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          }
+        }
       }
     ],
     "currentTab": 0
@@ -86,7 +98,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "go-lookup/server-implementation.md",
+            "file": "gamedev/concurrency.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -103,7 +115,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "go-lookup/server-implementation.md",
+            "file": "gamedev/concurrency.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -115,7 +127,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "go-lookup/server-implementation.md"
+            "file": "gamedev/concurrency.md"
           }
         }
       }
@@ -136,8 +148,18 @@
   },
   "active": "6997c1adf6d04a22",
   "lastOpenFiles": [
-    "go-lookup/ServeMux.md",
+    "gamedev/Rendering pipeline.md",
+    "gamedev/concurrency.md",
+    "Authorization header.md",
+    "backend/network/headers.md",
+    "backend/network/middleware.md",
+    "backend/network/hashing.md",
+    "backend/network/cookies.md",
+    "backend/network/CSRF.md",
+    "Payload.md",
+    "backend/network/XSS.md",
     "go-lookup/server-implementation.md",
+    "go-lookup/ServeMux.md",
     "simple-server-example.md",
     "go-lookup/std-http.md",
     "go-lookup/singleton-pattern.md",
@@ -151,9 +173,6 @@
     "backend/network/Authentication-vs-Authorization.md",
     "backend/database/setting-server.md",
     "localhost.md",
-    "Top shortcuts.md",
-    "child.md",
-    "Test note.md",
-    "Hello world.md"
+    "Top shortcuts.md"
   ]
 }

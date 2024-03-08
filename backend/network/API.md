@@ -71,7 +71,7 @@ It will contain:
 - 500 Server Error: Internal server error
 
 ## Authentication
-[[Authentication-authorization]] is required for public APIs to identify developers and restrict access. 
+[[Authentication authorization]] is required for public APIs to identify developers and restrict access. 
 Common methods:
 - API Tokens: Unique tokens assigned to each developer
 - OAuth: Token-based authentication where apps get limited access
