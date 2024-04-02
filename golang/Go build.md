@@ -1,0 +1,1 @@
+go run doesn't compile and link different files directly, but `go build` does.

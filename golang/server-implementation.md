@@ -63,9 +63,6 @@ As in [[go design philosophy]].
 
 ---
 [[simple server example]]
-
-# HEAD
-
 # Routing
 [[ServeMux]] is the standard router
 ## Patterns

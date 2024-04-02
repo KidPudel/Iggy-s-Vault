@@ -18,13 +18,7 @@ The endpoints define a structure of API
 
 Request handlers are functions that gets executed when hitting endpoint.
 
-## HTTP request methods
-HTTP request methods are there to indicate what action to perform on endpoint.
-- GET: get/retrieve the resource
-- POST: create new resource
-- PUT: update the existing resource
-- DELETE: delete resource 
- 	> NOTE: we use post when adding body, because of the specifications (though get could have the body), GET should not have any body, since if the request method does not include defined semantics for an entity-body, then the message-body **SHOULD** be ignored when handling the request
+## [[http methods]]
 
 ## Request parameters
 Parameters is the way to filter API requests and modify the flow of the request handler, as well as just provide an information add to Database for example
@@ -36,7 +30,10 @@ Parameters is the way to filter API requests and modify the flow of the request 
 
 Parameters enable pagination, sorting, filtering, and more.
 
+[[path vs query parameters]]
+
 ## Request headers
+[[backend/network/headers|headers]]
 Headers make it easy to pass [[metadata]] to the endpoint without having to put it in the URL or the body.
 
 In addition to standard `Content-Type`, we can define custom headers that provide additional context or functionality

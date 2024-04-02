@@ -1,0 +1,1 @@
+Buffer is the temporary storage area in memory to hold data before processing or transferring it. In graphics rendering, they are used to store vertex data, color data, texture data, etc.

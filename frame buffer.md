@@ -1,0 +1,1 @@
+Frame/Screen/Video [[buffer]] is the buffer that stores image to be displayed on the screen, contains pixel data.

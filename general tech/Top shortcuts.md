@@ -24,16 +24,18 @@
 # Visual studio
 - `cmd+shift+p`: command palette/show all commands
 - `cmd+p`: go to file
-- `ctrl+space`: suggestion
+- `ctrl+space`: completion suggestion
 - `cmd+i+cmd+k`: quick documentation lookup
 - `shift+cmd+space`: show parameters
 - `cmd+j`: toggle pannel
-- `opt+cmd+b / ctrl+tilda`: toggle terminal (secondary side bar)
+- `ctrl+tilda / opt+cmd+b` : toggle terminal (secondary side bar)
 - `cmd+b`: toggle primary side bar
 - `ctrl+shift+tilda`: create new terminal
 - `cmd+\`: split window
 - `cmd+w`: close window
 - `cmd+k + arrows (<- ->)`: move between split views
+- `opt+cmd+[]`: Fold and unfold
+- `cmd+shift+o`: search symbol in buffer
 
 
 # Vim

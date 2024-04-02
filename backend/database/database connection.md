@@ -4,6 +4,6 @@
 4. Operation completes 
 5. Network socket is closed
 
-Opening and closing connections aren't that expensive, but when scaling it could turn into expensive operation, and for that [[connection pooling]] is used
+Opening and closing connections aren't that expensive, but when scaling it could turn into expensive operation, and for that [[connection pool]] is used
 
 #database 

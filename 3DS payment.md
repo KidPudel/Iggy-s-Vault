@@ -1,0 +1,1 @@
+3-D Secure, is the protocol in online payment that forces 2-step authentication on every online purchase

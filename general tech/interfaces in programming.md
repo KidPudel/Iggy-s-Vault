@@ -1,0 +1,2 @@
+Interface in programming is the contract on how some component should interact with different parts of a system.
+It defines a methods, properties, events, or functions that component must implement or expose in order to be compatible with other components which also signed the contract and satisfy it.

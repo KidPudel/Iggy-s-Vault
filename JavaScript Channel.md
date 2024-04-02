@@ -1,0 +1,1 @@
+JavaScript channel allows receiving messages from js code inside of a webview

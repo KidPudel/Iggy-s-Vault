@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/concurrency.md",
+                "file": "projects/project-plans.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -98,7 +98,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "gamedev/concurrency.md",
+            "file": "projects/project-plans.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "gamedev/concurrency.md",
+            "file": "projects/project-plans.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -127,7 +127,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "gamedev/concurrency.md"
+            "file": "projects/project-plans.md"
           }
         }
       }
@@ -148,8 +148,11 @@
   },
   "active": "6997c1adf6d04a22",
   "lastOpenFiles": [
-    "gamedev/Rendering pipeline.md",
+    "python/mutable vs immutable.md",
+    "python/naming styles.md",
+    "general tech/Golang and C as friends and both u should love.md",
     "gamedev/concurrency.md",
+    "gamedev/Rendering pipeline.md",
     "Authorization header.md",
     "backend/network/headers.md",
     "backend/network/middleware.md",
@@ -170,9 +173,6 @@
     "backend/database/Untitled.md",
     "altering-user.md",
     "backend/network/Authentication-authorization.md",
-    "backend/network/Authentication-vs-Authorization.md",
-    "backend/database/setting-server.md",
-    "localhost.md",
-    "Top shortcuts.md"
+    "backend/network/Authentication-vs-Authorization.md"
   ]
 }

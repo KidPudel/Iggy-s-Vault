@@ -1,44 +1,45 @@
 **Project plans**
 
-- **Http request-response with cookies saving**
-- Automate file management with javascript
-- Youtube extension to move shorts
-- Spam bot (glep glep glep)
-- Terminal commands automation with python
-- Weather portal
-- Create a Chat app with data base Spotify API
-- Pixel 2D mobile game with LibKTX
-- ARCore android app
-- AirChat (Bluetooth)
-- Personal website
-- Mobile app that uses accelerometer
-- App food what goes with others? Store of combinations with ability to add and delete from it
-- Godot game happy birthday (gdscript)
-- Small terminal automation (also show what command really runned)
-- Learn docker
-- Learn database in depth
-- Learn computer networking
-- web scarping
-- compiler
-- web server with raspberry pi
-- transfer github notes to notion and vice versa
-- add vim motion support to notion !!!
-- My own todo app that i would use
-- Wishlist bot
-- C snake game
-- Web portfolio
-- Backend project: podcast app
-- App that detects genres
-- Bot that will send you concise news (with a link) on releases or events, on interesting topics for you, every morning
-- Authentication system (paper salt)
-- Cli notion app
-- Web scraping on choosen youtube videos (notifications)
-- Web scraping from , poison (puppeteer)
-- Cli for collecting statistics (eg, avarage time in different programs)
-- own vpn [https://www.youtube.com/watch?v=gxpX_mubz2A](https://www.youtube.com/watch?v=gxpX_mubz2A)
-- Obsidian plugin to sync (transfer) obsidian notes to github and wise versa
-- Scheduled wallpaper changer script with python [https://www.youtube.com/watch?v=H8Z5AgU7zWQ](https://www.youtube.com/watch?v=H8Z5AgU7zWQ)
-- Obsidian like in Go
-- Plants vs Zombies in C
-- Dvd loader
-- Implement socket with Go
+- [ ] **Http request-response with cookies saving**
+- [ ] Automate file management with javascript
+- [ ] Youtube extension to move shorts
+- [ ] Spam bot (glep glep glep)
+- [ ] Terminal commands automation with python
+- [ ] Weather portal
+- [ ] Create a Chat app with data base Spotify API
+- [ ] Pixel 2D mobile game with LibKTX
+- [ ] ARCore android app
+- [ ] AirChat (Bluetooth)
+- [ ] Personal website
+- [ ] Mobile app that uses accelerometer
+- [ ] App food what goes with others? Store of combinations with ability to add and delete from it
+- [ ] Godot game happy birthday (gdscript)
+- [ ] Small terminal automation (also show what command really runned)
+- [x] Learn docker
+- [ ] Learn database in depth
+- [ ] Learn computer networking
+- [ ] web scarping (beautiful soup)
+- [ ] compiler
+- [ ] web server with raspberry pi
+- [ ] transfer github notes to notion and vice versa
+- [ ] add vim motion support to notion !!!
+- [ ] My own todo app that i would use
+- [ ] Wishlist bot
+- [ ] C snake game
+- [ ] Web portfolio
+- [ ] Backend project: podcast app
+- [ ] App that detects genres
+- [ ] Bot that will send you concise news (with a link) on releases or events, on interesting topics for you, every morning
+- [ ] Authentication system (paper salt)
+- [ ] Cli notion app
+- [ ] Web scraping on choosen youtube videos (notifications)
+- [ ] Web scraping from , poison (puppeteer)
+- [ ] Cli for collecting statistics (eg, avarage time in different programs)
+- [ ] own vpn [https://www.youtube.com/watch?v=gxpX_mubz2A](https://www.youtube.com/watch?v=gxpX_mubz2A)
+- [ ] Obsidian plugin to sync (transfer) obsidian notes to github and wise versa
+- [ ] Scheduled wallpaper changer script with python [https://www.youtube.com/watch?v=H8Z5AgU7zWQ](https://www.youtube.com/watch?v=H8Z5AgU7zWQ)
+- [ ] Obsidian like in Go
+- [ ] Plants vs Zombies in go
+- [ ] Dvd loader
+- [ ] Implement socket with Go
+- [ ] Website with karma system
