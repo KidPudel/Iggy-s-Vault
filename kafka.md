@@ -1,1 +1,0 @@
-Platform for a real time data transfer with low latency and high-throughput

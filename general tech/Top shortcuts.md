@@ -36,6 +36,10 @@
 - `cmd+k + arrows (<- ->)`: move between split views
 - `opt+cmd+[]`: Fold and unfold
 - `cmd+shift+o`: search symbol in buffer
+- `cmd+k+z`: zen mode
+- `cmd+k+l`: minimap
+- `cmd+shift+x`: extensions
+- `cmd+shift+e`: explorer
 
 
 # Vim
@@ -131,7 +135,9 @@
 # Apple notes
 - `shift+cmd+7`: bullet point
 
-
+# Apple reminders
+- `cmd+e`: show nested
+- `cmd+opt+s`: show/hide sidebar
 # Warp
 - `cmd+T`: new tab
 - `cmd+,`: settings
@@ -144,3 +150,6 @@
 - `ctrl+cmd+f`: full screen
 - `ctrl + -> <-`: switch between full-screen windows
 - `ctrl+cmd+d`: view word definition
+
+# Arc
+- `cmd+shift+d`: move url to the main view

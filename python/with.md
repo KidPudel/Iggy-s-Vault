@@ -1,6 +1,8 @@
 `with` is used for resource management and exception handing.
 It ensures that resources are properly acquired and released, even if the error occurs.
 
+> `with`: carrying it along the scope
+
 `with` is commonly used with the objects that implement [[context manager]] protocol which defines the methods `__enter__()` and `__exit__()`
 
 ```python

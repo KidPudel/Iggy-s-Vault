@@ -1,0 +1,9 @@
+- `select`: get
+- `update`: put ([[http methods]])
+- `insert`: post
+- `from`
+- `where`: logical filter
+- `and`: combination
+- `or`
+- `between` filter query (age `between` 3 `and` 10)
+- `like`: search for pattern

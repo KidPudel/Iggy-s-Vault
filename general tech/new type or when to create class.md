@@ -1,6 +1,6 @@
 Type is the **classification** of the data, that tells the [[compiler]] or [[interpreter]] how data should be represented, how it should look, what have, what to do, and what it is at all.
 
-Act of defining a new type, is the **urge for a new classification**, therefore for the **urge for the ability of creation of new type of entity**. 
+Act of defining a new type, is the **urge for a new classification**, therefore - **urge for the ability of creation of new type of entity**. 
 
 Reasons:
 - Organization: class lets you organize data and procedure in one *idiomatic* way, as well as *reusability* in case of structured methods
@@ -14,3 +14,9 @@ Why class and not just an arbitrary function? because it is *arbitrary*, class w
 When to avoid:
 - When we just need to store data. use *dataclass* or *named tuple*
 - When it has one method. Use just function instead
+
+# when to use function and class
+- function -> code action-focused
+- class -> code state-focused
+- combination -> in class a lot of action
+[idea from](https://youtube.com/shorts/oIyq0q5Q7eo?si=O5L6g_oSah6UsvDt)

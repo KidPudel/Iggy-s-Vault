@@ -1,0 +1,11 @@
+- [ ] python
+- [ ] fastAPI
+- [ ] Selenium
+- [ ] telegram, aiogram, asyncio
+- [ ] PostgreSQL (with Joins etc.)
+- [ ] Redis
+- [ ] Kafka - for real time data queue
+- [ ] Docker
+- [ ] ClickHouse
+- [ ] AI
+- [ ] Vue - drawing board

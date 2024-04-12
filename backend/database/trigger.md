@@ -1,0 +1,1 @@
+Is the database object that gets executed *triggered* when specific event occurs associated with database table, like `SELECT`, `UPDATE`, `INSERT`, or `DELETE`.

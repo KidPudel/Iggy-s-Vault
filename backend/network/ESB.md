@@ -1,0 +1,1 @@
+Enterprise service bus, architectural pattern that combines messaging protocol and data transforms

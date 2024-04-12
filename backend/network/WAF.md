@@ -1,2 +1,2 @@
 Web Application Firewalls (WAFs) are used to track and block IP address activities and blacklist suspicious IPs. This can lead to permanent IP block.
-To avoid bot detection we can use [[IP rotation]] or [[proxy]] with selenium ([[cool libraries]])
+To avoid bot detection we can use [[IP rotation]] or [[proxy]] with selenium ([[must-have libraries]])

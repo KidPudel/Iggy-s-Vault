@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c249e8b2458dbb9a",
+            "id": "de459bcd3964705e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "general tech/new type or when to create class.md",
+                "file": "projects/two chopsticks/stack.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "a17b99edbe1bfff8",
+            "id": "00b50cba27793663",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "golang/Go build.md",
+                "file": "backend/network/API best practices.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "89613f433819f262",
+            "id": "4faa8c73e5aa57bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "double buffering.md",
+                "file": "python/with.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -47,7 +47,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -76,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "new",
+                "query": "chrome",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "golang/Go build.md",
+                "file": "python/with.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "golang/Go build.md",
+                "file": "python/with.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "golang/Go build.md"
+                "file": "python/with.md"
               }
             }
           },
@@ -182,8 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,55 +196,55 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "a17b99edbe1bfff8",
+  "active": "4faa8c73e5aa57bd",
   "lastOpenFiles": [
-    "gamedev/patterns/game loop.md",
-    "golang/Go build.md",
-    "double buffering.md",
-    "gamedev/patterns/state machine.md",
-    "gamedev/game structure.md",
-    "buffer.md",
-    "frame buffer.md",
+    "general tech/Top shortcuts.md",
+    "backend/network/http methods.md",
+    "backend/database/essential statements.md",
+    "python/virtual environment.md",
+    "backend/network/API best practices.md",
+    "backend/network/API.md",
+    "flutter ios error building handling guide.md",
+    "python/mastering python.md",
+    "podcast notes/HUBERMAN LAB How to breathe correctly.md",
+    "projects/sg courier rewrite.md",
+    "podcast notes",
+    "python/must-have libraries.md",
+    "projects/two chopsticks/base.md",
+    "projects/two chopsticks/stack.md",
+    "redis.md",
+    "general tech/anti-bot trick.md",
+    "python/fastAPI.md",
+    "projects/two chopsticks/dictionary retrieval.md",
+    "python/concurrency in python.md",
+    "general tech/my obsidian anyppuccin colors.md",
+    "backend/network/Kafka.md",
+    "backend/network/message broker.md",
+    "images/Pasted image 20240312111944.png",
+    "images/Pasted image 20240312112154.png",
+    "images/Pasted image 20240407124019.png",
+    "general tech/new type or when to create class.md",
+    "k.md",
+    "backend/network/topic.md",
+    "backend/network/ESB.md",
+    "backend/network/WAF.md",
+    "images/Pasted image 20240320111452.png",
+    "projects/two chopsticks",
     "gamedev/patterns",
     "gamedev/Untitled.canvas",
-    "gamedev/Untitled.md",
-    "gamedev/Rendering pipeline.md",
-    "gamedev/raylib.md",
-    "gamedev/raylib structure.md",
-    "golang/std database.md",
-    "golang/string formatters.md",
-    "golang/std http.md",
-    "golang/std context.md",
-    "golang/ServeMux.md",
-    "golang/module path.md",
-    "golang/go garbage collector.md",
-    "golang/go sub-repositories.md",
-    "golang/go-di.md",
-    "golang/collections.md",
-    "kafka.md",
-    "gamedev/game architecture.md",
     "math",
-    "scheduling tasks on Mac.md",
-    "python/classes.md",
-    "general tech/new type or when to create class.md",
-    "Pasted image 20240320111452.png",
     "gamedev/optimization",
     "images/Pasted image 20240312110822.png",
-    "images/Pasted image 20240312111944.png",
     "images",
     "images/Pasted image 20240312140401.png",
     "images/Pasted image 20240312112003.png",
     "images/Pasted image 20240312112223.png",
     "images/Pasted image 20240312112209.png",
     "images/Pasted image 20240312112205.png",
-    "images/Pasted image 20240312112154.png",
     "python",
     "general tech",
     "c",
     "gamedev",
-    "Untitled.canvas",
-    "Flutter 0144d1b24f3f402d94d17e44f4f31cd0",
-    "TCP",
-    "YnfYBNdG-5I.jpg"
+    "Untitled.canvas"
   ]
 }
