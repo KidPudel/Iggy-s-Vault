@@ -1,6 +1,7 @@
 > In Go pointers like in C, but without arithmetics for safety.
 
-Pointer holds memory address to the value. `*T` pointer of a `T` value. Zero value is `nil`
+When declaring a pointer `*T` of type `T` we allocate a data in heap, so that we can use it everywhere and any time
+So in go, if we don't assign point, its value is `nil`
 
 _pointer to the int value_
 ```go

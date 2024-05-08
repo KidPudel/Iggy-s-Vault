@@ -1,0 +1,1 @@
+System for Cross-domain Identity Management: Open standard designed to manage user identity information.

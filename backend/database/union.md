@@ -1,0 +1,1 @@
+`UNION` is used to combine 2 or more `SELECT` statements, to get all that info in one table result

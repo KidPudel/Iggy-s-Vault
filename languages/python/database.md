@@ -48,3 +48,7 @@ acursor.fetch[all][one]()
 conn.commit()
 ```
 to make the changes in the database, if some data is updated
+
+
+# prevent sql injection
+always use placeholders instead of directly putting variable into sql, this will automatically put `ticks` around a variable

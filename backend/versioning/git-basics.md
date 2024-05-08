@@ -9,8 +9,10 @@
 - `git restore`: discard changes in specified filed in working directory 
 - `git commit`: a **snapshot** of git repository at a particular *time*
 	- `git commit -m ""`: where `-m` is a message
-- `git checkout <commit-hash>`: to navigate between your commits and branches
+- `git checkout <commit-hash>`: to navigate between your commits and branches (restores it)
 	- `git checkout master`: to move to the most recent commit
+- `git switch`: switches between branches
+- `git restore`: restores a file from another source 
 
 
 # branch

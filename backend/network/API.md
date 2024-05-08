@@ -6,7 +6,8 @@
 
 
 ## API endpoints
-endpoints are URL paths to navigate to find a specific request handler. Endpoints are refer to requests that can be made
+endpoints are URL paths to navigate to find a specific request handler. Endpoints are refer to requests that can be made.
+And each endpoint has handler, that gets executed when corresponding endpoint has been hit.
 
 - /users - Retrieve a list of users
 - /users/123 - Get details of user with ID 123

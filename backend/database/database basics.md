@@ -104,7 +104,7 @@ GROUP BY w.rate;
 ```
 
 
-# [[sql data types]]
+# [[sql data **types**]]
 
 
 #database

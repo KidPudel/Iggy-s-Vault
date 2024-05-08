@@ -1,0 +1,12 @@
+- [x] python
+- [x] fastAPI
+- [x] Selenium
+- [x] telegram, aiogram, asyncio
+- [x] PostgreSQL (with Joins etc.)
+- [ ] JWT authoriazations?
+- [ ] Redis
+- [ ] Kafka - for real time data queue
+- [ ] Docker
+- [ ] ClickHouse
+- [ ] AI
+- [ ] Vue - drawing board

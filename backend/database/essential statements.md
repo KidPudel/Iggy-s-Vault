@@ -1,9 +1,13 @@
+- `create`: create new entity
 - `select`: get
 - `update`: put ([[http methods]])
 - `insert`: post
+- `delete`
 - `from`
 - `where`: logical filter
 - `and`: combination
 - `or`
 - `between` filter query (age `between` 3 `and` 10)
 - `like`: search for pattern
+- `into`
+- `values`: where we put future row data (can do multiple)

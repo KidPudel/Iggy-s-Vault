@@ -1,1 +1,0 @@
-Package in python the same as in Go [[modules, packages and versions]] is a folder where python files ([[modules]]) are living, as well as [[__init__]].py file

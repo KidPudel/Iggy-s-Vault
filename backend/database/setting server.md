@@ -22,12 +22,24 @@ Firstly, we need to start our postgresql service.
 brew services postgresql@14
 ```
 After that, we need to create our role that we want to use, to connect to server
-```bash
+```sql
 select * from pg_roles;
 create role postgres with login password 'postgres';
 ```
 
 Now we are ready to create our first **server**!!!  
 
+and then creating database
+```sql
+CREATE DATABASE chinesebee_db
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+```
 
 #database

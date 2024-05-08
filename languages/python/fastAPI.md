@@ -228,9 +228,38 @@ When we want to return a [[Pydantic]] model, to automatically document and valid
 
 
 # Request parsing
-Also we can manually parse the request with `Request()`
+Also we can manually parse the request with `Request`
+
+```python
+from fastapi import Request
+
+@app.get("/items")
+def items_handler(request: Request):
+	client_host = request.client.host
+```
 
 
+# Dependencies
+In FastAPI handling dependencies is done through `Depends` type, that takes callable inside it, so you don't call it directly, FastAPI calls it by itself
+
+```python
+
+def clear_phone(phone: str):
+	return re.sub(r"[/D]", "", phone)
+
+@app.get("/items")
+def items_handler(phone: Annotated[str | None, Depends(clear_phone)]):
+	return phone # cleared phone
+```
+
+
+# Security
+For most of the scenarios, we can handle security (authorization. authentication) using `Depends()`, but if we also want to declare a scope, then we can use `Security`
+
+
+```python
+from typing import Annotated from fastapi import ==Depends==, FastAPI from .db import User from .security import get_current_active_user app = FastAPI() @app.get("/users/me/items/") async def read_own_items( current_user: Annotated[User, Security(get_current_active_user, scopes=["items"])] ): return [{"item_id": "Foo", "owner": current_user.username}]
+```
 # swagger
 accessed by `/docs`
 we can extend paths with documentations, by passing parameters into a [[decorator]]

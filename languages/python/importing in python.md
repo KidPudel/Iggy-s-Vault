@@ -22,9 +22,16 @@ from module import *
 - imports all names from the module, except for internals (`_`)
 - makes using names of the module *implicit*, which is not a good practice
 
----
+```python
+from database.long_name_db as db
+```
 
+# Relative paths and imports
+## Relative (in the same package)
 ```python
 from .forces import Forces
 ```
-Relative (in the same package)
+
+
+## relative from another package
+to find other packages not related to current, we can set the path to the parent, so Python will be able to find it

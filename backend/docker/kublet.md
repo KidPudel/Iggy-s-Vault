@@ -1,0 +1,1 @@
+Kublet is a agent (software process) that is running on each [[nodes]], that is used to manage the state of [[nodes]] and its containers 

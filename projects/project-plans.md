@@ -8,7 +8,9 @@
 - [ ] Weather portal
 - [ ] Create a Chat app with data base Spotify API
 - [ ] Pixel 2D mobile game with LibKTX
-- [ ] ARCore android app
+- [ ] ARCore 
+- [ ] 
+-android app
 - [ ] AirChat (Bluetooth)
 - [ ] Personal website
 - [ ] Mobile app that uses accelerometer

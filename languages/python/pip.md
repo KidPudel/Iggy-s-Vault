@@ -1,5 +1,5 @@
 Package installer for Python
 ```
-pip install <package name>
+pip install/uninstall <package name>
 pip freeze (lists installed packages)
 ```

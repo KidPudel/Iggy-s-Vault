@@ -1,0 +1,1 @@
+General Data Protection Regulation: In EU Law for regulation on information privacy rules, how we can use, process and store personal data.

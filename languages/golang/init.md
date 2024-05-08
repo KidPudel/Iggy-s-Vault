@@ -1,0 +1,1 @@
+This is a package-scoped function that will be executed before main function 

@@ -1,0 +1,1 @@
+Gateway between an internet and a backend infrastructure, when requesting from the server, nginx knows where to look for the resources, it also used for [[reverse proxy]], handles caching and authentication processes
