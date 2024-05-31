@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "62ad2b67594c7c9a",
+            "id": "efe5e2b1c1ee2564",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/essential statements.md",
+                "file": "reverse proxy.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,12 +21,51 @@
             }
           },
           {
-            "id": "cfef41a06dba90cc",
+            "id": "8b08f70265707ff9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/constraints.md",
+                "file": "vue.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b97cfb10981cd3e4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Vue directive.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "74a393ccfab2fe6f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "nginx.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4d85a5419c01b367",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "vue reactive.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -34,7 +73,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -80,8 +119,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -102,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/database/constraints.md",
+                "file": "nginx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/database/constraints.md",
+                "file": "nginx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/database/constraints.md"
+                "file": "nginx.md"
               }
             }
           },
@@ -167,7 +205,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -186,35 +224,41 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "cfef41a06dba90cc",
+  "active": "74a393ccfab2fe6f",
   "lastOpenFiles": [
-    "backend/database/indexes.md",
-    "backend/database/constraints.md",
-    "languages/python/poetry.md",
-    "backend/database/join.md",
-    "backend/database/essential statements.md",
-    "backend/database/database basics.md",
-    "languages/python/wsgi.md",
-    "languages/golang/std database.md",
-    "languages/python/database query parameters.md",
-    "sql data **types**.md",
-    "projects/sg back rewrite/architecture.md",
-    "projects/sg back rewrite/getitems.md",
-    "backend/database/union.md",
-    "backend/versioning/git-basics.md",
-    "languages/python/bot creation.md",
+    "backend/network/proxy.md",
+    "vue reactive.md",
     "nginx.md",
+    "Pasted image 20240531182352.png",
+    "vue.md",
+    "backend/docker/Docker basic work.md",
+    "Vue directive.md",
     "reverse proxy.md",
-    "w.md",
-    "flutter ios error building handling guide.md",
-    "languages/python/gunicorn.md",
-    "languages",
+    "languages/python/modules.md",
+    "languages/python/if __name__ == \"__main__\".md",
+    "pygame fundamental concepts.md",
+    "css properties.md",
+    "css display.md",
+    "css units.md",
+    "HTML tags.md",
+    "general tech/Top shortcuts.md",
+    "css position.md",
+    "css pseudo selector.md",
+    "229217559-8c140797-6285-4e52-997b-5c938ede6c9b.png",
+    "229218927-53bd8b3b-e39d-4a87-b0a4-f6e72d2fb043.png",
+    "Pasted image 20240520115418.png",
+    "Pasted image 20240520115345.png",
+    "Pasted image 20240520115343.png",
+    "frontend/CSS.md",
+    "html class vs id.md",
+    "URI.md",
+    "RESTful API.md",
+    "sfc.md",
+    "backend/database/essential statements.md",
+    "backend/network/URL.md",
     "backend/network/API.md",
-    "projects/chinese bee/stack.md",
-    "backend/docker/pods.md",
-    "projects/sg back rewrite/sg back api.md",
-    "backend/database/transations.md",
-    "projects/chinese bee/base.md",
+    "languages/python/inner function.md",
+    "languages",
     "podcast notes",
     "images/Pasted image 20240312111944.png",
     "images/Pasted image 20240312112154.png",
@@ -225,13 +269,7 @@
     "gamedev/Untitled.canvas",
     "math",
     "gamedev/optimization",
-    "images/Pasted image 20240312110822.png",
     "images",
-    "images/Pasted image 20240312140401.png",
-    "images/Pasted image 20240312112003.png",
-    "images/Pasted image 20240312112223.png",
-    "images/Pasted image 20240312112209.png",
-    "images/Pasted image 20240312112205.png",
     "languages/python",
     "general tech",
     "languages/c",

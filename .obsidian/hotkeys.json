@@ -1,12 +1,4 @@
 {
-  "editor:toggle-highlight": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "H"
-    }
-  ],
   "obsidian-excalidraw-plugin:insert-link-to-element": [],
   "app:toggle-left-sidebar": [
     {

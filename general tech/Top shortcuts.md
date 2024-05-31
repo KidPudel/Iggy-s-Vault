@@ -150,6 +150,9 @@
 - `ctrl+cmd+f`: full screen
 - `ctrl + -> <-`: switch between full-screen windows
 - `ctrl+cmd+d`: view word definition
+- `shift+cmd+g`: go to folder (finder)
 
 # Arc
 - `cmd+shift+d`: move url to the main view
+- `opt+click`: opens new on side
+- `ctrl+shift++`: new side bar

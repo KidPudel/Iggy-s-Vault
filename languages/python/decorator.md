@@ -26,3 +26,8 @@ if __name__ == "__main__":
 # your function add_two returns: 7
 # 7
 ```
+
+So it wraps our function with some additional logic, but we want to return our function, but altered, thats what and why is wrapper nested function
+Also decorators can take additional arguments to flex the behaviour of the decorator 
+And also we can have decorator inside a decorator
+So the returning trace will be wrapper1(wrapper2withadditions(decorated_function))

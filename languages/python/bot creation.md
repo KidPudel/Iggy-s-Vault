@@ -15,6 +15,9 @@ Dispatcher is the main router, they are needed for handling incoming updates fro
 
 > We register endpoints at which bot will trigger, and below, what it would use to handle that request - handler
 > Note: that the *request* (data with which user triggered endpoint of some type), is also captured by the endpoint
+
+if in API we register endpoint, meaning opening a gate for the client to access db
+then in bot creation, we register endpoint, to listen and catch the incoming request from the stream of requests and handle it.
 ### process of handling
 1. looking through current router (from outter -> nested) first is Dispatcher
 2. in router looking sequentially, from top to bottom (the first that satisfy filters (non-filtered handler is always the strongest))
@@ -28,7 +31,7 @@ the order is matter
 Searching filters is always stops on first match set of filters are passed (empty filters are always passes, so **the order is matter**) . By defauilt all updates has empty filter set, so all updates will be passed to the handler that has no filters
 
 # state machine
-set a state of the bot stage
+set a state of the bot stage, this allows to filter out what will be triggered when sending text messages
 
 This is done with a StatesGroup, just define a states, to determine what step is now and what user must enter
 (like with enum group), just set state and then in a filters of a handler add needed state

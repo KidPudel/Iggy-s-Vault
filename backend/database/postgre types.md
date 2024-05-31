@@ -11,3 +11,4 @@
 | `smallserial`      | 2 bytes      | small autoincrementing integer  | 1 to 32767                                                                               |
 | `serial`           | 4 bytes      | autoincrementing integer        | 1 to 2147483647                                                                          |
 | `bigserial`        | 8 bytes      | large autoincrementing integer  | 1 to 9223372036854775807                                                                 |
+	

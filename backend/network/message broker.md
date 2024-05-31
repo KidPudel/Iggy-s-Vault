@@ -1,4 +1,5 @@
-Intermediate layer of software that allows 2 sides to communicate with each other by *translating messages between formal messaging protocols*, this allows them "talk" with each other even on different technologies (languages) *asynchronously to not wait the consumer to receive the message* and *be sure that message will be delivered*.
+**Intermediate layer** of software that allows two sides to communicate with each other by *translating messages between format messaging protocols*, this allows them "talk" with each other even on different technologies (languages) *asynchronously to not wait the consumer to receive the message* and *be sure that message will be delivered* maintaining a [[Message queue]]
+It is responsible for routing from sender to receiver as well as formatting and filtering messages based on the rules.
 
 # models
 ## point-to-point messaging
