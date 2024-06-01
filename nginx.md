@@ -1,4 +1,4 @@
-Gateway between an internet and a backend infrastructure, when requesting from the server, nginx knows where to look for the resources, it also used for [[reverse proxy]], handles caching and authentication processes
+[[Web server]] or Gateway between an internet and a backend infrastructure, when requesting from the server, nginx knows where to look for the resources, it also used for [[reverse proxy]], handles caching and authentication processes
 
 It could be configured as *web server*, [[reverse proxy]], load balancer, cache, firewall, etc.
 
@@ -27,3 +27,6 @@ http {
 			- Location - Inside server block, this block specify how NGINX should process requests *for specific URI* locations or paths
 		- Upstream - Defines group of servers that can be used as *load balancers*
 	- Stream - Context used to configure TCP/UDP ([[internet-protocol]]) [[proxy]] and *load balancing for non-HTTP protocols such as TCP or UDP servers*
+
+For example if we want to server ([[Web server]]) vue js, we can use [npm http-server](https://www.npmjs.com/package/http-server) with zero configurations, or we can utilize nginx
+Similarly we can do so for python backend, lets take [[fastAPI]] for example, it can run with build-in [[ASGI]] during development, but in production it's recommended using NGINX

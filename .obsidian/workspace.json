@@ -52,7 +52,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "nginx.md",
+                "file": "backend/docker/docker multi-stage build.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8148cc3f504d2c6e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/python/ASGI.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -140,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "nginx.md",
+                "file": "backend/docker/docker multi-stage build.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "nginx.md",
+                "file": "backend/docker/docker multi-stage build.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "nginx.md"
+                "file": "backend/docker/docker multi-stage build.md"
               }
             }
           },
@@ -226,14 +239,20 @@
   },
   "active": "74a393ccfab2fe6f",
   "lastOpenFiles": [
-    "backend/network/proxy.md",
-    "vue reactive.md",
+    "backend/docker/Docker basic work.md",
+    "backend/docker/docker multi-stage build.md",
+    "backend/docker/Docker basics.md",
+    "backend/docker/docker compose.md",
+    "backend/docker/docker basic terms.md",
     "nginx.md",
+    "Web server.md",
+    "languages/python/ASGI.md",
+    "reverse proxy.md",
+    "vue reactive.md",
+    "Vue directive.md",
+    "backend/network/proxy.md",
     "Pasted image 20240531182352.png",
     "vue.md",
-    "backend/docker/Docker basic work.md",
-    "Vue directive.md",
-    "reverse proxy.md",
     "languages/python/modules.md",
     "languages/python/if __name__ == \"__main__\".md",
     "pygame fundamental concepts.md",
@@ -252,12 +271,6 @@
     "frontend/CSS.md",
     "html class vs id.md",
     "URI.md",
-    "RESTful API.md",
-    "sfc.md",
-    "backend/database/essential statements.md",
-    "backend/network/URL.md",
-    "backend/network/API.md",
-    "languages/python/inner function.md",
     "languages",
     "podcast notes",
     "images/Pasted image 20240312111944.png",

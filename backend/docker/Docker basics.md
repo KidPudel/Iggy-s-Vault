@@ -8,7 +8,7 @@ When we *create* a Virtual Machine configuring VM (choosing OS) and using provid
 *Example:* If you create Windows 10 virtual machine, on your host Linux machine, VM would load an entire Windows 10 operating system, including the Windows kernel, device drivers, system files, etc.
 
 ## Docker
-When running docker container ([[docker terms]]), docker creates an isolated environment "container", that *shares kernel, as well as system libraries and other core OS components* of the host OS they are running on.
+When running docker container ([[docker basic terms]]), docker creates an isolated environment "container", that *shares kernel, as well as system libraries and other core OS components* of the host OS they are running on.
 Inside the container, Docker creates necessary user-space components like filesystems, process namespaces, network interfaces, etc., to provide isolation from the container and the host.
 > NOTE: if the base image of the container, is OS or based on OS, that is different from host OS, then the process is slightly different.
 
@@ -27,7 +27,7 @@ For example if host is MacOS, and container is using Linux, then:
 # Docker components
 A few terms you should be familiar with (including a baking analogy for ease of understanding):
 
-[[docker terms]]
+[[docker basic terms]]
 
 
 
