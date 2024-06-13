@@ -88,8 +88,7 @@ This OpenAPI [[schema]] is what powers 2 interactive documentations (swagger and
 
 
 
-
-
+---
 
 # path operator declarator
 
@@ -258,8 +257,39 @@ For most of the scenarios, we can handle security (authorization. authentication
 
 
 ```python
-from typing import Annotated from fastapi import ==Depends==, FastAPI from .db import User from .security import get_current_active_user app = FastAPI() @app.get("/users/me/items/") async def read_own_items( current_user: Annotated[User, Security(get_current_active_user, scopes=["items"])] ): return [{"item_id": "Foo", "owner": current_user.username}]
+from typing import Annotated
+from fastapi import ==Depends==, FastAPI 
+from .db import User
+from .security import get_current_active_user 
+
+app = FastAPI() 
+
+@app.get("/users/me/items/") 
+async def read_own_items( current_user: Annotated[User, Security(get_current_active_user, scopes=["items"])] ): 
+	return [{"item_id": "Foo", "owner": current_user.username}]
 ```
 # swagger
 accessed by `/docs`
 we can extend paths with documentations, by passing parameters into a [[decorator]]
+
+
+# Router
+
+
+
+# Mounting
+Adding external, completely independent application to the specific path, that takes care of everything that coming that path
+
+```python
+subapi = FastAPI()
+
+@subapi.get("/sub")
+def read_sub():
+	return "sub"
+
+app.mount("/v2", subapi)
+```
+
+> When handling sub-applications, FastAPI handles communication with mount path to the sub-applications using a mechanism of [[ASGI]] specification called "root_path" [[ASGI root_path]]
+
+For example, we can use all Django features with mounting it

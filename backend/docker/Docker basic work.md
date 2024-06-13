@@ -54,12 +54,25 @@ After building an Image, we can list all of our images
 `docker images`
 
 
-# Run an Image within a container
+# Run container from an image
 `docker run NAME`
+- `-p`: to specify port (`8000:80` mapping port of a local machine to port inside a container)
+- `-d`: detach. indicate to run container in a task mode in a background
+- `-it`: interactive. takes straight inside the container
+- `-v` [[docker volumes]], to map our directory to the path we want with the `:`
+- `--name`: name container
+- `--rm`: automatically rm once it's done
 
 
+# docker stop
+`docker stop name` or id, if we still want it to resume
+
+# docker remove
+`docker rm name`
 
 
+- `docker ps`: list containers
+	- `-a`: all, not just running
 
 # Commands
 ## Image
@@ -77,3 +90,47 @@ After building an Image, we can list all of our images
 - `docker container exec CONTAINER COMMAND`: executes a command on a container
 - `docker container kill`: Kill container
 - `docker container run` / `docker run NAME`: Create and run a container from an Image
+
+
+
+# dockerize python
+```Dockerfile
+FROM python:3.12.2-slim-bookworm AS build-stage
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    gcc \
+    libpq-dev \
+    python3-dev \
+    linux-headers-generic \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt ./
+
+RUN python -m venv venv
+
+RUN . ./venv/bin/activate && pip install --no-cache-dir -r requirements.txt
+
+
+FROM python:3.12.2-slim-bookworm as serve-stage
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    nginx \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+WORKDIR /app
+
+COPY . .
+
+COPY --from=build-stage /app/venv ./venv
+
+EXPOSE 80 8000
+
+CMD sh -c ". /app/venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 8000 & nginx -g 'daemon off;'"
+
+```

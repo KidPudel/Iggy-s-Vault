@@ -2,7 +2,7 @@
   "accentColor": "",
   "theme": "moonstone",
   "cssTheme": "AnuPpuccin",
-  "translucency": false,
+  "translucency": true,
   "interfaceFontFamily": "",
   "textFontFamily": "Lora,Brush Script MT,American Typewriter",
   "baseFontSize": 16,

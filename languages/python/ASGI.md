@@ -1,1 +1,1 @@
-Asynchronous Server Gateway interface
+Asynchronous Server Gateway interface (async [[wsgi]])

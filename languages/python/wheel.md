@@ -1,0 +1,2 @@
+Binary distribution format for python packages. It's a *compressed archive* that contains all the files needed for a Python package, including code, dependencies and metadata, **but in a pre-build, compiled form**.
+Wheel files, are pre-build binaries, that a*re already compiled and ready to be installed on a system, **without any compilation steps***.

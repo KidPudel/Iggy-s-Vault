@@ -1,7 +1,9 @@
 > **Application Programming Interface** (API) server is the interface between the client and a database.
 > API is running and listening to the calls from many clients. Meaning it is not one client per instance, it hosts all users, so the process, life of the program, is managed accordingly.
 
-[[RESTful API]]
+[[RESTful API]] 
+
+> API is resource focused
 # Basic components
 [info from](https://apidog.com/blog/what-are-the-components-of-an-api/#:~:text=APIs%20typically%20consist%20of%20three,data%20provided%20by%20the%20server.)
 

@@ -1,7 +1,7 @@
 {
   "vimMode": true,
   "promptDelete": false,
-  "showLineNumber": true,
+  "showLineNumber": false,
   "readableLineLength": false,
   "strictLineBreaks": false,
   "alwaysUpdateLinks": true,
@@ -31,5 +31,6 @@
   "smartIndentList": true,
   "useTab": true,
   "trashOption": "system",
-  "showInlineTitle": true
+  "showInlineTitle": true,
+  "showIndentGuide": true
 }

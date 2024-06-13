@@ -1,0 +1,1 @@
+Object Relational Mapping: write code to create different database models, and have them automatically be created in some kind of structured database schema like SQLite

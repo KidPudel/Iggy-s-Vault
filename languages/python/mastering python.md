@@ -1,5 +1,5 @@
 - [ ] Asyncio ([[concurrency in python]])
-- [ ] corutine ([[concurrency in python]])
+- [ ] coroutine ([[concurrency in python]])
 - [ ] object relational mapping ([[Pydantic]])
 - [ ] GUI
 - [ ] CLI

@@ -1,0 +1,1 @@
+== checks similarities of objects (Object), where as `is` checks if two objects are the same by reference, meaning pointing to the same memory space (truly is)
