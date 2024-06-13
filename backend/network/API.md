@@ -3,7 +3,7 @@
 
 [[RESTful API]] 
 
-> API is resource focused
+> API is resource focused, and is a perfect fit for communicating between client and server
 # Basic components
 [info from](https://apidog.com/blog/what-are-the-components-of-an-api/#:~:text=APIs%20typically%20consist%20of%20three,data%20provided%20by%20the%20server.)
 
