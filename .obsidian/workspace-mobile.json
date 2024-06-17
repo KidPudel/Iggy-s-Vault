@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/constraints.md",
-                "mode": "preview",
+                "file": "backend/database/indexes.md",
+                "mode": "source",
                 "backlinks": false,
                 "source": false
               }
@@ -98,7 +98,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "backend/database/constraints.md",
+            "file": "backend/database/indexes.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "backend/database/constraints.md",
+            "file": "backend/database/indexes.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -127,7 +127,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "backend/database/constraints.md"
+            "file": "backend/database/indexes.md"
           }
         }
       }
@@ -148,6 +148,8 @@
   },
   "active": "6997c1adf6d04a22",
   "lastOpenFiles": [
+    "backend/database/constraints.md",
+    "shallow vs deep copy.md",
     "general tech/args and kwargs.md",
     "languages/python/decorator.md",
     "backend/network/message broker.md",
@@ -171,8 +173,6 @@
     "go-lookup/ServeMux.md",
     "simple-server-example.md",
     "go-lookup/std-http.md",
-    "go-lookup/singleton-pattern.md",
-    "go-lookup/no-need-for-static?.md",
-    "go-lookup/std-database.md"
+    "go-lookup/singleton-pattern.md"
   ]
 }

@@ -1,4 +1,4 @@
-Index is a data structure in a database to process data faster, it works like a indexes at the back of the book, by maintaining  a sorted representation of the data in one or more columns to then easily process and find rows, without having to traverse through all rows.
+Index is a **data structure** in a database to process data faster, it works like a indexes at the back of the book, by maintaining  a sorted representation of the data in one or more columns to then easily process and find rows, without having to traverse through all rows. Basically points where the data is
 
 Index is a copy of selected column from a table.
 
@@ -25,3 +25,8 @@ To delete/drop an index
 drop index saved_words_by_user_word_id
 on saved_words;
 ```
+
+
+# [[types of indexes]]
+
+

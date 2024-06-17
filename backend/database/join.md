@@ -9,4 +9,15 @@ There is:
  - `inner join`: depend on similarities of both
  - `outer join`: depend on both independently (grab all)
 
+```sql
+select
+	sw.user_id,
+	w.chinese,
+	w.english,
+	w.russian,
+	w.level
+from words w
+inner join saved_words sw on sw.word_id = w.id
+where sw.user_id = 3412
+```
  

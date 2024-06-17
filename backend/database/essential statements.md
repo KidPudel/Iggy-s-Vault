@@ -11,3 +11,8 @@
 - `like`: search for pattern
 - `into`
 - `values`: where we put future row data (can do multiple)
+- `order by`: default `asc`
+- [[union]]
+- [[join]]
+- `distinct`
+- `in`/`in not`

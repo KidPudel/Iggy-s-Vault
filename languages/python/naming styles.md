@@ -1,4 +1,4 @@
-- `_single_leading_underscore`: for the weak "intentional for internal usage"  E.g. `from M import *` does not import objects whose name starts with an underscore. but we can import it directly with `from M import _private_function` or `import M` and use
+- `_single_leading_underscore`: for the weak "intentional for internal usage"  E.g. `from M import *` does not import objects whose name starts with an underscore. but we can import it directly with `from M import _private_function` or `import M` and use (imitate protected, to child classes)
 - `single_trailing_underscore_`: used to avoid conflicts with the Python keywords E.g. `class_ = "first"`
-- `__double_leading_underscore`: naming attributes in class with [[mangling]] for avoiding name clashes E.g when inheriting with the same names
+- `__double_leading_underscore`: naming attributes in class with [[mangling]] for avoiding name clashes E.g when inheriting with the same names (imitate private)
 - `__double_underscores__`:  are special predefined [[magic]] methods

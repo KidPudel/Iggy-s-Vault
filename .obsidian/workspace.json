@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bdca2941f82db86e",
+            "id": "33cba0d2cec7567a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/python/fastAPI.md",
+                "file": "languages/python/concurrency in python.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "7ca318eedc291579",
+            "id": "60cbe4da15fa7638",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/python/fastAPI.md",
+                "file": "asyncio coroutines.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "23c1cd0be8ca41cc",
+            "id": "2bd6d8e60f523563",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gRPC.md",
+                "file": "backend interview questions.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -47,12 +47,12 @@
             }
           },
           {
-            "id": "7c7d44444e5959c5",
+            "id": "5821f515eda28b94",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Protocol Buffers - Protobuf.md",
+                "file": "asyncio coroutines.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -60,12 +60,12 @@
             }
           },
           {
-            "id": "1d0411f0207a5adc",
+            "id": "21be4b2f1f979720",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/network/API.md",
+                "file": "asyncio Task.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -73,12 +73,12 @@
             }
           },
           {
-            "id": "2049803a0bd48f70",
+            "id": "c5426b0843534040",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HTTP2.0.md",
+                "file": "asyncio Task.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,12 +86,12 @@
             }
           },
           {
-            "id": "474ea2e9e327534e",
+            "id": "7af2f2957999913f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Server, Client and Bidirectional streaming.md",
+                "file": "asyncio Task.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -99,12 +99,12 @@
             }
           },
           {
-            "id": "50a0f90581b94477",
+            "id": "d1d9a7b40cc24846",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/network/API.md",
+                "file": "asyncio coroutines.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -112,12 +112,12 @@
             }
           },
           {
-            "id": "6829ed91fc9a07ae",
+            "id": "4498047264ba2c1a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Protocol Buffers - Protobuf.md",
+                "file": "asyncio coroutines.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -125,98 +125,19 @@
             }
           },
           {
-            "id": "8c369d01e2fe4f41",
+            "id": "d7cadda51cc99f27",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HTTP2.0.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "eaefbcc8a2050d4e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "multiplexing.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f79fee599ed192e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/RESTful API.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fb9574ed67498ed1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ASGI root_path.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b78c39811ad62d1b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/Application server.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1ef7a7aa1066c4a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "race condition.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "04b5a5bbce10b00c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "deadlock.md",
+                "file": "asyncio coroutines.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -245,7 +166,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "hash table",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -283,11 +204,11 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gRPC.md",
+                "file": "languages/python/concurrency in python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": true,
+                "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
@@ -300,7 +221,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gRPC.md",
+                "file": "languages/python/concurrency in python.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -323,7 +244,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gRPC.md"
+                "file": "languages/python/concurrency in python.md"
               }
             }
           },
@@ -347,8 +268,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -367,47 +287,47 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "23c1cd0be8ca41cc",
+  "active": "33cba0d2cec7567a",
   "lastOpenFiles": [
-    "Protocol Buffers - Protobuf.md",
-    "gRPC.md",
-    "backend/network/API.md",
-    "Server, Client and Bidirectional streaming.md",
-    "HTTP2.0.md",
-    "backend/network/RESTful API.md",
-    "multiplexing.md",
-    "Pasted image 20240613225051.png",
-    "ASGI root_path.md",
-    "Pasted image 20240613224948.png",
-    "Pasted image 20240613224721.png",
-    "Pasted image 20240613224705.png",
-    "Protocol Buffers/Protobuf.md",
-    "Protocol Buffers",
+    "asyncio.md",
+    "languages/python/concurrency in python.md",
+    "asyncio coroutines.md",
+    "gamedev/concurrency.md",
+    "general tech/Event loop.md",
+    "asyncio Task.md",
+    "languages/python/greenlets.md",
+    "multiprocessing vs multithreading.md",
+    "backend interview questions.md",
     "languages/python/must-have libraries.md",
-    "graphics pipeline.md",
-    "languages/python/Django.md",
-    "languages/python/__init__.md",
-    "proofs.md",
-    "backend/network/Application server.md",
-    "languages/python/fastAPI.md",
-    "languages/python/gunicorn.md",
-    "languages/python/wsgi.md",
-    "Django ORM.md",
-    "languages/python/ASGI.md",
-    "Django manage file.md",
-    "Django settings file.md",
-    "deadlock.md",
-    "race condition.md",
-    "Algorithms.md",
-    "orm.md",
+    "must.md",
+    "general tech/coroutines.md",
+    "coroutin.md",
+    "general tech/IO-bound vs CPU-bound processing.md",
+    "python interview questions.md",
+    "backend/network/Authentication and authorization.md",
+    "backend/database/setting server.md",
+    "backend/database/essential statements.md",
+    "backend/database/union.md",
+    "backend/database/join.md",
+    "backend/database/db role.md",
+    "backend/database/database driver.md",
+    "backend/database/database connection.md",
+    "backend/database/database basics.md",
+    "backend/database/database relationship.md",
+    "foreign key.md",
+    "Pasted image 20240617154638.png",
+    "Pasted image 20240617154729.png",
+    "Pasted image 20240617154712.png",
+    "Pasted image 20240617154604.png",
+    "images/229217559-8c140797-6285-4e52-997b-5c938ede6c9b.png",
+    "images/229218927-53bd8b3b-e39d-4a87-b0a4-f6e72d2fb043.png",
+    "images/Pasted image 20240520115343.png",
+    "images/Pasted image 20240613225051.png",
+    "images/Pasted image 20240613224948.png",
+    "images/Pasted image 20240613224721.png",
+    "Protocol Buffers",
     "I",
-    "Pasted image 20240610132906.png",
     "Untitled.canvas",
-    "Pasted image 20240531182352.png",
-    "229217559-8c140797-6285-4e52-997b-5c938ede6c9b.png",
-    "229218927-53bd8b3b-e39d-4a87-b0a4-f6e72d2fb043.png",
-    "Pasted image 20240520115418.png",
-    "Pasted image 20240520115345.png",
     "languages",
     "podcast notes",
     "projects/chinese bee",

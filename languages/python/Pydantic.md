@@ -55,3 +55,4 @@ class User(BaseModel):
 	
 ```
  The `PositiveInt` type is shorthand for `Annotated[int, annotated_types.Gt(0)]`.
+ 

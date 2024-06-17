@@ -243,7 +243,7 @@ In FastAPI handling dependencies is done through `Depends` type, that takes call
 
 ```python
 
-def clear_phone(phone: str):
+def clear_phone(phone: Annotated[str, Query()]):
 	return re.sub(r"[/D]", "", phone)
 
 @app.get("/items")

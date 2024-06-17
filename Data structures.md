@@ -73,13 +73,12 @@ Suppose we at grocery store, we can search in a book an item
 
 But if we had hash table (Maggie) that could help us get a price of an _apple_ for example, that would be _**O(1)**_
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe641dd6-230b-4507-ac3d-7328d30a410b/Untitled.png)
+![[Pasted image 20240617154604.png]]
 
 ### To create
 
 To create a hash table we need to use hash function (mapping key to value) `“apple” to 0.67`
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c22aaf1b-3481-45ca-a400-3ca728b3f444/Untitled.png)
+![[Pasted image 20240617154638.png]]
 
 Requirements
 
@@ -88,13 +87,9 @@ Requirements
 
 So you “feed” hash function with a new key-values and hash function outputs an index where to put in array
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9970e81d-6375-43f7-bf35-e2a83e65e822/Untitled.png)
-
+![[Pasted image 20240617154712.png]]
 After you’ve filled the entire array, you give hash function “avocado” and it tells that it’s at the index of 4!
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8536a655-e890-48d1-845c-b16eb2e48b81/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a7d5e284-572e-4f87-b843-e158cb1ca36c/Untitled.png)
 
 - Hash function returns the same index for a key each time (first time you feed it with a string → it adds to the array and returns an index, next time you feed with the same string it will just return an index)
 - Hash function gives each key different index and put a value in that index

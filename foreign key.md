@@ -1,0 +1,1 @@
+[[primary key]] that is referenced in other table, to represent the table

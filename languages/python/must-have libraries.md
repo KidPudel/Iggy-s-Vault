@@ -5,6 +5,7 @@
 - [string](https://docs.python.org/3/library/string.html): Common string operations
  - [re](https://docs.python.org/3/library/re.html): Regular expression operations
  - [requests](https://pypi.org/project/requests/): elegant way to make HTTP requests
+ - - [[asyncio]]: [[concurrency in python]] code
 # advanced
 - [fastAPI](https://fastapi.tiangolo.com/): for fast build REST [[API]]
 - [aiogram](https://aiogram.dev/): cool library for creating telegram bots concurrently
@@ -13,7 +14,7 @@
 - pymysql: MySQL client library
 - BeautifulSoup: pulling data out of HTML and XML
 - Selenium: we browser interaction automation
-- [asyncio](https://docs.python.org/3/library/asyncio.html#module-asyncio): [[concurrency in python]] code
+- [undetected-cromedriver](https://pypi.org/project/undetected-chromedriver/)
 - asgiref: to use @sync_to_async
 - [aiohttp](https://pypi.org/project/aiohttp//) async HTTP requests 
 - [lxml](https://lxml.de/): Fast XML and HTML processor written in C

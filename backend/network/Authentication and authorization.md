@@ -1,8 +1,11 @@
 [info from](https://apidog.com/blog/api-authorization/)
 
-**Authentication** is the process of exchanging credentials between the user and a browser, to verify the identity 
+**Identification** is the process of verifying that the user with that credentials even exists 
 
-**Authorization** is the process of verifying the necessary permission for the *authenticated* user to access some information. Meaning it ensures that only authorised users can access the information
+**Authentication** is the process of exchanging credentials between the user and a browser and verifying/proving the identity by matching it with stored credentials in DB 
+
+**Authorization** is the process of verifying/determining and giving the necessary permission for the *authenticated* user to access some information. Meaning it ensures that only authorized users can access the information
+
 
 
 # Types of authorization

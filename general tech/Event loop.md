@@ -1,12 +1,9 @@
 Central component that constantly checks for incoming events (IO, network, timer events) and dispatches them to their coroutines.
 
+In Python implemented via [[asyncio]], it runs asynchronous tasks and callbacks, perform network IO operations, and run subprocesses
+
 # the process
-1. When encountering asynchronous function, event loops adds it to the tasks, to also execute
-2. Starts executing
-3. Other async function could be added to the task
-4. When encountering the `await` it yields the control of the process back to the event loop to continue processing other tasks
-5. When second await is encountered control yielded back again to the event loop
-6. it process other tasks
-7. then when await completes, event loop get notified about it and it proceed execution of the task
-8. then those tasks are finished itself and event loop get notified again, that it can proceed the execution of in our case the main function (or any outer outer function)
-9. outer function proceeded and maybe finished
+- Encountering coroutine function call
+- if it is `await` marked, then the *current* coroutine is suspended and control yielded back to the event loop to check for available coroutines to execute
+	- and it is executing our coroutine, and then by finishing returns control back to the current coroutine
+- if it is scheduled by creating [[asyncio Task]] or Tasks in case of `gather()`, then new task is registered in event loop and runs, meanwhile our current coroutine is not blocked and is running until `await` is called, to literally wait for the functions to finish up
