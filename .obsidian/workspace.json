@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "792602c17d04a58f",
+        "id": "ddb191b3edfd2ec7",
         "type": "tabs",
         "children": [
           {
-            "id": "33cba0d2cec7567a",
+            "id": "9008c26c6fc45cbd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/python/concurrency in python.md",
+                "file": "unit tests.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "60cbe4da15fa7638",
+            "id": "344116fc3b6cde6a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "asyncio coroutines.md",
+                "file": "languages/python/must-have libraries.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "2bd6d8e60f523563",
+            "id": "d0b9964e0f90035f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend interview questions.md",
+                "file": "backend/network/RabbitMQ.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -47,12 +47,12 @@
             }
           },
           {
-            "id": "5821f515eda28b94",
+            "id": "b160b6d5c513bdae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "asyncio coroutines.md",
+                "file": "backend/network/message broker.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -60,12 +60,12 @@
             }
           },
           {
-            "id": "21be4b2f1f979720",
+            "id": "21a18b7fc75c54ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "asyncio Task.md",
+                "file": "database replication.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -73,71 +73,20 @@
             }
           },
           {
-            "id": "c5426b0843534040",
+            "id": "feb3c47d253f3853",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "asyncio Task.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7af2f2957999913f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "asyncio Task.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d1d9a7b40cc24846",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "asyncio coroutines.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4498047264ba2c1a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "asyncio coroutines.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d7cadda51cc99f27",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "asyncio coroutines.md",
+                "file": "database shard.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -204,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/python/concurrency in python.md",
+                "file": "languages/python/must-have libraries.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -221,7 +170,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/python/concurrency in python.md",
+                "file": "languages/python/must-have libraries.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -244,7 +193,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages/python/concurrency in python.md"
+                "file": "languages/python/must-have libraries.md"
               }
             }
           },
@@ -287,44 +236,47 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "33cba0d2cec7567a",
+  "active": "344116fc3b6cde6a",
   "lastOpenFiles": [
-    "asyncio.md",
-    "languages/python/concurrency in python.md",
-    "asyncio coroutines.md",
-    "gamedev/concurrency.md",
-    "general tech/Event loop.md",
-    "asyncio Task.md",
-    "languages/python/greenlets.md",
-    "multiprocessing vs multithreading.md",
-    "backend interview questions.md",
-    "languages/python/must-have libraries.md",
-    "must.md",
-    "general tech/coroutines.md",
-    "coroutin.md",
-    "general tech/IO-bound vs CPU-bound processing.md",
-    "python interview questions.md",
-    "backend/network/Authentication and authorization.md",
-    "backend/database/setting server.md",
-    "backend/database/essential statements.md",
-    "backend/database/union.md",
-    "backend/database/join.md",
-    "backend/database/db role.md",
-    "backend/database/database driver.md",
-    "backend/database/database connection.md",
-    "backend/database/database basics.md",
-    "backend/database/database relationship.md",
-    "foreign key.md",
-    "Pasted image 20240617154638.png",
-    "Pasted image 20240617154729.png",
-    "Pasted image 20240617154712.png",
-    "Pasted image 20240617154604.png",
+    "unit tests.md",
+    "backend/network/Kafka.md",
+    "backend/network/RabbitMQ.md",
+    "backend/network/message broker.md",
+    "backend/backend interview questions.md",
+    "messaging patters.md",
+    "backend/docker/Docker basic work.md",
+    "backend/docker/docker basic terms.md",
+    "backend/network/ESB.md",
+    "languages/python/python interview questions.md",
+    "general tech/multiprocessing vs multithreading.md",
+    "database replication.md",
+    "database shard.md",
+    "backend/database/redis.md",
+    "Pasted image 20240618184108.png",
+    "Pasted image 20240618183812.png",
+    "Pasted image 20240618183510.png",
+    "Pasted image 20240618183443.png",
+    "Pasted image 20240618183441.png",
+    "backend/database/transactions.md",
+    "backend/docker/orchestration.md",
+    "CS/SOLID.md",
+    "languages/python/virtual environment.md",
+    "ACID.md",
+    "4 levels of isolation.md",
+    "anomalies.md",
+    "serialization.md",
+    "backend/database/types of indexes.md",
+    "backend/database/indexes.md",
+    "python interpreter.md",
+    "languages/python/asyncio coroutines.md",
+    "images/Pasted image 20240617154638.png",
+    "backend/messaging",
+    "Untitled 1",
+    "CS",
+    "images/Pasted image 20240617154729.png",
+    "images/Pasted image 20240617154604.png",
+    "images/Pasted image 20240617154712.png",
     "images/229217559-8c140797-6285-4e52-997b-5c938ede6c9b.png",
-    "images/229218927-53bd8b3b-e39d-4a87-b0a4-f6e72d2fb043.png",
-    "images/Pasted image 20240520115343.png",
-    "images/Pasted image 20240613225051.png",
-    "images/Pasted image 20240613224948.png",
-    "images/Pasted image 20240613224721.png",
     "Protocol Buffers",
     "I",
     "Untitled.canvas",
@@ -333,9 +285,6 @@
     "projects/chinese bee",
     "gamedev/patterns",
     "gamedev/Untitled.canvas",
-    "math",
-    "gamedev/optimization",
-    "images",
-    "languages/python"
+    "math"
   ]
 }

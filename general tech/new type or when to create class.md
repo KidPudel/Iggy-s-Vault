@@ -1,4 +1,4 @@
-Type is the **classification** of the data, that tells the [[compiler]] or [[interpreter]] how data should be represented, how it should look, what have, what to do, and what it is at all.
+Type is the **classification** of the data, that tells the [[compiler]] or [[python interpreter]] how data should be represented, how it should look, what have, what to do, and what it is at all.
 
 Act of defining a new type, is the **urge for a new classification**, therefore - **urge for the ability of creation of new type of entity**. 
 

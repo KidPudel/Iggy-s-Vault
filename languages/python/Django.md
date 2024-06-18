@@ -44,9 +44,9 @@ settings.configure(default_settings=myapp_defaults, DEBUG=True)
 And if we use Django component(s) as a standalone, we **must** call `setup()` to load settings and populate Django's application registry (manage your resources).
 But it is necessary only if it is truly standalone. When inked by your web server or through django-admin, Django will handle this for you.
 # Django ORM
-Django [[ORM]] is for interacting with database using models representing tables 
+Django [[orm]] is for interacting with database using models representing tables 
 ### Migrations
-After creating [[ORM]]s or changing it we need to make a migration, to affect changes to the models into the database schema
+After creating [[orm]]s or changing it we need to make a migration, to affect changes to the models into the database schema
 Migration is automated code that create a model in some database engine like PostgreSQL
 
 Firs we need to register them in admin
@@ -72,7 +72,7 @@ and we can create it by creating a new project
 and now to setup a database connection we need to set it in `settings.py`
 
 
-the example of model [[ORM]]
+the example of model [[orm]]
 ```python
 class Client(models.Model):
 	client_name = models.CharField(max_length=256, null=False, blank=False)

@@ -3,7 +3,6 @@
 # Official analogy
 > when you put the mail that you want posting in a post box, you can be sure that the letter carrier will eventually deliver the mail to your recipient. In this analogy, RabbitMQ is a post box, a post office, and a letter carrier.
 >The major difference between RabbitMQ and the post office is that it doesn't deal with paper, instead it accepts, stores, and forwards binary blobs of data ‒ _messages_.
-
 # Basic terms
 RabbitMQ, and messaging in general, uses some jargon.
 
@@ -98,3 +97,8 @@ And now to enter a never ending loop of listening for the event and calling call
 ```python
 channel.start_consuming()
 ```
+
+
+
+# Message Delivery Semantics/models
+The RabbitMQ supports various messaging patterns/models (look in [[message broker]]) point-to-point, pub/sub

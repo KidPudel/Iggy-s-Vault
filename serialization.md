@@ -1,0 +1,1 @@
+The process of converting data structure or the object to the format that could be stored or transmitted and reconstructed later

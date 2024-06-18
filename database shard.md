@@ -1,0 +1,1 @@
+The process of splitting one database and storing in several database servers, to overcome the limitations of limited data processing

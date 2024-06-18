@@ -1,3 +1,32 @@
+# Top 10 questions in backed python interview
+
+[[python interview questions]]
+
+## Indexes, what is it, and types
+[[indexes]]
+
+## transaction
+[[transactions]]
+
+
+## replication
+- [[database replication]]
+- [[database shard]]
+
+
+## messaging systems
+[[RabbitMQ]]
+[[Kafka]]
+
+
+## containerization
+[[Docker basics]]
+[[Docker basic work]]
+
+
+# tests
+[[unit tests]]
+
 # Вопросы по архитектуре и принципам разработки ПО:
 
 - В чем отличие объектно-ориентированного и функционального программирования?

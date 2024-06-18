@@ -26,6 +26,7 @@ Can handle equality and range queries on data that can be stored into some order
 ```
 < <= = >= >
 ```
+B-tree can have greater than one keys in nodes and greater than 2 children
 
 
 

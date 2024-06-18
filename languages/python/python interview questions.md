@@ -60,6 +60,8 @@ If you need to count or find encounters in some way, just use dict/hashmap or se
 
 
 ## For what threading is perfect fit
+> NOTE: for CPU bound multiprocessing is better
+
 Good fit:
 - Threading is perfect for CPU bound processes (a lot of computations, processing, ML)
 Bad fit:
@@ -67,24 +69,16 @@ Bad fit:
 - if it has a lot of I/O bound operations (waiting a lot from outside)
 - if it has a lot of async operations
 - if reactive approach
-## what is interpreter
-Interpreter is another program that reads the code
-
-## cons and pros of interpreted languages
-pros:
-- dynamic typing
-- [[reflection]]
-- ease of debugging (it easier to get source code information in interpreted languages)
-- small program size (since interpreted languages have flexibility to choose instruction code)
-- automatic memory management
-- dynamic scoping
-cons:
-- worse performance
 
 
-# asynchronous
+## python interpreter
+[[python interpreter]]
+
+
+
+## asynchronous
 [[concurrency in python]]
 
 
-# event loop
-[[Event loop]]**
+## event loop
+[[Event loop]]

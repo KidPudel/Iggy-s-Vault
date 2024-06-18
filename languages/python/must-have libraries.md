@@ -5,7 +5,8 @@
 - [string](https://docs.python.org/3/library/string.html): Common string operations
  - [re](https://docs.python.org/3/library/re.html): Regular expression operations
  - [requests](https://pypi.org/project/requests/): elegant way to make HTTP requests
- - - [[asyncio]]: [[concurrency in python]] code
+ - [[asyncio]]: [[concurrency in python]] code
+ - [unittest](https://docs.python.org/3/library/unittest.html): testing library
 # advanced
 - [fastAPI](https://fastapi.tiangolo.com/): for fast build REST [[API]]
 - [aiogram](https://aiogram.dev/): cool library for creating telegram bots concurrently
