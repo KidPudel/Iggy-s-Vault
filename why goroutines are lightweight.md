@@ -1,0 +1,4 @@
+- Goroutines are managed by [[golang scheduler]], this makes it optimized on a system
+- Goroutines are using [[segmented stack in go]], which lets them to start small and grow/shrink
+- They are share memory ([[concurrency in go]]), which reduces memory usage and context switch time
+- Goroutine yield control at well-defined points via channel operations and function calls ([[concurrency in go]]). Which makes it predictable and efficient scheduling behavior. Cooperative scheduling. 

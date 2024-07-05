@@ -1,0 +1,4 @@
+- a send to a nil channel blocks forever
+- a receive from a nil channel blocks forever (like in my experience where i've stuck waiting it to end)
+- a send to a closed channel panics
+- a receive from a closed channel returns the zero value immediately

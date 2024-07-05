@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ddb191b3edfd2ec7",
+        "id": "b47fd49ab3e08ea3",
         "type": "tabs",
         "children": [
           {
-            "id": "9008c26c6fc45cbd",
+            "id": "6bb79d63bb6116f3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "unit tests.md",
+                "file": "languages/golang/Golang Backend Interview Preparation.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,72 +21,19 @@
             }
           },
           {
-            "id": "344116fc3b6cde6a",
+            "id": "2e2ff091a72ff8d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/python/must-have libraries.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d0b9964e0f90035f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/RabbitMQ.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b160b6d5c513bdae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/message broker.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "21a18b7fc75c54ff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "database replication.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "feb3c47d253f3853",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "database shard.md",
+                "file": "languages/golang/string formatters.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -115,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "zero value",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -132,7 +79,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -153,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/python/must-have libraries.md",
+                "file": "languages/golang/Golang Backend Interview Preparation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/python/must-have libraries.md",
+                "file": "languages/golang/Golang Backend Interview Preparation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -193,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages/python/must-have libraries.md"
+                "file": "languages/golang/Golang Backend Interview Preparation.md"
               }
             }
           },
@@ -236,47 +184,47 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "344116fc3b6cde6a",
+  "active": "6bb79d63bb6116f3",
   "lastOpenFiles": [
-    "unit tests.md",
-    "backend/network/Kafka.md",
-    "backend/network/RabbitMQ.md",
-    "backend/network/message broker.md",
+    "languages/golang/types.md",
+    "languages/golang/Golang Backend Interview Preparation.md",
+    "languages/golang/string formatters.md",
+    "go string.md",
     "backend/backend interview questions.md",
-    "messaging patters.md",
-    "backend/docker/Docker basic work.md",
-    "backend/docker/docker basic terms.md",
-    "backend/network/ESB.md",
-    "languages/python/python interview questions.md",
-    "general tech/multiprocessing vs multithreading.md",
-    "database replication.md",
-    "database shard.md",
-    "backend/database/redis.md",
+    "backend/database/transactions.md",
+    "ACID.md",
+    "general tech/mutable vs immutable.md",
+    "golang scheduler.md",
+    "go map under the hood.md",
+    "languages/golang/slices under the hood.md",
+    "mutex.md",
+    "event sourcing.md",
+    "Domain Driven Design.md",
+    "CRUD.md",
+    "languages/python/reflection.md",
+    "general tech/Top shortcuts.md",
+    "backend/versioning/git-basics.md",
+    "sync.Map.md",
+    "general tech/Flutter interview copy 2.md",
+    "general tech/Flutter interview copy.md",
+    "channel axioms.md",
+    "Pasted image 20240704163555.png",
+    "backend/docker/docker compose.md",
+    "go .....md",
+    "Pasted image 20240703164827.png",
+    "languages/golang/context.md",
+    "json-rpc.md",
+    "Pasted image 20240619222745.png",
     "Pasted image 20240618184108.png",
     "Pasted image 20240618183812.png",
     "Pasted image 20240618183510.png",
     "Pasted image 20240618183443.png",
     "Pasted image 20240618183441.png",
-    "backend/database/transactions.md",
-    "backend/docker/orchestration.md",
-    "CS/SOLID.md",
-    "languages/python/virtual environment.md",
-    "ACID.md",
-    "4 levels of isolation.md",
-    "anomalies.md",
-    "serialization.md",
-    "backend/database/types of indexes.md",
-    "backend/database/indexes.md",
-    "python interpreter.md",
-    "languages/python/asyncio coroutines.md",
     "images/Pasted image 20240617154638.png",
     "backend/messaging",
     "Untitled 1",
     "CS",
     "images/Pasted image 20240617154729.png",
-    "images/Pasted image 20240617154604.png",
-    "images/Pasted image 20240617154712.png",
-    "images/229217559-8c140797-6285-4e52-997b-5c938ede6c9b.png",
     "Protocol Buffers",
     "I",
     "Untitled.canvas",

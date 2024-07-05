@@ -6,7 +6,7 @@
 - **what you don't want to export (make importable)**
   - camelCase
 - **what you want to export**
-  - PascakCase
+  - PascalCase
 - **constants**
   - SCREAMING_SNAKE_CASE
 - **bool**

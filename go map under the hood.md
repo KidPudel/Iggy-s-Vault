@@ -1,0 +1,1 @@
+similar to [[slices under the hood]], it contains pointer to the map, but with maps doesn't store len and cap like slices, as well as maps doesn't have operations like `append()`, that exposes that it is a copy and lead to unwanted behavior.

@@ -28,7 +28,7 @@
   "anuppuccin-theme-settings-extended@@anp-theme-ext-light": false,
   "anuppuccin-theme-settings-extended@@anp-theme-ext-dark": false,
   "anuppuccin-theme-settings-extended@@anp-theme-ext-amoled": false,
-  "anuppuccin-theme-settings@@ctp-custom-red@@dark": "#A60000",
-  "anuppuccin-theme-settings@@ctp-custom-red@@light": "#A60000",
-  "anuppuccin-theme-settings@@ctp-custom-green@@light": "#1C5500"
+  "anuppuccin-theme-settings@@ctp-custom-red@@dark": "#640000",
+  "anuppuccin-theme-settings@@ctp-custom-red@@light": "#6F0000",
+  "anuppuccin-theme-settings@@ctp-custom-green@@light": "#153F00"
 }

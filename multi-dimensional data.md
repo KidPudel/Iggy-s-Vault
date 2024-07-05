@@ -1,0 +1,1 @@
+Information that could be categorized into multiple [[data dimension]]s e.g. to view the problem from different perspectives

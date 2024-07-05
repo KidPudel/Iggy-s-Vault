@@ -1,0 +1,1 @@
+On-Line Transactional Processing, for purely operational

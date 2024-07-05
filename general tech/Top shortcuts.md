@@ -25,7 +25,7 @@
 - `cmd+shift+p`: command palette/show all commands
 - `cmd+p`: go to file
 - `ctrl+space`: completion suggestion
-- `cmd+i+cmd+k`: quick documentation lookup
+- `cmd+k+cmd+i`: quick documentation lookup
 - `shift+cmd+space`: show parameters
 - `cmd+j`: toggle pannel
 - `ctrl+tilda / opt+cmd+b` : toggle terminal (secondary side bar)
@@ -40,6 +40,7 @@
 - `cmd+k+l`: minimap
 - `cmd+shift+x`: extensions
 - `cmd+shift+e`: explorer
+- `opt+shift+f`: reformat
 
 
 # Vim

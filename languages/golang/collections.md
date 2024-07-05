@@ -16,7 +16,7 @@ citiesVisitedInPast := [4]string{"mexico", "new-york", "tokyo", "shanghai"}
 len(matches) // 10
 ```
 
-arrays are one-dimentional, but we can compose types
+arrays are one-dimensional, but we can compose types
 ```go
 var twoDm [2][3]int
 for i := 0; i < 2; i++ {

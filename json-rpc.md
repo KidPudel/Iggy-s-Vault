@@ -1,0 +1,1 @@
+JSON-RPC is like a [[gRPC]], but it uses JSON format and HTTP 1.0 instead of [[HTTP2.0]] and [[Protocol Buffers - Protobuf]]

@@ -1,7 +1,10 @@
 `@something`
-You put it on top of a function, like pretty *decorative* had
+You put it on top of a function, like pretty *decorative* had, that's why it
 
-**Decorator takes decorated function *in* and does something with it**. For example tells [[fastAPI]] that function corresponds to the specific *path* and method/*operator*
+**Decorator takes decorated function *in* and does something with it**. 
+Semantically, decorator can add additional features, like a wrapper in a candy to add some more depth to it, or it can treat decorated functions, like handers to do some work for a bigger picture job
+
+For example tells [[fastAPI]] that function corresponds to the specific *path* and method/*operator*
 
 So it is the *path operator decorator*
 

@@ -1,3 +1,5 @@
+Reflection in computing is the **ability of a program to examine its own structure, particularly through types**.
+It is a form of metaprogramming.
 Reflection is an API that is used to ***examine or modify the behavior of methods, classes and interfaces at runtime***.
 
 

@@ -13,14 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/indexes.md",
+                "file": "backend/backend interview questions.md",
                 "mode": "source",
-                "backlinks": false,
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3518fb4e749d8b2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "anonymous functions.md",
+                "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -98,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "backend/database/indexes.md",
+            "file": "anonymous functions.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -115,7 +129,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "backend/database/indexes.md",
+            "file": "anonymous functions.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -127,7 +141,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "backend/database/indexes.md"
+            "file": "anonymous functions.md"
           }
         }
       }
@@ -146,8 +160,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6997c1adf6d04a22",
+  "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "golang scheduler.md",
+    "anonymous functions.md",
+    "backend/database/scheduler.md",
+    "languages/golang/concurrency in go.md",
+    "s3.md",
+    "4 levels of isolation.md",
+    "serialization.md",
+    "Untitled.md",
+    "backend/backend interview questions.md",
+    "languages/python/python interview questions.md",
+    "backend/network/XSS.md",
+    "backend/network/hashing.md",
+    "backend/network/claims.md",
+    "backend/network/CSRF.md",
+    "backend/docker/bind mounts.md",
+    "backend/database/indexes.md",
     "backend/database/constraints.md",
     "shallow vs deep copy.md",
     "general tech/args and kwargs.md",
@@ -157,22 +187,6 @@
     "pygame fundamental concepts.md",
     "projects/project-plans.md",
     "python/mutable vs immutable.md",
-    "python/naming styles.md",
-    "general tech/Golang and C as friends and both u should love.md",
-    "gamedev/concurrency.md",
-    "gamedev/Rendering pipeline.md",
-    "Authorization header.md",
-    "backend/network/headers.md",
-    "backend/network/middleware.md",
-    "backend/network/hashing.md",
-    "backend/network/cookies.md",
-    "backend/network/CSRF.md",
-    "Payload.md",
-    "backend/network/XSS.md",
-    "go-lookup/server-implementation.md",
-    "go-lookup/ServeMux.md",
-    "simple-server-example.md",
-    "go-lookup/std-http.md",
-    "go-lookup/singleton-pattern.md"
+    "python/naming styles.md"
   ]
 }

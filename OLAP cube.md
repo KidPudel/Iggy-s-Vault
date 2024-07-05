@@ -1,0 +1,2 @@
+Allows to quickly analyze, query and report [[multi-dimensional data]], by conceptualizing as a "cube" data structure, where [[data dimension]]s are edges and [[data fact]] is intersection of these dimensions
+![What is a Data Dimension?](https://data-warehouses.net/images/datadimensions.jpg)
