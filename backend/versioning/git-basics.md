@@ -21,7 +21,10 @@ And by default, git creates a main branch called "*master*"
 - `git branch`: lists our branches
 - `git branch <name>`: creates a new branch with name
 > Side note: If we use checkout, we are actually detaching from our master, and to attach back to it we can just use `git checkout master`
-- - `git merge <branch-name>`: to add changes (commits) from specified branch to the current branch
+- `git merge <branch-name>`: to add changes (commits) from specified branch to the current branch, with a new "merge commit"
+	- ![[Pasted image 20240711180045.png]]
+- `git rebase <branch-name>`: moves entire current branch to the tip of the chosen branch, and instead of using merge commits, it **re-writes the project history**, by creating **brand new commits for *each commit in the original branch***
+	- ![[Pasted image 20240711180949.png]]
 - `git delete <branch-name>`: delete branch
 
 
@@ -54,3 +57,41 @@ $ git config --global user.email johndoe@example.com
 
 # rebasing on pull
 we can do merging on pull instead of rebase, if we run `git config pull.rebase false`
+
+
+# cherry-pick
+`git cherry-pick <commit-hash>`
+Used to select a single commit from one branch and apply it to another
+
+Common use cases:
+
+- Applying a bug fix from one branch to another
+- Moving a feature commit to a different branch
+- Selectively applying changes when you don't want to merge entire branches
+
+# git rebase
+видел, что в одном PR ты добавил изменения из мастера в свою ветку через мердж. Это ОК, но лучше было бы сделать это через `git rebase`.
+
+Алгоритм такой:
+
+- `git checkout master`
+- `git pull origin master`
+- `git checkout <out-branch>`
+- `git rebase master`
+
+Данное действие отменит все коммиты в текущей ветке и затем переставит их так, словно ветка началась от текущего состояния мастера. И будет применять коммит за коммитом, так что если будут конфликты, оно остановит процесс и позволит их решить. После чего нужно будет сделать `git rebase --continue`.
+
+Плюс данного подхода в том, что так в PR сохраняется линейная история без непонятных коммитов в виде `Merge ... to ...`. Учитывая, что мы потом не делаем squash (объединение коммитов в один - я против такого, т.к. теряется история), то при ребейзе потом и мастер будет чище и линейнее после вливания PR.
+
+Однако данный подход может быть весьма сложным, если раньше с ним не было опыта. Потому я и не настаиваю на нём. Просто предлагаю обратить внимание.
+
+
+
+# git drop changes
+- `git stash push -m "Stash .idea changes"`
+- `git checkout <destination>`
+- `git stash drop`
+
+
+# conflicts
+when on both branches altered the same file

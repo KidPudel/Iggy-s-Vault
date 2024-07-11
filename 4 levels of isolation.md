@@ -8,9 +8,9 @@ When you have multiple transaction happening concurrently/at the same time, **th
 
 They released a list of "[[anomalies]]", occurred without Serializable
 
-|Isolation Level|Dirty Reads|Non-repeatable Reads|Phantom Reads|
-|---|---|---|---|
-|Read Uncommitted|Possible|Possible|Possible|
-|Read Committed|Not Possible|Possible|Possible|
-|Repeatable Reads|Not Possible|Not Possible|Possible|
-|Serializable|Not Possible|Not Possible|Not Possible|
+| Isolation Level  | Dirty Reads  | Non-repeatable Reads | Phantom Reads |
+| ---------------- | ------------ | -------------------- | ------------- |
+| Read Uncommitted | Possible     | Possible             | Possible      |
+| Read Committed   | Not Possible | Possible             | Possible      |
+| Repeatable Reads | Not Possible | Not Possible         | Possible      |
+| Serializable     | Not Possible | Not Possible         | Not Possible  |
