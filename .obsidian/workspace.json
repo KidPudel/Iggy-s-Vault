@@ -8,25 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6bb79d63bb6116f3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/versioning/git-basics.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "376236816f6d228e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4 levels of isolation.md",
+                "file": "general tech/Top shortcuts.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -40,6 +27,45 @@
               "type": "markdown",
               "state": {
                 "file": "languages/golang/string formatters.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1eff0bec8a8f7495",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "architecture/event sourcing.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d5341b882193db81",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "backend/network/Authentication and authorization.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a8fcee83f5e6c7f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "backend/versioning/git-basics.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -75,7 +101,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "zero value",
+                "query": "grep",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -113,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/versioning/git-basics.md",
+                "file": "general tech/Top shortcuts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/versioning/git-basics.md",
+                "file": "general tech/Top shortcuts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "backend/versioning/git-basics.md"
+                "file": "general tech/Top shortcuts.md"
               }
             }
           },
@@ -196,55 +222,54 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "6bb79d63bb6116f3",
+  "active": "376236816f6d228e",
   "lastOpenFiles": [
-    "Pasted image 20240711180949.png",
-    "Pasted image 20240711180045.png",
-    "clean architecture.md",
-    "Pasted image 20240711151025.png",
-    "polymorhism.md",
-    "backend/network/gRPC.md",
-    "backend/database/transactions.md",
-    "backend/network/RESTful API.md",
-    "general tech/Top shortcuts.md",
-    "backend/versioning/git-basics.md",
-    "languages/golang/packages-imports-exports.md",
-    "backend/database/types of indexes.md",
-    "backend/database/indexes.md",
-    "ACID.md",
-    "4 levels of isolation.md",
-    "backend/backend interview questions.md",
-    "go inheritance.md",
-    "backend/network/Kafka.md",
-    "backend/network/message broker.md",
-    "languages/golang/Golang Backend Interview Preparation.md",
-    "languages/python/python interview questions.md",
-    "languages/golang/types.md",
+    "todo.md",
+    "architecture/event sourcing.md",
     "languages/golang/string formatters.md",
-    "go string.md",
-    "general tech/mutable vs immutable.md",
-    "golang scheduler.md",
-    "go map under the hood.md",
-    "languages/golang/slices under the hood.md",
-    "Pasted image 20240704163555.png",
-    "Pasted image 20240703164827.png",
-    "Pasted image 20240619222745.png",
-    "Pasted image 20240618184108.png",
-    "Pasted image 20240618183812.png",
-    "Pasted image 20240618183510.png",
-    "Pasted image 20240618183443.png",
-    "Pasted image 20240618183441.png",
+    "Untitled.canvas",
+    "general tech/Top shortcuts.md",
+    "waterfall.md",
+    "cli/grep.md",
+    "cli/terminal-commands.md",
+    "general tech/scheduling tasks on Mac.md",
+    "backend/versioning/git-basics.md",
+    "backend/network/gRPC.md",
+    "backend/network/message broker.md",
+    "languages/python/Celery.md",
+    "backend/network/Kafka.md",
+    "backend/network/Protocol Buffers - Protobuf.md",
+    "backend/network/Message queue.md",
+    "backend/network/Authentication and authorization.md",
+    "backend/network/ssh.md",
+    "backend/docker/Docker commands.md",
+    "backend/docker/Docker basics.md",
+    "backend/database/4 levels of isolation.md",
+    "architecture/clean architecture.md",
+    "backend/network/check logs.md",
+    "backend/database/schema.md",
+    "languages/golang/sync.Map.md",
+    "backend/docker/docker network.md",
+    "images/Pasted image 20240703164827.png",
+    "images/Pasted image 20240618183441.png",
+    "architecture",
+    "images/Pasted image 20240711180949.png",
+    "images/Pasted image 20240711180045.png",
+    "images/Pasted image 20240711151025.png",
+    "images/Pasted image 20240704163555.png",
+    "images/Pasted image 20240619222745.png",
+    "images/Pasted image 20240618184108.png",
+    "images/Pasted image 20240618183812.png",
+    "images/Pasted image 20240618183510.png",
     "backend/messaging",
     "Untitled 1",
     "CS",
     "Protocol Buffers",
     "I",
-    "Untitled.canvas",
     "languages",
     "podcast notes",
     "projects/chinese bee",
     "gamedev/patterns",
-    "gamedev/Untitled.canvas",
-    "math"
+    "gamedev/Untitled.canvas"
   ]
 }

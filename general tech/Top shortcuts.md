@@ -21,15 +21,18 @@
 - `cmd+shift+F`: global search
 - `cmd+L:` toggle checkbox
 
-# Visual studio
+# vscode/zed
+
 - `cmd+shift+p`: command palette/show all commands
 - `cmd+p`: go to file
 - `ctrl+space`: completion suggestion
 - `cmd+k+cmd+i`: quick documentation lookup
 - `shift+cmd+space`: show parameters
-- `cmd+j`: toggle pannel
-- `ctrl+tilda / opt+cmd+b` : toggle terminal (secondary side bar)
-- `cmd+b`: toggle primary side bar
+- `cmd+j`: toggle panel
+- `ctrl+tilda` : toggle terminal (secondary side bar)
+- `ctrl+~`: new terminal
+- `cmd+b`: toggle left side bar
+- `cmd+r`: togger right side bar
 - `ctrl+shift+tilda`: create new terminal
 - `cmd+\`: split window
 - `cmd+w`: close window
@@ -41,6 +44,17 @@
 - `cmd+shift+x`: extensions
 - `cmd+shift+e`: explorer
 - `opt+shift+f`: reformat
+- `option+enter`: generate...
+- `cmd+.`: quick fix
+- `cmd+t`: go to symbol in workspace
+- `cmd+shift+o`: go to symbol in editor
+- plugin `cmd+shift+j`: fuzzy search for file
+	- `+u`: search for word in files
+- `cmd+k + r`: reveal in finder
+- `cmd+opt+b`: git switch branches
+- `cmd+opt+g +b`: git blame
+- `cmd+g`: next match
+- `cmd+shift+g`: previous match
 
 
 # Vim

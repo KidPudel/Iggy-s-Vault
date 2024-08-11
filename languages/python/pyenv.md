@@ -1,6 +1,8 @@
 Simple Python Version Manager.
 Lets you easily switch between multiple python versions
 
+> **for Golang, there is [[gvm]]**
+
 ```zsh
 brew install pyenv
 ```

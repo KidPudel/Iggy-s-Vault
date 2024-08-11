@@ -6,19 +6,25 @@
 - `git add`:  add our changes to staging area, to be committed
 	- `git add .`
 	- `git add main.go dockerfile README.md`
-- `git restore`: discard changes in specified filed in working directory 
+- `git reset`: discard changes in specified filed in working directory to a specific commit
+	- `git reset HEAD`
 - `git commit`: a **snapshot** of git repository at a particular *time*
 	- `git commit -m ""`: where `-m` is a message
 - `git checkout <commit-hash>`: to navigate between your commits and branches (restores it)
 	- `git checkout master`: to move to the most recent commit
+	- `git checkout -b <branch-name> <for-example-origin>/<from-what-branch>`: checkout to the branch with creation of it
 - `git switch`: switches between branches
 - `git restore`: restores a file from another source 
+- `git stash`: stash changes to the dirty working directory
+	- `git stash drop`: drops that changes
+	- `git stash pop`: pops changes from dirty to the current branch
 
 
 # branch
 In git's branch could be interpreted as an individual timeline of our git repository.
 And by default, git creates a main branch called "*master*"
 - `git branch`: lists our branches
+	- `git branch -r`: lists remote branches
 - `git branch <name>`: creates a new branch with name
 > Side note: If we use checkout, we are actually detaching from our master, and to attach back to it we can just use `git checkout master`
 - `git merge <branch-name>`: to add changes (commits) from specified branch to the current branch, with a new "merge commit"
@@ -48,11 +54,14 @@ $ git config --global user.email johndoe@example.com
 - upstream: in context of setting up a remote, you add a remote repository that is typically forked that is by convention named an "upstream"
 
 - `git remote -v` to see configured remote of repo
-- `git remote add origin <https://gitub.com/KidPudel/goproject.git>`
+- `git remote add <alias> <https://gitub.com/KidPudel/goproject.git>`
 - `git remote add upstream <https://github.com/<username>/<projectname>.git`> to add upstream to your configured remote, to pull changes from upstream repository
 - `git pull --set-upstream origin main`
 - `git pull --allow-unrelated-hisotries`
 зайти как не зарегистрированный пользователь
+
+
+`git remote set-url <existing alias> <url>`: change url to the existing remote
 
 
 # rebasing on pull
@@ -92,6 +101,8 @@ Common use cases:
 - `git checkout <destination>`
 - `git stash drop`
 
+
+# git stash
 
 # conflicts
 when on both branches altered the same file

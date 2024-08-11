@@ -55,6 +55,10 @@ After building an Image, we can list all of our images
 
 
 # Run container from an image
+
+
+# Commands
+
 `docker run NAME`
 - `-p`: to specify port (`8000:80` mapping port of a local machine to port inside a container)
 - `-d`: detach. indicate to run container in a task mode in a background
@@ -64,17 +68,16 @@ After building an Image, we can list all of our images
 - `--rm`: automatically rm once it's done
 
 
-# docker stop
+## docker stop
 `docker stop name` or id, if we still want it to resume
 
-# docker remove
+## docker remove
 `docker rm name`
 
-
+## list
 - `docker ps`: list containers
 	- `-a`: all, not just running
 
-# Commands
 ## Image
 - `docker build -t IMAGENAME .`: builds an image
   - also can be written as `docker image build -t IMAGENAME .`
@@ -92,8 +95,23 @@ After building an Image, we can list all of our images
 - `docker container run` / `docker run NAME`: Create and run a container from an Image
 
 
+## logs
+`docker logs 1dc0 -n 100`
+- `-n <num>`: number of logs 
+- `-f`: follow
+- `--since`
 
-# dockerize python
+
+## check env
+`docker exec 1f462e1e4c70 env`
+
+
+## run shell
+`docker exec -it f5c970a1a777 sh`
+`docker exec -it {container_name} /bin/bash
+    
+
+# dockerise python
 ```Dockerfile
 FROM python:3.12.2-slim-bookworm AS build-stage
 

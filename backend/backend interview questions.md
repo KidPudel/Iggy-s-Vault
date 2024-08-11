@@ -21,7 +21,7 @@
 
 ## containerization
 [[Docker basics]]
-[[Docker basic work]]
+[[Docker commands]]
 
 
 # tests

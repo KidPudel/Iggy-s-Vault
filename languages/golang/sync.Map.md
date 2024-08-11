@@ -1,4 +1,4 @@
-`sync.Map` is a concurrent map ([[concurrency in go]]) that provides a safe way to share data between goroutines without having to use explicit synchronization primitives like [[mutex]]. Great for use where most of the time reads are needed and fewer writes or updates.
+`sync.Map` is a concurrent map ([[concurrency in go]]) that provides a safe way to share data between goroutines without having to use explicit synchronization primitives like [[golang mutex]]. Great for use where most of the time reads are needed and fewer writes or updates.
 It works by using atomic operations in `Store`, `Load`, `Delete` like synchronization primitives provided by the Go runtime (`sync/atomic` and `sync.Once`)
 
 ```go

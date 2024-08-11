@@ -25,3 +25,61 @@ _when pointing to (denoting) value that stored in address, we basically accessin
 *p = 10
 fmt.Println(a) // 10
 ```
+
+
+Basically we pass something by reference, to not copy it, in order to *point* to the actual variable, and if we manipulate on it by to changing/altering **it**, 
+
+
+```go
+package main  
+  
+import (  
+    "encoding/json"  
+    "fmt"    "log")  
+  
+type Animal struct {  
+    Name string  
+}  
+  
+func (a *Animal) ChangeName() {  
+    a.Name = "New name"  
+}  
+  
+type Person struct {  
+    Name string `protobuf:"bytes,1,opt,Name=requestID,proto3" json:"name"`  
+    Age  int    `protobuf:"bytes,1,opt,Name=requestID,proto3" json:"age"`  
+    Pet  Animal `protobuf:"bytes,1,opt,name=requestID,proto3" json:"pet,omitempty"`  
+}  
+  
+func (p Person) ChangeAge() {  
+    p.Age = 20  
+    p.Pet.ChangeName() // won't affect global, becase ChangeAge took receiver by value
+} 
+
+func (p *Person) ChangeAgeWithRef() {  
+    p.Age = 20  
+    p.Pet.ChangeName() // will affect global, because the "ChangeAgeWithRef" receiver grabbed by reference
+}  
+  
+func main() {  
+    person := Person{  
+       Name: "john",  
+       Age:  10,  
+       Pet: Animal{  
+          Name: "Morgan",  
+       },  
+    }  
+  
+    person.ChangeAge()  
+  
+    rawPerson, err := json.Marshal(person)  
+    if err != nil {  
+       log.Fatal(err)  
+    }  
+    fmt.Println(string(rawPerson))  
+}
+```
+
+we can pass references to safe or share the object
+
+[PR]([BE] Добавление ссылочного чека в сервис "Чек")

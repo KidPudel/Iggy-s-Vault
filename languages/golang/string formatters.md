@@ -19,4 +19,5 @@
 - `#v` - Go-syntax representation of the value
 - T - a Go-syntax representation of the type of the value
 - p - pointer address
-- % - a double %% prints a single %
+- % - a double `%% prints a single %`
+- w - error

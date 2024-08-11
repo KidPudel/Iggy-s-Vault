@@ -11,7 +11,7 @@
 ## golang
 - [[race condition]]
 - [[deadlock]]
-- [[mutex]]
+- [[golang mutex]]
 - [[sync.Map]]
 - [[golang interfaces]]
 - [[concurrency in go]]

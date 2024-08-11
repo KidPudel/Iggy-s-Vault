@@ -1,0 +1,1 @@
+Saga patterns : sync data in microservices, and if some shit happens, they return to the stable status ([supersliv.biz](http://supersliv.biz))

@@ -26,9 +26,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "anonymous functions.md",
+                "file": "languages/golang/Golang Backend Interview Preparation.md",
                 "mode": "source",
-                "backlinks": true,
+                "backlinks": false,
                 "source": false
               }
             }
@@ -112,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "anonymous functions.md",
+            "file": "languages/golang/Golang Backend Interview Preparation.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "anonymous functions.md",
+            "file": "languages/golang/Golang Backend Interview Preparation.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -141,7 +141,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "anonymous functions.md"
+            "file": "languages/golang/Golang Backend Interview Preparation.md"
           }
         }
       }
@@ -162,6 +162,9 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "languages/golang/sync.Map.md",
+    "languages/golang/Golang Backend Interview Preparation.md",
+    "backend/backend interview questions.md",
     "golang scheduler.md",
     "anonymous functions.md",
     "backend/database/scheduler.md",
@@ -170,7 +173,6 @@
     "4 levels of isolation.md",
     "serialization.md",
     "Untitled.md",
-    "backend/backend interview questions.md",
     "languages/python/python interview questions.md",
     "backend/network/XSS.md",
     "backend/network/hashing.md",
@@ -185,8 +187,6 @@
     "backend/network/message broker.md",
     "Message queue.md",
     "pygame fundamental concepts.md",
-    "projects/project-plans.md",
-    "python/mutable vs immutable.md",
-    "python/naming styles.md"
+    "projects/project-plans.md"
   ]
 }

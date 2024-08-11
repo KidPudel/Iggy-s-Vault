@@ -41,16 +41,3 @@ After the event, fans speculate whether the fight was real
 User added the item to the basket, so view got updated, change the product availability
 
 
-# aggregates
-**Aggregate is a cluster of *related* objects/entities by business logic** that are treated as a single unit for data changes (for data consistency purpose)
-
-Aggregate has a root object, known as an **aggregate root**, which serves as an ***entry point for all operations on the aggregate***
-
-Example:
-We have a **route** of **locations** at which one of them is a **vending machine**
-And we can assign our route as a **root**, so that we can via route define locations and add vending machines
-
-> It is recommended to organize ***event streams per aggregate***, usually identified by the id of the aggregate root
-
-![[Pasted image 20240704163555.png]]
-

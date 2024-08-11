@@ -33,7 +33,7 @@ type (
 
 # Type methods
 To define a method for the type, we create a function with the ***receiver*** specified, indicating *what type is going to access it*.
-This defines methods/what it can do that ***belongs*** to the Person type ***instance***
+This defines methods/what it can do that ***belongs*** to the Person type ***instance***, basically it's just a semantics
 ```go
 type Person struct {
 	name string

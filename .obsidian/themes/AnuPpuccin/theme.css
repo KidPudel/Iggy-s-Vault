@@ -34,10 +34,10 @@ settings:
     allowEmpty: false
     default: ctp-latte
     options:
-      -
+      - 
         label: Latte
         value: ctp-latte
-      -
+      - 
         label: Rosé Pine
         value: ctp-rosepine-light
   -
@@ -48,16 +48,16 @@ settings:
     allowEmpty: false
     default: ctp-mocha
     options:
-      -
+      - 
         label: Frappe
         value: ctp-frappe
-      -
+      - 
         label: Macchiato
         value: ctp-macchiato
-      -
+      - 
         label: Mocha
         value: ctp-mocha
-      -
+      - 
         label: Mocha Old
         value: ctp-mocha-old
   -
@@ -68,46 +68,46 @@ settings:
     allowEmpty: true
     default: none
     options:
-      -
+      - 
         label: Rosewater
         value: ctp-accent-light-rosewater
-      -
+      - 
         label: Flamingo
         value: ctp-accent-light-flamingo
-      -
+      - 
         label: Pink
         value: ctp-accent-light-pink
-      -
+      - 
         label: Mauve
         value: ctp-accent-light-mauve
-      -
+      - 
         label: Red
         value: ctp-accent-light-red
-      -
+      - 
         label: Maroon
         value: ctp-accent-light-maroon
-      -
+      - 
         label: Peach
         value: ctp-accent-light-peach
-      -
+      - 
         label: Yellow
         value: ctp-accent-light-yellow
-      -
+      - 
         label: Green
         value: ctp-accent-light-green
-      -
+      - 
         label: Teal
         value: ctp-accent-light-teal
-      -
+      - 
         label: Sky
         value: ctp-accent-light-sky
-      -
+      - 
         label: Sapphire
         value: ctp-accent-light-sapphire
-      -
+      - 
         label: Blue
         value: ctp-accent-light-blue
-      -
+      - 
         label: Lavender
         value: ctp-accent-light-lavender
   -
@@ -118,46 +118,46 @@ settings:
     allowEmpty: false
     default: ctp-accent-rosewater
     options:
-      -
+      - 
         label: Rosewater
         value: ctp-accent-rosewater
-      -
+      - 
         label: Flamingo
         value: ctp-accent-flamingo
-      -
+      - 
         label: Pink
         value: ctp-accent-pink
-      -
+      - 
         label: Mauve
         value: ctp-accent-mauve
-      -
+      - 
         label: Red
         value: ctp-accent-red
-      -
+      - 
         label: Maroon
         value: ctp-accent-maroon
-      -
+      - 
         label: Peach
         value: ctp-accent-peach
-      -
+      - 
         label: Yellow
         value: ctp-accent-yellow
-      -
+      - 
         label: Green
         value: ctp-accent-green
-      -
+      - 
         label: Teal
         value: ctp-accent-teal
-      -
+      - 
         label: Sky
         value: ctp-accent-sky
-      -
+      - 
         label: Sapphire
         value: ctp-accent-sapphire
-      -
+      - 
         label: Blue
         value: ctp-accent-blue
-      -
+      - 
         label: Lavender
         value: ctp-accent-lavender
   -
@@ -178,7 +178,7 @@ settings:
   -
     id: anp-color-overrides-header
     title: Color Overrides
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -409,19 +409,19 @@ settings:
     default: none
     allowEmpty: false
     options:
-      -
+      - 
         label: Default
         value: none
-      -
+      - 
         label: Sleek
         value: anp-callout-sleek
-      -
+      - 
         label: Block
         value: anp-callout-block
-      -
+      - 
         label: Vanilla Normal
         value: anp-callout-vanilla-normal
-      -
+      - 
         label: Vanilla Plus
         value: anp-callout-vanilla-plus
   -
@@ -459,10 +459,10 @@ settings:
     type: variable-select
     default: '0'
     options:
-      -
+      - 
         label: Left
         value: 0
-      -
+      - 
         label: Right
         value: 1
 
@@ -568,6 +568,25 @@ settings:
     title: Maximum embed height in px
     type: variable-number
     default: 200
+
+# File Editor & Markdown Elements :: LaTeX
+
+  -
+    id: anp-latex-header
+    title: LaTex
+    type: heading
+    level: 2
+    collapsed: true
+  -
+    id: anp-latex-color
+    title: LaTeX Color
+    type: variable-themed-color
+    description: Applies to LaTeX blocks
+    allowEmpty: true
+    format: hex
+    opacity: false
+    default-light: '#'
+    default-dark: '#'
 
 # File Editor & Markdown Elements :: Lists
 
@@ -831,7 +850,7 @@ settings:
   -
     id: anp-plugin-kanban
     title: Kanban
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -841,7 +860,7 @@ settings:
   -
     id: anp-plugin-card-settings
     title: Card Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -889,7 +908,7 @@ settings:
   -
     id: anp-plugin-lane-settings
     title: Lane Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -934,34 +953,34 @@ settings:
   -
     id: anp-plugin-kanban-search-settings
     title: Search Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
   -
     id: anp-kanban-search-full
     title: Enable Full Width Search Bar
-    description:
+    description: 
     type: class-toggle
   -
     id: anp-kanban-collapse-lanes
     title: Collapse Lanes With No Search Results
-    description:
+    description: 
     type: class-toggle
   -
     id: anp-kanban-hide-cards
     title: Hide Cards That Don't Contain the Search Query
-    description:
+    description: 
     type: class-toggle
   -
     id: anp-kanban-hide-mark
     title: Hide Search Result Highlight in Cards
-    description:
+    description: 
     type: class-toggle
   -
     id: anp-kanban-uncollapse-lanes
     title: Uncollapse Lanes and Unhide Cards When Sorting
-    description:
+    description: 
     type: class-toggle
 
 # Integrations :: MAKE.md
@@ -969,7 +988,7 @@ settings:
   -
     id: anp-plugin-makemd
     title: MAKE.md
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -1119,7 +1138,7 @@ settings:
   -
     id: anp-font-families-header
     title: Font Families
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -1133,13 +1152,18 @@ settings:
     title: Live Preview Editor Font
     type: variable-text
     default: Noto Sans
+  -
+    id: anp-editor-font-rv
+    title: Reading View Editor Font
+    type: variable-text
+    default: Noto Sans
 
 # Typography :: Font Weights
 
   -
     id: anp-font-weight-header
     title: Font Weights
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -1284,7 +1308,7 @@ settings:
   -
     id: anp-header-header
     title: Headings
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -1316,7 +1340,7 @@ settings:
   -
     id: anp-h1-header
     title: H1
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -1348,46 +1372,46 @@ settings:
     allowEmpty: true
     default: anp-h1-red
     options:
-      -
+      - 
         label: Rosewater
         value: anp-h1-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-h1-flamingo
-      -
+      - 
         label: Pink
         value: anp-h1-pink
-      -
+      - 
         label: Mauve
         value: anp-h1-mauve
-      -
+      - 
         label: Red
         value: anp-h1-red
-      -
+      - 
         label: Maroon
         value: anp-h1-maroon
-      -
+      - 
         label: Peach
         value: anp-h1-peach
-      -
+      - 
         label: Yellow
         value: anp-h1-yellow
-      -
+      - 
         label: Green
         value: anp-h1-green
-      -
+      - 
         label: Teal
         value: anp-h1-teal
-      -
+      - 
         label: Sky
         value: anp-h1-sky
-      -
+      - 
         label: Sapphire
         value: anp-h1-sapphire
-      -
+      - 
         label: Blue
         value: anp-h1-blue
-      -
+      - 
         label: Lavender
         value: anp-h1-lavender
   -
@@ -1400,7 +1424,7 @@ settings:
   -
     id: anp-h2-header
     title: H2
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -1432,46 +1456,46 @@ settings:
     allowEmpty: true
     default: anp-h2-peach
     options:
-      -
+      - 
         label: Rosewater
         value: anp-h2-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-h2-flamingo
-      -
+      - 
         label: Pink
         value: anp-h2-pink
-      -
+      - 
         label: Mauve
         value: anp-h2-mauve
-      -
+      - 
         label: Red
         value: anp-h2-red
-      -
+      - 
         label: Maroon
         value: anp-h2-maroon
-      -
+      - 
         label: Peach
         value: anp-h2-peach
-      -
+      - 
         label: Yellow
         value: anp-h2-yellow
-      -
+      - 
         label: Green
         value: anp-h2-green
-      -
+      - 
         label: Teal
         value: anp-h2-teal
-      -
+      - 
         label: Sky
         value: anp-h2-sky
-      -
+      - 
         label: Sapphire
         value: anp-h2-sapphire
-      -
+      - 
         label: Blue
         value: anp-h2-blue
-      -
+      - 
         label: Lavender
         value: anp-h2-lavender
   -
@@ -1484,7 +1508,7 @@ settings:
   -
     id: anp-h3-header
     title: H3
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -1516,46 +1540,46 @@ settings:
     allowEmpty: true
     default: anp-h3-green
     options:
-      -
+      - 
         label: Rosewater
         value: anp-h3-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-h3-flamingo
-      -
+      - 
         label: Pink
         value: anp-h3-pink
-      -
+      - 
         label: Mauve
         value: anp-h3-mauve
-      -
+      - 
         label: Red
         value: anp-h3-red
-      -
+      - 
         label: Maroon
         value: anp-h3-maroon
-      -
+      - 
         label: Peach
         value: anp-h3-peach
-      -
+      - 
         label: Yellow
         value: anp-h3-yellow
-      -
+      - 
         label: Green
         value: anp-h3-green
-      -
+      - 
         label: Teal
         value: anp-h3-teal
-      -
+      - 
         label: Sky
         value: anp-h3-sky
-      -
+      - 
         label: Sapphire
         value: anp-h3-sapphire
-      -
+      - 
         label: Blue
         value: anp-h3-blue
-      -
+      - 
         label: Lavender
         value: anp-h3-lavender
   -
@@ -1568,7 +1592,7 @@ settings:
   -
     id: anp-h4-header
     title: H4
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -1600,46 +1624,46 @@ settings:
     allowEmpty: true
     default: anp-h4-teal
     options:
-      -
+      - 
         label: Rosewater
         value: anp-h4-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-h4-flamingo
-      -
+      - 
         label: Pink
         value: anp-h4-pink
-      -
+      - 
         label: Mauve
         value: anp-h4-mauve
-      -
+      - 
         label: Red
         value: anp-h4-red
-      -
+      - 
         label: Maroon
         value: anp-h4-maroon
-      -
+      - 
         label: Peach
         value: anp-h4-peach
-      -
+      - 
         label: Yellow
         value: anp-h4-yellow
-      -
+      - 
         label: Green
         value: anp-h4-green
-      -
+      - 
         label: Teal
         value: anp-h4-teal
-      -
+      - 
         label: Sky
         value: anp-h4-sky
-      -
+      - 
         label: Sapphire
         value: anp-h4-sapphire
-      -
+      - 
         label: Blue
         value: anp-h4-blue
-      -
+      - 
         label: Lavender
         value: anp-h4-lavender
   -
@@ -1652,7 +1676,7 @@ settings:
   -
     id: anp-h5-header
     title: H5
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -1684,46 +1708,46 @@ settings:
     allowEmpty: true
     default: anp-h5-lavender
     options:
-      -
+      - 
         label: Rosewater
         value: anp-h5-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-h5-flamingo
-      -
+      - 
         label: Pink
         value: anp-h5-pink
-      -
+      - 
         label: Mauve
         value: anp-h5-mauve
-      -
+      - 
         label: Red
         value: anp-h5-red
-      -
+      - 
         label: Maroon
         value: anp-h5-maroon
-      -
+      - 
         label: Peach
         value: anp-h5-peach
-      -
+      - 
         label: Yellow
         value: anp-h5-yellow
-      -
+      - 
         label: Green
         value: anp-h5-green
-      -
+      - 
         label: Teal
         value: anp-h5-teal
-      -
+      - 
         label: Sky
         value: anp-h5-sky
-      -
+      - 
         label: Sapphire
         value: anp-h5-sapphire
-      -
+      - 
         label: Blue
         value: anp-h5-blue
-      -
+      - 
         label: Lavender
         value: anp-h5-lavender
   -
@@ -1736,7 +1760,7 @@ settings:
   -
     id: anp-h6-header
     title: H6
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -1768,46 +1792,46 @@ settings:
     allowEmpty: true
     default: anp-h6-mauve
     options:
-      -
+      - 
         label: Rosewater
         value: anp-h6-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-h6-flamingo
-      -
+      - 
         label: Pink
         value: anp-h6-pink
-      -
+      - 
         label: Mauve
         value: anp-h6-mauve
-      -
+      - 
         label: Red
         value: anp-h6-red
-      -
+      - 
         label: Maroon
         value: anp-h6-maroon
-      -
+      - 
         label: Peach
         value: anp-h6-peach
-      -
+      - 
         label: Yellow
         value: anp-h6-yellow
-      -
+      - 
         label: Green
         value: anp-h6-green
-      -
+      - 
         label: Teal
         value: anp-h6-teal
-      -
+      - 
         label: Sky
         value: anp-h6-sky
-      -
+      - 
         label: Sapphire
         value: anp-h6-sapphire
-      -
+      - 
         label: Blue
         value: anp-h6-blue
-      -
+      - 
         label: Lavender
         value: anp-h6-lavender
   -
@@ -1820,7 +1844,7 @@ settings:
   -
     id: anp-decor-header
     title: Text Decoration
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -1835,46 +1859,46 @@ settings:
     allowEmpty: true
     default: anp-bold-red
     options:
-      -
+      - 
         label: Rosewater
         value: anp-bold-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-bold-flamingo
-      -
+      - 
         label: Pink
         value: anp-bold-pink
-      -
+      - 
         label: Mauve
         value: anp-bold-mauve
-      -
+      - 
         label: Red
         value: anp-bold-red
-      -
+      - 
         label: Maroon
         value: anp-bold-maroon
-      -
+      - 
         label: Peach
         value: anp-bold-peach
-      -
+      - 
         label: Yellow
         value: anp-bold-yellow
-      -
+      - 
         label: Green
         value: anp-bold-green
-      -
+      - 
         label: Teal
         value: anp-bold-teal
-      -
+      - 
         label: Sky
         value: anp-bold-sky
-      -
+      - 
         label: Sapphire
         value: anp-bold-sapphire
-      -
+      - 
         label: Blue
         value: anp-bold-blue
-      -
+      - 
         label: Lavender
         value: anp-bold-lavender
   -
@@ -1884,46 +1908,46 @@ settings:
     allowEmpty: true
     default: anp-italic-green
     options:
-      -
+      - 
         label: Rosewater
         value: anp-italic-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-italic-flamingo
-      -
+      - 
         label: Pink
         value: anp-italic-pink
-      -
+      - 
         label: Mauve
         value: anp-italic-mauve
-      -
+      - 
         label: Red
         value: anp-italic-red
-      -
+      - 
         label: Maroon
         value: anp-italic-maroon
-      -
+      - 
         label: Peach
         value: anp-italic-peach
-      -
+      - 
         label: Yellow
         value: anp-italic-yellow
-      -
+      - 
         label: Green
         value: anp-italic-green
-      -
+      - 
         label: Teal
         value: anp-italic-teal
-      -
+      - 
         label: Sky
         value: anp-italic-sky
-      -
+      - 
         label: Sapphire
         value: anp-italic-sapphire
-      -
+      - 
         label: Blue
         value: anp-italic-blue
-      -
+      - 
         label: Lavender
         value: anp-italic-lavender
   -
@@ -1933,46 +1957,46 @@ settings:
     allowEmpty: true
     default: anp-highlight-yellow
     options:
-      -
+      - 
         label: Rosewater
         value: anp-highlight-rosewater
-      -
+      - 
         label: Flamingo
         value: anp-highlight-flamingo
-      -
+      - 
         label: Pink
         value: anp-highlight-pink
-      -
+      - 
         label: Mauve
         value: anp-highlight-mauve
-      -
+      - 
         label: Red
         value: anp-highlight-red
-      -
+      - 
         label: Maroon
         value: anp-highlight-maroon
-      -
+      - 
         label: Peach
         value: anp-highlight-peach
-      -
+      - 
         label: Yellow
         value: anp-highlight-yellow
-      -
+      - 
         label: Green
         value: anp-highlight-green
-      -
+      - 
         label: Teal
         value: anp-highlight-teal
-      -
+      - 
         label: Sky
         value: anp-highlight-sky
-      -
+      - 
         label: Sapphire
         value: anp-highlight-sapphire
-      -
+      - 
         label: Blue
         value: anp-highlight-blue
-      -
+      - 
         label: Lavender
         value: anp-highlight-lavender
 
@@ -2005,7 +2029,7 @@ settings:
   -
     id: colorful-frame
     title: Colorful Frame
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -2085,7 +2109,7 @@ settings:
   -
     id: anp-pdf-viewer-header
     title: PDF Viewer
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -2105,7 +2129,7 @@ settings:
   -
     id: anp-rainbow-section-header
     title: Rainbow Folders
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -2122,13 +2146,13 @@ settings:
     allowEmpty: false
     default: anp-default-rainbow
     options:
-      -
+      - 
         label: None
         value: anp-default-rainbow
-      -
+      - 
         label: Full
         value: anp-full-rainbow-color-toggle
-      -
+      - 
         label: Simple
         value: anp-simple-rainbow-color-toggle
 
@@ -2137,7 +2161,7 @@ settings:
   -
     id: anp-full-rainbow-folder-settings
     title: Full Folder Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -2165,7 +2189,7 @@ settings:
   -
     id: anp-simple-rainbow-folder-settings
     title: Simple Folder Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -2195,7 +2219,7 @@ settings:
   -
     id: anp-stacked-tabs-header
     title: Stacked Tabs
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -2242,7 +2266,7 @@ settings:
   -
     id: anp-alt-tab-header
     title: Tabs
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -2253,19 +2277,19 @@ settings:
     allowEmpty: false
     default: anp-default-tab
     options:
-      -
+      - 
         label: Default
         value: anp-default-tab
-      -
+      - 
         label: Depth
         value: anp-depth-tab-toggle
-      -
+      - 
         label: Minimalistic
         value: anp-mini-tab-toggle
-      -
+      - 
         label: Safari-style (Animated)
         value: anp-alternate-tab-toggle
-      -
+      - 
         label: Safari-style (Vanilla)
         value: anp-safari-tab-toggle
   -
@@ -2341,7 +2365,7 @@ settings:
   -
     id: anp-safari-vanilla-tab-header
     title: Vanilla Safari-style Tab Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -2355,7 +2379,7 @@ settings:
   -
     id: anp-translucency-header
     title: Translucency
-    description:
+    description: 
     type: heading
     level: 2
     collapsed: true
@@ -2405,7 +2429,7 @@ settings:
   -
     id: anp-layout-card
     title: Card Layout Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -2442,7 +2466,7 @@ settings:
   -
     id: anp-layout-border
     title: Border Layout Settings
-    description:
+    description: 
     type: heading
     level: 3
     collapsed: true
@@ -3226,6 +3250,10 @@ body.theme-dark {
   --font-text: var(--anp-editor-font-lp, var(--font-text-override)), var(--font-text-theme), var(--font-interface);
 }
 
+.markdown-preview-view {
+  --font-text: var(--anp-editor-font-rv, var(--font-text-override)), var(--font-text-theme), var(--font-interface);
+}
+
 /*-Highlighted gutter number-*/
 .cm-lineNumbers .cm-gutterElement.cm-active {
   color: var(--interactive-accent);
@@ -3734,11 +3762,11 @@ body.is-translucent {
   --title-bar-translate-y: 40px;
   /**
    * This should fix the drag/click titlebar issue.
-   *
+   * 
    * Invisible boxes are not rendered (as if they were fully transparent),
    * cannot be interacted with (and behave as if they had pointer-events: none),
    * and are removed from navigation (similar to display: none).
-   *
+   * 
    * @see: https://drafts.csswg.org/css-display/#visibility
    */
 }
@@ -4038,7 +4066,8 @@ body.anp-card-layout {
   --divider-width: 4px;
   --divider-width-hover: 4px;
   --tab-container-background: var(--card-background-color);
-  --file-header-border: var(--border-width) dashed var(--background-modifier-border);
+  --file-header-border: var(--border-width) dashed
+  	var(--background-modifier-border);
   --ribbon-padding: 0;
 }
 body.anp-card-layout.anp-hide-borders {
@@ -4047,7 +4076,8 @@ body.anp-card-layout.anp-hide-borders {
 body.anp-card-layout.anp-hide-borders .menu {
   border: 0px !important;
 }
-body.anp-card-layout .sidebar-toggle-button, body.anp-card-layout .workspace-tabs.mod-top {
+body.anp-card-layout .sidebar-toggle-button,
+body.anp-card-layout .workspace-tabs.mod-top {
   --tab-container-background: var(--card-background-color);
 }
 body.anp-card-layout .workspace-tabs.mod-top:has(.obsidian-banner-wrapper) {
@@ -4078,27 +4108,29 @@ body.anp-card-layout.anp-card-layout-actions .side-dock-actions {
   margin-top: 2px;
   border-width: 1px 1px 0px 1px;
 }
-body.anp-card-layout.anp-card-layout-actions .side-dock-actions, body.anp-card-layout.anp-card-layout-actions .side-dock-settings {
+body.anp-card-layout.anp-card-layout-actions .side-dock-actions {
   border-style: solid;
   border-color: var(--tab-outline-color);
   background-color: var(--card-foreground-color);
-}
-body.anp-card-layout.anp-card-layout-actions .side-dock-settings {
-  border-width: 1px 1px 0px 0px;
-  border-radius: 0px var(--anp-card-radius, var(--radius-xl)) 0px 0px;
 }
 body.anp-card-layout.anp-card-layout-actions.anp-fixed-status-bar .side-dock-settings {
   border-width: 1px;
   border-radius: 0px var(--anp-card-radius, var(--radius-xl)) var(--anp-card-radius, var(--radius-xl)) 0px;
 }
-body.anp-card-layout .side-dock-actions,
-body.anp-card-layout .side-dock-settings {
+body.anp-card-layout .side-dock-actions {
   padding: var(--size-4-2) var(--size-4-1) var(--size-4-3);
+}
+body.anp-card-layout .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  border: none;
+  margin: var(--anp-card-layout-padding, 10px);
+  margin-bottom: 0;
+  background-color: transparent;
 }
 body.anp-card-layout .workspace-ribbon.mod-left {
   margin-top: calc(var(--header-height) - 1px);
 }
-body.anp-card-layout .workspace-tab-header-container, body.anp-card-layout .workspace-ribbon.mod-left:before {
+body.anp-card-layout .workspace-tab-header-container,
+body.anp-card-layout .workspace-ribbon.mod-left:before {
   border-bottom: none;
 }
 body.anp-card-layout .mod-vertical .workspace-tabs {
@@ -4223,13 +4255,19 @@ body.anp-border-layout .workspace .workspace-split.mod-left-split .workspace-tab
   border-left: var(--border-border-style);
 }
 body.anp-border-layout .workspace .workspace-split.mod-left-split .workspace-tabs:last-child .workspace-tab-container {
-  border-bottom-left-radius: var(--anp-border-radius, var(--radius-xl));
   border-bottom: var(--border-border-style);
 }
 body.anp-border-layout .workspace .workspace-split.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-container {
   border-top-left-radius: var(--anp-border-radius, var(--radius-xl));
   border-top: var(--border-border-style);
   border-left: var(--border-border-style);
+}
+body.anp-border-layout .workspace .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  border-top: none;
+  background-color: var(--card-foreground-color);
+  border-bottom-left-radius: var(--anp-border-radius, var(--radius-xl));
+  border-left: var(--border-border-style);
+  border-bottom: var(--border-border-style);
 }
 body.anp-border-layout .workspace .workspace-split.mod-right-split {
   padding-bottom: var(--anp-border-bottom-padding, 20px);
@@ -5222,6 +5260,11 @@ hr {
   --list-bullet-radius: 0;
   --list-bullet-border: 1px solid var(--list-marker-color);
   background-color: transparent;
+}
+
+/*-LaTeX-*/
+.math {
+  color: var(--anp-latex-color, var(--text-normal));
 }
 
 .anp-toggle-metadata .frontmatter-container, .markdown-rendered.hide-metadata .frontmatter-container {
@@ -6884,51 +6927,62 @@ None of the original code was used and the feature was implemented from scratch.
 * folder colors.
 *---------------------------------------------------------------*/
 .nav-folder-children > .nav-folder:nth-child(11n+2),
+.nav-files-container > div > .nav-folder:nth-child(11n+2),
 [data-type=bookmarks] .tree-item:nth-child(11n+2) {
   --rainbow-folder-color: var(--ctp-red);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+3),
+.nav-files-container > div > .nav-folder:nth-child(11n+3),
 [data-type=bookmarks] .tree-item:nth-child(11n+3) {
   --rainbow-folder-color: var(--ctp-maroon);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+4),
+.nav-files-container > div > .nav-folder:nth-child(11n+4),
 [data-type=bookmarks] .tree-item:nth-child(11n+4) {
   --rainbow-folder-color: var(--ctp-peach);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+5),
+.nav-files-container > div > .nav-folder:nth-child(11n+5),
 [data-type=bookmarks] .tree-item:nth-child(11n+5) {
   --rainbow-folder-color: var(--ctp-yellow);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+6),
+.nav-files-container > div > .nav-folder:nth-child(11n+6),
 [data-type=bookmarks] .tree-item:nth-child(11n+6) {
   --rainbow-folder-color: var(--ctp-green);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+7),
+.nav-files-container > div > .nav-folder:nth-child(11n+7),
 [data-type=bookmarks] .tree-item:nth-child(11n+7) {
   --rainbow-folder-color: var(--ctp-teal);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+8),
+.nav-files-container > div > .nav-folder:nth-child(11n+8),
 [data-type=bookmarks] .tree-item:nth-child(11n+8) {
   --rainbow-folder-color: var(--ctp-sky);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+9),
+.nav-files-container > div > .nav-folder:nth-child(11n+9),
 [data-type=bookmarks] .tree-item:nth-child(11n+9) {
   --rainbow-folder-color: var(--ctp-sapphire);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+10),
+.nav-files-container > div > .nav-folder:nth-child(11n+10),
 [data-type=bookmarks] .tree-item:nth-child(11n+10) {
   --rainbow-folder-color: var(--ctp-blue);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+11),
+.nav-files-container > div > .nav-folder:nth-child(11n+11),
 [data-type=bookmarks] .tree-item:nth-child(11n+11) {
   --rainbow-folder-color: var(--ctp-lavender);
 }
 .nav-folder-children > .nav-folder:nth-child(11n+12),
+.nav-files-container > div > .nav-folder:nth-child(11n+12),
 [data-type=bookmarks] .tree-item:nth-child(11n+12) {
   --rainbow-folder-color: var(--ctp-mauve);
 }
 
-.anp-rainbow-subfolder-color-toggle .nav-folder.mod-root .nav-folder.nav-folder .nav-folder,
+.anp-rainbow-subfolder-color-toggle .nav-files-container .nav-folder.nav-folder .nav-folder,
 .anp-rainbow-subfolder-color-toggle [data-type=bookmarks] .tree-item .tree-item {
   --rainbow-folder-color: inherit;
 }
@@ -6936,30 +6990,34 @@ None of the original code was used and the feature was implemented from scratch.
 /*---------------------------------------------------------------
 * FULL RAINBOW STYLE
 *---------------------------------------------------------------*/
-.anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title,
-.anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-file-title,
-.anp-full-rainbow-color-toggle .nav-folder.mod-root .collapse-icon svg.svg-icon,
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder .nav-folder-title,
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder .nav-file-title,
+.anp-full-rainbow-color-toggle .nav-files-container .collapse-icon svg.svg-icon,
 .anp-full-rainbow-color-toggle .tree-item-self .tree-item-icon {
   color: var(--anp-full-rainbow-text-inverted, var(--background-primary));
+  --icon-color: var(
+  	--anp-full-rainbow-text-inverted,
+  	var(--background-primary)
+  );
 }
-.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle .nav-folder.mod-root > .nav-folder-children > .nav-file .nav-file-title {
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle .nav-files-container > div > .nav-folder-children > .nav-file .nav-file-title {
   color: var(--anp-full-rainbow-text-inverted, var(--background-primary));
 }
-.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle.theme-dark .nav-folder.mod-root > .nav-folder-children > .nav-file {
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle.theme-dark .nav-files-container > .nav-folder-children > .nav-file {
   background-color: rgba(var(--ctp-text), var(--anp-rainbow-folder-bg-opacity));
 }
-.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle.theme-light .nav-folder.mod-root > .nav-folder-children > .nav-file {
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle.theme-light .nav-files-container > div > .nav-file {
   background-color: rgba(var(--ctp-overlay1), var(--anp-rainbow-folder-bg-opacity));
 }
-.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle .nav-folder.mod-root > .nav-folder-children > .nav-file {
+.anp-full-rainbow-color-toggle.anp-rainbow-file-toggle .nav-files-container > div > .nav-file {
   border-radius: 5px;
   margin-bottom: 2px;
 }
-.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title:hover,
-.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-folder.mod-root > .nav-folder-children .nav-file .nav-file-title:hover {
+.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-files-container > div > .nav-folder .nav-folder-title:hover,
+.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-files-container > div .nav-file .nav-file-title:hover {
   background-color: rgba(var(--ctp-base), 0.1);
 }
-.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-file-title.is-active {
+.anp-full-rainbow-color-toggle:not(.is-grabbing) .nav-files-container > div > .nav-folder .nav-file-title.is-active {
   border-color: rgba(var(--ctp-base), 0.2);
   background-color: rgba(var(--ctp-base), 0.2);
 }
@@ -6979,24 +7037,24 @@ None of the original code was used and the feature was implemented from scratch.
 .anp-full-rainbow-color-toggle .nav-file-title-content.is-being-renamed::selection {
   background-color: rgba(var(--ctp-accent), 0.2);
 }
-.anp-full-rainbow-color-toggle .nav-folder.mod-root .nav-folder > .nav-folder-children {
+.anp-full-rainbow-color-toggle .nav-files-container .nav-folder > .nav-folder-children {
   padding: 0 5px 0 5px;
 }
-.anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-folder {
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder {
   transition: background-color 0.4s;
   background-color: rgba(var(--rainbow-folder-color), var(--anp-rainbow-folder-bg-opacity));
   margin-bottom: 2px;
   border-radius: 5px;
 }
-.anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-children {
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-folder .nav-folder-children {
   border-color: rgba(var(--ctp-crust), 0.4);
 }
-.anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-file.has-focus {
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-file.has-focus {
   background-color: rgba(var(--ctp-text), var(--anp-rainbow-folder-bg-opacity));
   border-left: none;
   border-color: rgb(var(--ctp-accent));
 }
-.anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-file > .nav-file-title, .anp-full-rainbow-color-toggle .nav-folder.mod-root > .nav-folder-children > .nav-file.has-focus > .nav-file-title {
+.anp-full-rainbow-color-toggle .nav-files-container > div > .nav-file > .nav-file-title, .anp-full-rainbow-color-toggle .nav-files-container > div > .nav-file.has-focus > .nav-file-title {
   margin-bottom: 0;
 }
 .anp-full-rainbow-color-toggle .workspace-leaf.mod-active .nav-folder.has-focus > .nav-file-title, .anp-full-rainbow-color-toggle .workspace-leaf.mod-active .nav-folder.has-focus > .nav-file-title:focus-within,
@@ -7016,7 +7074,7 @@ None of the original code was used and the feature was implemented from scratch.
 /*---------------------------------------------------------------
 * SIMPLE RAINBOW STYLE
 *---------------------------------------------------------------*/
-.anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title,
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle .nav-files-container > div > .nav-folder .nav-folder-title,
 .anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle [data-type=bookmarks] .tree-item .tree-item-inner {
   transition: color 0.4s;
   color: rgba(var(--rainbow-folder-color), var(--anp-simple-rainbow-opacity, 1));
@@ -7026,7 +7084,7 @@ None of the original code was used and the feature was implemented from scratch.
 .anp-simple-rainbow-color-toggle.anp-simple-rainbow-title-toggle .nav-folder.is-being-dragged-over {
   background-color: rgba(var(--rainbow-folder-color), 0.1);
 }
-.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-toggle .nav-folder.mod-root > .nav-folder-children > .nav-folder .nav-folder-title:after,
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-toggle .nav-files-container > div > .nav-folder .nav-folder-title:after,
 .anp-simple-rainbow-color-toggle.anp-simple-rainbow-icon-toggle [data-type=bookmarks] .tree-item .tree-item-inner:after {
   transition: color 0.4s;
   color: rgba(var(--rainbow-folder-color), var(--anp-simple-rainbow-opacity, 1));
@@ -7043,7 +7101,7 @@ None of the original code was used and the feature was implemented from scratch.
   flex-grow: 1;
   justify-content: space-between;
 }
-.anp-simple-rainbow-color-toggle.anp-simple-rainbow-indentation-toggle .nav-folder.mod-root .nav-folder > .nav-folder-children,
+.anp-simple-rainbow-color-toggle.anp-simple-rainbow-indentation-toggle .nav-files-container .nav-folder > .nav-folder-children,
 .anp-simple-rainbow-color-toggle.anp-simple-rainbow-indentation-toggle [data-type=bookmarks] .tree-item .tree-item-children {
   transition: color 0.4s;
   border-color: rgba(var(--rainbow-folder-color), 0.5);
@@ -7731,6 +7789,10 @@ None of the original code was used and the feature was implemented from scratch.
 
 .excalidraw.theme--dark.excalidraw .App-menu__left {
   --button-hover-bg: rgba(var(--ctp-surface2), 0.6) !important;
+}
+
+.excalidraw .HintViewer {
+  display: none;
 }
 
 .obsidian-icon-folder-icon {

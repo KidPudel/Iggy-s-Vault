@@ -22,6 +22,7 @@ grep -r "match" *
 - `-w`: exact search
 - `-l`: lowercase
 - `-I`: uppercase
+- `-E`: extended regular expressions
 
 ## Usage with a pipe operator
  For example, If you want to know if a certain package is installed in Ubuntu system execute

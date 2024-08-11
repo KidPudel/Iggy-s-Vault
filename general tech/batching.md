@@ -1,0 +1,1 @@
+In scripts, commands to be executed in a serial order
