@@ -25,6 +25,8 @@
 
 - `cmd+shift+p`: command palette/show all commands
 - `cmd+p`: go to file
+- `cmd+t`: go to symbol in workspace
+- `cmd+shift+o`: go to symbol in editor/buffer
 - `ctrl+space`: completion suggestion
 - `cmd+k+cmd+i`: quick documentation lookup
 - `shift+cmd+space`: show parameters
@@ -46,15 +48,15 @@
 - `opt+shift+f`: reformat
 - `option+enter`: generate...
 - `cmd+.`: quick fix
-- `cmd+t`: go to symbol in workspace
-- `cmd+shift+o`: go to symbol in editor
-- plugin `cmd+shift+j`: fuzzy search for file
-	- `+u`: search for word in files
 - `cmd+k + r`: reveal in finder
 - `cmd+opt+b`: git switch branches
 - `cmd+opt+g +b`: git blame
 - `cmd+g`: next match
 - `cmd+shift+g`: previous match
+- `cmd+opt+f`: replace
+- `cmd+shift+f`: global search
+- `cmd+shift+m`: errors multibuffer
+- `cmd+shift+i`: format
 
 
 # Vim
@@ -101,6 +103,9 @@
 - `n` ⇒ repeat search
     - N ⇒ repeat search opposite direction
 - `f[+ any character]`⇒ jump to the character in the line
+
+
+- `ctrl+v`: visual block, so now you can add many cursors 
 
 
 ## insert

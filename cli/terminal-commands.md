@@ -1,2 +1,4 @@
 - `printenv`: prints [[environment variables]]
 - `go env`: prints Go's environment variables
+- systemctl start OTC_Test5
+- systemctl status OTC_Test5

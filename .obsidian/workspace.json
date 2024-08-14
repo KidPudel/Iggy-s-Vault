@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "general tech/Top shortcuts.md",
+                "file": "golang event sourcing architecture.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -139,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "general tech/Top shortcuts.md",
+                "file": "golang event sourcing architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "general tech/Top shortcuts.md",
+                "file": "golang event sourcing architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "general tech/Top shortcuts.md"
+                "file": "golang event sourcing architecture.md"
               }
             }
           },
@@ -224,32 +224,33 @@
   },
   "active": "376236816f6d228e",
   "lastOpenFiles": [
+    "general tech/Top shortcuts.md",
+    "golang event sourcing architecture.md",
+    "backend/docker/docker multi-stage build.md",
+    "backend/docker/Docker basics.md",
+    "backend/docker/Kubernetes.md",
+    "backend/docker/kublet.md",
+    "backend/docker/cluster.md",
+    "backend/docker/pods.md",
+    "backend/versioning/git-basics.md",
+    "cli/terminal-commands.md",
+    "cli/cli-tools.md",
     "todo.md",
+    "backend/network/Authentication and authorization.md",
     "architecture/event sourcing.md",
     "languages/golang/string formatters.md",
     "Untitled.canvas",
-    "general tech/Top shortcuts.md",
     "waterfall.md",
     "cli/grep.md",
-    "cli/terminal-commands.md",
     "general tech/scheduling tasks on Mac.md",
-    "backend/versioning/git-basics.md",
     "backend/network/gRPC.md",
     "backend/network/message broker.md",
     "languages/python/Celery.md",
     "backend/network/Kafka.md",
     "backend/network/Protocol Buffers - Protobuf.md",
     "backend/network/Message queue.md",
-    "backend/network/Authentication and authorization.md",
     "backend/network/ssh.md",
     "backend/docker/Docker commands.md",
-    "backend/docker/Docker basics.md",
-    "backend/database/4 levels of isolation.md",
-    "architecture/clean architecture.md",
-    "backend/network/check logs.md",
-    "backend/database/schema.md",
-    "languages/golang/sync.Map.md",
-    "backend/docker/docker network.md",
     "images/Pasted image 20240703164827.png",
     "images/Pasted image 20240618183441.png",
     "architecture",
