@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "golang event sourcing architecture.md",
+                "file": "languages/golang/golang event sourcing architecture.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -122,8 +122,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.5,
-    "collapsed": true
+    "width": 360.5
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -139,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "golang event sourcing architecture.md",
+                "file": "languages/golang/golang event sourcing architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "golang event sourcing architecture.md",
+                "file": "languages/golang/golang event sourcing architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "golang event sourcing architecture.md"
+                "file": "languages/golang/golang event sourcing architecture.md"
               }
             }
           },
@@ -224,8 +223,9 @@
   },
   "active": "376236816f6d228e",
   "lastOpenFiles": [
+    "waterfall.md",
+    "languages/golang/golang event sourcing architecture.md",
     "general tech/Top shortcuts.md",
-    "golang event sourcing architecture.md",
     "backend/docker/docker multi-stage build.md",
     "backend/docker/Docker basics.md",
     "backend/docker/Kubernetes.md",
@@ -240,7 +240,6 @@
     "architecture/event sourcing.md",
     "languages/golang/string formatters.md",
     "Untitled.canvas",
-    "waterfall.md",
     "cli/grep.md",
     "general tech/scheduling tasks on Mac.md",
     "backend/network/gRPC.md",
