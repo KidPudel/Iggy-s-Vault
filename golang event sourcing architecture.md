@@ -3,11 +3,6 @@
 **-> … money comes to the trader, and he is making a deal and aggregator gets triggered back**
 
   
-
-Utilizes Yandex OCR for computer vision which accomplishes text recognition in files like PDF and images
-
-  
-
 We have clients, traders, payment orders (заявки), receipts (чеки)
 
   
