@@ -1,4 +1,4 @@
-# Goroutines
+[]()# Goroutines
 > Goroutines - lightweight threads.
 
 Unlike Kotlin's coroutines, which are kind of workers in a thread, **Goroutines are _actual threads_**, but way more lightweight.  

@@ -1,2 +1,4 @@
 #cli
-[[grep]], [[sed]]
+- [[grep]]
+- [[sed]]
+- [yazi](https://github.com/sxyazi/yazi)

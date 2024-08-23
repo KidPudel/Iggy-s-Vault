@@ -8,6 +8,7 @@
 	- `git add main.go dockerfile README.md`
 - `git reset`: discard changes in specified filed in working directory to a specific commit
 	- `git reset HEAD`
+	- `git reset --hard <branch-name>`
 - `git commit`: a **snapshot** of git repository at a particular *time*
 	- `git commit -m ""`: where `-m` is a message
 - `git checkout <commit-hash>`: to navigate between your commits and branches (restores it)
@@ -27,18 +28,20 @@ And by default, git creates a main branch called "*master*"
 	- `git branch -r`: lists remote branches
 - `git branch <name>`: creates a new branch with name
 > Side note: If we use checkout, we are actually detaching from our master, and to attach back to it we can just use `git checkout master`
-- `git merge <branch-name>`: to add changes (commits) from specified branch to the current branch, with a new "merge commit"
+- `git merge <branch-name>`: to *rebase* (change the base/branch of the history) changes (commits) from specified branch to the current branch, with a new "merge commit"
 	- ![[Pasted image 20240711180045.png]]
 - `git rebase <branch-name>`: moves entire current branch to the tip of the chosen branch, and instead of using merge commits, it **re-writes the project history**, by creating **brand new commits for *each commit in the original branch***
 	- ![[Pasted image 20240711180949.png]]
 - `git delete <branch-name>`: delete branch
 
+- `git branch -m <new-name>`: rename branch (if not pointing, then specify old name as well) and to rename remote, just push this branch
 
 # git setup (login)
 ```
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
+
 
 
 

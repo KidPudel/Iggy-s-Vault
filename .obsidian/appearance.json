@@ -1,10 +1,10 @@
 {
   "accentColor": "",
-  "theme": "moonstone",
-  "cssTheme": "AnuPpuccin",
+  "theme": "system",
+  "cssTheme": "Minimal",
   "translucency": true,
   "interfaceFontFamily": "",
-  "textFontFamily": "Lora,Brush Script MT,American Typewriter",
+  "textFontFamily": "Avenir,Lora,Brush Script MT,American Typewriter",
   "baseFontSize": 16,
   "showViewHeader": true,
   "nativeMenus": true

@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b47fd49ab3e08ea3",
+        "id": "23c032c0abc2c57e",
         "type": "tabs",
         "children": [
           {
-            "id": "376236816f6d228e",
+            "id": "f60397ff9faec50c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/golang event sourcing architecture.md",
+                "file": "neovim/neovim config.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,51 +21,12 @@
             }
           },
           {
-            "id": "2e2ff091a72ff8d0",
+            "id": "9a08454f0fd40b55",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/string formatters.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1eff0bec8a8f7495",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "architecture/event sourcing.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d5341b882193db81",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/Authentication and authorization.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a8fcee83f5e6c7f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/versioning/git-basics.md",
+                "file": "neovim/vim command-line mode.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -101,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "grep",
+                "query": "tag:#cheatsheet",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -122,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.5
+    "width": 231.5,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -138,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/golang/golang event sourcing architecture.md",
+                "file": "neovim/neovim config.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/golang/golang event sourcing architecture.md",
+                "file": "neovim/neovim config.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -178,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages/golang/golang event sourcing architecture.md"
+                "file": "neovim/neovim config.md"
               }
             }
           },
@@ -221,46 +183,48 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "376236816f6d228e",
+  "active": "f60397ff9faec50c",
   "lastOpenFiles": [
-    "waterfall.md",
-    "languages/golang/golang event sourcing architecture.md",
+    "Treesitter.md",
+    "neovim/vim motions.md",
+    "neovim/vim command-line mode.md",
+    "neovim/neovim config.md",
+    "neovim/vim topics.md",
+    "general tech/cool cli.md",
+    "neovim/leader key.md",
+    "neovim",
+    "neovim/vim netrw mode.md",
     "general tech/Top shortcuts.md",
-    "backend/docker/docker multi-stage build.md",
-    "backend/docker/Docker basics.md",
-    "backend/docker/Kubernetes.md",
-    "backend/docker/kublet.md",
-    "backend/docker/cluster.md",
-    "backend/docker/pods.md",
-    "backend/versioning/git-basics.md",
-    "cli/terminal-commands.md",
-    "cli/cli-tools.md",
+    "languages/golang/concurrency in go.md",
+    "images/Pasted image 20240711180949.png",
+    "images/Pasted image 20240618184108.png",
+    "images/Pasted image 20240520115343.png",
+    "images/Pasted image 20240312140401.png",
+    "images/Pasted image 20240312112205.png",
+    "images/Pasted image 20240312112003.png",
+    "languages/golang/golang event sourcing architecture.md",
+    "login shell sessions vs non-interactive sessions.md",
+    "messaging patters.md",
+    "general tech/the underlying difference between AND and OR with one instance.md",
+    "general tech/MIME-Type.md",
     "todo.md",
-    "backend/network/Authentication and authorization.md",
-    "architecture/event sourcing.md",
-    "languages/golang/string formatters.md",
+    "languages/golang/gvm.md",
+    "compiler.md",
+    "[BE].md",
+    "languages/zig/anonymous type.md",
+    "languages/zig/defer.md",
+    "languages/zig/error handling.md",
+    "languages/zig",
+    "backend/versioning/git-basics.md",
+    "cli/cli-tools.md",
+    "languages/golang/golang rwmutex.md",
+    "languages/golang/golang mutex.md",
     "Untitled.canvas",
-    "cli/grep.md",
-    "general tech/scheduling tasks on Mac.md",
-    "backend/network/gRPC.md",
-    "backend/network/message broker.md",
-    "languages/python/Celery.md",
-    "backend/network/Kafka.md",
-    "backend/network/Protocol Buffers - Protobuf.md",
-    "backend/network/Message queue.md",
-    "backend/network/ssh.md",
-    "backend/docker/Docker commands.md",
     "images/Pasted image 20240703164827.png",
     "images/Pasted image 20240618183441.png",
     "architecture",
-    "images/Pasted image 20240711180949.png",
     "images/Pasted image 20240711180045.png",
     "images/Pasted image 20240711151025.png",
-    "images/Pasted image 20240704163555.png",
-    "images/Pasted image 20240619222745.png",
-    "images/Pasted image 20240618184108.png",
-    "images/Pasted image 20240618183812.png",
-    "images/Pasted image 20240618183510.png",
     "backend/messaging",
     "Untitled 1",
     "CS",
@@ -268,8 +232,6 @@
     "I",
     "languages",
     "podcast notes",
-    "projects/chinese bee",
-    "gamedev/patterns",
     "gamedev/Untitled.canvas"
   ]
 }

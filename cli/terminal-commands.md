@@ -1,4 +1,5 @@
 - `printenv`: prints [[environment variables]]
 - `go env`: prints Go's environment variables
+- `go test /Users/iggysleepy/dev/job/otc/otcgateway/internal/repository -run TestOrderRepository_UpdateOrder`
 - systemctl start OTC_Test5
 - systemctl status OTC_Test5

@@ -1,7 +1,7 @@
 - [x] repeat notes
-- [ ] create top questions notes and explain them
-- [ ] create snake game
-- [ ] practice practice practice
+- [x] create top questions notes and explain them
+- [x] create snake game
+- [x] practice practice practice
 
 
 # Top questions

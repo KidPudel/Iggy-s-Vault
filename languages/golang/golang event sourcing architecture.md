@@ -1,25 +1,18 @@
 **P2P service for payment handling (supervising) with DDD and event sourcing (for us) for handling money payout or transactions via traders to accounts, and checks that everything is alright** 
 
 **-> … money comes to the trader, and he is making a deal and aggregator gets triggered back**
-
-  
 We have clients, traders, payment orders (заявки), receipts (чеки)
-
-  
 
 ## ==**Project components**==
 
 Services
-
 - Client-serivice
 - Payment-order-projection-sercice
 - Payment-order-service
 - Platform-service 
 - Rating-service
 - Receipt-analysis-service
-
 - Validation
-
 - Receipt-service
 - Trader-projection-serviec
 - Trader-service
@@ -29,31 +22,18 @@ Services
 - Login
 - Transfer money to the trader
 
-  
-
 Other
-
 - Templates
-
 - Real DDD template to utilize
-
 - Tools
-
 - Future Frameworks (present pkg)
-
 - UI
 - Api-gateway
-
 - Reverse proxy / authorization substitution 
-
 - CI
-
 - Continues integration (for real)
-
 - Event-aggregator
-
 - Aggregating orders to the clickhouse (analyze) for composing trader’s rating 
-
 - Scheduler
 
 - Handles payment orders statuses, deadlines (assigned, in progress)
