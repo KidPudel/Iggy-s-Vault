@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "23c032c0abc2c57e",
+        "id": "f56ec4c412412f3c",
         "type": "tabs",
         "children": [
           {
-            "id": "f60397ff9faec50c",
+            "id": "286bee80017ae766",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "neovim/neovim config.md",
+                "file": "terminal/neovim/my plugins.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,19 +21,33 @@
             }
           },
           {
-            "id": "9a08454f0fd40b55",
+            "id": "e9d47453cba7438f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "neovim/vim command-line mode.md",
+                "file": "terminal/tmux.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "58294d0a9628f135",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/zig/build modes.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -62,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#cheatsheet",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +93,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -100,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "neovim/neovim config.md",
+                "file": "languages/zig/build modes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "neovim/neovim config.md",
+                "file": "languages/zig/build modes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "neovim/neovim config.md"
+                "file": "languages/zig/build modes.md"
               }
             }
           },
@@ -183,42 +198,42 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "f60397ff9faec50c",
+  "active": "58294d0a9628f135",
   "lastOpenFiles": [
-    "Treesitter.md",
-    "neovim/vim motions.md",
-    "neovim/vim command-line mode.md",
-    "neovim/neovim config.md",
-    "neovim/vim topics.md",
-    "general tech/cool cli.md",
-    "neovim/leader key.md",
-    "neovim",
-    "neovim/vim netrw mode.md",
-    "general tech/Top shortcuts.md",
-    "languages/golang/concurrency in go.md",
+    "backend/versioning/git-basics.md",
+    "languages/zig/build modes.md",
+    "terminal/neovim/vim motions.md",
+    "terminal/neovim/vim command-line mode.md",
+    "terminal/neovim/my plugins.md",
+    "terminal/neovim/vim topics.md",
+    "terminal/tmux.md",
+    "terminal/neovim/leader key.md",
+    "terminal/neovim/neovim config.md",
+    "terminal/neovim/Treesitter.md",
+    "terminal/neovim/vim netrw mode.md",
+    "terminal/terminal-commands.md",
+    "terminal/sed.md",
+    "terminal/exit terminal.md",
+    "general tech/multiplexer.md",
+    "terminal/neovim/colorscheme.md",
+    "Виски.md",
+    "Арманьяк.md",
+    "баармеен щит.md",
+    "Пиво.md",
+    "солод.md",
+    "Коньяк.md",
+    "Водка.md",
+    "Шапанское.md",
+    "Вино.md",
+    "Проссеко.md",
+    "terminal/neovim",
     "images/Pasted image 20240711180949.png",
     "images/Pasted image 20240618184108.png",
     "images/Pasted image 20240520115343.png",
     "images/Pasted image 20240312140401.png",
     "images/Pasted image 20240312112205.png",
     "images/Pasted image 20240312112003.png",
-    "languages/golang/golang event sourcing architecture.md",
-    "login shell sessions vs non-interactive sessions.md",
-    "messaging patters.md",
-    "general tech/the underlying difference between AND and OR with one instance.md",
-    "general tech/MIME-Type.md",
-    "todo.md",
-    "languages/golang/gvm.md",
-    "compiler.md",
-    "[BE].md",
-    "languages/zig/anonymous type.md",
-    "languages/zig/defer.md",
-    "languages/zig/error handling.md",
     "languages/zig",
-    "backend/versioning/git-basics.md",
-    "cli/cli-tools.md",
-    "languages/golang/golang rwmutex.md",
-    "languages/golang/golang mutex.md",
     "Untitled.canvas",
     "images/Pasted image 20240703164827.png",
     "images/Pasted image 20240618183441.png",

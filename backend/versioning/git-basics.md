@@ -67,6 +67,8 @@ $ git config --global user.email johndoe@example.com
 `git remote set-url <existing alias> <url>`: change url to the existing remote
 
 
+`git remote rm <alias>`: remove remote
+
 # rebasing on pull
 we can do merging on pull instead of rebase, if we run `git config pull.rebase false`
 

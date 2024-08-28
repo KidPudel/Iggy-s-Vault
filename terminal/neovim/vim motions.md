@@ -25,15 +25,15 @@
 - `gI` ⇒ go to implementation
 - `g]` ⇒ go to definition
 - `gr` ⇒ go to reference
-- `control + o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_
-- `control + e` ⇒ move window down
-    - `control + y `⇒ up
-    - `control + d `⇒ 1/2 window down
-    - `control + u `⇒ 1/2 window up
-    - `control + f `⇒ one window down
-    - `control + b `⇒ one window up
-    - `control + h` ⇒ move to _left window_
-        - `control + l `⇒ move to _right window_
+- `C-o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_
+- `C-e` ⇒ move window down
+    - `C + y `⇒ up
+    - `C-d `⇒ 1/2 window down
+    - `C-u `⇒ 1/2 window up
+    - `C-f `⇒ one window down
+    - `C-b `⇒ one window up
+    - `C-h` ⇒ move to _left window_
+        - `C-l `⇒ move to _right window_
 - `H` ⇒ jump to the first line in window
     - `L` ⇒ end
     - `M` ⇒ middle
@@ -43,13 +43,16 @@
 - `n` ⇒ repeat search
     - N ⇒ repeat search opposite direction
 - `f[+ any character]`⇒ jump to the character in the line
+	- `F[+ any character]` => reverse direction
+- `C-w <hjkl>`: move between windows
 
 
 # visual
 - `v`: insert visual mode
 - `ctrl+v`: **visual block**, so now you can add many cursors (apply your work on multiple lines)
 	- `I`: allows to insert for **all** lines
-
+- **u** - change marked text to lowercase
+- **U** - change marked text to uppercase
 
 
 # insert
@@ -65,7 +68,7 @@
         - R ⇒ replace until ESC
 - `J` ⇒ join 2 lines with a space between
 - `u` ⇒ undo
-- `control + r` ⇒ redo
+- `C-r` ⇒ redo
 - . ⇒ repeat last line command
 - `gu` ⇒ turn to lowercase
 - `gU` ⇒ turn to uppercase
@@ -78,8 +81,7 @@
 - `s` ⇒ delete character AND substitute (replace) character
 	- S ⇒ equivalent to cc
 - `xp` ⇒ transpose 2 letters (delete and paste)
-- **u** - change marked text to lowercase
-- **U** - change marked text to uppercase
+
 
 ## cut and paste (we don’t go to insert)
 

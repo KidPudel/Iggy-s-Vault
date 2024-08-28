@@ -37,3 +37,10 @@ find containing `vim.`
 /vim.
 ```
 find 
+
+
+
+# Replace
+```
+:%s/original/replacement/g(for global)
+```

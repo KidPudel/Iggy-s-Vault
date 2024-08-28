@@ -29,8 +29,12 @@ the go to plugin manager formerly is packager, but now is lazy
 after adding lazy to the configuration, we can add plugins by putting them into `my-conf/plugins`, adding them to the `init.lua` and specifying the correct path to the plugin':s `init.lua` 
 
 # configuring plugin:
-`keys` are used to define mapping that will trigger/lazily load a plugin and execute a command
-`config`: where we remap the rest of commands that doesn't need ensure that plugin is loaded
+> NOTE: `config` is executed when plugin is loaded, here you can deeply config some dependencies and plugin itself, by requiring it (so mapping as well), but it is **not** advisable to use it, stick to the `opts`, 
+> since default implementation will automatically run `require(MAIN).setup(opts)`, if `opts` or `config` is set to `true`.
+> or run `keys`. 
+> `keys` are used to define mapping that will trigger/lazily load a plugin and execute a command
+
+
 
 mapping is typically happens in this order:
 - key map
@@ -46,12 +50,13 @@ return {
 	keys = {
 		{"<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find files"}
     }
-	config = function() 
-		vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>") 
-	end
 }
 ```
+> ==Always== use `opts` instead of `config` when possible. `config` is almost never needed.
 
 dap?
 
 > Note, some plugins should be forced to load, with priority and lazy to false, and then forced to be applied with `config = function()` require to load
+
+
+

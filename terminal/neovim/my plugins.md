@@ -1,0 +1,16 @@
+- lazy.vim
+- telescope
+- treesitter
+	- if not hightlighted try `:TSBufToggle highlight`
+- lsp-zero (and every dependency to it)
+	- cmp
+	- mason
+	- snip
+- whichkey
+- undotree
+- lualine: bottom bar
+- nvim-autopairs: auto-pair
+- todo-comments
+- oil: file explorer
+- gitsigns
+- 
