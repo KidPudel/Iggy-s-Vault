@@ -1,0 +1,1 @@
+Simply an executable files, that are in binary format (non-text format), and should not be transformed for platform-specific reasons.

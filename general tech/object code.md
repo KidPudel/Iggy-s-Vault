@@ -1,0 +1,1 @@
+sequence of machine-readable instructions that is processed by the CPU in a computer.

@@ -1,0 +1,1 @@
+Structure that contains of a pointer itself and a metadata associated with it, specifically a length

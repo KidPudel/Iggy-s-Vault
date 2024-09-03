@@ -1,0 +1,1 @@
+peer-to-peer gossip protocol for node-to node communitcation. This protocol helps nodes share information about the state and health of other nodes in the cluster. Ensuring that all the nodes are aware of changes and overall health of the cluster.

@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "architecture/saga.md",
+                "file": "general tech/dynamic library.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -112,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "architecture/saga.md",
+            "file": "general tech/dynamic library.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "architecture/saga.md",
+            "file": "general tech/dynamic library.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -141,7 +141,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "architecture/saga.md"
+            "file": "general tech/dynamic library.md"
           }
         }
       }
@@ -162,6 +162,8 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "languages/zig/optional types.md",
+    "architecture/saga.md",
     "languages/golang/Golang Backend Interview Preparation.md",
     "languages/golang/sync.Map.md",
     "backend/backend interview questions.md",
@@ -185,8 +187,6 @@
     "general tech/args and kwargs.md",
     "languages/python/decorator.md",
     "backend/network/message broker.md",
-    "Message queue.md",
-    "pygame fundamental concepts.md",
-    "projects/project-plans.md"
+    "Message queue.md"
   ]
 }

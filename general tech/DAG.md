@@ -1,0 +1,2 @@
+Directed acyclic graph is a **graph with no directed cycles**.
+Meaning It consists of vertices and edges, with each edge directed from one vertex to another, such that following those directions **will never form a closed loop**.

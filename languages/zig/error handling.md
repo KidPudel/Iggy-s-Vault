@@ -1,7 +1,7 @@
 In Zig error handling has 2 aspects: <u>error sets</u> and <u>try/catch</u>
 
 Error sets are just a specialized enums, that could created *implicitly* by `error.ErrorName` 
-```zig
+```c
 fn divide(dividend: u32, devisor: u32) !u32 {
 	if (devisor == 0) {
 		return error.DivideByZero;
@@ -11,7 +11,7 @@ fn divide(dividend: u32, devisor: u32) !u32 {
 ```
 
 or ***explicitly*** by making a *custom* **<u>error set</u>
-```zig
+```c
 const MathErrors = error {
 	DivideByZero,
 	SomeOtherMathError
@@ -31,7 +31,7 @@ fn divide(dividend: u32, divisor: u32) !u32 {
 In Zig handling errors is done via `try` and `catch`, but not the annoying `try/catch` as in many old languages, but more flexible way of Go's `if err != nil`
 
 `try` is to bubble error up, just like In Go `if err != nil { return err }`
-```zig
+```c
 pub fn calculate() !void {
 	const result = try divide(100, 10);
 	_ = result; // use result
@@ -40,14 +40,14 @@ pub fn calculate() !void {
 > Note, this works, because `calculate()` function also returns possible error
 
 
-`catch` to **handle** error
-```zig
+`catch` to actually **handle** error
+```c
 pub fn main() !void {
 	const result = divide(100, 10) catch |err| {
 		// handle the error, maybe log, or use a default
 	}
 }
 ```
+so `try` is a shorthand for `catch |err| return err`
 
 
-more complicated example

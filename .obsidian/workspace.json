@@ -4,50 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "f56ec4c412412f3c",
+        "id": "cd4464baf14d7188",
         "type": "tabs",
         "children": [
           {
-            "id": "286bee80017ae766",
+            "id": "d66d6324589307ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "terminal/neovim/my plugins.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e9d47453cba7438f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "terminal/tmux.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "58294d0a9628f135",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "languages/zig/build modes.md",
+                "file": "architecture/clean architecture.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -76,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "paginat",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,8 +66,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -115,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/zig/build modes.md",
+                "file": "architecture/clean architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/zig/build modes.md",
+                "file": "architecture/clean architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages/zig/build modes.md"
+                "file": "architecture/clean architecture.md"
               }
             }
           },
@@ -198,34 +170,34 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "58294d0a9628f135",
+  "active": "d66d6324589307ce",
   "lastOpenFiles": [
     "backend/versioning/git-basics.md",
-    "languages/zig/build modes.md",
-    "terminal/neovim/vim motions.md",
-    "terminal/neovim/vim command-line mode.md",
-    "terminal/neovim/my plugins.md",
-    "terminal/neovim/vim topics.md",
-    "terminal/tmux.md",
-    "terminal/neovim/leader key.md",
-    "terminal/neovim/neovim config.md",
-    "terminal/neovim/Treesitter.md",
-    "terminal/neovim/vim netrw mode.md",
-    "terminal/terminal-commands.md",
-    "terminal/sed.md",
-    "terminal/exit terminal.md",
-    "general tech/multiplexer.md",
-    "terminal/neovim/colorscheme.md",
-    "Виски.md",
-    "Арманьяк.md",
-    "баармеен щит.md",
-    "Пиво.md",
-    "солод.md",
-    "Коньяк.md",
-    "Водка.md",
-    "Шапанское.md",
-    "Вино.md",
-    "Проссеко.md",
+    "languages/zig/build system.md",
+    "languages/zig/exporting.md",
+    "general tech/build artifacts.md",
+    "general tech/compiler.md",
+    "general tech/DAG.md",
+    "general tech/installation prefix.md",
+    "backend/network/Gossip protocol.md",
+    "general tech/object files.md",
+    "general tech/object code.md",
+    "general tech/fat pointer.md",
+    "general tech/dynamic library.md",
+    "general tech/static library.md",
+    "general tech/linker.md",
+    "general tech/slices under the hood.md",
+    "backend/network/pagination.md",
+    "backend/database/database partition.md",
+    "general tech/executable binaries.md",
+    "backend/network/base64-encoding.md",
+    "backend/database/Cassandra.md",
+    "backend/database/database replication.md",
+    "backend/database/database shard.md",
+    "backend/database/NoSQL database.md",
+    "backend/network/CDN.md",
+    "languages/zig/optional types.md",
+    "languages/zig/anonymous type.md",
     "terminal/neovim",
     "images/Pasted image 20240711180949.png",
     "images/Pasted image 20240618184108.png",

@@ -103,3 +103,10 @@
 
 # formatting
 - `=`: format indentation
+
+
+```go
+func main() {
+	fmt.Println()
+}
+```
