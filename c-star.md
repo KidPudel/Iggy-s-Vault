@@ -1,0 +1,1 @@
+Is a data-parallel superset of ANSI C with synchronous semantics

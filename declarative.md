@@ -1,0 +1,2 @@
+You are just declare and system knows enough information to figure out instructions. It is about describing **what** you want as the final result, without explicitly detailing the steps to get there.
+Opposite to [[imperative]]

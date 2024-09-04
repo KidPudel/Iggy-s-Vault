@@ -1,0 +1,1 @@
+RedPanda is fast compared to [[Kafka]], because it uses [[c-star]] framework, 

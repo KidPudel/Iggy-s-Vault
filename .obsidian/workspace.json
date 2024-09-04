@@ -4,23 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "cd4464baf14d7188",
+        "id": "72820d4b2fbeb741",
         "type": "tabs",
         "children": [
           {
-            "id": "d66d6324589307ce",
+            "id": "ba47c4ff6e3f4c6d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "architecture/clean architecture.md",
+                "file": "declarative.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f4710bce96b699e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/zig/build system.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -87,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "architecture/clean architecture.md",
+                "file": "languages/zig/build system.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "architecture/clean architecture.md",
+                "file": "languages/zig/build system.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "architecture/clean architecture.md"
+                "file": "languages/zig/build system.md"
               }
             }
           },
@@ -151,7 +165,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -170,34 +185,34 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "d66d6324589307ce",
+  "active": "f4710bce96b699e9",
   "lastOpenFiles": [
-    "backend/versioning/git-basics.md",
+    "backend/network/Kafka.md",
+    "redpanda.md",
+    "c-star.md",
     "languages/zig/build system.md",
+    "imperative.md",
+    "declarative.md",
+    "languages/golang/event sourcing architecture.md",
+    "backend/database/which to use.md",
+    "backend/network/Authentication and authorization.md",
+    "languages/golang/no need for static?.md",
+    "general tech/DAG.md",
+    "general tech/static library.md",
+    "general tech/dynamic library.md",
+    "architecture/clean architecture.md",
+    "backend/versioning/git-basics.md",
     "languages/zig/exporting.md",
     "general tech/build artifacts.md",
     "general tech/compiler.md",
-    "general tech/DAG.md",
     "general tech/installation prefix.md",
     "backend/network/Gossip protocol.md",
     "general tech/object files.md",
     "general tech/object code.md",
     "general tech/fat pointer.md",
-    "general tech/dynamic library.md",
-    "general tech/static library.md",
     "general tech/linker.md",
     "general tech/slices under the hood.md",
     "backend/network/pagination.md",
-    "backend/database/database partition.md",
-    "general tech/executable binaries.md",
-    "backend/network/base64-encoding.md",
-    "backend/database/Cassandra.md",
-    "backend/database/database replication.md",
-    "backend/database/database shard.md",
-    "backend/database/NoSQL database.md",
-    "backend/network/CDN.md",
-    "languages/zig/optional types.md",
-    "languages/zig/anonymous type.md",
     "terminal/neovim",
     "images/Pasted image 20240711180949.png",
     "images/Pasted image 20240618184108.png",

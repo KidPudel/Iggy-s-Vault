@@ -19,6 +19,8 @@ Build system can help with:
 
 ---
 
+> **NOTE:** the build script may seem [[imperative]], but it is [[declarative]], on a way of constructing a build graph that will be executed by an external runner. Meaning even though it feels like imperative, we just declare the end result, that we want.
+
 ## Simple executable
 
 src/main.zig
@@ -55,7 +57,7 @@ This is the job of project's build script to add to the set of things to install
 ## Build result
 After build, there are two directories generated:
 - `zig-cache`: to make subsequent builds faster
-- `zig-out`: is a [[installation prefix]]
+- `zig-out`: is a [[installation prefix]], so it contains artifacts like `bin` which is an [[executable binaries]], or lib that contains libraries 
 
 
 
@@ -139,9 +141,135 @@ pub fn main() void {
 ## [[static library]]
 
 expose the function to be a part of an api by [[exporting]] it
+math.zig
 ```rust
 export fn add(a: i32, b: i32) i32 {
 	return a + b;
 }
 ```
 
+utilize external library
+```rust
+extern fn add(a: i32, b: i32) i32;
+
+pub fn main() !void {
+	return add(2, 3);
+}
+```
+
+create/link a [[static library]]
+```rust
+const std = @import("std");
+
+pub fn build(b: *std.Build) void {
+	// define target and optimize...
+
+	const libmath = b.addStaticLibrary(.{
+		.name = "math",
+		.root_source_file = "path/to/lib/math.zig",
+		.target = target,
+		.optimize = optimize,
+	});
+	// this is to add library as well, so that it would be modular
+	b.installArtifact(libmath);
+
+	const exe = b.addExecutable(.{
+		.name = "hello",
+		.root_source_file = "main.zig",
+		.target = target,
+		.optimize = optimize,
+	})
+
+	exe.linkLibrary(libmath);
+
+	b.installArtifact(exe);
+}
+```
+
+here is what we get as the result
+```
+zig-out/
+├── bin
+│  └── demo
+└── lib 
+	└── libfizzbuzz.a // .a is for static
+```
+
+**NOTE:** Installing static library gives as the modular result. 
+Meaning we have separate library packaged, so that we can reuse it.
+Thats why adding the code base itself as a static library, could be beneficial.
+- Modularity: If your library is used by multiple executable, it makes sense to build it as a static or dynamic library.
+- Reusability: If you want to distribute the library as a standalone component
+- 
+
+> **NOTE:** if we don't install executable artifact, build system is not going to waste any time building the executable, unless specified, because build system is based on [[DAG]] with dependency edges
+
+
+## [[dynamic library]]
+build.zig
+```rust
+const libmath = b.addSharedLibrary(.{
+	.name = "math",
+	.root_source_file = "path/to/lib/math.zig",
+	.target = target,
+	.optimize = optimize,
+});
+b.installArtifact(libmath);
+
+// to embed information about library
+exe.linkLibrary(libmath);
+```
+
+```
+zig-out 
+└── lib 
+	├── libfizzbuzz.so -> libfizzbuzz.so.1 
+	├── libfizzbuzz.so.1 -> libfizzbuzz.so.1.2.3 
+	└── libfizzbuzz.so.1.2.3
+```
+
+calling `linkLibrary` in build script in case of dynamic library ensures that Zig compiler and [[linker]] can **check that the executable correctly references the shared library**, 
+and so that dynamic linker **could use the embedded information in the executable to find and load the shared library at runtime**.
+This information includes library's name and version, so the correct library is loaded.
+
+
+
+## Getting and adding external dependencies
+
+Previously what we've talked is great, but it is for organizing project's **local code** into separate libraries, and managing them as libraries.
+But if we want to manage **external or third-party** dependencies, we need to tell it to the Zig build system.
+
+But first of all, how we even get external dependencies?
+```zsh
+zig fetch --save <some-url-for-download>
+// like https://github.com/Not-Nik/raylib-zig/archive/devel.tar.gz
+
+```
+
+> This field is optional.
+> Each dependency must either provide a `url` and `hash`, or a `path`.
+> `zig build --fetch` can be used to fetch all dependencies of a package, recursively.
+> Once all dependencies are fetched, `zig build` no longer requires
+> internet connectivity.
+
+
+And now we need to **tell the build system that we depend on it**.
+This done with `b.dependency(.{})`, this tells that our project depends on external package or library, and you want Zig to handle the details of locating, configuring, and integrating that dependency into you build process!
+
+```rust
+pub fn build(b: *std.Build) void {
+	const raylib_dep = b.dependency("raylib-zig", .{
+		.target = target,
+        .optimize = optimize,
+	});
+	
+	// raylib C library
+	const raylib_artifact = raylib_dep.artifact("raylib");
+	exe.linkLibrary(raylib_artifact);
+	
+	// get main module from raylib
+	const raylib = raylib_dep.module("raylib");
+	exe.root_module.addImport("raylib-zig", raylib);
+
+}
+```
