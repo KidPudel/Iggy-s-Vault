@@ -8,4 +8,4 @@ Main tasks:
 	4. Line control: `#line` for debugging purposes or when working with generated code.
 	5. Error handling: Preprocessor can generate an error message using `#error` directive, that is useful when catching errors or enforcing specific requirements.
 
-> Note: Modern C programming practices often favour alternative techniques, such as [[inline functions]] or [[constexpr]], over complex macro definitions, whenever possible. 
+> Note: Modern C programming practices often favour alternative techniques, such as [[inline functions]] or [[constexpr]], over complex macro definitions, whenever possible.

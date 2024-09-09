@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ba47c4ff6e3f4c6d",
+            "id": "d40e9ed2920dbab3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "declarative.md",
+                "file": "languages/zig/comptime.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,12 +21,12 @@
             }
           },
           {
-            "id": "f4710bce96b699e9",
+            "id": "aff8aae5da251ba4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/zig/build system.md",
+                "file": "languages/zig/zig inline.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -84,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.5,
+    "width": 409.5,
     "collapsed": true
   },
   "right": {
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/zig/build system.md",
+                "file": "languages/zig/zig inline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/zig/build system.md",
+                "file": "languages/zig/zig inline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "languages/zig/build system.md"
+                "file": "languages/zig/zig inline.md"
               }
             }
           },
@@ -165,8 +165,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -185,34 +184,36 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "f4710bce96b699e9",
+  "active": "aff8aae5da251ba4",
   "lastOpenFiles": [
-    "backend/network/Kafka.md",
-    "redpanda.md",
-    "c-star.md",
-    "languages/zig/build system.md",
-    "imperative.md",
+    "languages/zig/comptime.md",
+    "languages/zig/zig inline.md",
+    "C inline.md",
     "declarative.md",
-    "languages/golang/event sourcing architecture.md",
-    "backend/database/which to use.md",
-    "backend/network/Authentication and authorization.md",
-    "languages/golang/no need for static?.md",
-    "general tech/DAG.md",
-    "general tech/static library.md",
-    "general tech/dynamic library.md",
-    "architecture/clean architecture.md",
-    "backend/versioning/git-basics.md",
-    "languages/zig/exporting.md",
-    "general tech/build artifacts.md",
-    "general tech/compiler.md",
-    "general tech/installation prefix.md",
-    "backend/network/Gossip protocol.md",
-    "general tech/object files.md",
-    "general tech/object code.md",
-    "general tech/fat pointer.md",
-    "general tech/linker.md",
+    "images/Pasted image 20240909144047.png",
+    "languages/zig/zig pointer.md",
+    "Pasted image 20240909143848.png",
+    "Pasted image 20240909143850.png",
+    "redpanda.md",
+    "imperative.md",
+    "horizontal scaling.md",
+    "first-class citizens.md",
+    "languages/c/macros.md",
+    "languages/c/preprocessor.md",
+    "languages/c/directives in C.md",
+    "C preprocessor.md",
+    "languages/c/T* name vs T *name.md",
     "general tech/slices under the hood.md",
-    "backend/network/pagination.md",
+    "general tech/mutable vs immutable.md",
+    "languages/golang/pointer.md",
+    "vertical scaling.md",
+    "gamedev/Rendering pipeline.md",
+    "gamedev/game structure.md",
+    "gamedev/game architecture.md",
+    "gamedev/frame buffer.md",
+    "languages/zig/build system.md",
+    "architecture/clean architecture.md",
+    "backend/network/Kafka.md",
     "terminal/neovim",
     "images/Pasted image 20240711180949.png",
     "images/Pasted image 20240618184108.png",
@@ -223,10 +224,7 @@
     "languages/zig",
     "Untitled.canvas",
     "images/Pasted image 20240703164827.png",
-    "images/Pasted image 20240618183441.png",
     "architecture",
-    "images/Pasted image 20240711180045.png",
-    "images/Pasted image 20240711151025.png",
     "backend/messaging",
     "Untitled 1",
     "CS",

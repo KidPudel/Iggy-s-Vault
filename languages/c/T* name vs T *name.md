@@ -9,7 +9,7 @@ User *user;
 
 Is that the *second* is more right considering logic part.
 
-Because we declare *variable pointer of*  type, and not a ~~variable *pointer of type*~~
+Because we declare ***variable pointer of***  type, and not a ~~variable *pointer of type*~~
 
 and with that, we won't misunderstand the following line:
 ```C
