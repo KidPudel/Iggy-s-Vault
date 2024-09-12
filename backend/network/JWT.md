@@ -43,7 +43,7 @@ HMACSHA256(
 1. user sends it's credentials
 2. server verifies and generates a JWT token based on that, as well as private key
 3. server stores private key associates with JWT as a key, in a *minimal* table
-4. sends back JWT as a response to the user in secured [[cookies]] or/and params with HTTPS ([[internet-protocol]])
+4. sends back JWT as a response to the user in secured [[cookies]] or/and params with HTTPS ([[IP]])
 5. user stores JWT token in cookies or persistent storage
 6. user sends JWT token in the subsequent requests
 7. server matches JWT to the private key, and then decipher it and gets info like, user id, to then retrieve user unique data.

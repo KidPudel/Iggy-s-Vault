@@ -1,0 +1,1 @@
+Connection where data can be sent and received simultaneously on the same frequency range, potentially doubling spectral efficiency compared to half-duplex systems.

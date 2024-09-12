@@ -1,0 +1,1 @@
+Each unit of data is individually addressed and routed from the source device to the target device, and the target does not send an acknowledgement back the source.

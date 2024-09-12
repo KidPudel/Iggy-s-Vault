@@ -1,0 +1,1 @@
+`MAC` like [[IP]] address, but it's a local, physical address, attachet to the machine, to route to right machine

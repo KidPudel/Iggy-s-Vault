@@ -1,0 +1,1 @@
+Distributed denial-of-service (DDoS), overwhelming the target of its surrounding infrastructure with a flood of internet traffic.

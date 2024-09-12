@@ -44,7 +44,7 @@
 
 
 ## сеть, grpc, api
-[[internet-protocol]], [[gRPC]], [[API]], [[HTTP2.0]], [[http methods]]
+[[IP]], [[gRPC]], [[API]], [[HTTP2.0]], [[http methods]]
 
 ## нагрузка, rps:
 - How to measure and monitor RPS:

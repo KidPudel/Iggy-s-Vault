@@ -87,14 +87,117 @@ src/main.zig:28:25: note: runtime control flow here
 
 Marking variable with `comptime`, guarantees to the compiler that every load and store of the variable is **performed** at compile-time, meaning that this variable can be used only in compile time operations. Any violation of this results in a compilation error.
 > NOTE: so if we can change variable only at compile time, at run-time this variable is basically a `const`
-
 ```rust
 comptime var a = 0;
 ```
 
+And combining it with [[zig inline]], we can write a function which is partially evaluated at compile-time and partially at run-time
+
+```rust
+const expect = @import("std").testing.expect;
+
+const CmdFn = struct {
+    name: []const u8,
+    func: fn(i32) i32,
+};
+
+const cmd_fns = [_]CmdFn{
+    CmdFn {.name = "one", .func = one},
+    CmdFn {.name = "two", .func = two},
+    CmdFn {.name = "three", .func = three},
+};
+fn one(value: i32) i32 { return value + 1; }
+fn two(value: i32) i32 { return value + 2; }
+fn three(value: i32) i32 { return value + 3; }
+
+fn performFn(comptime prefix_char: u8, start_value: i32) i32 {
+    var result: i32 = start_value;
+    comptime var i = 0;
+    inline while (i < cmd_fns.len) : (i += 1) {
+        if (cmd_fns[i].name[0] == prefix_char) {
+            result = cmd_fns[i].func(result);
+        }
+    }
+    return result;
+}
+
+test "perform fn" {
+    try expect(performFn('t', 1) == 6);
+    try expect(performFn('o', 0) == 1);
+    try expect(performFn('w', 99) == 99);
+}
+```
+
+this generates following codes
+performFn_1
+```rust
+// From the line:
+// expect(performFn('t', 1) == 6);
+fn performFn(start_value: i32) i32 {
+    var result: i32 = start_value;
+    result = two(result);
+    result = three(result);
+    return result;
+}
+```
+
+performFn_2
+
+```rust
+// From the line:
+// expect(performFn('o', 0) == 1);
+fn performFn(start_value: i32) i32 {
+    var result: i32 = start_value;
+    result = one(result);
+    return result;
+}
+```
+
+performFn_3
+
+```rust
+// From the line:
+// expect(performFn('w', 99) == 99);
+fn performFn(start_value: i32) i32 {
+    var result: i32 = start_value;
+    return result;
+}
+```
+
 
 # Compile-time expressions
+With `comptime` we can guarantee that expression will be evaluated at compile-time, if this cannot be accomplished, the compiler will emit an error
 
+Within a `comptime` expression:
+- All variables and functions are `comptime`
+- All `if`, `while`, `for`, `switch` are evaluated at compile-time
+- `return` and `try` expression are invalid
+
+We can call the same function at compile time and run time
+```rust
+fn fibonacci(index: u32) u32 {
+	if (index < 2) return index;
+	return fibonacci(index - 1) + fibonacci(index - 2);
+}
+
+test "fibonacci" {
+	// run-time
+	try expect(fibonacci(7) == 13);
+
+	// compile-time
+	try comptime expect(fibonacci(7) == 13);
+}
+```
+
+So if we would make it endless, the compiler produces an error which is stack trace from trying to evaluate the function at compile-time, because of the unsigned int!
+But if we would make it signed, then compiler would notice that the function at compile-time took more than 1000 branches to execute, this emits an error and gives up.
+> **NOTE:** in the future we will be able to change that number
+
+At [[containers]] level, all expressions are **implicitly** `comptime` expressions.
+```rust
+const first_25_primes = firstNPrimes(25);
+const sum_of_first_25_primes = sum(&first_25_primes);
+```
 
 # Compile-time types
 `comptime_` types, that are automatically figure out what's the best type to use, because the inputs the functions are known at compile time or `comptime`

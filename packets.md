@@ -1,0 +1,1 @@
+In networking, it is a small segment of a larger message

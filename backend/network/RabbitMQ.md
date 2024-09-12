@@ -27,7 +27,7 @@ lets go from producer to the consumer.
 
 ### Connect
 First, we need to connect to the RabbitMQ server (Where RabbitMQ is launched).
-This could be our local machine, or a different server ( IP address [[internet-protocol]])
+This could be our local machine, or a different server ([[IP]] address)
 ```python
 connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
 ```

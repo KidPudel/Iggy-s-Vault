@@ -1,0 +1,1 @@
+Const keyword means that the variable won't be changed, therefore will be known and only be used at [[comptime]]

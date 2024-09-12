@@ -1,0 +1,1 @@
+In memory allocation, pre-allocated block of memory, from which smaller chunks of memory allocated as needed.
