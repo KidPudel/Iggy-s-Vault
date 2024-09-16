@@ -1,4 +1,4 @@
-In Go there is a lot of times where we have an interface that does something.
+In Go there is a lot of times where we have an [[interface]] that does something.
 For example `Handler` from `net/http` that is the second parameter in `ListenAndServe` function, where `Handler` does indeed serve (handles), but it *maybe* does not do/has everything inside it that we want.
 Go's philosophy is intend to implement those base blocks to enhance the functionality and content, because of that it is so easy to implement interfaces in Go.  
 

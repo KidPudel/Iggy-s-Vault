@@ -1,4 +1,4 @@
-C header file contains declarations ([[interfaces in programming]]) and [[macros]] definitions, to be shared between different source files.
+C header file contains declarations ([[interface]]) and [[macros]] definitions, to be shared between different source files.
 
 You request/access the use of header file by including it in a file with [[preprocessor]] mechanism, via `#include` [[directives in C]]
 

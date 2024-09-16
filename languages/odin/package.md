@@ -1,0 +1,1 @@
+In odin package is a folder that contains odin files, just like in golang with [[modules, packages and versions]]

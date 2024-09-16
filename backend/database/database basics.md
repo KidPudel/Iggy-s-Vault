@@ -107,4 +107,9 @@ GROUP BY w.rate;
 # [[sql data **types**]]
 
 
+# conversion from json
+```sql
+where (payload::json)->>'externalID' = '9b733e35-1169-4247-a213-af811759edba'
+```
+
 #database

@@ -1,2 +1,3 @@
+Interface is the **"placeholder" for the future struct** that we are waiting, and since it is not a real structure, but rather a "placeholder", it is a **pointer to the future possible real structure that will be passed**
 Interface in programming is the contract on how some component should interact with different parts of a system.
 It defines a methods, properties, events, or functions that component must implement or expose in order to be compatible with other components which also signed the contract and satisfy it.
