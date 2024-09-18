@@ -103,4 +103,7 @@
 ## sync.Pool: 
 [[concurrency in go]]
 
+
+[[memory allocation]]
+
 ## livecodding:

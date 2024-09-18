@@ -4,23 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "92dae355a46c1371",
+        "id": "6d40848a71722f6d",
         "type": "tabs",
         "children": [
           {
-            "id": "3246582e9800a760",
+            "id": "0a0b89377538d25f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "general tech/vertical scaling.md",
+                "file": "languages/golang/Golang Backend Interview Preparation.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e1d2a60faee0d805",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "general tech/function vs method.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -86,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "general tech/vertical scaling.md",
+                "file": "general tech/function vs method.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "general tech/vertical scaling.md",
+                "file": "general tech/function vs method.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "general tech/vertical scaling.md"
+                "file": "general tech/function vs method.md"
               }
             }
           },
@@ -170,8 +184,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "039133efe5b78d25",
+  "active": "e1d2a60faee0d805",
   "lastOpenFiles": [
+    "languages/golang/anonymous functions.md",
+    "general tech/function vs method.md",
+    "languages/golang/memory allocation.md",
+    "languages/golang/Golang Backend Interview Preparation.md",
+    "general tech/mutable vs immutable.md",
+    "languages/golang/channel axioms.md",
+    "languages/golang/go map under the hood.md",
+    "languages/golang/why goroutines are lightweight.md",
+    "backend/backend interview questions.md",
+    "general tech/slices under the hood.md",
+    "languages/golang/go garbage collector.md",
+    "languages/golang/pointer.md",
+    "general tech/vertical scaling.md",
     "backend/network/TCP.md",
     "backend/network/packets.md",
     "sql data **types**.md",
@@ -185,19 +212,6 @@
     "general tech/callback.md",
     "general tech/arena allocator.md",
     "general tech/c-star.md",
-    "general tech/DDoS attacks.md",
-    "backend/database/database basics.md",
-    "languages/golang/concurrency in go.md",
-    "backend/database/psql.md",
-    "languages/odin/what is it.md",
-    "backend/network/Web Sockets.md",
-    "backend/network/UDP.md",
-    "backend/network/Webhooks.md",
-    "languages/odin/package.md",
-    "languages/golang/go garbage collector.md",
-    "general tech/garbage collector.md",
-    "languages/golang/modules, packages and versions.md",
-    "languages/golang/pointer.md",
     "languages/odin",
     "images/Pasted image 20240912163930.png",
     "images/Pasted image 20240909144047.png",

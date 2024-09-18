@@ -1,0 +1,1 @@
+Method is just a function, but **with our perspective of the object** (point of view we are thinking), it **needs the instance of object**, that will be the **main**/**central** parameter/**figure** of the action, **to manipulate/alter its data or to use its data**. 
