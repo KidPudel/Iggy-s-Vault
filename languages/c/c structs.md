@@ -1,4 +1,4 @@
-[[Structures]] in C could be declared with [[new type or when to create class]] definition and without, but with type definition is the best practices, which allows:
+[[structure]] in C could be declared with [[new type or when to create class]] definition and without, but with type definition is the best practices, which allows:
 - Reusability
 - Clarity
 - Type Safety

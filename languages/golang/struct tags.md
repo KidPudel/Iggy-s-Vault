@@ -1,5 +1,5 @@
 
-[[Structures]] can define [[metadata]], when you read data from database or APIs, to control how the data is assigned to the fields of the struct.
+[[structure]] can define [[metadata]], when you read data from database or APIs, to control how the data is assigned to the fields of the struct.
 You can do this by utilising ***struct tags***
 
 Struct tags are the small pieces of information that are assigned to the fields of the struct, that provides the instruction to other Go code that works with this struct.

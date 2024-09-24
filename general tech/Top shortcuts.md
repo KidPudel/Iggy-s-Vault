@@ -83,7 +83,10 @@
 - `cmd+shift+d`: move url to the main view
 - `opt+click`: opens new on side
 - `ctrl+shift++`: new side bar
+- `cmd-d`: add bookmarks
 
+# Safari
+- `cmd-d`: add bookmarks
 # Rectangle
 - `ctrl+opt+><`: move window to the sides
 - `ctrl+opt+c`: center

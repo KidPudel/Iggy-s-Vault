@@ -13,8 +13,10 @@ Benefits:
 	- we see current window with opened like this at the bottom `0] 0:zsh* 1:zsh  2:zsh-`
 - `leader-n`: move/navigate to next window
 	- or `leader-<number of the window>`
+- `leader-&`: kill window
 - `leader-%`: split window vertical
 - `leader-"`: split window horizontally
+- `leader-x`: kill pane
 - `leader-<hjkl>`: to navigate between panes
 - `leader-x`: close pane or `exit`
 - `leader-d`: detach from a session

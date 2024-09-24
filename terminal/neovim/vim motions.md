@@ -25,6 +25,8 @@
 - `gI` ⇒ go to implementation
 - `g]` ⇒ go to definition
 - `gr` ⇒ go to reference
+- `gl` : select next
+- `gL`: select previous
 - `C-o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_
 - `C-e` ⇒ move window down
     - `C + y `⇒ up

@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6d40848a71722f6d",
+        "id": "421a91337a8aaec9",
         "type": "tabs",
         "children": [
           {
-            "id": "0a0b89377538d25f",
+            "id": "b6b12138590a4342",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/Golang Backend Interview Preparation.md",
+                "file": "terminal/tmux.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -21,20 +21,19 @@
             }
           },
           {
-            "id": "e1d2a60faee0d805",
+            "id": "fc7be4b8e93bfe2b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "general tech/function vs method.md",
+                "file": "general tech/structure.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -84,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.5
+    "width": 409.5,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "general tech/function vs method.md",
+                "file": "terminal/tmux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "general tech/function vs method.md",
+                "file": "terminal/tmux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "general tech/function vs method.md"
+                "file": "terminal/tmux.md"
               }
             }
           },
@@ -184,12 +184,28 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e1d2a60faee0d805",
+  "active": "b6b12138590a4342",
   "lastOpenFiles": [
-    "languages/golang/anonymous functions.md",
-    "general tech/function vs method.md",
-    "languages/golang/memory allocation.md",
+    "CS/patterns/Template method.md",
+    "general tech/structure.md",
+    "CS/polymorphism.md",
+    "CS/patterns",
+    "general tech/Top shortcuts.md",
+    "terminal/tmux.md",
+    "terminal/kitty.md",
     "languages/golang/Golang Backend Interview Preparation.md",
+    "languages/golang/types.md",
+    "terminal/neovim/vim motions.md",
+    "languages/golang/collections.md",
+    "backend/database/database basics.md",
+    "neuroscience/learn.md",
+    "neuroscience/breathe.md",
+    "backend/database/columnar database.md",
+    "backend/database/ClickHouse.md",
+    "backend/database/OLAP.md",
+    "general tech/function vs method.md",
+    "languages/golang/anonymous functions.md",
+    "languages/golang/memory allocation.md",
     "general tech/mutable vs immutable.md",
     "languages/golang/channel axioms.md",
     "languages/golang/go map under the hood.md",
@@ -197,21 +213,6 @@
     "backend/backend interview questions.md",
     "general tech/slices under the hood.md",
     "languages/golang/go garbage collector.md",
-    "languages/golang/pointer.md",
-    "general tech/vertical scaling.md",
-    "backend/network/TCP.md",
-    "backend/network/packets.md",
-    "sql data **types**.md",
-    "general tech/first-class citizens.md",
-    "backend/network/full duplex.md",
-    "backend/network/MAC.md",
-    "backend/network/HTTP.md",
-    "general tech/declarative.md",
-    "backend/network/connectionless protocol.md",
-    "general tech/arena.md",
-    "general tech/callback.md",
-    "general tech/arena allocator.md",
-    "general tech/c-star.md",
     "languages/odin",
     "images/Pasted image 20240912163930.png",
     "images/Pasted image 20240909144047.png",
@@ -232,7 +233,6 @@
     "CS",
     "Protocol Buffers",
     "I",
-    "languages",
     "gamedev/Untitled.canvas"
   ]
 }

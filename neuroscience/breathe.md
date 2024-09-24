@@ -1,4 +1,4 @@
-Correct breathing can improve your mental health, physical health as well as concentration and cognitive abilities 
+Correct breathing can **improve your mental health**, physical health as well as concentration and cognitive abilities 
 
 Like by having this feature of controlling breathing, we can change our state of mind (eg help study or sleep)
 

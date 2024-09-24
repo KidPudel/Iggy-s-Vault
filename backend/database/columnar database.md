@@ -3,4 +3,7 @@ It makes reading data or aggregating queries (sum, average, max, min) very quick
 And in this orientation, this system is acknowledged of which data is corresponding to which column, by assigning a number to each row of data
 It is also highly recommended to order the data, allowing for much faster queries
 
-But this is makes inserting new row somewhere in the middle very slow
+But this is makes inserting **new row** somewhere in the middle very slow
+But inserting a batches of rows at once is very fast, because it is optimized for high-throughputs
+
+Updates are very slow
