@@ -1,1 +1,1 @@
- balances the load between the servers (to manage traffic)
+Server that acts like an aggregator, it sits in front of [[Web server]]s and forwards client (web browser) requests to those servers

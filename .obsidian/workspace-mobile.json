@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/network/Message queue.md",
+                "file": "languages/golang/concurrency in go.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -112,7 +112,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "backend/network/Message queue.md",
+            "file": "languages/golang/concurrency in go.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "backend/network/Message queue.md",
+            "file": "languages/golang/concurrency in go.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -141,7 +141,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "backend/network/Message queue.md"
+            "file": "languages/golang/concurrency in go.md"
           }
         }
       }
@@ -150,6 +150,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "publish:Publish changes...": false,
       "markdown-importer:Open format converter": false,
       "switcher:Open quick switcher": false,
@@ -162,16 +163,24 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "languages/golang/why goroutines are lightweight.md",
+    "languages/golang/Golang Backend Interview Preparation.md",
+    "languages/golang/concurrency in go.md",
+    "languages/golang/golang scheduler.md",
+    "languages/golang/golang interfaces.md",
+    "general tech/interface.md",
+    "languages/golang/golang mutex.md",
+    "languages/golang/sync.Map.md",
+    "general tech/deadlock.md",
+    "general tech/race condition.md",
+    "backend/network/Message queue.md",
     "general tech/dynamic library.md",
     "languages/zig/optional types.md",
     "architecture/saga.md",
-    "languages/golang/Golang Backend Interview Preparation.md",
-    "languages/golang/sync.Map.md",
     "backend/backend interview questions.md",
     "golang scheduler.md",
     "anonymous functions.md",
     "backend/database/scheduler.md",
-    "languages/golang/concurrency in go.md",
     "s3.md",
     "4 levels of isolation.md",
     "serialization.md",
@@ -179,14 +188,6 @@
     "languages/python/python interview questions.md",
     "backend/network/XSS.md",
     "backend/network/hashing.md",
-    "backend/network/claims.md",
-    "backend/network/CSRF.md",
-    "backend/docker/bind mounts.md",
-    "backend/database/indexes.md",
-    "backend/database/constraints.md",
-    "shallow vs deep copy.md",
-    "general tech/args and kwargs.md",
-    "languages/python/decorator.md",
-    "backend/network/message broker.md"
+    "backend/network/claims.md"
   ]
 }

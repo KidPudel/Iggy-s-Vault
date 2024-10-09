@@ -1,9 +1,10 @@
+> special thanks to Primeagen with his [0 to LSP](https://www.youtube.com/watch?v=w7i4amO_zaE), typecraft's series on setting up neovim and folke for [lazy.nvim](https://lazy.folke.io/) plugin manager!
+
 to config neovim correctly, we can look at `:h rtp`, to see the run time path, which will tell you where lua looks for configs
 
 the main interesting to as is `<config-path>/nvim` root of Neovim config and `/after` which is used to load configurations of <u>plugins</u> **after** the standard runtime files, so this is basically allows to overrule/override distributed or system-wide settings
 
 ---
-
 # basics
 
 the "entry" file is `init.lua`, it takes all configs and requires/loads external settings
@@ -59,4 +60,8 @@ dap?
 > Note, some plugins should be forced to load, with priority and lazy to false, and then forced to be applied with `config = function()` require to load
 
 
+
+# TODO
+- [ ] snippets
+- [ ] symbol search
 

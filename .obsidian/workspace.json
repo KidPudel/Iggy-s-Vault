@@ -4,29 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "421a91337a8aaec9",
+        "id": "1369bb5574015dcd",
         "type": "tabs",
         "children": [
           {
-            "id": "b6b12138590a4342",
+            "id": "670fa89d62c8c49c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "terminal/tmux.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fc7be4b8e93bfe2b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "general tech/structure.md",
+                "file": "terminal/nix.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -100,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "terminal/tmux.md",
+                "file": "terminal/nix.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "terminal/tmux.md",
+                "file": "terminal/nix.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "terminal/tmux.md"
+                "file": "terminal/nix.md"
               }
             }
           },
@@ -168,8 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,35 +170,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b6b12138590a4342",
+  "active": "670fa89d62c8c49c",
   "lastOpenFiles": [
-    "CS/patterns/Template method.md",
-    "general tech/structure.md",
-    "CS/polymorphism.md",
-    "CS/patterns",
-    "general tech/Top shortcuts.md",
+    "backend/docker/pods.md",
+    "backend/network/ingress controller.md",
+    "load balancer.md",
+    "backend/network/reverse proxy.md",
+    "backend/versioning/git-basics.md",
+    "terminal/neovim/resolve conflict with neovim.md",
+    "terminal/nix.md",
+    "backend/database/indexes.md",
+    "general tech/declarative.md",
+    "general tech/imperative.md",
     "terminal/tmux.md",
-    "terminal/kitty.md",
-    "languages/golang/Golang Backend Interview Preparation.md",
-    "languages/golang/types.md",
-    "terminal/neovim/vim motions.md",
-    "languages/golang/collections.md",
+    "terminal/neovim/vim command-line mode.md",
     "backend/database/database basics.md",
-    "neuroscience/learn.md",
-    "neuroscience/breathe.md",
-    "backend/database/columnar database.md",
-    "backend/database/ClickHouse.md",
+    "terminal/neovim/vim motions.md",
+    "backend/docker/Docker commands.md",
+    "backend/docker/Docker basics.md",
+    "terminal/neovim/autocommands.md",
+    "frontend/Vue directive.md",
+    "architecture/event sourcing.md",
+    "architecture/saga.md",
+    "out only trader task.md",
+    "terminal/neovim/lsp.md",
+    "terminal/neovim/formatter.md",
+    "terminal/neovim/linter.md",
+    "terminal/neovim/neovim config.md",
     "backend/database/OLAP.md",
-    "general tech/function vs method.md",
-    "languages/golang/anonymous functions.md",
-    "languages/golang/memory allocation.md",
-    "general tech/mutable vs immutable.md",
-    "languages/golang/channel axioms.md",
-    "languages/golang/go map under the hood.md",
-    "languages/golang/why goroutines are lightweight.md",
-    "backend/backend interview questions.md",
-    "general tech/slices under the hood.md",
-    "languages/golang/go garbage collector.md",
+    "CS/patterns",
     "languages/odin",
     "images/Pasted image 20240912163930.png",
     "images/Pasted image 20240909144047.png",

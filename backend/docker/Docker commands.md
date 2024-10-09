@@ -109,7 +109,9 @@ After building an Image, we can list all of our images
 ## run shell
 `docker exec -it f5c970a1a777 sh`
 `docker exec -it {container_name} /bin/bash
-    
+
+# clear
+`docker system prune (-a)`: remove all cache and dangling images
 
 # dockerise python
 ```Dockerfile

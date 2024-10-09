@@ -3,10 +3,11 @@
 - `hjkl` ⇒ move
 	- `J`: put the next line on the current
 - `w` ⇒ jump the word
-    - `e` ⇒ jump the en
-    - d of a word
-        - ge ⇒ jump back to the end of a word
-    - `b` ⇒ jump back one word
+	- `W`: jump to the next sequence of character separated by space
+- `e` ⇒ jump the end
+	-  `ge` ⇒ jump back to the end of a word
+- `b` ⇒ jump back one word
+	- `B`: jump to the previous sequence of character separated by space
 - `$` ⇒ jump the end of a line
     - ^ ⇒ jump beginning of a characters line
     - 0 ⇒ jump beginning of a line
@@ -46,7 +47,7 @@
     - N ⇒ repeat search opposite direction
 - `f[+ any character]`⇒ jump to the character in the line
 	- `F[+ any character]` => reverse direction
-- `C-w <hjkl>`: move between windows
+- `C-w <hjkl>`: move **between** split windows
 
 
 # visual
@@ -87,18 +88,20 @@
 
 ## cut and paste (we don’t go to insert)
 
-- “+y ⇒ yank to the **SYSTEM clipboard**
--  yy ⇒ yank (copy) a line
-- nyy (where n is number) ⇒ yank n lines
-- yw ⇒ yank word
-- y$ or Y ⇒ yank to the end of a line
-- p ⇒ paste the clipboard after cursor
-- “+p ⇒ paster from **SYSTEM clipboard**    
+- `“<buffer number>y`: yank to specified register
+	- `"+y`: yank to the **SYSTEM clipboard**
+-  `yy` ⇒ yank (copy) a line
+- `nyy` (where n is number) ⇒ yank n lines
+- `yw` ⇒ yank word
+- `y$` or `Y` ⇒ yank to the end of a line
+- p: paste the clipboard after cursor
+- `“<buffer number>p`: paste to specified register
+	- `“+p`: paster from **SYSTEM clipboard**    
 - P ⇒ before
 - dd ⇒ delete (cut) a line
-- ndd ⇒ n lines
-- diw ⇒ delete (cut) a word        
-- dw ⇒ delete from cursor to the end of the word
+- `<n>dd` ⇒ n lines
+- `diw` ⇒ delete (cut) a word        
+- `dw` ⇒ delete from cursor to the end of the word
 - :3, 5d ⇒ delete (cut) lines 3-5 
 - x ⇒ delete (cut) a character
 
@@ -106,9 +109,5 @@
 # formatting
 - `=`: format indentation
 
-
-```go
-func main() {
-	fmt.Println()
-}
-```
+# more stuff
+- `~`: toggle case
