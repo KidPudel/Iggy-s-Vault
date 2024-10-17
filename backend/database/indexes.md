@@ -7,7 +7,7 @@ Each row/record has a unique *key* associated to it which distinguishes it from 
 
 > Note: each time row with unique key is added, index is automatically updated
 
-When we need to look data by data that is not stored as a key (primary key), we need to ***create our own index***.
+When we need to look data by data that is not stored as a key ([[primary key]]), we need to ***create our own index***.
 
 ```sql
 create index saved_words_by_user_word_id

@@ -113,6 +113,10 @@ After building an Image, we can list all of our images
 # clear
 `docker system prune (-a)`: remove all cache and dangling images
 
+# exec (-it name)
+docker exec -it receipt-analysis-service-db-1 psql -U postgres -d postgres
+
+
 # dockerise python
 ```Dockerfile
 FROM python:3.12.2-slim-bookworm AS build-stage

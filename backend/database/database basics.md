@@ -34,9 +34,25 @@ CREATE DATABASE wishesstore;
 ```sql
 CREATE TABLE wish_lists (
   id serial primary key,
+  talk_id serial
   name varchar(50)
+  constraint fk_talks
+	  foreign key (talk_id)
+		  references talks(id)
 );
 ```
+
+```sql
+CREATE TABLE reference_receipts (
+    id UUID NOT NULL UNIQUE,
+    type INT NOT NULL,
+    CONSTRAINT fk_receipt
+        FOREIGN KEY(id)
+            REFERENCES receipts(id)
+            ON DELETE CASCADE
+);
+```
+
 
 > **NOTE**: Your user may need a [[db role]] assigned to them to create a DB
 ### altering
