@@ -1,0 +1,1 @@
+is an early return, put your "unhappy" code first, so that we would discard bad scenarios first, to get them out the way of consideration 
