@@ -1,0 +1,1 @@
+Distributed network of computers (software) that is responsible for handling trading of anything without a middle man, by running the same operation on each computer and using mechanism like cryptography to secure the transactions

@@ -1,7 +1,7 @@
 []()# Goroutines
 > Goroutines - lightweight threads.
 
-Unlike Kotlin's coroutines, which are kind of workers in a thread, **Goroutines are _actual threads_**, but way more lightweight.  
+Unlike [[kotlin coroutines]], which are kind of workers in a thread, **Goroutines are _actual threads_**, but way more lightweight.  
 
 Unlike usual kernel threads, that are managed by operating system, **goroutines are _user-space threads managed by Go runtime_**.
 

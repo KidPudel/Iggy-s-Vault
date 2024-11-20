@@ -10,3 +10,6 @@ func countWords(text string, wg *sync.WaitGroup, wordMap *sync.Map) {
     }
 }
 ```
+
+why you sometimes need to call `defer` if it memory is automated?
+because some of the resources are externally opened/utilized, and for that after you've instructed to open something, you need to close it

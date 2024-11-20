@@ -35,7 +35,8 @@
 [[segmented stack in go]]
     
 - When and where do you make your own interfaces
-    
+    when you want to create a "component" that doesn't care what is the other's "component's" implementation
+    for example when you want to swap crypto processor
 - How do you handle errors in Go
     
 - When and where do you use panic and recover
