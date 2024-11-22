@@ -31,6 +31,14 @@ While executing happens in a new goroutine.
 # Channels
 > Channels are typed conduct (pipe, tube), through which you can send and receive data with the help of channel operator `<-`
 
+```go
+type chan struct {
+	mx sync.mutex
+	buffer []T
+	readers []Goroutines
+	writers []Goroutines
+}
+```
 ### send data through channel
 ```go
 func countSum(arr []int, ch chan int) {

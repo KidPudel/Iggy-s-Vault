@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/network/blockchain.md",
+                "file": "languages/golang/recover.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "blockchain"
+              "title": "recover"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "sha256",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/network/blockchain.md",
+                "file": "languages/golang/recover.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for blockchain"
+              "title": "Backlinks for recover"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/network/blockchain.md",
+                "file": "languages/golang/recover.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from blockchain"
+              "title": "Outgoing links from recover"
             }
           },
           {
@@ -193,32 +193,32 @@
   },
   "active": "6e43e4c83ee66835",
   "lastOpenFiles": [
-    "backend/network/hashing.md",
+    "WAL.md",
+    "languages/golang/recover.md",
+    "backend/database/ACID.md",
+    "backend/network/pagination.md",
+    "languages/golang/concurrency in go.md",
+    "languages/golang/channel axioms.md",
+    "languages/golang/context.md",
+    "languages/golang/golang scheduler.md",
+    "languages/golang/why goroutines are lightweight.md",
+    "languages/golang/Golang Backend Interview Preparation.md",
+    "general tech/interface.md",
+    "backend/network/nginx.md",
+    "backend/network/gRPC.md",
+    "backend/network/three-way handshake.md",
     "backend/network/blockchain.md",
+    "backend/network/hashing.md",
     "backend/database/database basics.md",
     "backend/database/NoSQL database.md",
     "terminal/terminal-commands.md",
-    "languages/golang/concurrency in go.md",
-    "languages/golang/Golang Backend Interview Preparation.md",
     "languages/golang/golang mutex.md",
     "backend.md",
     "languages/golang/go sync.Map vs sync.Pool.md",
     "general tech/kotlin coroutines.md",
     "backend/docker/Docker commands.md",
     "backend/docker/Docker basics.md",
-    "backend/network/pagination.md",
     "backend/database/database shard.md",
-    "backend/database/database partition.md",
-    "backend/database/psql.md",
-    "terminal/neovim/vim motions.md",
-    "languages/golang/golang iota.md",
-    "CS/SOLID.md",
-    "CS/Data structures.md",
-    "backend/backend interview questions.md",
-    "backend/database/transactions.md",
-    "backend/database/ACID.md",
-    "backend/database/4 levels of isolation.md",
-    "general tech/race condition.md",
     "Pasted image 20241022091013.png",
     "Pasted image 20241022090626.png",
     "Pasted image 20241022090625.png",

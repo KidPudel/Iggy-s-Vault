@@ -22,3 +22,4 @@ There is [[4 levels of isolation]]
 
 # Durability
 Ensures that changes to you data made by successfully executed transactions will be saved **even in the event of system failure**
+saves data to other to [[WAL]] file

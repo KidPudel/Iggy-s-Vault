@@ -1,0 +1,1 @@
+db basically maintains a WAL file in which data writes gets logged before directly flushing it into disk. Write-Ahead Logging (WAL) is a standard method for ensuring data integrity.

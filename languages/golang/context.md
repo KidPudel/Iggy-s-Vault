@@ -1,7 +1,7 @@
 Context is a mechanism for carrying:
 - deadlines: set maximum time for the process of the request
 - cancellation: way of terminating request
-- ==request-scoped values:== data associated with a request, passed *down the call stack*, passing  to the down nested function, middleware, or actual request handler
+- request-scoped values: data associated with a request, passed *down the call stack*, passing  to the down nested function, middleware, or actual request handler
 
 # how to use
 
