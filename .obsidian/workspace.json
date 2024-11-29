@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/recover.md",
+                "file": "languages/golang/errors.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "recover"
+              "title": "errors"
             }
           }
         ]
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.5
+    "width": 409.5,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -95,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/golang/recover.md",
+                "file": "languages/golang/errors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for recover"
+              "title": "Backlinks for errors"
             }
           },
           {
@@ -114,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "languages/golang/recover.md",
+                "file": "languages/golang/errors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from recover"
+              "title": "Outgoing links from errors"
             }
           },
           {
@@ -193,8 +194,17 @@
   },
   "active": "6e43e4c83ee66835",
   "lastOpenFiles": [
-    "WAL.md",
+    "languages/golang/methods.md",
+    "backend/network/http methods.md",
+    "backend/database/rollback migrations.md",
+    "backend/database/docker db.md",
+    "terminal/neovim/resolve conflict with neovim.md",
+    "general tech/bot.md",
+    "general tech/Golang and C as friends and both u should love.md",
+    "languages/python/bot creation.md",
+    "languages/golang/errors.md",
     "languages/golang/recover.md",
+    "WAL.md",
     "backend/database/ACID.md",
     "backend/network/pagination.md",
     "languages/golang/concurrency in go.md",
@@ -210,15 +220,6 @@
     "backend/network/blockchain.md",
     "backend/network/hashing.md",
     "backend/database/database basics.md",
-    "backend/database/NoSQL database.md",
-    "terminal/terminal-commands.md",
-    "languages/golang/golang mutex.md",
-    "backend.md",
-    "languages/golang/go sync.Map vs sync.Pool.md",
-    "general tech/kotlin coroutines.md",
-    "backend/docker/Docker commands.md",
-    "backend/docker/Docker basics.md",
-    "backend/database/database shard.md",
     "Pasted image 20241022091013.png",
     "Pasted image 20241022090626.png",
     "Pasted image 20241022090625.png",
