@@ -1,1 +1,0 @@
-Process in database where very large tables are divided into multiple smaller parts

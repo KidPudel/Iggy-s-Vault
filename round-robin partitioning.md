@@ -1,0 +1,1 @@
+[[partitioning]] strategy that divides dataset equally without any specific logic

@@ -1,19 +1,22 @@
-# Top 10 questions in backed python interview
-
+# language specific
 [[python interview questions]]
+[[Golang Backend Interview Preparation]]
 
+# Database
 ## Indexes, what is it, and types
 [[indexes]]
 
 ## transaction
 [[transactions]]
 
-
 ## replication
 - [[database replication]]
-- [[database shard]]
+
+# partitioning and types and strategies
+- [[partitioning]]
 
 
+# Communications
 ## messaging systems
 [[RabbitMQ]]
 [[Kafka]]

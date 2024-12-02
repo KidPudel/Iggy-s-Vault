@@ -1,0 +1,2 @@
+The horizontal (like in [[horizontal scaling]]) [[partitioning]] which is the process of distributing rows of data into multiple tables or databases called shards
+**Usecase**: Very large dataset where rows are independent

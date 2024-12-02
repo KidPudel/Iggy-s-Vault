@@ -5,7 +5,7 @@ Developed at Facebook [[NoSQL database]] to manage massive amounts of data fast
 - Cluster a collection of nodes
 
 Data distribution
-- [[database partition]]: distributes data across nodes using a consistent hashing mechanism, so data is distributed based on partition key
+- [[partitioning]]: distributes data across nodes using a consistent hashing mechanism, so data is distributed based on partition key
 - token ring: each node is responsible for a range of tokens (hash values). **Data is mapped to tokens**, and nodes manage ranges of these tokens
 
 [[database replication]]
