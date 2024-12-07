@@ -34,3 +34,6 @@ We always reference more important thing (that is **ONE** to many) in many parts
 - Person on its own
 - Project is taken by someone (person), → therefore, we reference a person in a project**s**
 - since we don’t store complex types like lists in a table, we store the thing that can be *common across many things.*
+
+
+[[alternative to relationship tables]]

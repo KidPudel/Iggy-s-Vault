@@ -91,11 +91,11 @@ UPDATE wishes SET rate = 0.0 WHERE name LIKE '%game%' OR name LIKE "%oil" OR nam
 Alternative:
 
 | **Operator Name** | **Substitute with Description** |
-| ---- | ---- |
-| ~~ | It is used instead of like |
-| ~~* | It is used instead of ilike |
-| !~~ | It is used instead of not like |
-| !~~* | It is used instead of not ilike |
+| ----------------- | ------------------------------- |
+| ~~                | It is used instead of like      |
+| ~~*               | It is used instead of ilike     |
+| !~~               | It is used instead of not like  |
+| !~~*              | It is used instead of not ilike |
 
 ```sql
 DELETE FROM wishes WHERE rate < 8.0;
@@ -129,3 +129,26 @@ where (payload::json)->>'externalID' = '9b733e35-1169-4247-a213-af811759edba'
 ```
 
 #database
+
+# Aggregate functions
+function that takes set of values and return singe value.
+- `MIN()`
+- `MAX()`
+- `COUNT()`
+- `SUM()`
+- `AVG()`
+
+# Having
+`HAVING` was added because `WHERE` keyword cannot be used with aggregate functions
+```sql
+select count(usr_id), country
+from users
+where country != "Finland"
+group by country
+having count(usr_id) > 5;
+```
+
+# Views
+
+
+# Procedures

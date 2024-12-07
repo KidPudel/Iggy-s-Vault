@@ -1,4 +1,4 @@
-Isolation is for managing level of access to the changes that are being made during the process of [[transactions]]
+Isolation is for managing level of access to the changes that are being made to the same thing during the process of different writes to avoid conflicts 
 
 # Serializable
 The **gold standard** is "serializable" (**not** [[serialization]] in terms of converting).

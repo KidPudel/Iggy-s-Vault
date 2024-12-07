@@ -1,0 +1,1 @@
+In distributed data store consistency is the way to achieve availability by utilizing distribution across the globe for example

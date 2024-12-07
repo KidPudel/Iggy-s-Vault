@@ -2,7 +2,7 @@ g(anything)**R**emote**P**rocedural**C**alls
 Framework to make **remote** **calls** to make **procedurals**
 > Some what like [[API]], but different in architecture (relying on HTTP methods) and different purpose ([[API]] is resource focusing)
 
-gRPC is focusing on ***calling procedurals*** without relying on HTTP methods, so it is a perfect fit for communicating between different internal services in micro service architecture 
+gRPC is focusing on ***calling procedurals*** without relying on HTTP methods, so it is a perfect fit for communicating between different **internal services** in micro service architecture 
 
 API example
 ```
@@ -45,7 +45,8 @@ After that we run compiler that will generate all functions we need to create, e
 
 
 # Create a gRPC Service itself
-Here we can define what methods we can call and what models it takes and what returns
+We define service with methods to call and what models it takes and what returns
+We need to define this service only once, like a 'prototype' and compile it to client and server
 ```idl
 service SearchService {
 	rpc Search(PersonRequest) returns (PersonResponse) {}
@@ -57,14 +58,10 @@ service SearchService {
 - **On the client side** where requests are made, those methods are called we define gRPC Stub, this service is for creating messages and sending them to the server
 > So when making request, client go to the gRPC Stub *Service*, it creates message, encodes it, sends it to the gRPC server, server catches it, handles, and passes the response back in the reverse order.
 
-> NOTE: On the handlers, we can also define a custom set of logic, to adjust *for* a request
-
-> Also we can *generate code for creating services in different languages,* just compile them later
-
 
 ---
 
-> gRPC uses [[HTTP2.0]], which uses binary format
+gRPC uses [[HTTP2.0]], which uses binary format
 
 > Also *headers* in gRPC are *handled differently*, in requests can be send only those headers that is different from the headers from the previous request
 
@@ -75,3 +72,7 @@ It's a perfect match for Micro services.
 
 
 But also gRPC can be used outside of microservices, we can use it in web app, utilizing gRPC-Web which allows making regular single request and getting stream from the server 
+
+
+
+[[gRPC Streams]]

@@ -1,4 +1,5 @@
-Part of a Go runtime, scheduler is a program or more of a **part of the program (runtime)**, so it's a subsystem code implemented with Go and assembly for performance-critical parts.
+Part of a Go [[runtime]], scheduler is a program or more of a **part of the program (runtime)**, so it's a subsystem code implemented with Go and assembly for performance-critical parts.
+Analogy would be a factory's operating system manager
 
 It is **responsible for distributing** (managing which, when, and where (on which thread) goroutine should run) goroutines across the OS threads to run on.
 

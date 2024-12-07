@@ -4,7 +4,7 @@
   "cssTheme": "Minimal",
   "translucency": true,
   "interfaceFontFamily": "",
-  "textFontFamily": "Avenir,Lora,Brush Script MT,American Typewriter",
+  "textFontFamily": "Avenir,Apple Symbols,Lora,Brush Script MT,American Typewriter",
   "baseFontSize": 16,
   "showViewHeader": true,
   "nativeMenus": true

@@ -1,8 +1,24 @@
-# language specific
+# TODO
+pipeline patterns
+outbox
+grpc streams
+sql having
+views
+
+# Language specific
+---
 [[python interview questions]]
-[[Golang Backend Interview Preparation]]
+[[Golang theory]]
+
+# Patterns
+[[concurrency patterns]]
+[[outbox]] **TODO**
 
 # Database
+---
+## sql
+[[database basics]]
+
 ## Indexes, what is it, and types
 [[indexes]]
 
@@ -17,12 +33,16 @@
 
 
 # Communications
-## messaging systems
-[[RabbitMQ]]
+---
+## asynchronous messaging systems
 [[Kafka]]
+[[RabbitMQ]]
 
-
-## containerization
+# synchronous communication
+[[gRPC]]
+[[gRPC Streams]]
+# Containerization
+---
 [[Docker basics]]
 [[Docker commands]]
 
@@ -30,14 +50,28 @@
 # tests
 [[unit tests]]
 
-# Вопросы по архитектуре и принципам разработки ПО:
+# Cache
+---
+[[redis]]
+[[cache techniques]]
 
-- В чем отличие объектно-ориентированного и функционального программирования?
-## Что такое SOLID, DRY, KISS, YAGNI?
+# Code style
+---
 - [[SOLID]]
 - [[DRY]]
 - [[KISS]]
 - [[YAGNI]]
+
+# Code architecture
+---
+- [[clean architecture]]
+- [[Domain Driven Design]]
+- [[event sourcing]]
+
+# Вопросы по архитектуре и принципам разработки ПО:
+
+- В чем отличие объектно-ориентированного и функционального программирования?
+## Что такое SOLID, DRY, KISS, YAGNI?
 - Назовите плюсы и минусы монолитной архитектуры?
 - Назовите плюсы и минусы микросервисов?
 - Как «распилить» монолит, не прекращая разработку? 
@@ -84,6 +118,7 @@
 - Что такое lambda функции? Для каких задач их лучше всего использовать? Какие есть ограничения?
 
 # Вопросы по GIT:
+[[git-basics]]
 
 - Что такое index в контексте GIT?
 - Отличие tag от branch?

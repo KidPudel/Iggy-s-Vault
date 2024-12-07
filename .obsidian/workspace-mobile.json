@@ -11,13 +11,10 @@
             "id": "6997c1adf6d04a22",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/backend interview questions.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           },
           {
@@ -26,11 +23,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/concurrency in go.md",
+                "file": "backend/database/4 levels of isolation.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "4 levels of isolation"
             }
           }
         ],
@@ -50,7 +49,9 @@
           "type": "file-explorer",
           "state": {
             "sortOrder": "alphabetical"
-          }
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
         }
       },
       {
@@ -65,7 +66,9 @@
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical"
-          }
+          },
+          "icon": "lucide-search",
+          "title": "Search"
         }
       },
       {
@@ -76,7 +79,9 @@
           "state": {
             "sortOrder": "frequency",
             "useHierarchy": true
-          }
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
         }
       },
       {
@@ -84,7 +89,9 @@
         "type": "leaf",
         "state": {
           "type": "bookmarks",
-          "state": {}
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
         }
       },
       {
@@ -96,7 +103,9 @@
             "sortOrder": "frequency",
             "showSearch": false,
             "searchQuery": ""
-          }
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
         }
       }
     ],
@@ -120,7 +129,9 @@
             "searchQuery": "",
             "backlinkCollapsed": false,
             "unlinkedCollapsed": true
-          }
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
         }
       },
       {
@@ -132,7 +143,9 @@
             "file": "languages/golang/concurrency in go.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
-          }
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
         }
       },
       {
@@ -142,7 +155,9 @@
           "type": "outline",
           "state": {
             "file": "languages/golang/concurrency in go.md"
-          }
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
         }
       }
     ],
@@ -163,9 +178,11 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "backend/database/ACID.md",
+    "backend/database/transactions.md",
+    "languages/golang/concurrency in go.md",
     "languages/golang/why goroutines are lightweight.md",
     "languages/golang/Golang Backend Interview Preparation.md",
-    "languages/golang/concurrency in go.md",
     "languages/golang/golang scheduler.md",
     "languages/golang/golang interfaces.md",
     "general tech/interface.md",
@@ -186,8 +203,6 @@
     "serialization.md",
     "Untitled.md",
     "languages/python/python interview questions.md",
-    "backend/network/XSS.md",
-    "backend/network/hashing.md",
-    "backend/network/claims.md"
+    "backend/network/XSS.md"
   ]
 }

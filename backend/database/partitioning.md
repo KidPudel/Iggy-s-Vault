@@ -1,4 +1,4 @@
-Process in database where very large tables or databases are divided into smaller parts, which increases load, throughput and fault tolerance
+Process in database where very large tables or databases are divided into smaller parts, which increases load, throughput/speed and fault tolerance
 
 Types of partitioning:
 - [[sharding]] (horizontal partitioning)
