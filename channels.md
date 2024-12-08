@@ -1,4 +1,4 @@
-Channel is a global typed conduct (pipe, tube) or [[message queue]], through which you can send and receive data with the help of channel operator `<-`
+Channel is a *global/common for use* typed conduct (pipe, tube) or [[message queue]], through which you can send and receive data with the help of channel operator `<-`
 
 > channels kind of like [[errors]] in golang, but for concurrent operations, they are values, so we can pass them, manage them, iterate them, print them, mess around with them.
 
