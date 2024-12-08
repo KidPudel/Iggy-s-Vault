@@ -5,7 +5,7 @@ Context is a mechanism for carrying:
 
 # how to use
 
-> NOTE: key, must not be not be a string or any build in types, to avoid collisions with packages using context
+> NOTE: key, must not be be a string or any build in types, to avoid collisions with packages using context
 
 ```go
 type SgContextKey string
@@ -89,5 +89,28 @@ func main() {
 
 	// Start the server
 	http.ListenAndServe(":8080", nil)
+}
+```
+
+
+# Cancellation
+```go
+ctx, cancel := context.WithCancel(context.Background())
+
+for {
+	go worker(ctx)
+}
+cancel()
+```
+`
+```go
+func worker(ctx context.Context, in <-chan int) {
+	for n := range in {
+		select {
+			case out <- n:
+			case <-ctx.Done():
+				return
+		}
+	}
 }
 ```

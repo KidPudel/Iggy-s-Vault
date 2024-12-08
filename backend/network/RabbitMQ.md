@@ -38,7 +38,7 @@ channel = connection.channel()
 
 
 ### Declare and check queue
-Before sending messages to the consumer, we need to make sure that [[Message queue]] exists, otherwise RabbitMQ will drop a message
+Before sending messages to the consumer, we need to make sure that [[message queue]] exists, otherwise RabbitMQ will drop a message
 ```python
 channel.queue_declare(queue="hello")
 ```

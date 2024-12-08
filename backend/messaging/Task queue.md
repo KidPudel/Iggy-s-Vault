@@ -5,4 +5,4 @@ Dedicated worker processes constantly monitor task queue for work/task to perfor
 
 
 Task queue communicates via messages, usually using [[message broker]] to mediate between clients and workers
-So worker here is the other side that listens, just like in regular [[Message queue]], but instead of just some client, there is a worker
+So worker here is the other side that listens, just like in regular [[message queue]], but instead of just some client, there is a worker

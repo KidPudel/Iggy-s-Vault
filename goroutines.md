@@ -1,9 +1,7 @@
-Unlike [[kotlin coroutines]], which are kind of workers in a thread, **Goroutines are _actual threads_**, but way more lightweight.  
-
-Unlike usual kernel threads, that are managed by operating system, **goroutines are _user-space threads managed by Go runtime_**.
-
 Actually goroutine is not a lightweight thread, it is an abstraction of a function that is being launched asynchronously and smartly managed by [[runtime]] and controlled by [[golang scheduler]].
-[[why goroutines are lightweight]]
+[[why goroutines are lightweight]].
+
+> NOTE: All goroutines are allocated in [[heap]] and not garbage collected ([[garbage collector]]), so they **must exit on their own**.
 
 ```go
 func sleepTrack(start int) {
