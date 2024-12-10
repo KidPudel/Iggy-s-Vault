@@ -24,3 +24,7 @@ The evaluation of `sleepTrack` and `start` happens is current goroutine,
 While executing happens in a new goroutine.
 
 > **IMPORTANT**: Goroutines ***share the same address space***, so accessing shared data MUST be in synchronized way (to avoid deadlocks and rase conditions), for that Go has useful primitives like mutexes and atomic for protecting shared data accross Goroutines
+
+
+in 64x is 1gb max
+32 250 max

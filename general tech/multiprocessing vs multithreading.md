@@ -14,4 +14,4 @@ Threads are better for I/O because of:
 
 But for I/O is better [[asyncio coroutines]]
 
-[[IO-bound vs CPU-bound processing]]
+[[IO-bound or CPU-bound processing]]

@@ -152,3 +152,6 @@ having count(usr_id) > 5;
 
 
 # Procedures
+
+
+# Explain

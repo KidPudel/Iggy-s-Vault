@@ -1,4 +1,4 @@
-Developed at Facebook [[NoSQL database]] to manage massive amounts of data fast
+Developed at Facebook [[non-relational database]] to manage massive amounts of data fast
 # Architecture
 [[nodes]] and [[cluster]]
 - Node is a single instance of a Cassandra running on a server

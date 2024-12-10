@@ -5,3 +5,9 @@ It allows for:
 - Dynamic and expressive data model
 - Specialized query operations
 - Greater scalability
+
+
+When to use:
+- Unstructured/semi-structured data: flexible schema or [[JSON]]-like documents
+- [[horizontal scaling]]
+- High throughput like in [[redis]]

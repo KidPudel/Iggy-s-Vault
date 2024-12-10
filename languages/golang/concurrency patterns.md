@@ -1,7 +1,7 @@
 https://go.dev/blog/pipelines
 
 Go's concurrency approach makes it easy to build/construct streaming data pipeline that takes the best of both worlds, make efficient use of I/O and multiple CPUs with goroutines
-[[IO-bound vs CPU-bound processing]]
+[[IO-bound or CPU-bound processing]]
 
 but what is pipeline? [[pipeline pattern in golang]]
 
@@ -50,8 +50,8 @@ func main() {
 
 # Fan-out, Fan-in
 ---
-Multiple functions can read from **one** channel ([[channels]]), to provide a way to distribute work among a group of workers *potentially* to parallelize CPU use and I/O. This is called ***Fan-out***, it widens/spreads the gates
-
+Multiple functions can read from **one** [[channel]], to provide a way to distribute work among a group of workers *potentially* to parallelize CPU use and I/O. This is called ***Fan-out***, it widens/spreads the gates
+==**In a high load service, we can "fan-out" at every corner, where there is a [[IO-bound or CPU-bound processing]]**==
 
 ```go
 	in := gen(5, 34, 3, 12)
@@ -163,7 +163,7 @@ Often we need to just read some values to get going, or we listening for a speci
 
 If stage fails to consume all incoming values, the goroutine (sender) attempting to send value downstream will block indefinitely
 This is a **resource leak**, so we need to cover the case if some downstream stage fail/don't want to receive all inbound values.
-One way is to change to outbound [[channels]] to have a buffer, this means it has all space it needs to send all values at once ***without blocking***, which means we don't need a goroutine
+One way is to change to outbound [[channel]] to have a buffer, this means it has all space it needs to send all values at once ***without blocking***, which means we don't need a goroutine
 ```go
 func gen(nums ...int) <-chan int {
 	out := make(chan int, len(nums))

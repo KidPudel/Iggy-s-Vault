@@ -3,10 +3,18 @@
 [[goroutines]]
 # Channels
 ---
-[[channels]]
+[[channel]]
 # Patterns
 ---
 [[concurrency patterns]]
+
+## When to use concurrency
+
+In a high load service, we can "fan-out" at every corner, where there is a [[IO-bound or CPU-bound processing]]
+and im not talking specifically about fan-out pattern, but rather about concurrency feature like delegating I/O or CPU heavy processes to several "workers" in this case - [[goroutines]]
+
+
+---
 # Waiting for a group of goroutines
 To catch/**wait** for all **goroutines to finish**, use `sync.WaitGroup`.  
 It works by counting active goroutines, by using:

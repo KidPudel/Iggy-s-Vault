@@ -20,3 +20,19 @@ Interface contains of 2 pieces.
 2. Data pointer: pointer to the data
 
 Thats why `nil` pointer is not the same as `nil`
+
+
+# Detect type
+or type assertion with `v, ok := i.(string)`
+or with [[reflection]]
+
+```go
+func main() {
+    x := 42
+    t := reflect.TypeOf(x) тоже для типов по сути
+    fmt.Println("Type:", t)       // Type: int
+    fmt.Println("Kind:", t.Kind()) // Kind: int
+}
+
+```
+

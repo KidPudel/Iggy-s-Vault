@@ -1,17 +1,12 @@
+A server that hosts the [[message queue]] and serves the clients
+
 > 	Intermediate layer that allows two sides to communicate with each other through messaging protocol, by ***asynchronously***  sending messages to not wait for the response, and just hit the  and maintaining a message queue, as well as following some rules on how to send message
 
 **Intermediate layer** of software that allows two sides to communicate with each other by *translating messages between format messaging protocols*, this allows them "talk" with each other even on different technologies (languages) ***asynchronously** to not wait the consumer to receive the message* and *be sure that message will be delivered* maintaining a [[message queue]]
 
 It is responsible for routing from sender to receiver as well as formatting and filtering messages based on the rules.
 
-# models
-## point-to-point messaging
-distribution pattern that utilizes message queues with one-to-one relationship between sender and receiver. Each message is *sent to only one receiver by only one sender and must be acted upon only once*.
-Use case: is for payment processing, because we need to accomplish financial transaction.
-
-## public/subscribe messaging (pub/sub)
-The producer of messages adds a message to the [[topic]] and consumers subscribes to to topics from which they want to receive messages. One-to-many relationship, so all messages are published to a [[topic]] are distributed to all subscribers.
-Use case: Updating landing times of an airline, driver position on the map
+There are several [[message patterns]] to utilize
 
 # message broker vs api
 ## [[API]]

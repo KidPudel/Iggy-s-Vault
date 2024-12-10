@@ -1,11 +1,18 @@
-[[message broker]] that designed for higher level of data load, which makes it event streaming platform with message broker functionality.
-This makes it a platform for a *real time data transfer with low latency and high-throughput*
+Kafka is distributed event streaming platform, that is designed to handle real-time data efficiently
 
-Kafka's primarily focused on pub/sub
-# Essence of the Kafka
-- **[[message broker]]s**: Kafka **cluster** (group of) stores one or more broker servers to receive and store data from producer and then sends it to the data consumer. Each brokers manages storage and replication partition
-- **[[topic]]s**: Topics in Kafka are partitioned logs(journals), meaning each topic is divided into one or more partitions
-- **partitions**: Sequential, ordered immutable set of records (messages, events) within the [[topic]], each partition is *append-only* log, and records are assigned in unique, sequential identifier, called **offset**
-So it's not traditional message queue
+It works by [[producer]] sending message (creating a record) to the [[message queue]] and [[consumer]] will read those records with the help of [[message broker]]
+Records then identified by sequential number called
 
-![[Pasted image 20240407124019.png]]
+The load could become really heavy, and server that handling the [[message queue]] could start struggling to process.
+Here comes the [[partition in kafka]], the host of the one or more partition is a [[message broker]]
+To which partition to write a record comes the [[partition key]]
+
+So record could be found by [[partition in kafka]] number and [[offset in partion]]
+
+A group of the partitions that store the same type of messages are called [[topic]]
+A group of the consumers are called a [[consumer group]]
+
+
+Kafka has different [[kafka delivery semantics]]
+
+[[message patterns]]

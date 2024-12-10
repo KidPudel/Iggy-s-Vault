@@ -12,7 +12,13 @@ views
 
 # Patterns
 [[concurrency patterns]]
-[[outbox]] **TODO**
+[[message patterns]]
+[[outbox]] 
+
+
+# System design
+---
+[[Designing data-intensive applications]]
 
 # Database
 ---
@@ -127,3 +133,15 @@ views
 - Что выполняет команда git rebase -i HEAD~15?
 - За что отвечает команда git stash?
 - Какие вы знаете модели ветвления в Git?
+
+
+
+
+recent interesting tasks
+at the job: 
+- scam checks with bytes matching bytes , scam with scam, scam with true, 17 + s3 
+- reading with pdf reader
+- move bank configs
+personal stuff:
+- 3d engine
+- designing order processing system during zombie apocalypse

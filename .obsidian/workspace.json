@@ -4,91 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4aad21adf8008417",
+        "id": "c1a25d5ccf8590fa",
         "type": "tabs",
         "children": [
           {
-            "id": "6e43e4c83ee66835",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "d39e16b20d589b56",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CS/Divide and conqure.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Divide and conqure"
-            }
-          },
-          {
-            "id": "4d3c60522f7390e9",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          },
-          {
-            "id": "6e8272e44ad6d522",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/design/Consistency.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Consistency"
-            }
-          },
-          {
-            "id": "5ee942bd5616e45d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/HTTP2.0.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HTTP2.0"
-            }
-          },
-          {
-            "id": "5486ad9676113374",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "backend/network/HTTP2.0.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HTTP2.0"
-            }
-          },
-          {
-            "id": "0d94f84f7f50b544",
+            "id": "39992bfe5fa2df48",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -103,37 +23,127 @@
             }
           },
           {
-            "id": "ef0761100ecfc8bc",
+            "id": "d8631034e99df758",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/Golang theory.md",
+                "file": "backend/database/redis.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Golang theory"
+              "title": "redis"
             }
           },
           {
-            "id": "5307d22a5e923ebb",
+            "id": "4031082e44560034",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "channels.md",
+                "file": "backend/network/Kafka.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "channels"
+              "title": "Kafka"
+            }
+          },
+          {
+            "id": "aa85e35234881088",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/golang/concurrency in go.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "concurrency in go"
+            }
+          },
+          {
+            "id": "df24200f8b5e1ae5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "backend/backend and systems design questions.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "backend and systems design questions"
+            }
+          },
+          {
+            "id": "68e2edbc7fb8fca0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "backend/backend and systems design questions.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "backend and systems design questions"
+            }
+          },
+          {
+            "id": "e0e07fc432cce7f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "backend/design/Designing data-intensive applications.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Designing data-intensive applications"
+            }
+          },
+          {
+            "id": "0c4d476cf754410d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "design patterns.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "design patterns"
+            }
+          },
+          {
+            "id": "0ae78bc73725953b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "backend/network/three-way handshake.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "three-way handshake"
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -164,7 +174,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "WaitGroup",
+                "query": "Scalabil",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -190,8 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.5,
-    "collapsed": true
+    "width": 409.5
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -207,7 +216,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "channels.md",
+                "file": "backend/network/topic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -217,7 +226,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for channels"
+              "title": "Backlinks for topic"
             }
           },
           {
@@ -226,12 +235,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "channels.md",
+                "file": "backend/network/topic.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from channels"
+              "title": "Outgoing links from topic"
             }
           },
           {
@@ -303,34 +312,34 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5307d22a5e923ebb",
+  "active": "0c4d476cf754410d",
   "lastOpenFiles": [
-    "languages/golang/concurrency patterns.md",
-    "languages/golang/Golang theory.md",
-    "languages/golang/concurrency in go.md",
-    "languages/golang/go defer.md",
-    "channels.md",
-    "backend/network/message queue.md",
-    "languages/golang/channel axioms.md",
-    "languages/golang/context.md",
+    "backend/database/redis.md",
+    "design patterns.md",
+    "backend/design/CAP.md",
+    "backend/design/Designing data-intensive applications.md",
     "backend/backend and systems design questions.md",
-    "backend/network/HTTP2.0.md",
+    "projects/chinese bee/base.md",
     "backend/design/Consistency.md",
-    "CS/Divide and conqure.md",
-    "languages/golang/why goroutines are lightweight.md",
+    "backend/database/types of indexes.md",
+    "consumer group.md",
+    "backend/database/primary key.md",
+    "backend/database/indexes.md",
+    "ACK.md",
+    "backend/database/database basics.md",
+    "languages/golang/go garbage collector.md",
+    "general tech/garbage collector.md",
+    "languages/golang/golang interfaces.md",
+    "languages/python/reflection.md",
+    "general tech/interface.md",
+    "atomics.md",
     "goroutines.md",
-    "heap.md",
-    "stack.md",
-    "languages/golang/segmented stack in go.md",
-    "projects/chinese bee/stack for chinese bee.md",
-    "languages/golang/errors.md",
-    "pipeline pattern in golang.md",
-    "general tech/multiplexer.md",
-    "languages/golang/golang mutex.md",
-    "languages/golang/go map under the hood.md",
-    "general tech/slices under the hood.md",
-    "languages/golang/golang scheduler.md",
-    "CS/Data structures.md",
+    "languages/golang/concurrency in go.md",
+    "languages/golang/Golang theory.md",
+    "message patterns.md",
+    "backend/network/Kafka.md",
+    "kafka delivery semantics.md",
+    "languages/golang/concurrency patterns.md",
     "backend/design",
     "CS/algorithms",
     "Pasted image 20241022090626.png",
