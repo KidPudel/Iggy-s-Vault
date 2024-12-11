@@ -9,5 +9,6 @@ type SliceHeader struct {
 ```
 So when passing slice to the function, you pass a **copy of the header**.
 When pointing to the backing array and changing the value, it will affect and *let caller to observe the changes*.
-**But** when appending, to the slice, we ***change len and cap locally***, so caller won't be able to observe the changes.
+
+**But** when appending `append`, to the slice, and if  cap is exceeded, then slice willwe ***change len and cap locally***, so caller won't be able to observe the changes.
 

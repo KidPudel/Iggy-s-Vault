@@ -5,6 +5,7 @@ Go's philosophy is intend to implement those base blocks to enhance the function
 If you know that you are going to have custom version of the default one -> this is an interface, and you need to implement it
 
 Or many versions that at the base basically the same, use interfaces
+
 ## wrapping
 > ***NOTE:*** if some function takes an interface, and some type implements it, (for example `ServeMux` that implements `Handler`),  with some functionality, we can wrap with another custom implementation of interfaces
 
@@ -18,6 +19,13 @@ type Connecter interface {
 Interface contains of 2 pieces.
 1. Type information: **metadata about the concrete type** of the value stored in the interface, like size of a string, alignment in memory, kind and so on
 2. Data pointer: pointer to the data
+
+```go
+type error interface {
+	TypeInfo
+	DataPointer unsafe.Pointer
+}
+```
 
 Thats why `nil` pointer is not the same as `nil`
 
@@ -36,3 +44,19 @@ func main() {
 
 ```
 
+
+
+```go
+
+func printErr(err error) {
+	if err != nil {
+		fmt.Println("error: ", err)
+	}
+}
+
+func main() {
+	err := *MyError
+	printErr(err) // err doesnt equals err, but its value is nil pointer
+	// so "error: nil"
+}
+```

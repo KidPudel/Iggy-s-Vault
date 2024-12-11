@@ -138,7 +138,8 @@ function that takes set of values and return singe value.
 - `SUM()`
 - `AVG()`
 
-# Having
+# HAVING
+---
 `HAVING` was added because `WHERE` keyword cannot be used with aggregate functions
 ```sql
 select count(usr_id), country
@@ -148,6 +149,7 @@ group by country
 having count(usr_id) > 5;
 ```
 
+
 # Views
 
 
@@ -155,3 +157,36 @@ having count(usr_id) > 5;
 
 
 # Explain
+
+
+# GROUP BY
+---
+Grouping rows that have the same value into a summary rows, like "find the number of customers in **each country**"
+```sql
+select count(id), country
+from customers
+group by country;
+```
+It is of often used with aggregate functions to group the result-set by one or more columns 
+```sql
+select count(usr_id), country
+from users
+where country != "Finland"
+group by country
+having count(usr_id) > 5;
+```
+
+Or another example: list users and their purchases that **made purchases greater than 5000 dollars**
+User and purchase has one to many relationship, so users will appear in the table, so we can should join here
+so here we need to group by users and find the sums
+```sql
+select u.id, sum(p.price)
+from users u
+join purchases p on u.id = u.user_id
+group by u.id
+having sum(p.price) > 5000
+
+```
+
+# DISTINCT
+unique rows
