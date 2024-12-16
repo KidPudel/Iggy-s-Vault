@@ -33,3 +33,4 @@ darwin-rebuild switch --flake ~/.config/nix --impure
 # Home-manager
 home-manager is a user scoped config manager
 Just add `home.nix` to the `flake.nix`
+but now i use [[stow]]

@@ -1,6 +1,7 @@
 g(anything)**R**emote**P**rocedural**C**alls
 Framework to make **remote** **calls** to make **procedurals**
-> Some what like [[API]], but different in architecture (relying on HTTP methods) and different purpose ([[API]] is resource focusing)
+
+In [[RESTful API]] we rely on [[URL]], in gRPC this mechanism of hitting the destination is fundamentally different. It relies on defining an *isolated* contract by ***service definition***
 
 gRPC is focusing on ***calling procedurals*** without relying on HTTP methods, so it is a perfect fit for communicating between different **internal services** in micro service architecture 
 

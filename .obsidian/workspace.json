@@ -103,28 +103,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/design/Designing data-intensive applications.md",
+                "file": "terminal/nix.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Designing data-intensive applications"
+              "title": "nix"
             }
           },
           {
-            "id": "0c4d476cf754410d",
+            "id": "9f3feeb23149522e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/database basics.md",
+                "file": "stow.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "database basics"
+              "title": "stow"
             }
           }
         ],
@@ -159,7 +159,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Scalabil",
+                "query": "home manager",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -180,13 +180,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -298,34 +296,34 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0c4d476cf754410d",
+  "active": "9f3feeb23149522e",
   "lastOpenFiles": [
-    "backend/network/three-way handshake.md",
+    "Symlink.md",
+    "stow.md",
+    "terminal/nix.md",
+    "backend/network/Kafka.md",
+    "channel.md",
+    "languages/golang/concurrency in go.md",
+    "goroutines.md",
+    "general tech/slices under the hood.md",
+    "backend/network/gRPC.md",
+    "backend/design/Designing data-intensive applications.md",
+    "backend/network/Protocol Buffers - Protobuf.md",
+    "backend/network/URL.md",
     "backend/database/database basics.md",
+    "backend/network/three-way handshake.md",
     "languages/golang/golang interfaces.md",
     "general tech/interface.md",
-    "general tech/slices under the hood.md",
     "languages/golang/go string.md",
-    "backend/network/gRPC.md",
     "cache techniques.md",
     "design patterns.md",
     "backend/database/redis.md",
     "backend/design/CAP.md",
-    "backend/design/Designing data-intensive applications.md",
     "backend/backend and systems design questions.md",
     "projects/chinese bee/base.md",
     "backend/design/Consistency.md",
     "backend/database/types of indexes.md",
     "consumer group.md",
-    "backend/database/primary key.md",
-    "backend/database/indexes.md",
-    "ACK.md",
-    "languages/golang/go garbage collector.md",
-    "general tech/garbage collector.md",
-    "languages/python/reflection.md",
-    "atomics.md",
-    "goroutines.md",
-    "languages/golang/concurrency in go.md",
     "backend/design",
     "CS/algorithms",
     "Pasted image 20241022090626.png",
