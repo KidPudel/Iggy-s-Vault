@@ -348,3 +348,6 @@ But also gRPC can be used outside of microservices, we can use it in web app, ut
 
 
 [[gRPC Streams]]
+
+
+It's not that deep, all those technologies, are tools, and tools are for different usecases, it's natural.
