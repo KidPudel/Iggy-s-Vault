@@ -1,5 +1,24 @@
-Actually goroutine is not a lightweight thread, it is an abstraction of a function that is being launched asynchronously and smartly managed by [[runtime]] and controlled by [[golang scheduler]].
+Goroutine are modern version of [[green threads]], it is an abstraction above the function, runtime-managed ***execution context*** (more about that below) that is being launched asynchronously and smartly managed by [[runtime]] and controlled by [[golang scheduler]].
 [[why goroutines are lightweight]].
+
+# what is the execution context here?
+Since goroutines are manages functions
+- Its own [[stack]]
+- [[program counter]]
+- [[runtime]] [[metadata]], containing information to manage goroutine
+	- state: running, waiting, ready
+	- which os thread it is currently mapped to
+
+
+# [[green threads]]?
+Yes
+1. Execute code concurrently
+2. Managed by go [[runtime]], so kernel knows nothing about goroutines
+3. scheduling goroutines by [[golang scheduler]]
+But more
+1. [[runtime]] creates and manages context for each goroutines
+2. they are not blocking [[syscalls]]
+
 
 > NOTE: All goroutines are allocated in [[heap]] and not garbage collected ([[garbage collector]]), so they **must exit on their own**.
 

@@ -15,7 +15,7 @@ if they can, they will keep the memory the same
 `len` is an indicator to where to append, also it is like [[cursor]], as in `append()` section will become lear
 `cap` is the edge indicating when to allocate a new memory
 # `append()`
-if cap doesn't exceeded, `append()` returns *the new struct*, with changed `len`, but **the rest is the same**, meaning the data pointed is the same
+if cap doesn't exceeded, `append()` returns *the new struct*, with changed `len`, but **the rest is the same**, meaning the memory that pointer is pointing to backing array is the same
 if cap hit the limit, then *the new struct* with **new memory** is returned
 
 
@@ -58,3 +58,7 @@ mini = append(mini, 10) // len 3, cap 6
 fmt.Println(s) // 1 2 10 4 5
 ```
 since we utilizing the same memory, and pointing to overriding existing memory because `Len` points to the 3rd element and overrides the memory
+
+
+# `copy()`
+Unlike `append()`, `copy()` never changes capacity or backing array, instead it iterates over the `src` and **overwrites** the `dst` memory with up to the smallest of two of them (src or dst)

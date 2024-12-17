@@ -1,2 +1,2 @@
-Stack in memory is a fast limited contiguous space (but not in [[segmented stack in go]]) for storing temporary variables and function calls during program execution that **automatically memory managed**.
+Stack is a fast limited contiguous memory preallocated space (but not in [[segmented stack in go]]) for storing temporary variables and function calls during program execution that **automatically memory managed**.
 Acts by Last-in-First-out

@@ -35,7 +35,7 @@ Benefits:
 # vi
 - `leader-[`: enter
 - `enter`: exit
-- `space`: visual mode
+- `space`/`V`: visual mode
 - with yank plugin copy paste as usual cmd-c and cmd-v
 
 
