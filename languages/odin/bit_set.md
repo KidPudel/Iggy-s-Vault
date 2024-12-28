@@ -27,7 +27,7 @@ assert(card(less_ten) == 3)
 ```
 
 
-Bit sets are often used to denote flags, because they are efficient, type safe and fast for set operations because of bitwise operations.
+Bit sets are often used to denote flags, because they are ***value fixed and restricted by specific type and range*** and fast for set operations because of bitwise operations.
 
 ```odin
 States :: enum {
