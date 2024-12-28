@@ -1,0 +1,1 @@
+In database views are ***virtual tables*** that store the SQL query to execute, which will get the result from the actual physical tables that store data.

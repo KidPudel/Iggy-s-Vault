@@ -1,0 +1,1 @@
+Backend is the service itself, it is the heart, it is the soul, it is not the part of the service, it is the service itself. The frontend is just a means of communicating, the way for the users to interact with it, via APIs and points that backend slash the service allowed it to communicate with.

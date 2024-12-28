@@ -6,4 +6,4 @@
     
 **Interface Segregation** → interfaces should not force clients to implement something they don’t need, ***interfaces should not be monolithic*** (cleaner and more maintainable code)
     
-**Dependency Inversion** → high-level modules (application logic) should not depend on low-level modules (some specific implementations of some part like repositories) but both should depend on abstract (interface of abstract class) (lose coupling and dependency injection)
+**Dependency Inversion** → high-level modules (application logic) should not depend on low-level modules (some specific implementations of some part like repositories or db calls) but both should depend on abstract (interface of abstract class) (lose coupling and dependency injection)

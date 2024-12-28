@@ -1,1 +1,2 @@
+[[RAM]] space minus [[stack]] space
 flexible space where dynamic objects allocated, and unlike [[stack]] where last-in-first-out, the heap allows for flexible allocation and deallocation of memory and limited only by [[RAM]]

@@ -23,13 +23,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/concurrency patterns.md",
+                "file": "backend.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "concurrency patterns"
+              "title": "backend"
             }
           }
         ],
@@ -178,6 +178,8 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "languages/golang/concurrency patterns.md",
+    "backend.md",
     "design patterns.md",
     "backend/database/4 levels of isolation.md",
     "backend/database/ACID.md",
@@ -201,8 +203,6 @@
     "anonymous functions.md",
     "backend/database/scheduler.md",
     "s3.md",
-    "4 levels of isolation.md",
-    "serialization.md",
-    "Untitled.md"
+    "4 levels of isolation.md"
   ]
 }

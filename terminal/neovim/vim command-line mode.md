@@ -57,3 +57,4 @@ find
 ```
 :%s/original/replacement/g(for global)c(ask)
 ```
+where `.` could mean any character

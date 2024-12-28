@@ -62,3 +62,8 @@ To add results of bash commands use `#()` syntax
 
 
 >HINT: select and open links using `shift`
+
+
+
+# MArking?
+leader + m

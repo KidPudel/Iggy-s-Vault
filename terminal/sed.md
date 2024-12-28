@@ -39,7 +39,10 @@ grep '45p' file.txt
 
 [more info on commands]()
 
-
+replace text in all non-binary files in current directory
+```sh
+LC_CTYPE=C find . -type f -exec sed -i '' 's/receipt-analysis-service/bank-config-service/g' {} +
+```
 
 ---
 

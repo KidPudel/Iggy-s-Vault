@@ -1,0 +1,1 @@
+unique fingerprint that allows two files verify they are identical.

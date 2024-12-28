@@ -1,3 +1,6 @@
+All memory allocations together are just a ***lifetime***, this is the best way of thinking about memory management, think of allocations per lifetime of some part.
+
+
 In Golang memory allocation happening when:
 - declare variables
 - call `new` function
