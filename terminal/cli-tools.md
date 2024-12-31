@@ -5,3 +5,6 @@
 - tree
 - [[find]]
 - [[mv]]
+- [[fzf]]
+
+- ctrl-r: search in history of commands

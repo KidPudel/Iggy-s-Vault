@@ -1,4 +1,5 @@
-Enumeration types define a new type whose values consist of the ones specified, they are also ordered
+Enumeration types define a new type whose values consist of the strictly ones specified, they are also ordered
+
 ```odin
 Foo :: enum {
 	A,
