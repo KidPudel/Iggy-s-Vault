@@ -233,21 +233,6 @@
             }
           },
           {
-            "id": "4cf371737791f654",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "languages/odin/union.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "union"
-            }
-          },
-          {
             "id": "ea7d6dc20f3409e4",
             "type": "leaf",
             "state": {
@@ -263,7 +248,7 @@
             }
           }
         ],
-        "currentTab": 15
+        "currentTab": 14
       }
     ],
     "direction": "vertical"
@@ -294,7 +279,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "reflect",
+                "query": "data str",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -335,7 +320,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/network/topic.md",
+                "file": "languages/odin/union.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -345,7 +330,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for topic"
+              "title": "Backlinks for union"
             }
           },
           {
@@ -431,8 +416,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4cf371737791f654",
+  "active": "804d4970bda4bf43",
   "lastOpenFiles": [
+    "all computer can do (programming).md",
+    "procedures.md",
+    "terminal/neovim/resolve conflict with neovim.md",
+    "backend/versioning/git-basics.md",
+    "languages/odin/allocators.md",
+    "languages/zig/error handling.md",
+    "languages/odin/union.md",
+    "languages/odin/soa.md",
+    "languages/odin/type assertion.md",
+    "tags.md",
+    "languages/odin/enum.md",
+    "languages/odin/dynamic arrays.md",
+    "languages/odin/fixed array.md",
+    "general tech/polymorphism.md",
+    "CS/polymorphism.md",
+    "fzf.md",
     "architecture/Design.md",
     "architecture/saga.md",
     "architecture/oop.md",
@@ -443,22 +444,6 @@
     "languages/golang/server-implementation.md",
     "backend/database/trigger.md",
     "backend/database/trigger function.md",
-    "backend/database/function.md",
-    "flyway.md",
-    "fzf.md",
-    "terminal/cli-tools.md",
-    "languages/odin/union.md",
-    "procedures.md",
-    "languages/odin/enum.md",
-    "languages/odin/bit_set.md",
-    "mathematical notion of a set.md",
-    "languages/odin/dynamic arrays.md",
-    "languages/odin/slices.md",
-    "languages/odin/fixed array.md",
-    "languages/odin/alias.md",
-    "languages/odin/distinct.md",
-    "backend/database/migrations.md",
-    "languages/golang/alias.md",
     "backend/design",
     "CS/algorithms",
     "Pasted image 20241022090626.png",

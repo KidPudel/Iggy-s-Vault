@@ -65,44 +65,20 @@ Firstly to use them, we need to set up shell integration
 ---
 
 - `CTRL-T` - Paste the selected files and directories onto the command-line
-    - The list is generated using `--walker file,dir,follow,hidden` option
-        - You can override the behavior by setting `FZF_CTRL_T_COMMAND` to a custom command that generates the desired list
-        - Or you can set `--walker*` options in `FZF_CTRL_T_OPTS`
-    - Set `FZF_CTRL_T_OPTS` to pass additional options to fzf
-        
-        ```shell
-        # Preview file content using bat (https://github.com/sharkdp/bat)
-        export FZF_CTRL_T_OPTS="
-          --walker-skip .git,node_modules,target
-          --preview 'bat -n --color=always {}'
-          --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-        ```
-        
-    - Can be disabled by setting `FZF_CTRL_T_COMMAND` to an empty string when sourcing the script
 - `CTRL-R` - Paste the selected command from history onto the command-line
-    - If you want to see the commands in chronological order, press `CTRL-R` again which toggles sorting by relevance
-    - Press `CTRL-/` or `ALT-/` to toggle line wrapping
-    - Set `FZF_CTRL_R_OPTS` to pass additional options to fzf
-        
-        ```shell
-        # CTRL-Y to copy the command into clipboard using pbcopy
-        export FZF_CTRL_R_OPTS="
-          --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-          --color header:italic
-          --header 'Press CTRL-Y to copy command into clipboard'"
-        ```
-        
 - `ALT-C` - cd into the selected directory
-    - The list is generated using `--walker dir,follow,hidden` option
-    - Set `FZF_ALT_C_COMMAND` to override the default command
-        - Or you can set `--walker-*` options in `FZF_ALT_C_OPTS`
-    - Set `FZF_ALT_C_OPTS` to pass additional options to fzf
-        
-        ```shell
-        # Print tree structure in the preview window
-        export FZF_ALT_C_OPTS="
-          --walker-skip .git,node_modules,target
-          --preview 'tree -C {}'"
-        ```
-        
-    - Can be disabled by setting `FZF_ALT_C_COMMAND` to an empty string when sourcing the script
+
+
+
+# Search syntax
+
+| Token     | Match type                              | Description                                  |
+| --------- | --------------------------------------- | -------------------------------------------- |
+| `sbtrkt`  | fuzzy-match                             | Items that match `sbtrkt`                    |
+| `'wild`   | exact-match (quoted)                    | Items that include `wild`                    |
+| `'wild'`  | exact-boundary-match (quoted both ends) | Items that include `wild` at word boundaries |
+| `^music`  | prefix-exact-match                      | Items that start with `music`                |
+| `.mp3$`   | suffix-exact-match                      | Items that end with `.mp3`                   |
+| `!fire`   | inverse-exact-match                     | Items that do not include `fire`             |
+| `!^music` | inverse-prefix-exact-match              | Items that do not start with `music`         |
+| `!.mp3$`  | inverse-suffix-exact-match              | Items that do not end with `.mp3`            |

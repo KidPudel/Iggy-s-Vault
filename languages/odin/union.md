@@ -14,11 +14,11 @@ s, isString := v.(string) // true
 ```
 
 
-In C unions are structures, but all members occupy the same memory, so when you write to one, all members gets overwritten
+structures, but instead of fields being aligned in memory, all members occupy the same memory, so when you write to one, all members gets overwritten
 
 
 There are 2 main use cases
-1. Storing a bunch of different types and you don't know what type exactly it will be at runtime
+1. Storing a bunch of different types and you don't know what type exactly it will be at runtime. in other words [[polymorphism]]
 2. Type punning, to represent something usual in unusual format
 
 

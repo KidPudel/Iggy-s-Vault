@@ -3,9 +3,14 @@ In golang methods has following syntax
 func (t LockedParameterOrOwner) FunctionName(...p Params) error {}
 ```
 
-there are no such thing as objects or behavior in computer, there are only data and procedures/functions
+there are no such thing as objects or behavior in computer, there are only data and procedures that manipulate on that data
+
 But it is nice to define some *boundaries*, when there are some "exclusive" procedures happening with one data structure, that acts as pivot.
 So this is a way of associating procedurals for some specific data structure.
+
+So here methods, are just plane procedures that are ***scoped*** for ***specific data structures***
+
+Because golang is service language, where data structures are more central and advanced part
 
 To define outline for the procedures we can achieve it by attaching non negotiable/**locked** (different from necessary) parameter that acts as the owner data structure/type and also makes it exclusive to that type. 
 

@@ -46,7 +46,7 @@ for direction, index in Direction {
 
 
 # Enumerated array
-Allows to use Enum values as indexes
+Allows to use Enum values as indexes for [[fixed array]]
 
 ```odin
 Direction_Vectors :: [Direction]Vector {
@@ -56,3 +56,9 @@ Direction_Vectors :: [Direction]Vector {
 	.West = { -1, 0 },
 }
 ```
+
+- **where you have one type with different data** so it is for one purpose like list of different sounds for different events
+
+When you need to make
+1. accessing members meaningful
+2. predictable, fixed size, dense mapping
