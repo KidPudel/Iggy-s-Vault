@@ -1,4 +1,5 @@
 Enumeration types define a new type whose values consist of the strictly ones specified, they are also ordered
+> `enum` is used to indicate the different ***hierarchical** data indication*, so it is **the data**.
 
 ```odin
 Foo :: enum {
@@ -59,6 +60,6 @@ Direction_Vectors :: [Direction]Vector {
 
 - **where you have one type with different data** so it is for one purpose like list of different sounds for different events
 
-When you need to make
+so enum is perfect when you need to make:
 1. accessing members meaningful
 2. predictable, fixed size, dense mapping

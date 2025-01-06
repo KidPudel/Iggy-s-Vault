@@ -1,4 +1,5 @@
-In Odin union is a data structure that contains in itself a collection of types it could be
+In Odin union is a data structure that contains in itself a collection of types it could be.
+which allows for flexible *fan-out* (like in [[concurrency patterns]]) data structure capabilities (meaning, that it can change its **data capabilities**)
 Zero value of union is `nil`
 ```odin
 Value :: union {
@@ -18,13 +19,15 @@ structures, but instead of fields being aligned in memory, all members occupy th
 
 
 There are 2 main use cases
-1. Storing a bunch of different types and you don't know what type exactly it will be at runtime. in other words [[polymorphism]]
+1. Storing a bunch of ***different*** types and you don't know what type exactly it will be at runtime and you can check it to act accordingly. in other words [[polymorphism]]
 2. Type punning, to represent something usual in unusual format
 
 
-i have a feeling that the difference between [[enum]] and union approaches is for using unions when types are too different, like "Thing In the Pocket", it could be a pen or it could be a gun, where as for enum, it is just for slight data inside instance difference.
-So [[enum]] for *shallow difference*
-where as unions are for *deep difference*
+# difference between [[enum]] and `union` approaches:
+- `enum` is used to indicate the different ***hierarchical** data indication*, so it is **the data**.
+- `union` is the fundamental change in **data structure** that is a ***shape-shifter*** by its nature. which allows for flexible *fan-out* (like in [[concurrency patterns]]) data structure capabilities (meaning, that it can change its **data capabilities**)
 
 - union approach, since it is self containing variants is suited for cases where there is a possibility for extensions and **growth of variants of types**
-- [[enum]]erated [[dynamic arrays]] approach is more memory efficient and for smaller and simpler cases **where you have one type with different data** so it is for one purpose like list of different sounds for different events
+
+// hierarchical approach
+- [[enum]]erated [[dynamic arrays]] approach is more memory efficient and for smaller and simpler cases **where you have one type with different data indicating something** so it is for **one purpose**, that allows to make it strict and safe from disallowed usages. like list of different sounds for different events

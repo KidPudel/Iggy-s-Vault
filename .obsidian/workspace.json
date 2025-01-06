@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/golang interfaces.md",
+                "file": "languages/odin/union.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "golang interfaces"
+              "title": "union"
             }
           },
           {
@@ -223,13 +223,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/trigger function.md",
+                "file": "languages/odin/enum.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "trigger function"
+              "title": "enum"
             }
           },
           {
@@ -248,7 +248,7 @@
             }
           }
         ],
-        "currentTab": 14
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -416,19 +416,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "804d4970bda4bf43",
+  "active": "4031082e44560034",
   "lastOpenFiles": [
-    "all computer can do (programming).md",
+    "languages/odin/enum.md",
+    "languages/odin/union.md",
+    "languages/golang/golang interfaces.md",
+    "backend/database/redis.md",
+    "backend/backend and systems design questions.md",
+    "thread.md",
+    "languages/odin/distinct.md",
+    "languages/odin/type assertion.md",
     "procedures.md",
+    "backend/database/trigger function.md",
+    "all computer can do (programming).md",
     "terminal/neovim/resolve conflict with neovim.md",
     "backend/versioning/git-basics.md",
     "languages/odin/allocators.md",
     "languages/zig/error handling.md",
-    "languages/odin/union.md",
     "languages/odin/soa.md",
-    "languages/odin/type assertion.md",
     "tags.md",
-    "languages/odin/enum.md",
     "languages/odin/dynamic arrays.md",
     "languages/odin/fixed array.md",
     "general tech/polymorphism.md",
@@ -438,12 +444,6 @@
     "architecture/saga.md",
     "architecture/oop.md",
     "architecture/inversion.md",
-    "architecture/event sourcing.md",
-    "architecture/Domain Driven Design.md",
-    "backend/network/Web server.md",
-    "languages/golang/server-implementation.md",
-    "backend/database/trigger.md",
-    "backend/database/trigger function.md",
     "backend/design",
     "CS/algorithms",
     "Pasted image 20241022090626.png",
