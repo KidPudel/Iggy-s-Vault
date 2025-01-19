@@ -23,6 +23,8 @@
 - `:Ex`: open [[vim netrw mode]]
 - `:lua` to execute lua code
 - `:messages`: to see the log of messages
+- `:hi`: highlights
+- `:cdo`: execute command in all files in quick list or location list
 
 # macros
 > macro is the list of keypresses, that you could store in a buffer and repeat it

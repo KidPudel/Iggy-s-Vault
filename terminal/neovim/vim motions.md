@@ -49,6 +49,8 @@
 - `f[+ any character]`⇒ jump to the character in the line
 	- `F[+ any character]` => reverse direction
 - `C-w <hjkl>`: move **between** split windows
+- `"`: show last registers
+	- `"<buffer>p`
 
 
 # visual
@@ -112,6 +114,8 @@
 
 # more stuff
 - `~`: toggle case
+- `u`: to lowercase
+- `U`: to uppercase
 - `hjkl` ⇒ move
 	- `J`: put the next line on the current
 - `w` ⇒ jump the word

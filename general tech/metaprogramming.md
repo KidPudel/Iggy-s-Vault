@@ -1,0 +1,1 @@
+Technique that gives programs the ability threat other programs as their data.

@@ -120,3 +120,36 @@ networks:
 commands:
 - `docker-compose up`: run containers
 - `docker-compose down`: stop containers
+
+
+
+# Volumes
+Way to share data between container and local host or multiple containers
+
+
+# Networking
+By default compose sets up a single network for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by the service's name.
+> each network is given a name on the "project name"
+
+For example, suppose your app is in a directory called `myapp`, and your `compose.yml` looks like this:
+
+```yaml
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres
+    ports:
+      - "8001:5432"
+```
+
+When you run `docker compose up`, the following happens:
+
+1. A network called `myapp_default` is created.
+2. A container is created using `web`'s configuration. It joins the network `myapp_default` under the name `web`.
+3. A container is created using `db`'s configuration. It joins the network `myapp_default` under the name `db`.
+
+
+- `docker-compose exec flyway-container-name flyway migrate`: `exec` allows to communicate with other containers defined in docker-compose.yml

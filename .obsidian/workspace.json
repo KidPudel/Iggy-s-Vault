@@ -43,13 +43,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/odin/union.md",
+                "file": "terminal/neovim/colorscheme.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "union"
+              "title": "colorscheme"
+            }
+          },
+          {
+            "id": "1f9c98030d2735b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "general tech/directive.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "directive"
             }
           },
           {
@@ -73,13 +88,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/concurrency in go.md",
+                "file": "languages/odin/union.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "concurrency in go"
+              "title": "union"
             }
           },
           {
@@ -248,7 +263,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -279,7 +294,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "data str",
+                "query": "#include",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -300,7 +315,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -416,34 +432,36 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4031082e44560034",
+  "active": "aa85e35234881088",
   "lastOpenFiles": [
-    "languages/odin/enum.md",
-    "languages/odin/union.md",
-    "languages/golang/golang interfaces.md",
-    "backend/database/redis.md",
-    "backend/backend and systems design questions.md",
-    "thread.md",
-    "languages/odin/distinct.md",
-    "languages/odin/type assertion.md",
     "procedures.md",
-    "backend/database/trigger function.md",
+    "backend/database/function.md",
+    "languages/odin/union.md",
+    "languages/odin/enum.md",
+    "general tech/directive.md",
+    "languages/c/directives in C.md",
+    "languages/golang/concurrency in go.md",
+    "languages/python/reflection.md",
+    "frontend/Vue directive.md",
+    "languages/c/headers.md",
+    "terminal/neovim/vim motions.md",
+    "general tech/metaprogramming.md",
+    "languages/odin/bit_set.md",
+    "backend/docker/docker network.md",
+    "backend/docker/docker compose.md",
+    "backend/docker/Docker commands.md",
+    "backend/docker/Docker basics.md",
+    "flyway.md",
+    "terminal/tmux.md",
+    "languages/golang/methods.md",
+    "languages/golang/errors.md",
+    "backend/database/ACID.md",
     "all computer can do (programming).md",
-    "terminal/neovim/resolve conflict with neovim.md",
-    "backend/versioning/git-basics.md",
-    "languages/odin/allocators.md",
-    "languages/zig/error handling.md",
-    "languages/odin/soa.md",
-    "tags.md",
+    "backend/database/4 levels of isolation.md",
     "languages/odin/dynamic arrays.md",
-    "languages/odin/fixed array.md",
-    "general tech/polymorphism.md",
-    "CS/polymorphism.md",
-    "fzf.md",
-    "architecture/Design.md",
-    "architecture/saga.md",
-    "architecture/oop.md",
-    "architecture/inversion.md",
+    "architecture/design patterns.md",
+    "Pasted image 20250109194409.png",
+    "Pasted image 20250109192912.png",
     "backend/design",
     "CS/algorithms",
     "Pasted image 20241022090626.png",
@@ -457,8 +475,6 @@
     "Pasted image 20240909143850.png",
     "terminal/neovim",
     "images/Pasted image 20240711180949.png",
-    "images/Pasted image 20240618184108.png",
-    "images/Pasted image 20240520115343.png",
     "languages/zig",
     "Untitled.canvas",
     "architecture",

@@ -1,0 +1,1 @@
+In programming languages directive is a construct that tells/specifies to the compiler how it should process its input.

@@ -10,6 +10,11 @@ So this is a way of associating procedurals for some specific data structure.
 
 So here methods, are just plane procedures that are ***scoped*** for ***specific data structures***
 
+**Just a way of organization and nothing more**
+- Scoping, but not just scoping, but rather scoping to a specific related/dependent data structure therefore **filtering** related functions
+- Apart from that it is the same as `do_something :: proc(important_data: Data) {}`, but just with some sugar syntax
+
+
 Because golang is service language, where data structures are more central and advanced part
 
 To define outline for the procedures we can achieve it by attaching non negotiable/**locked** (different from necessary) parameter that acts as the owner data structure/type and also makes it exclusive to that type. 

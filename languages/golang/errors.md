@@ -4,3 +4,5 @@ In golang it is idiomatic to manually and explicitly manage your errors, so that
 Golang's design lets you always take into account scenarios of the error
 
 it is designed to pass the error down the stream **decorating** it to track each place from inner to outer.
+
+In golang there are explicit absence of the value, so it is something or nil, in this case error or nil.

@@ -31,6 +31,9 @@ Benefits:
 - `leader-{}`: switch panes places
 - `leader-s`: manage sessions
 - `leader-z`: zoom to the particular pane
+- `leader-ctrl-z`: zoom to the particular pane
+	- `fg` to recover
+- `leader-space`: rotate
 
 # vi
 - `leader-[`: enter

@@ -88,7 +88,7 @@ flyway -url=jdbc:postgresql://host:port/db_name -user=postgres -password='' -sch
     
 - **flyway.conf** - Файл конфигурации FlyWay
 
-
+> Note: it applies migrations in order by default, and to add order we can do something like R__01 and R__02
 
 ## Имя версионной (V) миграции должно соответствовать формату
 

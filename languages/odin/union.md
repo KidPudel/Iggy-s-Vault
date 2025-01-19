@@ -14,6 +14,17 @@ v: Value = "hello"
 s, isString := v.(string) // true
 ```
 
+or with switch statement
+```odin
+#partial switch v in machine.variant {
+	case Processor:
+	case Battery:
+	case Creator, Entry, Sled:
+}
+```
+
+> NOTE: we can use partial [[directive]]
+
 
 structures, but instead of fields being aligned in memory, all members occupy the same memory, so when you write to one, all members gets overwritten
 
@@ -24,10 +35,14 @@ There are 2 main use cases
 
 
 # difference between [[enum]] and `union` approaches:
-- `enum` is used to indicate the different ***hierarchical** data indication*, so it is **the data**.
-- `union` is the fundamental change in **data structure** that is a ***shape-shifter*** by its nature. which allows for flexible *fan-out* (like in [[concurrency patterns]]) data structure capabilities (meaning, that it can change its **data capabilities**)
+- `enum` is used to indicate the different ***hierarchical** data indication*, so it is **the data** itself and nothing more.
+- `union` is the fundamental **change in data structure** that is a ***shape-shifter*** by its nature, it changes the structure. which allows for flexible *fan-out* (like in [[concurrency patterns]]) data structure capabilities (meaning, that it can change its **data capabilities**)
 
-- union approach, since it is self containing variants is suited for cases where there is a possibility for extensions and **growth of variants of types**
+Also on its own can serve as a hierarchical data indication
 
-// hierarchical approach
 - [[enum]]erated [[dynamic arrays]] approach is more memory efficient and for smaller and simpler cases **where you have one type with different data indicating something** so it is for **one purpose**, that allows to make it strict and safe from disallowed usages. like list of different sounds for different events
+
+Holder type/shape shifter/many-faced
+
+with `#shared_nil` [[directive]] assigning to a union type nil or zero value of any variant normalizes each variant's nil value into `nil` on assignment.
+> NOTE: each variant of union **require** to have nil value

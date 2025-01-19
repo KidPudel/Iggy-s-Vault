@@ -19,6 +19,7 @@ if cap doesn't exceeded, `append()` returns *the new struct*, with changed `len`
 if cap hit the limit, then *the new struct* with **new memory** is returned
 meaning, function `append()`, tries to put new element on position `len+1`
 
+> **just like in Odin [[dynamic arrays]], but instead of operating with the same holder by passing reference to the same, we keeping up to date by returning to a new holder.**
 
 ```go
 s := make([]int, 3, 6)
