@@ -126,6 +126,13 @@ commands:
 # Volumes
 Way to share data between container and local host or multiple containers
 
+mounting/mapping files with write capabilities
+```yml
+    volumes:
+      - ./db/migrations:/service/db/migrations:rw # map with the host with read write mode
+
+```
+
 
 # Networking
 By default compose sets up a single network for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by the service's name.

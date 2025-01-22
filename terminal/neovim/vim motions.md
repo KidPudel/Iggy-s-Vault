@@ -227,3 +227,11 @@
 
 # more stuff
 - `~`: toggle case
+
+
+# vimium
+f - find and interact, keybinding show
+F - find, but opens different tab
+o - omnibar. search in current tab
+gt, gT - go to tab
+x, X - close tab and unclose tab

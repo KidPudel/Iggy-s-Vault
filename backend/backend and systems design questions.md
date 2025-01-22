@@ -49,7 +49,7 @@ views
 [[gRPC Streams]]
 # Containerization
 ---
-[[Docker basics]]
+[[Docker analogy]]
 [[Docker commands]]
 
 

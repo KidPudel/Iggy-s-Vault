@@ -23,13 +23,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/golang/channel axioms.md",
+                "file": "backend/network/Authentication and authorization.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "channel axioms"
+              "title": "Authentication and authorization"
             }
           }
         ],
@@ -178,6 +178,7 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "languages/golang/channel axioms.md",
     "backend/database/sharding.md",
     "backend/database/database replication.md",
     "backend/backend and systems design questions.md",
@@ -202,7 +203,6 @@
     "languages/golang/golang scheduler.md",
     "languages/golang/golang interfaces.md",
     "general tech/interface.md",
-    "languages/golang/golang mutex.md",
-    "languages/golang/sync.Map.md"
+    "languages/golang/golang mutex.md"
   ]
 }
