@@ -1,4 +1,5 @@
 `defer` annotated line placed to the call stack and will fire at the end of scope or at the end
+first `defer` is the most "patient" one, he is deferred, until all other processes are done (since `defer` is also a process)
 
 ```go
 // Function to count words in a string and update the sync.Map

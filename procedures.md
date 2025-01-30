@@ -4,9 +4,11 @@ It is a unit of execution, an encapsulated logic for manipulating data. [[all co
 
 They are building blocks of instructions and logic and how data should change depending on your logic.
 
-pseudo scenario, without specific values, where value is an X value.
+without specific values, where value is an X value.
 instruction of actions
-**You instruct**
+**instruction units, pluggins**
+
+How data should change, based on certain condition
 
 They operate, executed just to work with data
 [[all computer can do (programming)]]

@@ -162,7 +162,7 @@ having count(usr_id) > 5;
 
 # GROUP BY
 ---
-Grouping rows that have the same value into a summary rows, like "find the number of customers in **each country**"
+Grouping rows that have the same value into a **summary rows** (not listing all rows), like "find the number of customers in **each country**"
 ```sql
 select count(id), country
 from customers

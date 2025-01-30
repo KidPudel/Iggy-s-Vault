@@ -1,0 +1,2 @@
+surface is a representation of raw (unoptimized) pixel data with some [[metadata]] like size and format.
+It is a basically a 2D image that is rendered via [[software rendering]]

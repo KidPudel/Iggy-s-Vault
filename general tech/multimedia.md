@@ -1,0 +1,1 @@
+refers to the integration of various types of media in computer - such as graphics, images, audio, video, animatioo, etc.

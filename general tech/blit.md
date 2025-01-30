@@ -1,0 +1,1 @@
+logical operation in which a block of data is rapidly moved or copied in memory

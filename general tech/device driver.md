@@ -1,0 +1,1 @@
+Software program that controls a device that is attached to a computer

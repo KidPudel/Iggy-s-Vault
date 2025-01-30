@@ -1,0 +1,1 @@
+Nodes are network participants or just computers, which store their own copy of a shared ledger of data [[blockchain]]
