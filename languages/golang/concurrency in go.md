@@ -16,11 +16,11 @@ and im not talking specifically about fan-out pattern, but rather about concurre
 
 ---
 # Waiting for a group of goroutines
-To catch/**wait** for all **goroutines to finish**, use `sync.WaitGroup`.  
+To catch/**wait** for all **goroutines to finish**, use `sync.WaitGroup` to easily observe the group.  
 It works by counting active goroutines, by using:
 	- `Add(n)` and `Done()`
  	- `Wait()`: waits until **all** goroutines are done
-> SIDE NOTE: if we want to pass a `wg`, use pointer
+> SIDE NOTE: if we want to pass a `wg`, use pointer to affect its changes
 
 > **NOTE**: since the execution is goes so fast, order of execution is **NOT** guaranteed, **_meaning that `wg.Wait()` could be reached faster than `wg.Add(1)`, and execution will be ended by this point._**  
 > **THEREFORE**: It is a good practice to add to the group, _BEFORE_ launching goroutine!

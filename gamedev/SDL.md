@@ -19,3 +19,4 @@ SDL might be more than enough for a lot of 3D graphical interfaces.
 https://mausimus.itch.io/efcm
 https://dan200.itch.io/redirection
 https://bananaft.itch.io/yedomaglobula
+https://tylerstraub.itch.io/cave-wizard

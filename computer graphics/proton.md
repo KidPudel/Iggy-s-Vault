@@ -1,0 +1,1 @@
+Proton is a [[compatibility layer]] over graphics api to translate from windows api architecture to unix.

@@ -23,13 +23,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/docker db.md",
+                "file": "backend/database/sharding.md",
                 "mode": "source",
-                "backlinks": false,
-                "source": false
+                "source": false,
+                "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "docker db"
+              "title": "sharding"
             }
           }
         ],
@@ -178,6 +178,7 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "backend/database/docker db.md",
     "backend/docker/docker basic terms.md",
     "gamedev/SDL.md",
     "procedures.md",
@@ -202,7 +203,6 @@
     "backend/database/4 levels of isolation.md",
     "backend/database/ACID.md",
     "languages/golang/concurrency in go.md",
-    "languages/golang/why goroutines are lightweight.md",
-    "languages/golang/Golang Backend Interview Preparation.md"
+    "languages/golang/why goroutines are lightweight.md"
   ]
 }

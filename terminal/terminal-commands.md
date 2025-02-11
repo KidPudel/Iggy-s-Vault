@@ -6,3 +6,4 @@
 - `history`: history of commands
 - `mkfifo`: creates a [[named pipe]]
 - `eval`: concatenates the arguments into a single string, parses it as a shell command and executes. and uses $() to substitute the output of the command in place of it.
+- `find . -name '*.go' | xargs wc -l`

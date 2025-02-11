@@ -1,1 +1,1 @@
-This is a package-scoped function that will be executed before main function 
+This is a package-scoped function that will be executed before the program starts executing (main function)
