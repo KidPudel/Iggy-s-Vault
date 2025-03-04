@@ -5,6 +5,8 @@
 - [[why goroutines are lightweight]]
 - [[sync.Map]]
 - [[concurrency patterns]]
+- [[GMP]]
+- [[atomics]]
 
 # Data structures
 - [[Data structures]]
@@ -20,6 +22,7 @@
 - [[memory allocation]]
 # Inside
 - [[go garbage collector]]
+- [[escape analysis]]
 - [[golang scheduler]]
 - [[mutable vs immutable]]
 - [[segmented stack in go]]

@@ -1,0 +1,7 @@
+- Input: vertex data
+- [[input assembler]]: vertices are grouped into primitives (lines and triangles)
+- [[vertex shader]]
+- [[rasterization]]
+- [[fragment shader]]
+- output merging
+- result: render target

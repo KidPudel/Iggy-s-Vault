@@ -23,13 +23,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/sharding.md",
+                "file": "computer graphics/sampler.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "sharding"
+              "title": "sampler"
             }
           }
         ],
@@ -48,7 +48,8 @@
         "state": {
           "type": "file-explorer",
           "state": {
-            "sortOrder": "alphabetical"
+            "sortOrder": "alphabetical",
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "Files"
@@ -121,7 +122,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "languages/golang/concurrency in go.md",
+            "file": "computer graphics/shader.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -178,13 +179,17 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "gamedev/delta time.md",
+    "computer graphics/shader.md",
+    "computer graphics/vertex shader.md",
+    "computer graphics/scissor.md",
+    "procedures.md",
+    "backend/database/sharding.md",
     "backend/database/docker db.md",
     "backend/docker/docker basic terms.md",
     "gamedev/SDL.md",
-    "procedures.md",
     "backend/network/Authentication and authorization.md",
     "languages/golang/channel axioms.md",
-    "backend/database/sharding.md",
     "backend/database/database replication.md",
     "backend/backend and systems design questions.md",
     "backend/database/transactions.md",
@@ -199,10 +204,6 @@
     "languages/golang/methods.md",
     "backend.md",
     "languages/golang/concurrency patterns.md",
-    "design patterns.md",
-    "backend/database/4 levels of isolation.md",
-    "backend/database/ACID.md",
-    "languages/golang/concurrency in go.md",
-    "languages/golang/why goroutines are lightweight.md"
+    "design patterns.md"
   ]
 }

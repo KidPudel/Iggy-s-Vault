@@ -1,0 +1,1 @@
+Scissor locks all of the buffers agains writing to a certain region, meaning it is impossible to write from the buffers outside of an active scissor region

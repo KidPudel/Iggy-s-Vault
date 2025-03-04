@@ -1,0 +1,2 @@
+converts vector graphics into a raster image ( a grid of pixels for a display on a screen.
+It bridges the gap between the geometric processing done by the [[vertex shader]] and the pixel-level processing done by the [[fragment shader]]

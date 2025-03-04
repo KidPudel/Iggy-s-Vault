@@ -1,0 +1,1 @@
+Pointer is a type that can hold address to the memory (in [[heap]], [[stack]] or in static memory).

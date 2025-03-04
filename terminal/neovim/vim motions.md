@@ -29,6 +29,8 @@
 - `gr` ⇒ go to reference
 - `gl` : select next
 - `gL`: select previous
+- `gn`: search next match of pattern
+	- `cgn`: changes with a new pattern to be recorded and repeated with `.`
 - `C-o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_
 - `C-e` ⇒ move window down
     - `C + y `⇒ up

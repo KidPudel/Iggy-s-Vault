@@ -191,3 +191,6 @@ having sum(p.price) > 5000
 
 # DISTINCT
 unique rows
+
+
+https://habr.com/ru/articles/791208/

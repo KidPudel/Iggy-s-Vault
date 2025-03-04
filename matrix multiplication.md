@@ -1,0 +1,1 @@
+we take the [[dot product]] of 1st matrix row and 2nd matrix column, and go

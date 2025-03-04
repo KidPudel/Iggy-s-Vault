@@ -5,9 +5,15 @@ generation
 ssh-keygen -t rsa -b 4096 -C "email@example.com"
 ```
 
-some use
+to use when running gitbash to clone repo
 ```zsh
-ssh-agent $(ssh-add /Users/iggysleepy/.ssh/id_rsa; git clone git@git.bwg-io.site:waterfall/payment-order-service.git``` 
+ssh-agent $(ssh-add /Users/youname/.ssh/id_rsa; git clone git@gitlab.com:xyz/SpringBootStarter.git)
+```
+
+or add it like that
+```
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519 # or ~/.ssh/id_rsa
 ```
 
 connect

@@ -1,0 +1,1 @@
+[[buffer]] that stores pixel data and additional metadata like dimensions, format, and layout.

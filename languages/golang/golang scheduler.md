@@ -6,7 +6,4 @@ It is **responsible for distributing** (managing which, when, and where (on whic
 Scheduler utilizes CPU cores and distributing goroutines across them for maximum efficiency.
 So if CPU has 1 core, then scheduler will rapidly switch between them giving it a slice of CPU time
 
-GMP model
-- G - goroutine
-- M - system of threads
-- P - Process
+[[GMP]]

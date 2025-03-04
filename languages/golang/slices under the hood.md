@@ -1,8 +1,8 @@
 Slices is an abstraction, Slices **doesn't store elements like array does**, instead it stores a *header*, describing contiguous section of backing array (info like length, capacity, and [[pointer]] to the array itself).
-So it's not an array like in C that is a pointer to the beginning of the array, but rather a [[fat pointer]]
+So it's not an array like in C that is a pointer to the beginning of the array, but rather a [[fat pointer]], or in this case [[reference]]
 ```go
 type SliceHeader struct {
-    Data uintptr
+    Data uintptr // pointer to the beginning of the array
     Len  int
     Cap  int
 }

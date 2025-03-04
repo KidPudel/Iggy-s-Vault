@@ -1,0 +1,1 @@
+Technique used by garbage collector to determine whether an object will escape certain scopes or not, aka whether it should be allocated in stack or heap.

@@ -3,7 +3,7 @@ Type alias is an alternative name for an existing type, it is used for a **refer
 ```go
 type MetadataAlias = mo.Option[Metadata]
 ```
-> NOTE: type alias does not create a new distinct/separate type, it is a reference
+> NOTE: type alias does not create a new distinct/separate type, it is a reference - **alternative way to access the memory**
 
 if you want to create a separate type just use
 ```go

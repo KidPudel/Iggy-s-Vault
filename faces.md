@@ -1,0 +1,2 @@
+A flat [[surface]] formed by connecting three or more [[vertex]] (typically triangle or quad).
+Faces make up the visible surface of 3D models and have properties like textures, materials, and [[normals]]
