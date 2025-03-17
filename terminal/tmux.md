@@ -29,11 +29,11 @@ Benefits:
 - `leader-I`: install plugins
 - `leader-U`: update plugins
 - `leader-{}`: switch panes places
+- `leader-space`: convert panes from vertical to horizontal and vise versa / rotate
 - `leader-s`: manage sessions
 - `leader-z`: zoom to the particular pane
 - `leader-ctrl-z`: zoom to the particular pane
 	- `fg` to recover
-- `leader-space`: rotate
 
 # vi
 - `leader-[`: enter
@@ -68,5 +68,5 @@ To add results of bash commands use `#()` syntax
 
 
 
-# MArking?
+# Marking
 leader + m

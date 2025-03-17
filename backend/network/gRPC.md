@@ -351,3 +351,22 @@ But also gRPC can be used outside of microservices, we can use it in web app, ut
 
 
 It's not that deep, all those technologies, are tools, and tools are for different usecases, it's natural.
+
+
+
+# oneOF
+when only one field from a set is possible fields. This saves memory 
+```proto
+syntax = "proto3";
+
+message Payment {
+  string id = 1;
+  
+  oneof method {
+    string credit_card = 2;
+    string paypal = 3;
+    string bank_transfer = 4;
+  }
+}
+
+```

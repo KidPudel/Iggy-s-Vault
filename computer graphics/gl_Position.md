@@ -1,0 +1,1 @@
+`gl_Position` is a built-in output variable that represents the final position of a vertex in a clip/projection space ([[transformations]]) before [[rasterization]]

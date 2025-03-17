@@ -5,4 +5,7 @@ The main purpose of shader is:
 - calculate light
 - Apply effects 
 
-So the 3d model or 2d texture is a collection of vertices, and shaders are for making this data interactive?
+The main point of shader is delegate the heavy computation to it from CPU
+You can manage it with [[buffer]]s [[layout qualifier]]s [[binding]]s and so on and pass to it data in many many ways.
+
+And then shader code handles one vertex -> pixel at the time, but GPU runs all of them in parallel at once, because of parallel properties of GPU.

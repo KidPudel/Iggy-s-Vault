@@ -14,7 +14,7 @@ First transformation applies to model position *model matrix* to convert from *m
 Model matrix is:
 - Translation (moving the object in space)
 - Rotation (turning the object)
-- Scaling (changing object's size)
+- Scaling (changing object's size) and coordinate space?
 ```c
 world_positon = model_positon * model_matrix
 ```
@@ -26,7 +26,7 @@ View matrix represents camera's position and orientation. It practically shifts 
 view_positon = world_positon * view_matrix
 ```
 
-## 4. Projection Space
+## 4. Projection/Clip Space
 Next, we apply *projection matrix* to transform from view (camera) space to clip space.
 This will configure and adjust how 3D coordinates are *projected* into 2D place / screen.
 It handles:
@@ -56,3 +56,6 @@ screen_y = (ncd_y + 1) * viewport.height / 2 + viewport.y
 
 
 
+MVP - model view projection
+- model: moving from model to world
+- 

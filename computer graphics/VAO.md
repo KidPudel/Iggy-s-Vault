@@ -1,0 +1,1 @@
+Vertex Array Object specified which [[VBO]] to use for vertex [[attribute data]] and how the data is laid out in those VBOs

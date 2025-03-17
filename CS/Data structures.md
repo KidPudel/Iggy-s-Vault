@@ -73,12 +73,12 @@ Suppose we at grocery store, we can search in a book an item
 
 But if we had hash table (Maggie) that could help us get a price of an _apple_ for example, that would be _**O(1)**_
 
-![[Pasted image 20240617154604.png]]
+![[Pasted image 20240617154604.png|500]]
 
 ### To create
 
 To create a hash table we need to use hash function (mapping key to value) `“apple” to 0.67`
-![[Pasted image 20240617154638.png]]
+![[Pasted image 20240617154638.png|500]]
 
 Requirements
 
@@ -87,7 +87,7 @@ Requirements
 
 So you “feed” hash function with a new key-values and hash function outputs an index where to put in array
 
-![[Pasted image 20240617154712.png]]
+![[Pasted image 20240617154712.png|500]]
 After you’ve filled the entire array, you give hash function “avocado” and it tells that it’s at the index of 4!
 
 

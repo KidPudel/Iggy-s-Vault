@@ -1,3 +1,5 @@
+**REMEMBER [[all computer can do (programming)]] **
+
 procedures are **building code blocks that you or system calls** that contain *independent* code, which allows to structure your code more flexibly.
 that may or may not have a name by which we or OS can distinguish the code.
 
@@ -10,8 +12,6 @@ instruction of actions
 **instruction units, plugins**
 How data should change, based on certain condition
 
-They operate, executed just to work with data
-[[all computer can do (programming)]]
 
 they also support default value
 ```odin

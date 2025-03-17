@@ -202,6 +202,8 @@
 - `s` ⇒ delete character AND substitute (replace) character
 	- S ⇒ equivalent to cc
 - `xp` ⇒ transpose 2 letters (delete and paste)
+- `ctrl+a`: increment by +1
+- `ctrl+x`: decrement by -1
 
 
 ## cut and paste (we don’t go to insert)

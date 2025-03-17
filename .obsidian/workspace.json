@@ -4,67 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "830ae2c19910633b",
+        "id": "e4c202f04e1452d4",
         "type": "tabs",
         "children": [
           {
-            "id": "9f5146f92f068622",
+            "id": "53217d3618fac354",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer graphics/NDC.md",
+                "file": "computer graphics/UBO.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "NDC"
+              "title": "UBO"
             }
           },
           {
-            "id": "ef3511e745126a0f",
+            "id": "d2cff1eb1b83607d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer graphics/transformations.md",
+                "file": "SSBO.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "transformations"
+              "title": "SSBO"
             }
           },
           {
-            "id": "7ba346cc8ed6d7b3",
+            "id": "9e6fcdb10f2356e2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer graphics/homogeneous coordinates.md",
+                "file": "computer graphics/frame buffer.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "homogeneous coordinates"
+              "title": "frame buffer"
             }
           },
           {
-            "id": "2561a7bf6a7f375b",
+            "id": "8133e9ce555d3aef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/reference.md",
+                "file": "computer graphics/UBO.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "reference"
+              "title": "UBO"
             }
           }
         ],
@@ -100,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "record",
+                "query": "faster",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -125,7 +125,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -141,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/SOLID.md",
+                "file": "computer graphics/UBO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +152,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for SOLID"
+              "title": "Backlinks for UBO"
             }
           },
           {
@@ -237,38 +238,39 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2561a7bf6a7f375b",
+  "active": "8133e9ce555d3aef",
   "lastOpenFiles": [
-    "matrix multiplication.md",
-    "CS/reference.md",
-    "languages/golang/alias.md",
-    "languages/odin/alias.md",
-    "CS/pointer.md",
-    "languages/zig/zig pointer.md",
-    "languages/golang/pointer.md",
-    "languages/golang/slices under the hood.md",
-    "terminal/terminal-commands.md",
-    "backend/network/ssh.md",
-    "procedures.md",
-    "general tech/buffer.md",
-    "computer graphics/image buffers.md",
-    "computer graphics/transformations.md",
-    "backend/database/transactions.md",
-    "indices.md",
-    "computer graphics/homogeneous coordinates.md",
-    "magnitude.md",
-    "dot product.md",
-    "computer graphics/NDC.md",
+    "SSBO.md",
+    "computer graphics/UBO.md",
+    "computer graphics/layout qualifier.md",
+    "computer graphics/attribute data.md",
+    "computer graphics/vertex.md",
+    "computer graphics/divider.md",
+    "computer graphics/frame buffer.md",
+    "computer graphics/vertex shader.md",
+    "computer graphics/Culling.md",
+    "tags.md",
+    "math/matrix multiplication.md",
+    "math/mathematical notion of a set.md",
+    "backend/network/consumer group.md",
+    "backend/database/cache techniques.md",
+    "CS/all computer can do (programming).md",
+    "backend/network/ACK.md",
+    "languages/golang/atomics.md",
+    "general tech/b2c.md",
+    "general tech/b2p.md",
+    "general tech/browser search filters.md",
+    "general tech/backend.md",
+    "languages/golang/channel.md",
+    "backend/network/consumer.md",
+    "CS/algorithms/mark-and-sweep.md",
+    "computer graphics/faces.md",
+    "terminal/fzf.md",
+    "Pasted image 20250316113928.png",
     "Pasted image 20250302160131.png",
-    "backend/network/three-way handshake.md",
-    "project vector.md",
     "Pasted image 20250302152734.png",
     "Pasted image 20250302152030.png",
     "Pasted image 20250302150741.png",
-    "computer graphics/surface.md",
-    "languages/odin/enum.md",
-    "backend/database/trigger.md",
-    "backend/database/trigger function.md",
     "Pasted image 20250302142704.png",
     "computer graphics",
     "Pasted image 20250109194409.png",
@@ -277,7 +279,6 @@
     "CS/algorithms",
     "Pasted image 20241022090626.png",
     "Pasted image 20241022091013.png",
-    "Pasted image 20241022090625.png",
     "CS/patterns",
     "languages/odin",
     "terminal/neovim",

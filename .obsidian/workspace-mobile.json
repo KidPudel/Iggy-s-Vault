@@ -23,13 +23,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer graphics/sampler.md",
+                "file": "computer graphics/draw call.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "sampler"
+              "title": "draw call"
             }
           }
         ],
@@ -179,6 +179,9 @@
   },
   "active": "3518fb4e749d8b2a",
   "lastOpenFiles": [
+    "computer graphics/text rendering.md",
+    "backend/database/database basics.md",
+    "computer graphics/sampler.md",
     "gamedev/delta time.md",
     "computer graphics/shader.md",
     "computer graphics/vertex shader.md",
@@ -200,10 +203,7 @@
     "backend/database/vertical partitioning.md",
     "backend/database/union.md",
     "backend/database/OLAP.md",
-    "backend/database/database basics.md",
     "languages/golang/methods.md",
-    "backend.md",
-    "languages/golang/concurrency patterns.md",
-    "design patterns.md"
+    "backend.md"
   ]
 }

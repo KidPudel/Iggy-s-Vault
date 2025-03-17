@@ -9,6 +9,7 @@
 - `git reset`: discard changes in specified filed in working directory to a specific commit
 	- `git reset HEAD`
 	- `git reset --hard <branch-name>`
+- `git clean -fd`: clean forced deletion and removes untracked changes
 - `git commit`: a **snapshot** of git repository at a particular *time*
 	- `git commit -m ""`: where `-m` is a message
 - `git checkout <commit-hash>`: to navigate between your commits and branches (restores it)
@@ -19,6 +20,8 @@
 - `git stash`: stash changes to the dirty working directory
 	- `git stash drop`: drops that changes
 	- `git stash pop`: pops changes from dirty to the current branch
+- `git fetch <origin>`: retrieves from remote to the repository
+- `git diff <file path>`: see difference
 
 
 # branch
@@ -29,10 +32,10 @@ And by default, git creates a main branch called "*master*"
 - `git branch <name>`: creates a new branch with name
 > Side note: If we use checkout, we are actually detaching from our master, and to attach back to it we can just use `git checkout master`
 - `git merge <branch-name>`: to *rebase* (change the base/branch of the history) changes (commits) from specified branch to the current branch, with a new "merge commit"
-	- ![[Pasted image 20240711180045.png]]
+	- ![[Pasted image 20240711180045.png|500]]
 - `git rebase <branch-name>`: moves entire current branch to the tip of the chosen branch, and instead of using merge commits, it **re-writes the project history**, by creating **brand new commits for *each commit in the original branch***
-	- ![[Pasted image 20240711180949.png]]
-- `git delete <branch-name>`: delete branch
+	- ![[Pasted image 20240711180949.png|500]]
+- `git branch -d/-D <branch-name>`: delete branch (or force delete)
 
 - `git branch -m <new-name>`: rename branch (if not pointing, then specify old name as well) and to rename remote, just push this branch
 
@@ -111,3 +114,7 @@ Common use cases:
 
 # conflicts
 when on both branches altered the same file
+
+
+# git squash
+is a mod that allows you to "squash" history of commits to make clear history

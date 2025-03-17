@@ -1,6 +1,7 @@
 # Publish/Subscribe (Pub/Sub)
 This pattern allows multiple [[consumer]]s in **different [[consumer group]]s** to subscribe to the [[topic]] read from the [[message broker]]
 
+[[event bus]]
 
 # Point-to-Point
 Ensures that one [[consumer]] process each message

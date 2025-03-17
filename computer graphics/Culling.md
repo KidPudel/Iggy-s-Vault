@@ -1,0 +1,1 @@
+removing objects that aren't visible.

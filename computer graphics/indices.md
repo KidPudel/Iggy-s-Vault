@@ -1,4 +1,4 @@
-Numerical values that references to vertices ([[vertex]]) in a 3D model's vertex array.
+Numerical values that **references** to vertices ([[vertex]]) in a 3D model's vertex array.
 So instead of storing complete vertex data multiple times, indexes point to existing vertices
 
 ```

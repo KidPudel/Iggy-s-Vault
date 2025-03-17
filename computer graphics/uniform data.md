@@ -1,0 +1,3 @@
+constant data you pass to the [[vertex shader]] or [[fragment shader]] that is the same across all vertices/fragments in a [[draw call]] and remains the same for entire [[render pass]], and typically fixed during rendering
+Describe global or object-wide properties, for example like [[transformations]] matrices applied to the entire model.
+So it is away to pass some "global" "separate" "constant" data to utilize in shader, sort of like "scene properties".

@@ -1,0 +1,1 @@
+Binding is a general mechanism for connecting resources ([[buffer]], [[texture]]) to specific [[shader]] storages or slots in the GPU pipeline.
