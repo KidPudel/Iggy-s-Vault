@@ -1,7 +1,0 @@
-- `os`, `io`, and `io/ioutil`: for working with files, streams and readers/writers
-- `strings`: working with string manipulation
-- `fmt`: formatting
-- `net`: networking
-- `sync`: advanced asynchronous working
-- `math`, `time`
-- `testing`

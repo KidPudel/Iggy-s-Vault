@@ -18,3 +18,17 @@ float vertices[] = {
 	0.0f,  0.5f, 0.0f
 };
 ```
+
+
+
+# convert screen-space pixel values to NDC
+## X-Axis conversion (left-to-right)
+- Normalize coordinates by dividing by screen width
+- Then scale by 2.0 because we normalized screen coordinates (NSC) gave us only a right half of NDC (only positive values), so we double it.
+- and shifting value by -1
+## Y-Axis conversion (Flipping to OpenGL's Bottom-to-Top)
+- Normalize
+- Then scale by 2.0
+- Because OpenGL's y-axis is flipped (y=0 top, but in NDC y=1 top), we flipping subtraction of `1 - value`
+
+

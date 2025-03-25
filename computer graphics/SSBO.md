@@ -16,3 +16,9 @@ layout(std430, binding = 0) buffer MvpData {
 
 In order for [[shader]] to accept SSBO, it needs to specify `std140` or `std430` [[layout qualifier]] which speficies a std layout for the uniform block, ensuring that the shader and you CPU-side code agree on the memory layout.
 But with modern approach we can specify [[binding]] directly. `binding=X`
+
+Since it is a buffer, we should add it to our [[binding]]s as a storage buffer.
+
+So it could be used as more flexible way of passing even vertex buffers, without having to define [[attribute data]] in layout
+
+Instead of updating [[uniform data]] every [[draw call]], you upload once and reuse the storage buffer across frames

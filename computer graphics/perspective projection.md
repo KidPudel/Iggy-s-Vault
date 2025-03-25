@@ -1,0 +1,1 @@
+make distant objects appear smaller
