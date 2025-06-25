@@ -1,0 +1,1 @@
+[[OS]] allocates a [[physical page frame]] and do it page by page, so it maps contiguous virtual memory (that can by multiple [[virtual memory page]] in a row) to the multiple [[physical page frame]], that will not be in the row (but each page itself is contiguous)

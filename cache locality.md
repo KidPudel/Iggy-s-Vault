@@ -1,0 +1,1 @@
+How well program's memoery access patterns align with how [[CPU cache]] work. how often [[cache hit]] and [[cache miss]]

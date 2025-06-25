@@ -1,0 +1,1 @@
+Common table expression is a temporary result set from `SELECT INSERT UPDATE DELETE` that is defined with `WITH` keyword and allows you to name CTE to reuse it later

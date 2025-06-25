@@ -1,0 +1,1 @@
+digital circuit that hold 1 bit of data

@@ -1,1 +1,1 @@
-Program that keeps track of the memory objects that are still reachable (can still access) by the program, by using the counter, and when it reaches 0, it claims the object, freeing up the memory
+Program that keeps track of the memory objects that are still reachable (can still access) by the program, by using the reference counter, and when it reaches 0, it claims the object, freeing up the memory

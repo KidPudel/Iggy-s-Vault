@@ -1,0 +1,2 @@
+[[static]] variables are not instance specific, but rather global to the class, meaning, changing variable, changes the value of the **whole class**.
+This allows to avoid the problem of polluting your coding space.

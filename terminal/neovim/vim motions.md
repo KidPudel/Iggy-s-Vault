@@ -32,6 +32,7 @@
 - `gn`: search next match of pattern
 	- `cgn`: changes with a new pattern to be recorded and repeated with `.`
 - `C-o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_
+- `C-i` ⇒ return to the next position _**(IN A JUMP LIST (history))**_
 - `C-e` ⇒ move window down
     - `C + y `⇒ up
     - `C-d `⇒ 1/2 window down
@@ -50,9 +51,14 @@
     - N ⇒ repeat search opposite direction
 - `f[+ any character]`⇒ jump to the character in the line
 	- `F[+ any character]` => reverse direction
+- `t`: jump until the character
 - `C-w <hjkl>`: move **between** split windows
 - `"`: show last registers
 	- `"<buffer>p`
+- `ctrl+r+<register>`: insert from register, just like `"<register>p`
+- `m{a-z}`: add mark
+- `'{a-z}`: jump mark
+- `:delmarks {a-z}`: delete mark
 
 
 # visual

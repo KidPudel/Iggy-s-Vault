@@ -100,6 +100,13 @@ After that we run compiler that will generate all functions we need to create, e
 protoc --go_out=. --go_opt=paths=source_relative \
     --go-grpc_out=. --go-grpc_opt=paths=source_relative \
     routeguide/route_guide.proto
+
+
+protoc --go_out=. --go_opt=paths=source_relative ./redis/models/proto/models.proto
+protoc --go_out=. --go_opt=paths=source_relative ./kafka/models/proto/orders/order.proto
+protoc --go_out=. --go_opt=paths=source_relative ./kafka/models/proto/offers/offer.proto
+protoc --go_out=. --go_opt=paths=source_relative ./kafka/models/proto/notifications/notifications.proto
+
 ```
 
 this will generate

@@ -1,0 +1,1 @@
+Scene is a collection of [[node in godot]]s, saved as a ***[[resource]]***.

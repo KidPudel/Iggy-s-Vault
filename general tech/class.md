@@ -1,0 +1,1 @@
+class is a form of [[structure]] but with fancy associated [[methods]] through them, via sugar and some additional metadata

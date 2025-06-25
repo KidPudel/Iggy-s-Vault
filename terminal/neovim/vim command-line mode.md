@@ -24,7 +24,11 @@
 - `:lua` to execute lua code
 - `:messages`: to see the log of messages
 - `:hi`: highlights
-- `:cdo`: execute command in all files in quick list or location list
+- `:cdo`: execute command on each line in the quickfix list. for specific matching line
+	- Example: `:cdo s/models/platform/gc | update`
+- `:cfdo`: execute command on each file in the quickfix list. for entire file
+- `:norm`: Normal mode commands. It will execute command like it was typed out. for example you can select the area and do the thing
+- `vimgrep`: search accorss
 
 # macros
 > macro is the list of keypresses, that you could store in a buffer and repeat it

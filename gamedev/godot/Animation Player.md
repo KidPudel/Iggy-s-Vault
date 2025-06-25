@@ -1,0 +1,2 @@
+Generally it is used for playback of animations. It is a script that has a list of instructions to set properties and call functions (via [[signal]] to promote loose coupling) by referencing them via key.
+So it is particularly useful for synchronization of animation with certain events.

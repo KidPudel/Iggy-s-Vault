@@ -1,0 +1,2 @@
+Hot reloading is a technique where we update [[dynamic library]] that contains our dynamic code using the old/current memory (could be a struct of data) with which we are running our main [[executable binaries]], base that checks for dll.
+We constantly check in executable whether the dll has been modified (by date). and read the new dll and using it instead of previous one.

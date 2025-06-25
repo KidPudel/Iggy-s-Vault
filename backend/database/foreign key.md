@@ -9,3 +9,8 @@ CREATE TABLE reference_receipts (
             ON DELETE CASCADE
 );
 ```
+
+NOTE: setting foreign key to another field (even primary id of another table) does improve performance by itself so create your own index if needed
+```sql
+CREATE INDEX idx_dimension_timelines_element_id ON dimension_timelines(element_id);
+```

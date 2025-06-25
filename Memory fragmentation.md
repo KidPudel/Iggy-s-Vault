@@ -1,0 +1,2 @@
+Event when free memory is broken into non-contiguous blocks, making it harder to allocate large continuous chunks. 
+To avoid it use [[hot and cold data separation]] in [[data oriented design principles]].

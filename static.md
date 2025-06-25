@@ -1,0 +1,1 @@
+static means the function or variable **belongs to the class itself, not to instances**.

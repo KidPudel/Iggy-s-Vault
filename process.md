@@ -1,0 +1,2 @@
+what happens when [[OS]] loads the [[program]] into memory and starts running its instructions. This is active.
+It encapsulates running [[program]] along with all the resources and information it needs to execute.

@@ -1,0 +1,1 @@
+In motherboard, capacitors, act as small energy reservoirs or [[buffer]]s, helping to maintain clean and stable power supply to the [[CPU]] and other components

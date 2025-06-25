@@ -1,0 +1,1 @@
+Mechanism that determines whether objects interact with each other.

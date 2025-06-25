@@ -1,0 +1,1 @@
+Literal is a [[languages/odin/comptime|comptime]] construct that directly  initializes (allocates, inserts and optimizes memory layout) value in memory.

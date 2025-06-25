@@ -16,3 +16,5 @@
 - [[join]]
 - `distinct`
 - `in`/`in not`
+- `returning`: returns some field like with select, but after `update`, `insert`
+- `with`: cte

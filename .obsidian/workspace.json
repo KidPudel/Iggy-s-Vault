@@ -4,25 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "cb416628f0c5dc37",
+        "id": "45720040f88fb9ed",
         "type": "tabs",
         "children": [
           {
-            "id": "a64cadd844436c26",
+            "id": "339bc7f77d65609d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "computer graphics/instancing.md",
+                "file": "gamedev/godot/node in godot.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "instancing"
+              "title": "node in godot"
+            }
+          },
+          {
+            "id": "121724a7ca4fbdbe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ways to reference node instance in a tree.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "ways to reference node instance in a tree"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "computer graphics/instancing.md",
+                "file": "ways to reference node instance in a tree.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +123,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for instancing"
+              "title": "Backlinks for ways to reference node instance in a tree"
             }
           },
           {
@@ -193,55 +209,55 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a64cadd844436c26",
+  "active": "121724a7ca4fbdbe",
   "lastOpenFiles": [
-    "instance.md",
-    "computer graphics/instancing.md",
-    "languages/golang/must-have packages aka pack of productive engineer.md",
-    "computer graphics/draw call.md",
-    "languages/golang/alias.md",
-    "backend/docker/Docker commands.md",
-    "backend/docker/docker basic terms.md",
-    "computer graphics/text rendering.md",
-    "rule of CPU vs GPU computation.md",
-    "computer graphics/NDC.md",
-    "computer graphics/SSBO.md",
-    "terminal/neovim/vim command-line mode.md",
-    "terminal/fzf.md",
-    "mock.md",
-    "general tech/unit tests.md",
-    "languages/golang/architect services advice.md",
-    "languages/golang/atomics.md",
-    "languages/golang/go-di.md",
+    "gamedev/godot/node in godot.md",
+    "ways to reference node instance in a tree.md",
+    "gamedev/godot/groups.md",
+    "export in godot.md",
+    "languages/zig/exporting.md",
+    "gamedev/godot/resource.md",
+    "gamedev/godot/scene.md",
+    "gamedev/godot/SceneTree.md",
+    "backend/docker/nodes.md",
+    "gamedev/godot/finite state machine in godot.md",
+    "gamedev/godot/autoload.md",
+    "gamedev/godot/class in godot.md",
+    "computer graphics/shader math.md",
+    "aseprite shortcuts.md",
+    "gamedev/godot/signal.md",
+    "gamedev/godot/godot project structure recommendation.md",
     "architecture/event bus.md",
-    "computer graphics/orthogonal projection.md",
-    "languages/golang/goroutines.md",
-    "terminal/tmux.md",
-    "computer graphics/perspective projection.md",
-    "computer graphics/normals.md",
-    "general tech/dynamic library.md",
-    "computer graphics/UBO.md",
-    "Pasted image 20250316113928.png",
-    "Pasted image 20250302160131.png",
-    "Pasted image 20250302152734.png",
-    "Pasted image 20250302152030.png",
-    "Pasted image 20250302150741.png",
-    "Pasted image 20250302142704.png",
+    "backend/database/cache techniques.md",
+    "computer graphics/UV coordinates.md",
+    "shader map.md",
+    "backend/database/redis.md",
+    "gamedev/godot/viewport in godot.md",
+    "autoloas.md",
+    "Untitled.canvas",
+    "gamedev/godot/shader in godot.md",
+    "computer graphics/shader.md",
+    "gamedev/godot/data-driven design in godot.md",
+    "gamedev/godot",
+    "Pasted image 20250512191336.png",
+    "Pasted image 20250512190641.png",
+    "Pasted image 20250512190638.png",
+    "Pasted image 20250512185907.png",
+    "Pasted image 20250512185611.png",
+    "Pasted image 20250512185320.png",
+    "Pasted image 20250510180450.png",
+    "Pasted image 20250510180227.png",
+    "Pasted image 20250420201052.png",
+    "images/Pasted image 20250316113928.png",
     "computer graphics",
-    "Pasted image 20250109194409.png",
-    "Pasted image 20250109192912.png",
     "backend/design",
     "CS/algorithms",
-    "Pasted image 20241022090626.png",
-    "Pasted image 20241022091013.png",
     "CS/patterns",
     "languages/odin",
     "terminal/neovim",
     "languages/zig",
-    "Untitled.canvas",
     "architecture",
     "backend/messaging",
-    "Untitled 1",
     "gamedev/Untitled.canvas"
   ]
 }

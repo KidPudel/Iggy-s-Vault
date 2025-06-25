@@ -1,0 +1,1 @@
+Virtual contiguous memory space that got reserved by [[OS]] marking it

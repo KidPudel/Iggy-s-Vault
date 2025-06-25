@@ -6,3 +6,6 @@ NOTE: you setup number of instances explicitly, because GPU inherently know how 
 we can have vertex buffer that only stores one type of quad, and instancing it and then change it with [[transformations]]
 
 where [[indices]] is for referencing vertices, instancing references whole geometries like meshes with all their [[vertex]]ies and [[indices]].
+
+But you are limited to the number of  `GL_MAX_VERTEX_ATTRIBS` [[attribute data]] per buffer element.
+If you want to excite this limit, use [[SSBO]] instead, yes, it has more overhead but the limits are one your memory.

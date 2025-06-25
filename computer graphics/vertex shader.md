@@ -1,5 +1,6 @@
 Processes individual vertices ([[vertex]] points in 3D space) of a 3D model.
-It transforms vertex positions from 3D world to 3d screen coordinates, then it passes data (texture coordinates, normals, acolors) to the next date of [[graphics pipeline]]
+It **transforms** vertex positions from 3D world to 3d screen coordinates, then it passes data (texture coordinates, normals, acolors) to the next date of [[graphics pipeline]]
+NOTE: vertex shader only works with existing vertices, it cannot add or delete them.
 
 
 ```c

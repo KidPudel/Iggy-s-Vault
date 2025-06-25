@@ -1,0 +1,1 @@
+Dynamic [[RAM]] or main memory that is used for 99% of system memory, it requires refreshes every 64 ms (hence **dynamic**) because it ***stores data using electrical charges*** in capacitors

@@ -1,0 +1,1 @@
+a [[file]] descriptor is just an integer handle that the [[OS]] uses to refer to an open I/O resources.

@@ -1,4 +1,4 @@
-FIFO is a named pipe is a special file that allows for [[IPC]] and it has no contents on a filesystem
+FIFO is a named pipe is a special [[file]] that allows for [[IPC]] and it has no contents on a filesystem
 Unlike regular pipes `|` (like in `ls | grep "Error"`), FIFO has name and can be accessed by unrelated processes.
 
 it is like [[channel]]
@@ -56,4 +56,5 @@ prw-r--r--@  1 iggysleepy  staff      0 Jan 22 13:27 git_aware_pipe
 drwxr-xr-x@ 46 iggysleepy  staff   1472 Jan 20 11:40 migrations
 
 ```
+
 
