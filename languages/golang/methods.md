@@ -5,6 +5,11 @@ func (t LockedParameterOrOwner) FunctionName(...p Params) error {}
 
 there are no such thing as objects or behavior in computer, there are only data and procedures that manipulate on that data
 
+Basically for:
+- semantics (sugar), method is belongs to/centered around specific data structure
+- interfaces 
+
+
 # Receiver
 In golang exists a concept of a **receiver** and it's **method**.
 In contrast to concept of  owner, receiver is *not* an entity and *it cannot own anything* as it is just a data type as every type (everyone is equal).

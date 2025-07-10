@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/godot project structure recommendation.md",
+                "file": "languages/golang/methods.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "godot project structure recommendation"
+              "title": "methods"
             }
           }
         ]
@@ -111,7 +111,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "gamedev/godot/godot project structure recommendation.md",
+            "file": "languages/golang/methods.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -168,8 +168,8 @@
   },
   "active": "6997c1adf6d04a22",
   "lastOpenFiles": [
-    "gamedev/godot/SceneTree.md",
     "gamedev/godot/godot project structure recommendation.md",
+    "gamedev/godot/SceneTree.md",
     "architecture/data-driven design.md",
     "architecture/data-driven architecture.md",
     "computer graphics/draw call.md",

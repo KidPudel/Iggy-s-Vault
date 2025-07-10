@@ -1,0 +1,2 @@
+- `call_deferred`: calls in idle time
+- `await get_tree().process_frame`

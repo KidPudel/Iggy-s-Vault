@@ -31,3 +31,5 @@ class_name Item extends Resource
 ```
 
 Which then allows as to create specific resources based on our new `Item` type, like `Pickaxe`, `Sword`, etc. and now we can securely reference concrete setup resources.
+
+**If your CardResource instances exist only inside a ColumnResource and nowhere else, there’s no need to save them individually as separate .tres or .tscn files.**

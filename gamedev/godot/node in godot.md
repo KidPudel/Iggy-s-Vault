@@ -18,9 +18,18 @@ It is called deferred
 Tree entered ->
 Ready <-
 This is why [[Call down, signal up]]
+If we still want to access the parent components of node in a scene, in `_ready`, we can call `call_deferred("_func_to_run")`, which will run at the idle time.
+Idle time happens at the end of the process and physics frames.
+
+
+# Dependency. Component nature.
+Since nodes are components, it is best to keep them self-contained as possible, this removes the tight-coupling.
+Nodes that has children owns its children, meaning interaction with it is normal
+[[signal]] allowing children to keep their reaction, while not introducing tight coupling.
+Outer nodes are the parent of the child nodes.
 
 
 ---
 
 # Ways to reference node instance in a tree
-[[ways to reference node instance in a tree]]
+[[ways to reference node instance in a tree godot]]

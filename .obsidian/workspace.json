@@ -4,41 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "45720040f88fb9ed",
+        "id": "70175be82b5b34a6",
         "type": "tabs",
         "children": [
           {
-            "id": "339bc7f77d65609d",
+            "id": "9080fd8b5d81bc7d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/node in godot.md",
+                "file": "languages/language processing/AST.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "node in godot"
-            }
-          },
-          {
-            "id": "121724a7ca4fbdbe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ways to reference node instance in a tree.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "ways to reference node instance in a tree"
+              "title": "AST"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -91,13 +75,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -113,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ways to reference node instance in a tree.md",
+                "file": "languages/language processing/parser.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ways to reference node instance in a tree"
+              "title": "Backlinks for parser"
             }
           },
           {
@@ -132,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/network/topic.md",
+                "file": "languages/language processing/parser.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from topic"
+              "title": "Outgoing links from parser"
             }
           },
           {
@@ -209,35 +191,36 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "121724a7ca4fbdbe",
+  "active": "9080fd8b5d81bc7d",
   "lastOpenFiles": [
+    "languages/language processing/parser.md",
+    "languages/language processing/AST.md",
+    "languages/language processing/REPL.md",
+    "languages/language processing/interpreter.md",
+    "languages/language processing/syntax analysis.md",
+    "languages/language processing/token.md",
+    "languages/language processing/lexer.md",
+    "languages/language processing",
+    "CS/patterns/Template method.md",
+    "languages/golang/methods.md",
+    "Pasted image 20250708184512.png",
     "gamedev/godot/node in godot.md",
-    "ways to reference node instance in a tree.md",
-    "gamedev/godot/groups.md",
-    "export in godot.md",
-    "languages/zig/exporting.md",
-    "gamedev/godot/resource.md",
-    "gamedev/godot/scene.md",
     "gamedev/godot/SceneTree.md",
-    "backend/docker/nodes.md",
-    "gamedev/godot/finite state machine in godot.md",
-    "gamedev/godot/autoload.md",
-    "gamedev/godot/class in godot.md",
-    "computer graphics/shader math.md",
-    "aseprite shortcuts.md",
-    "gamedev/godot/signal.md",
-    "gamedev/godot/godot project structure recommendation.md",
-    "architecture/event bus.md",
-    "backend/database/cache techniques.md",
-    "computer graphics/UV coordinates.md",
-    "shader map.md",
-    "backend/database/redis.md",
-    "gamedev/godot/viewport in godot.md",
-    "autoloas.md",
-    "Untitled.canvas",
-    "gamedev/godot/shader in godot.md",
-    "computer graphics/shader.md",
     "gamedev/godot/data-driven design in godot.md",
+    "gamedev/godot/must have singletons.md",
+    "gamedev/godot/resource.md",
+    "gamedev/godot/defer.md",
+    "gamedev/godot/godot project structure recommendation.md",
+    "gamedev/godot/export in godot.md",
+    "ways to reference node instance in a tree godot.md",
+    "gamedev/godot/signal.md",
+    "backend/network/HTTP2.0.md",
+    "aseprite shortcuts.md",
+    "computer graphics/shader math.md",
+    "gamedev/godot/scene.md",
+    "backend/docker/nodes.md",
+    "backend/database/redis.md",
+    "Untitled.canvas",
     "gamedev/godot",
     "Pasted image 20250512191336.png",
     "Pasted image 20250512190641.png",
@@ -248,7 +231,6 @@
     "Pasted image 20250510180450.png",
     "Pasted image 20250510180227.png",
     "Pasted image 20250420201052.png",
-    "images/Pasted image 20250316113928.png",
     "computer graphics",
     "backend/design",
     "CS/algorithms",
@@ -257,7 +239,6 @@
     "terminal/neovim",
     "languages/zig",
     "architecture",
-    "backend/messaging",
     "gamedev/Untitled.canvas"
   ]
 }

@@ -3,6 +3,7 @@
 - command-n: create new sprite
 - ctrl-u: color editor
 - shift-o: outline tool
+- ctrl-shift-move: move layer
 - ctrl-b: custom brash based on selected area
 - shift-h: flip horizontally
 	- shift-v: vertically
