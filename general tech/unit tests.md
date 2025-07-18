@@ -12,3 +12,5 @@ test the entire app like an end user
 Test runners like Jest can run all tests automatically on the background or in continious integration while deploying 
 
 
+
+Tests are good for constantly verify the state and correctness of the component.

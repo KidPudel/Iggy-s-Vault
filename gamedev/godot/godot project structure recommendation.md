@@ -14,7 +14,7 @@ res://
   common/          # standalone
   utilities/       # helpers like game and level manager, 
   ui/              # menus & HUD that are reused everywhere
-  actors/          # player, enemies, NPCs – one sub-folder each
+  actors or entities/          # player, enemies, NPCs – one sub-folder each
   levels/          # each playable level/world map scene
   assets_raw/      # .blend, .psd, wav masters – ignored by Godot
   assets/          # global to the game, like soundtrack.

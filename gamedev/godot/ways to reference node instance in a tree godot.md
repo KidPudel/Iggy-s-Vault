@@ -12,9 +12,10 @@
 
 ## Editor-Assigned Access (Inspector-driven)
 
-5. Assign a node directly via Inspector using `@export var target: Node`. This gives a typed reference to an existing node without hardcoding. [[export in godot]]
+5. Assign a node directly via Inspector using `@export var target: Node`. This gives a typed reference to an existing node without hardcoding. [[export in godot]]. Works with the current scene
 
 6. Store a path to the node using `@export var path: NodePath` and resolve it with `get_node(path)`. More decoupled than direct references and allows Inspector configuration. It allows to explicitly with [[export in godot]] to assign a reference to the node in the current scene
+7. `@export var scene: PackedScene`, provide scene resource to instantiate the scene, not the class
 
 dependencies are received, not retrieved, passive, not active
 

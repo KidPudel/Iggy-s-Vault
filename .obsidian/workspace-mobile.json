@@ -168,6 +168,9 @@
   },
   "active": "6997c1adf6d04a22",
   "lastOpenFiles": [
+    "languages/language processing/parser.md",
+    "languages/language processing/syntax analysis.md",
+    "languages/golang/methods.md",
     "gamedev/godot/godot project structure recommendation.md",
     "gamedev/godot/SceneTree.md",
     "architecture/data-driven design.md",
@@ -190,9 +193,6 @@
     "backend/database/database replication.md",
     "backend/backend and systems design questions.md",
     "backend/database/transactions.md",
-    "backend/database/partitioning.md",
-    "backend/database/list partitioning.md",
-    "backend/database/hash partitioning.md",
-    "backend/database/range partitioning.md"
+    "backend/database/partitioning.md"
   ]
 }

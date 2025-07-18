@@ -5,8 +5,10 @@ func (t LockedParameterOrOwner) FunctionName(...p Params) error {}
 
 there are no such thing as objects or behavior in computer, there are only data and procedures that manipulate on that data
 
+Golang is more expressive language than Odin.
+
 Basically for:
-- semantics (sugar), method is belongs to/centered around specific data structure
+- semantics (sugar), method is belongs to/centered around specific data structure. "why would we expose something specific to the others, right?", it is contextually dedicated to it. For logical organization
 - interfaces 
 
 
