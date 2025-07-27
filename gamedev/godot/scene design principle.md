@@ -1,0 +1,3 @@
+If a node or a [[scene]] is **reusable in multiple contexts (scenes)/context sensitive**, and its behavior depends on where it is used, then it must not contain logic that directly references context sensitive data. Instead, it should expose events ([[signal]]) and **delegate control to the parent scene**.
+
+If a node or scene is tightly coupled to a specific context and will **only ever be used within that context** (e.g. a GameHUD used only in the Game scene), then it may **own logic that directly references other parts of the same scene** and coordinate behavior internally.

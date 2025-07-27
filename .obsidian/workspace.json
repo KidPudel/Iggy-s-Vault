@@ -4,43 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "bc35b20e0eeb5911",
+        "id": "a4f5ece605bd6455",
         "type": "tabs",
         "children": [
           {
-            "id": "de1e2994d2ede5df",
+            "id": "002d9ecebe89ac33",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/nodes in essence.md",
+                "file": "aseprite shortcuts.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "nodes in essence"
+              "title": "aseprite shortcuts"
+            }
+          },
+          {
+            "id": "8d5ab6cd5945ad10",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blender shortcuts.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "blender shortcuts"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
-        "id": "455f8deca0478aff",
+        "id": "e0722d583bb5eb49",
         "type": "tabs",
         "children": [
           {
-            "id": "4261d8889d51ab95",
+            "id": "fe5127356889d9e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/node2d vs control.md",
+                "file": "aseprite shortcuts.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "node2d vs control"
+              "title": "aseprite shortcuts"
             }
           }
         ]
@@ -213,12 +229,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4261d8889d51ab95",
+  "active": "8d5ab6cd5945ad10",
   "lastOpenFiles": [
+    "computer graphics/vertex.md",
+    "blender shortcuts.md",
+    "aseprite shortcuts.md",
+    "blender learning path for game dev.md",
+    "gamedev/godot/scene design principle.md",
+    "gamedev/godot/signal.md",
     "gamedev/godot/nodes in essence.md",
+    "backend/network/ingress controller.md",
+    "gamedev/godot/viewport in godot.md",
+    "computer graphics/viewport.md",
+    "computer graphics/shader math.md",
+    "gamedev/godot/tween.md",
+    "computer graphics/fragment shader.md",
+    "shader map.md",
+    "computer graphics/shader.md",
     "gamedev/godot/node2d vs control.md",
     "gamedev/godot/node in godot.md",
-    "aseprite shortcuts.md",
     "gamedev/godot/ways to reference node instance in a tree godot.md",
     "gamedev/godot/godot project structure recommendation.md",
     "gamedev/godot/resource.md",
@@ -228,21 +257,8 @@
     "general tech/unit tests.md",
     "languages/language processing/parser.md",
     "CFG.md",
-    "languages/language processing/lexer.md",
-    "languages/language processing/AST.md",
-    "languages/language processing/REPL.md",
-    "languages/language processing/interpreter.md",
-    "languages/language processing/syntax analysis.md",
-    "languages/language processing/token.md",
     "languages/language processing",
-    "CS/patterns/Template method.md",
     "Pasted image 20250708184512.png",
-    "gamedev/godot/SceneTree.md",
-    "gamedev/godot/data-driven design in godot.md",
-    "gamedev/godot/must have singletons.md",
-    "gamedev/godot/defer.md",
-    "gamedev/godot/signal.md",
-    "backend/network/HTTP2.0.md",
     "Untitled.canvas",
     "gamedev/godot",
     "Pasted image 20250512191336.png",
