@@ -1,0 +1,1 @@
+Fundamental geometric shapes used to represent objects in 2D or 3D models.

@@ -1,0 +1,1 @@
+Shape of our model. [[polygons]] that are connected

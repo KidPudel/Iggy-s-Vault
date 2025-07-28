@@ -1,0 +1,1 @@
+Pre-calculate complex data like material, transforms, lighting, shadows into a static format often an image [[texture]].

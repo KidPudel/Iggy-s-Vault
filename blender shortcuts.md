@@ -1,15 +1,16 @@
 - middle mouse for rotating around
-	- ctrl + middle: zoom in and out
-	- shift + middle: move around
-	- alt/option+middle mouse: clip the view 
+	- ctrl+middle: zoom in and out
+	- shift+middle: move around
+	- alt/option+middle mouse: clip the view to axis
 - x: delete
-- shift-a: add. just like in godot cmd+a
-- shift-d: duplicate an object
+- shift+a: add. just like in godot cmd+a
+- shift+d: duplicate an object
 - g: grab the object
 	- esc/right click: cancel the movement:
 	- left click: accept
 	- x, y, z: for moving along the chosen axis
 	- middle mouse: snap to the nearest axis
+- e: extrude creates a new connected geometry from selected elements ([[vertex]], [[edge]], [[faces]]) in a direction, usually normal to the selection
 - f12: take a photo/render
 - n: properties of the selected object. Location, scale, rotation, plugin panels
 - t: tool selection
@@ -29,15 +30,23 @@
 - alt+left click: edge select, which will select whole edge of connected vertices [[vertex]]
 	- with `shift`: selects more
 - f2: rename object
+- f3: search for action and shortcut 
 - shift+tab: enable snap during transform. can be enabled with different targets
 - h: hide
 	- alt+h: unhide
-
-
-
-Mesh modifiers
-- generate subdivision surface modified. (which splits [[faces]] into smaller parts, making it appear smoother exponentially)
-- generate solidify: make surface thick
-
-NOTE: When we Add modifier, it is Non-destructive, temporary preview, editable stack, but when we Apply modifier, it Bakes result into real geometry, removes from stack, destructive
-NOTE 2: blender applies modifiers from top to bottom, so the order matters. For example, you needed to first subdivision surface of the donut, to then create a copy for icing, and then you apply solidify to make it thick, and on a thicken surface, you apply new subdivision surface for the drips of icing.
+- f: change the size of a brush in sculpting
+	- shift+f: change the strength of a brush
+- ctrl+i: invert something like mask brush effect, to paint only on originally masked area
+- shift: invokes smooth brush type in any brush type
+- ctrl+p: assign (1) child object to the (2) parent object
+- /: isolation mode toggle
+- ctrl+a: [[blender apply]] menu
+- a: select all
+- ctrl+b: in edit mode. Performs a **bevel** (chamfer) on selected **edges or vertices**. Splits the geometry ([[vertex]], [[edge]]) and inserts new edges, to soften or round edges
+	- ![[Pasted image 20250728120935.png|500]] example
+- ctrl+r: loop cut mesh new loop, which creates new vertices, new [[topology]], so you can edit it more
+- k: knife cuts new [[topology]]
+- alt+z: x-ray
+- m: move to new collection
+- ctrl+j: join to the active object (yellow one)
+- shift+right click: move 3D cursor, this allows to make it origin in some operations
