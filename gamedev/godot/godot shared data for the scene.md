@@ -1,0 +1,1 @@
+When you assign a scene scoped thing like surface material override, all instanced will share the same reference to it.P

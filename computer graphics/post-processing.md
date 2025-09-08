@@ -1,0 +1,1 @@
+post processing is the process of applying shader to the frame after the "godot" has rendered it

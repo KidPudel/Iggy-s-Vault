@@ -5,3 +5,6 @@
 - Control: Base class for all GUI elements. Adjusts its position and size based on its parent control
 - Subviewport: [[viewport in godot]] separate render target
 	- For example you can render a whole different window in it and set its texture to the texture of TextureRect node and render it as a flat texture
+- AnimationTree: Blending
+	- https://www.youtube.com/watch?v=n872lbC-_BU
+- AnimationPlayer: Animating any property

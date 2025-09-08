@@ -25,9 +25,9 @@ dependencies are received, not retrieved, passive, not active
 
 7. Use [[groups]] with `get_tree().get_nodes_in_group("group_name")`. Lets you reference one or many nodes sharing a role or behavior. For global search, groups are go to.
 
-8. Perform a recu   rsive search with `find_child("Name")` or `find_node("Name", recursive = true)`. Useful for uncertain hierarchy but slower and less safe.
+8. Perform a recursive search with `find_child("Name")` or `find_node("Name", recursive = true)`. Useful for uncertain hierarchy but slower and less safe.
 
-9. Use `owner` to reference the instancer of the current node. Helpful when a scene is instanced inside another and needs to call back to its context.
+9. Use `owner` to reference the instancer of the current node. Helpful when a scene is instanced inside another and needs to call back to its context. It gets the reference to the owner of the scene (node at the base of the current scene)
 
 10. Pass the reference directly via method arguments. Keeps things decoupled and clear when the reference is already available in the calling scope.
 

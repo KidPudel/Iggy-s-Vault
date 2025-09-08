@@ -245,3 +245,10 @@ F - find, but opens different tab
 o - omnibar. search in current tab
 gt, gT - go to tab
 x, X - close tab and unclose tab
+
+
+
+vim-surround:
+	- ysiw] - surround entire word with ]
+	- cs"' - change surround " to '
+	- ds" - delete surround

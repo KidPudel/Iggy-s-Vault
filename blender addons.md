@@ -1,0 +1,5 @@
+- [LoopTools](https://extensions.blender.org/add-ons/looptools/)
+- [Game Rig Tools](https://toshicg.gumroad.com/l/game_rig_tools)
+	- [generates rigs that are sane for games (works with every plugin. e.g. rigify)](https://www.youtube.com/watch?v=iZBx1I7vmQ0)
+	- **Convert complex Rigify rigs** into **game-engine friendly rigs**.
+- 

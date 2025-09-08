@@ -2,7 +2,9 @@
 	- ctrl+middle: zoom in and out
 	- shift+middle: move around
 	- alt/option+middle mouse: clip the view to axis
-- x: delete
+- x: 
+	- object mode: delete object
+	- edit mode: delete vertex, edge, face
 - shift+a: add. just like in godot cmd+a
 - shift+d: duplicate an object
 - g: grab the object
@@ -11,17 +13,24 @@
 	- x, y, z: for moving along the chosen axis
 	- middle mouse: snap to the nearest axis
 - e: extrude creates a new connected geometry from selected elements ([[vertex]], [[edge]], [[faces]]) in a direction, usually normal to the selection
+	- alt+e: special extrude options
 - f12: take a photo/render
-- n: properties of the selected object. Location, scale, rotation, plugin panels
+- n: properties of the selected object. Location, scale, rotation, plugin panels. we can notice here if we forgotten to [[blender apply]] to [[bake]] some transformation
 - t: tool selection
 - s: scale
 	- supports scaling along axis (could be used in any mode)
+	- use shift with transformations to make it slower, hence accurate
+	- s+x+0: aligns selected (makes all of them 0 at x)
+	- alt+s: resets
 - r: rotate
+	- You can also use numbers to rotate at precise degree 
+	- alt+r: resets
 - z: change shading (viewport, material preview, wireframe)
 	- shift-z: switch between 2 latest
 - ctrl+tab: switch between interaction modes (object, editing, sculpting, etc)
 	- tab: to switch between 2 latest
-- w: change selection mode: rectangle, lasso
+	- in timeline to go into graph view
+- w: change selection mode: rectangle, circle, lasso
 - f9: parameters of the object that are appeared when you create a new object
 - right click: commonly used commands on a selected item
 - cmd+1: adds a subdivision surface modified. (which splits [[faces]] into smaller parts, making it appear smoother exponentially)
@@ -34,8 +43,11 @@
 - shift+tab: enable snap during transform. can be enabled with different targets
 - h: hide
 	- alt+h: unhide
-- f: change the size of a brush in sculpting
-	- shift+f: change the strength of a brush
+- f: 
+	- sculpt mode:
+		- change the size of a brush in sculpting
+		- shift+f: change the strength of a brush
+	- edit mode: fill at edge with face
 - ctrl+i: invert something like mask brush effect, to paint only on originally masked area
 - shift: invokes smooth brush type in any brush type
 - ctrl+p: assign (1) child object to the (2) parent object
@@ -44,9 +56,26 @@
 - a: select all
 - ctrl+b: in edit mode. Performs a **bevel** (chamfer) on selected **edges or vertices**. Splits the geometry ([[vertex]], [[edge]]) and inserts new edges, to soften or round edges
 	- ![[Pasted image 20250728120935.png|500]] example
+	- ctrl+shift+b: bevel the vertex
 - ctrl+r: loop cut mesh new loop, which creates new vertices, new [[topology]], so you can edit it more
 - k: knife cuts new [[topology]]
 - alt+z: x-ray
-- m: move to new collection
+- m: 
+	- in object: move to new collection
+	- in edit: merge vertices
 - ctrl+j: join to the active object (yellow one)
+	- 2 objects needs to be joined to perform bridge edge loops
 - shift+right click: move 3D cursor, this allows to make it origin in some operations
+- ctrl+l: links transfer data to the other selected objects from the target. (like modifiers)
+- j: join vertices to create new edge
+- g+g: grab and drag vertex along the edge
+- ctrl+mouse select: deselects
+- alt+a: select all
+	- l: linked selection
+	- alt+a: deselects all
+- i: insert a key frame
+- cmd+alt+s: incremental save
+- q: quick actions
+- .: choose transform pivot point
+- t: in graph editor choose interpolation mode
+- shift+e: adds a F-curve extrapolation like cyclic animation

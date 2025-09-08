@@ -4,25 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "58e987443fe43586",
+        "id": "5e5ad32306cb62e9",
         "type": "tabs",
         "children": [
           {
-            "id": "b5c2e92855dd5e20",
+            "id": "155d912548192e9e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "modifiers.md",
+                "file": "gamedev/godot/fsm vs hsm.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "modifiers"
+              "title": "fsm vs hsm"
+            }
+          },
+          {
+            "id": "c8231d66d1c2b2b8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "gamedev/godot/shader next_pass vs shader mix.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "shader next_pass vs shader mix"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -54,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "PackedScene",
+                "query": "surround",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,12 +91,12 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -154,8 +170,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           },
           {
@@ -181,6 +197,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "switcher:Open quick switcher": false,
@@ -192,35 +209,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b5c2e92855dd5e20",
+  "active": "c8231d66d1c2b2b8",
   "lastOpenFiles": [
+    "computer graphics/shader math.md",
+    "gamedev/godot/shader next_pass vs shader mix.md",
+    "terminal/neovim/vim motions.md",
+    "backend/versioning/git-basics.md",
+    "gamedev/godot/fsm vs hsm.md",
+    "gamedev/godot/Limbo AI.md",
+    "gamedev/godot/ways to reference node instance in a tree godot.md",
+    "gamedev/godot/godot shared data for the scene.md",
+    "claude code tips.md",
+    "aseprite shortcuts.md",
+    "CS/SOLID.md",
+    "gamedev/godot/viewport in godot.md",
+    "computer graphics/viewport.md",
+    "computer graphics/post-processing.md",
+    "gamedev/godot/godot project structure recommendation.md",
+    "gamedev/godot/nodes in essence.md",
     "blender shortcuts.md",
+    "blender modifiers.md",
+    "blender quick rigging guide.md",
+    "blender deform vs non-deform bones.md",
+    "blender addons.md",
+    "blender learning path for game dev.md",
     "topology.md",
     "Pasted image 20250728120935.png",
     "blender distructive and non-distructive.md",
     "blender apply.md",
     "general tech/Top shortcuts.md",
-    "modifiers.md",
-    "mesh.md",
-    "polygons.md",
-    "bake.md",
-    "aseprite shortcuts.md",
-    "blender learning path for game dev.md",
-    "computer graphics/normals.md",
-    "computer graphics/vertex.md",
-    "gamedev/godot/scene design principle.md",
-    "gamedev/godot/signal.md",
-    "gamedev/godot/nodes in essence.md",
-    "backend/network/ingress controller.md",
-    "gamedev/godot/viewport in godot.md",
-    "computer graphics/viewport.md",
-    "computer graphics/shader math.md",
-    "gamedev/godot/tween.md",
-    "computer graphics/fragment shader.md",
-    "shader map.md",
-    "computer graphics/shader.md",
-    "gamedev/godot/node2d vs control.md",
-    "gamedev/godot/node in godot.md",
     "languages/language processing",
     "Pasted image 20250708184512.png",
     "Untitled.canvas",
