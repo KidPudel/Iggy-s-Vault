@@ -27,6 +27,13 @@ vec3 b = vec3(0.0, 0.0, 1.0);
 vec3 result = mix(a, b, 0.5); // result = purple (0.5, 0.0, 0.5)
 ```
 
+# clamp - constraint value between min and max values
+```c
+clamp(10, 0, 1) = 1
+clamp(-1, 0, 1) = 0
+clamp(0.5, 0, 1) = 0.5
+```
+
 # fract - fractional part of the number
 ```c
 fract(0.0)   = 0.0
@@ -60,7 +67,7 @@ step(0.5, 0.8) = 1.0
 
 # smoothstep(edge0, edge1, x) - smooth curve (ease-in, ease-out) step
 
-Returns a **smooth transition** from 0.0 to 1.0 as x moves from edge0 to edge1.
+Returns a **smooth transition** from 0.0 to 1.0 indicating how much progress we've made as x moves from edge0 to edge1.
 ```
 smoothstep(0.2, 0.8, 0.5) = ~0.5
 smoothstep(0.2, 0.8, 0.2) = 0.0

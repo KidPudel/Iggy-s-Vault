@@ -5,3 +5,6 @@ Control nodes make it easy to
 - Different support for respond to the input/interaction, which is coming from the UI nature
 	- Builtin mouse support
 	- etc
+
+
+Note: container makes the child node say how much it wants size from the parent

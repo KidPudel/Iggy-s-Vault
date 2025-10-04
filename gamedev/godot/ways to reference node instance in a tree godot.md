@@ -1,3 +1,4 @@
+
 ## Static Access (known at design time)
 
 1. Call it directly with a string path `get_node("path")`. This is hardcoded, but works for static, predictable trees.

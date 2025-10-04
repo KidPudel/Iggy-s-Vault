@@ -22,6 +22,7 @@ var character_node = Character.new()
 
 To register a class we can use `class_name` or `class`.
 
+NOTE: the difference between instantiating a class `.new()` and instantiating a scene `.instantiate()`, is that first is just create a fresh instance of a class and nothing more, while the second creates a fresh instance of the resource, meaning bringing all hierarchy of the scene.
 
 
 # Global class

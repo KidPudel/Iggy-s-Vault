@@ -2,6 +2,7 @@ Resource is the base class for all Godot-specific resource types, serving primar
 They inherit from RefCounter [[reference counter]], meaning we can reference count it and free when not needed.
 By extending class with `Resource`, we add the ability to export a data.
 
+
 Example would be a `PackedScene` which is a resource able to store and instantiate a [[scene]] it contains as many times as needed.
 So basically `PackedScene` is a built-in type representing a scene resource
 
@@ -16,7 +17,7 @@ This method is equivalent of using [ResourceLoader.load()](https://docs.godoten
 
 
 load or preload literally loads a resource and then you can **instantiate new** instance of a node/scene
-> NOTE: we can use ResourceLoader to use something like `ResourceLoader.load_threaded_request("path")`, `ResourceLoader.load_threaded_get_status("path")` and `ResourceLoader.load_threaded_get("path")`
+> NOTE: we can use ResourceLoader to use something like `ResourceLoader.load_threaded_request("path")`, `ResourceLoader.load_threaded_get_status("path")` and `ResourceLoader.load_threaded_get("path")` and we can save using `ResourceSaver.save()`
 
 `preload()` when you require resources to be available immediately and consistently throughout your game or when optimizing performance is crucial.
 For dynamic or occasional resource needs, opt for `load()` or the resource loader methods.
@@ -31,3 +32,7 @@ Examples of resource:
 
 Note: -  it’s _generally better to store the “owns many” relationship on the parent_ (e.g. Column has an array of Cards) rather than modeling “many-to-one” from the children’s side (e.g. each Card storing its own column_index).
 Because: Godot's resource system is hierarchical and tree-oriented, and data structures underneath benefits that approach. It is better to make owner to "own" its sub-resources, it makes it clear, who manages them, simplifies serialization, avoids dangling pointers.
+
+Note 3: static data like the template, definition, during design time is stored in `res://` is immutable, while saving state or just mutable data should be in the `user://` 
+
+
