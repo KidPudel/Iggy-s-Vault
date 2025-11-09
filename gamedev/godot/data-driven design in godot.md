@@ -73,4 +73,4 @@ static data like the template, definition, during design time is stored in `res:
 TLDR:
 - DeckConfig (**Resource**, in `res://`): editor-authored list of **CardConfig ids** (or weighted entries or `.tres` resources created from `.gd` resource class defenition) for starters/recipes.
 - ProfileSave (**Resource**, written to `user://`) for persistent ownership/progress.
-- for the local scoped like current runtime state of the board game states like health of the card just a regular script with fields in it
+- *for the local scoped like current runtime state of the board game states like health of the card just a regular script with fields in it*

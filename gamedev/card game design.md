@@ -3,13 +3,18 @@ The C. A. R. D. S. model of Card Games, that helps structure card game design to
 The following 5 categories has different categories to consider in itself, and they could be mixed or leaning towards one or strictly doing one of these
 
 # Collection
-Before diving deep into the rules, think about how players will get cards.
-1. Randomized like Random rewards
-2. Non-Randomized like Starter pack
+How players obtains cards
+1. Starter pack, randomized or not
+2. In-Run collection
+	1. rewards in duels defeating bosses
+3. Meta-progression
+	1. Unlocked pack outside lookof a card game itself
+		1. Solving puzzles
+	2. Real meta-progression with unlocking cards between games (whole (video) game)
 
 # Aim
 The ultimate goal of the game.
-> NOTE: It is important to let the player know how to win a game **as soon as possible**.
+> NOTE: It is important to let the player know how to win a game **ASAP**.
 
 Two categories that could be done in many different ways:
 1. Value to Defend (The most common): Health points (hp < 0 = you lose)

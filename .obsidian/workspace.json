@@ -4,25 +4,56 @@
     "type": "split",
     "children": [
       {
-        "id": "3bc922f074d15f21",
+        "id": "e96bfdb83544af5a",
         "type": "tabs",
         "children": [
           {
-            "id": "3325a17cc0c3d8ed",
+            "id": "971729061f03c1ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/5 mistakes and solutions.md",
+                "file": "gamedev/roblox/essential apis.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "5 mistakes and solutions"
+              "title": "essential apis"
+            }
+          },
+          {
+            "id": "7e8aa9221a8dff57",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "gamedev/roblox/Project architecture.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Project architecture"
+            }
+          },
+          {
+            "id": "4a9dc89a54ebddf0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "gamedev/roblox/client vs server and replication.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "client vs server and replication"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -41,7 +72,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -54,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "instantiate",
+                "query": "GetService",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,12 +106,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 357.5124969482422,
     "collapsed": true
   },
   "right": {
@@ -97,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "languages/language processing/parser.md",
+                "file": "gamedev/card game design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +137,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for parser"
+              "title": "Backlinks for card game design"
             }
           },
           {
@@ -173,7 +203,8 @@
               "title": "All properties"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -194,55 +225,56 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3325a17cc0c3d8ed",
+  "active": "4a9dc89a54ebddf0",
   "lastOpenFiles": [
-    "gamedev/Game design document.md",
-    "gamedev/5 mistakes and solutions.md",
-    "gamedev/card game design.md",
-    "gamedev/godot/scene design principle.md",
-    "gamedev/godot/scene.md",
-    "gamedev/godot/class in godot.md",
-    "general tech/class.md",
-    "gamedev/godot/fsm vs hsm.md",
-    "gamedev/godot/resource.md",
-    "gamedev/godot/node2d vs control.md",
-    "gamedev/godot/godot project structure recommendation.md",
-    "gamedev/godot/data-driven design in godot.md",
-    "gamedev/godot/shader render modes.md",
-    "gamedev/godot/shader in godot.md",
-    "gamedev/godot/Call down, signal up.md",
-    "gamedev/godot/event bus.md",
-    "gamedev/godot/autoload.md",
-    "gamedev/godot/ways to reference node instance in a tree godot.md",
-    "architecture/event bus.md",
-    "gamedev/godot/Unique node.md",
-    "gamedev/godot/SceneTree.md",
-    "computer graphics/shader math.md",
-    "math/signed distance.md",
-    "krita shorcuts.md",
     "blender shortcuts.md",
-    "aseprite shortcuts.md",
+    "gamedev/roblox/events.md",
+    "gamedev/roblox/essential apis.md",
+    "gamedev/roblox/Player and Character API.md",
+    "gamedev/roblox/Project architecture.md",
+    "gamedev/roblox/Core environments (containers).md",
+    "gamedev/roblox/Communication (Remote).md",
+    "gamedev/roblox/must-have packages.md",
+    "gamedev/roblox/client vs server and replication.md",
+    "gamedev/roblox/Services.md",
+    "languages/lua/require.md",
+    "languages/lua/module.md",
+    "gamedev/roblox/DataModel.md",
+    "gamedev/roblox/Script types.md",
+    "gamedev/roblox/Data Persistence with DataStores.md",
+    "gamedev/roblox/roblox oop.md",
+    "gamedev/roblox/execution context.md",
+    "languages/lua/table.md",
+    "gamedev/roblox/essential services.md",
+    "gamedev/roblox/CFrame.md",
+    "backend/network/API.md",
+    "gamedev/roblox/essencial services.md",
+    "gamedev/godot/shader in godot.md",
+    "computer graphics/shader math.md",
+    "gamedev/godot/static keyword.md",
+    "gamedev/godot/fsm vs hsm.md",
+    "languages/lua",
+    "gamedev/roblox",
+    "test canvas.canvas",
+    "Untitled.canvas",
+    "Pasted image 20250510180227.png",
+    "Pasted image 20250512190641.png",
+    "Pasted image 20250512191336.png",
     "Pasted image 20250728120935.png",
+    "Pasted image 20251006004155.png",
+    "Untitled.base",
     "languages/language processing",
     "Pasted image 20250708184512.png",
-    "Untitled.canvas",
     "gamedev/godot",
-    "Pasted image 20250512191336.png",
-    "Pasted image 20250512190641.png",
     "Pasted image 20250512190638.png",
     "Pasted image 20250512185907.png",
     "Pasted image 20250512185611.png",
     "Pasted image 20250512185320.png",
-    "Pasted image 20250510180450.png",
-    "Pasted image 20250510180227.png",
     "computer graphics",
     "backend/design",
     "CS/algorithms",
     "CS/patterns",
     "languages/odin",
-    "terminal/neovim",
-    "languages/zig",
-    "architecture",
     "gamedev/Untitled.canvas"
   ]
 }

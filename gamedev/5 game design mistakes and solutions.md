@@ -7,7 +7,7 @@ top for the board game designers, but it is true for games in general.
     - **Make a GDD (Game Design Document):** Write down all thoughts, ideas, and goals for your game to establish a clear foundation.
 
 # 2. Being Defensive of Unbalanced Mechanics
-- **The Mistake:** Becoming so excited and proud of a mechanic or system you devised that you defend it when playtesters point out it is unbalanced or ruins the fun.
+- **The Mistake:** Becoming so excited and proud of a mechanic or system you devised that you defend it when playtesters point out it is unbalanced or ***ruins the fun***.
 - **The Solution:**
     - **Put yourself in your players' shoes:** Recognize that unbalanced mechanics—or even the feeling of imbalance—can ruin the experience.
     - **Remove unbalanced mechanics:** Listen to playtesters' pain points and remove unbalanced mechanics wherever you find them.

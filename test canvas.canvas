@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"fe6767f73d8e152b","type":"text","text":"Collection\n\nStart with a predefined number of x (number of slots) cards. randomly one of the predefined sets of “starter pack”, for carefully balanced, yet unique starts.\n\nIn-run collection:\nCollect cards by defeating the opponent (bosses?)\n\nMeta-progression\nCollect new cards and objects by solving mysteries (puzzles) around the school (and outside of it)\n","x":-800,"y":-792,"width":580,"height":500,"color":"3"},
+		{"id":"5160e26a06f1ccc9","type":"text","text":"Aim  \n  \nThe ultimate goal to win  \n  \ndefend or obtain?  \n  \n  \nDefend  \n  \nObtaining is global goal, while defending is the ultimate goal to to win the round  \nOr we should defend x until y, and win is who obtains more z?  \nResource could be linked to this?","x":80,"y":-1120,"width":604,"height":396},
+		{"id":"b69f54f921180c2d","type":"file","file":"Pasted image 20251006004155.png","x":340,"y":-292,"width":400,"height":225}
+	],
+	"edges":[
+		{"id":"387e432674c0abfa","fromNode":"fe6767f73d8e152b","fromSide":"right","toNode":"5160e26a06f1ccc9","toSide":"left"}
+	]
+}
