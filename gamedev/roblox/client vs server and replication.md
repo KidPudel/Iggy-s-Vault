@@ -2,7 +2,7 @@
 
 In Godot, you typically start with a single-player context and add networking later. Roblox is a multiplayer-first platform; every game runs on a server-client architecture, even when you're the only one playing in Studio. The server is the ultimate authority, while clients are essentially windows into the game world.
 
-- **Server**: The owner of the game itself (master data), it manipulates on it directly and securely
+- **Server**: The owner of the game itself (master data), it manipulates on it directly and securely, it is the *authority*
 - **Client**: The receiver/viewer and asker (via shared service and events) for the changes on the server
 - **Replicated containers/data**: The exposed data (properties of instances) that are replicatable, the rest of data is locked to specific context (internal to server, internal to client)
 - **Replication**: the synchronization of latest master data to the client.
@@ -18,6 +18,22 @@ If it’s just for the player’s own visual experience and doesn’t matter to 
 In other words:
 If we want to replicate changes to all players that we make in our script, we should use server scripts
 If we want to replicate changes only to one player, then we will use local script (client side)
+
+But with an exception being - Roblox does _grants_ clients **authority** in very specific, intentional areas:
+- Character movement
+- Character animation
+
+In other words it server is a truth holder, except for a small set of replicated components where roblox intentionally trusts the client
+
+| **Component / Behavior**                                              | **Client can initiate?** | **Will automatic replication happen?** | **Conditions / Notes**                                                                                                           |
+| --------------------------------------------------------------------- | ------------------------ | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Animator → AnimationTracks on _player’s own character_                | ✅ Yes                    | ✅ Yes                                  | Animator must be properly parented under Humanoid in the character, created or owned by server.  [oai_citation:8‡Developer Forum |
+| Character basic movement (walk, jump)                                 | ✅ Yes                    | ✅ Partial                              | Client prediction works; server validates/overrides state.                                                                       |
+| Visual effects/particles parented to replicated object                | ✅ Yes                    | ✅ Possibly                             | The object must be replicated; client must have permission to modify or spawn; replication of children is subject to ownership.  |
+| Tool animations loaded via animator for player’s character            | ✅ Yes                    | ✅ Possibly                             | Similar conditions to character animations. Some parts have lag or non-replication issues.  [oai_citation:9‡Developer Forum      |
+| Animation on NPC / rig not owned by player                            | ❌ Usually server         | ✅ Yes if server plays                  | If client tries, often fails.  [oai_citation:10‡Developer Forum                                                                  |
+| Arbitrary property changes (e.g., leaderstats, game state, inventory) | ❌ No                     | ❌ No                                   | Requires server logic & replication.                                                                                             |
+
 
 #### **The Server**
 The server is the **source of truth**. It is the authoritative version of the game world.

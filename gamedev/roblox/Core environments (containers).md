@@ -1,4 +1,4 @@
-[[Script types]], [[execution context]], [[Services]], [[DataModel]]
+[[Script types]], [[execution context]], [[Services]], [[DataModel singleton]]
 
 # **Architectural Roles of Core Game Containers**
 

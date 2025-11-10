@@ -1,6 +1,9 @@
 ### **The DataModel (Explorer Window)**
 
-In Godot, you have the [[SceneTree]] In Roblox, the equivalent is called the **DataModel**, which you view and interact with through the **Explorer** window in Roblox Studio.
+In Godot, you have the [[SceneTree]] In Roblox, the equivalent is called the **DataModel** `game`, which you view and interact with through the **Explorer** window in Roblox Studio.
+
+- `game` - to the whole model
+- `script` - to the current script
 
 **Core Concepts:**
 - **Hierarchical Structure:** The DataModel is a hierarchical tree of objects. Everything that exists in your game—parts, scripts, players, lighting settings, UIs—is an object within this tree.

@@ -1,0 +1,2 @@
+- `LinearVelocity` instance that applies constant velocity in Vector3 to an attached part
+- `AnglularVelocity` makes it roll or spin

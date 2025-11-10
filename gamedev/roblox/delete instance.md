@@ -1,0 +1,4 @@
+- `Remove()` - frees the instance and sets the variable to `nil` (not recommended)
+- `Destroy()` - just like `Remove`, but performs free in cascade all children as well as disconnects from [[events]] (the most optimal. use when you need to delete right away)
+- Debris - is scheduled garbage collected, instead of using `task.wait` (which will do it synchronous) with `destroy` (use when you need to delay)
+	- `debris:AddItem(part, 5)`

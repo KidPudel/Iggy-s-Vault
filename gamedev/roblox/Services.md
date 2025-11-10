@@ -188,8 +188,9 @@ Provides access to the engine's runtime loop, allowing you to connect functions 
 
 *   **Primary Role**: Game Loop Events.
 *   **Essential Members**:
-    *   `.Heartbeat`: A server-side event that fires every frame *after* the physics simulation. Ideal for continuous game logic.
+    *   `.Heartbeat`: A server-side event that fires every frame *after* the physics simulation. Ideal for continuous game logic. Runs every frame _after_ physics, stable timing (use for gameplay logic).
     *   `.RenderStepped`: A client-side event that fires every frame *before* the scene is rendered. Ideal for camera manipulation that must be perfectly smooth.
+    * `.Stepped`: runs _with_ physics steps (use for physics-aligned logic).
 
 **Common Use**: Making a part constantly rotate on the server.
 ```lua
