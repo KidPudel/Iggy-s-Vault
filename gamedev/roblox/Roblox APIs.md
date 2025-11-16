@@ -1,20 +1,6 @@
 # 1. Finding Objects in the DataModel
 
-You'll spend most of your time getting references to objects (as usual). These two methods are fundamental.
-
-*   **`Instance:WaitForChild(childName, timeout?)`**: Pauses the script's execution until the specified child exists. **This is crucial for client-side scripts** waiting for the server to replicate objects.
-    ```lua
-    -- In a LocalScript, guaranteed to work even if "MyPart" hasn't loaded yet
-    local part = workspace:WaitForChild("MyPart")
-    ```
-*   **`Instance:FindFirstChild(childName)`**: Immediately returns the child object or `nil` if it's not found. It does not error or wait. Use this on the server or when you are certain an object exists.
-    ```lua
-    -- Check if a character has a "Shield" part
-    local shield = character:FindFirstChild("Shield")
-    if shield then
-        print("Character has a shield.")
-    end
-    ```
+[[api for finding objects]]
 
 # 2. Creating and Destroying Instances
 

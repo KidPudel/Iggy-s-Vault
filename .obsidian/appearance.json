@@ -5,7 +5,7 @@
   "translucency": true,
   "interfaceFontFamily": "",
   "textFontFamily": "Avenir,Apple Symbols,Lora,Brush Script MT,American Typewriter",
-  "baseFontSize": 18,
+  "baseFontSize": 20,
   "showViewHeader": true,
   "nativeMenus": true
 }

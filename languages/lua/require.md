@@ -1,10 +1,12 @@
-Built-in function that loads a [[module]], in a cached way (maintains table `package.loaded`), searching it within a predefine file path using patterns and turning it into a real path, and returning the table from that module
+Built-in function that loads a [[module]], in a cached way (maintains table `package.loaded`) meaning it will run the script and return the table, searching it within a predefine file path using patterns and turning it into a real path, and returning the table from that module
 
 
 ```lua
 -- mylibrary.lua
 
 local M = {} -- Create a local table to hold the module's functions and data
+
+print("hello")
 
 function M.sayHello(name)
     return "Hello, " .. name .. "!"
@@ -25,7 +27,7 @@ return M
 
 -- Load the 'mylibrary' module. 
 -- The argument to require is the name of the file without the .lua extension.
-local lib = require("mylibrary")
+local lib = require("mylibrary") -- here it will print "hello"
 
 -- Now you can use the functions provided by the loaded library
 local greeting = lib.sayHello("World")

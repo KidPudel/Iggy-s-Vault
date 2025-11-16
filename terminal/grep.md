@@ -1,6 +1,8 @@
 #cli
 filter a data in searching
 
+> modern grep is repgrep (rg)
+
 find a match in a file
 ```
 grep "string we want to find" file.txt
@@ -10,6 +12,9 @@ recursively search for a match
 ```
 grep -r "match" *
 ```
+
+
+> grep tag match where
 
 
 ## flags
@@ -27,7 +32,7 @@ grep -r "match" *
 ## Usage with a pipe operator
  For example, If you want to know if a certain package is installed in Ubuntu system execute
 
-```bash
+```sh
 $ dpkg -L | grep "package-name"
 ```
 

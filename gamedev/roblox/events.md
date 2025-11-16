@@ -59,7 +59,7 @@ These are `Instance`s you create (usually in `ReplicatedStorage`) to send signal
 ---
 
 ### 5. Custom Script Events
-Used for communication between scripts **within the same context**.
+Used for communication between scripts **within the same context** server or client.
 
 *   **`BindableEvent`**
     *   **What:** A signal that allows scripts to communicate *without* crossing the client-server boundary.

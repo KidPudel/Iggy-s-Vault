@@ -1,0 +1,1 @@
+Replication is the process of sending a copies to all the clients from the server to enable synchronization.

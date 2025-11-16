@@ -1,69 +1,190 @@
-# Characters
-- `.` match any character except new line
-- `\d` Matches any digit character ([0-9])
-- `\D` Matches any non-digit character
-- `\w` Matches any word character (alphanumeric & underscore) ([A-Za-z0-9_])
-- `\W` Matches any non-word character
-- `\s` Matches whitespace characters (space, tab, newline, etc.)
-- `\S` Matches non-whitespace characters
-# Anchors
+# Regex Reference
 
-- `^` Matches the start of the string
-- `$` Matches the end of the string
-- `\b` Matches a word boundary
-- `\B` Matches a non-word boundary
+## Basic Patterns
 
-# Quantifiers
+```regex
+.           # Any single character (except newline)
+\d          # Digit [0-9]
+\D          # Non-digit
+\w          # Word character [a-zA-Z0-9_]
+\W          # Non-word character
+\s          # Whitespace [ \t\n\r\f]
+\S          # Non-whitespace
+^           # Start of string/line
+$           # End of string/line
+\b          # Word boundary
+\B          # Non-word boundary
+```
 
-- `?` Matches 0 or 1 occurrence
-- `*` Matches 0 or more occurrences
-- `+` Matches 1 or more occurrences
-- `{n}` Matches exactly n occurrences
-- `{n,}` Matches at least n occurrences
-- `{n,m}` Matches between n and m occurrences (inclusive)
+## Quantifiers
 
-# Groups & Alternation
+```regex
+*           # 0 or more (greedy)
++           # 1 or more (greedy)
+?           # 0 or 1 (optional)
+{3}         # Exactly 3
+{3,}        # 3 or more
+{3,7}       # Between 3 and 7
+*?          # 0 or more (lazy/non-greedy)
++?          # 1 or more (lazy)
+??          # 0 or 1 (lazy)
+```
 
-- `(...)` Captures a group
-- `(?:...)` Non-capturing group
-- `|` Alternates between multiple patterns
-- `(?=...)` Positive lookahead, to stop matching after found
-- `(?!...)` Negative lookahead
+## Character Classes
 
-# Flags
+```regex
+[abc]       # Any of a, b, or c
+[^abc]      # NOT a, b, or c
+[a-z]       # Range a through z
+[a-zA-Z]    # Any letter
+[0-9]       # Any digit
+[^0-9]      # Not a digit
+```
 
-- `g` Global search (find all matches)
-- `i` Case-insensitive search
-- `m` Multi-line search
-- `s` Dot matches newline characters
-- `u` Unicode support
-- `y` Sticky search
+## Groups & Alternation
 
-# Escaping
+```regex
+(abc)       # Capture group
+(?:abc)     # Non-capturing group
+(?<name>abc) # Named capture group
+|           # OR operator
+(a|b)       # Match a or b
+```
 
-- `\` Escape character (e.g., `\.` matches a literal dot)
+## Anchors & Boundaries
 
+```regex
+^start      # Must start with "start"
+end$        # Must end with "end"
+^exact$     # Exact match only
+\bword\b    # Whole word "word"
+```
 
-# Examples
+## Escaping Special Characters
 
-  
-no, you misunderstood me
+```regex
+\.  \*  \+  \?  \[  \]  \(  \)  \{  \}  \^  \$  \|  \\
+```
 
-having this string "[m1]This is a test message aaa[/m][m2]nested[/m][m1]another main[/m]"
+## Lookahead & Lookbehind
 
-and this expression
+```regex
+(?=...)     # Positive lookahead
+(?!...)     # Negative lookahead
+(?<=...)    # Positive lookbehind
+(?<!...)    # Negative lookbehind
+```
 
-`\[m1\](.*?)(?=\[m1\])`
+## Practical Examples
 
-i match: [m1]This is a test message aaa[/m][m2]nested[/m]
+**Email:**
 
-and i group: This is a test message aaa[/m][m2]nested[/m]
+```regex
+\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
+```
 
-but how to do that my group will be the same as match like so: [m1]This is a test message aaa[/m][m2]nested[/m]
+**Phone (US):**
 
-Solution
-`(\[m1\].*?(?=\[m1\]))`
+```regex
+\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}
+```
 
+**URL:**
 
+```regex
+https?://[^\s]+
+```
 
-> Note from python, group(0) returns match, group(1) returns group
+**IP Address:**
+
+```regex
+\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b
+```
+
+**Date (YYYY-MM-DD):**
+
+```regex
+\d{4}-\d{2}-\d{2}
+```
+
+**Hex Color:**
+
+```regex
+#[0-9A-Fa-f]{6}
+```
+
+**Extract text between quotes:**
+
+```regex
+"([^"]*)"
+```
+
+**Match word not followed by number:**
+
+```regex
+\b\w+\b(?!\d)
+```
+
+## Common Patterns
+
+**Username (alphanumeric + underscore, 3-16 chars):**
+
+```regex
+^[a-zA-Z0-9_]{3,16}$
+```
+
+**Strong password (8+ chars, upper, lower, digit, special):**
+
+```regex
+^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
+```
+
+**Remove extra whitespace:**
+
+```regex
+\s+          # Replace with single space
+```
+
+**Match lines NOT containing "error":**
+
+```regex
+^(?!.*error).*$
+```
+
+## Flags/Modifiers
+
+```
+i     # Case-insensitive
+g     # Global (all matches)
+m     # Multiline (^ and $ match line starts/ends)
+s     # Dot matches newline
+x     # Ignore whitespace in pattern
+```
+
+## Greedy vs Lazy
+
+**Greedy (default):**
+
+```regex
+<.+>        # Matches: <a>text</a>  →  "<a>text</a>"
+```
+
+**Lazy:**
+
+```regex
+<.+?>       # Matches: <a>text</a>  →  "<a>" and "</a>"
+```
+
+## Testing Tools
+
+- regex101.com (best for learning, shows explanations)
+- regexr.com
+- Your CLI: `grep -E`, `sed`, `awk`
+
+## Quick Tips
+
+1. **Start simple, add complexity** - Build patterns incrementally
+2. **Test edge cases** - Empty strings, special chars, boundaries
+3. **Use raw strings** in code - `r"\d+"` (Python) to avoid escape hell
+4. **Capture only what you need** - Use `(?:...)` for non-capturing groups
+5. **Anchors matter** - `^` and `$` prevent partial matches

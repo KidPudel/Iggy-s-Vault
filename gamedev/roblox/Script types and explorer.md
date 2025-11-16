@@ -38,7 +38,7 @@ end
 
 ### `LocalScript` (Client-Side Logic)
 
-A `LocalScript` runs **on the player's client** (their computer or mobile device). Every player runs their own independent copy of the game's `LocalScript`s. This is where you create an interactive and responsive experience for the player.
+A `LocalScript` runs **on the player's client**. Every player runs their own independent copy of the game's `LocalScript`s. This is where you create an interactive and responsive experience for the player.
 
 *   **Execution Context**: Client
 *   **Primary Purpose**:
@@ -52,6 +52,8 @@ A `LocalScript` runs **on the player's client** (their computer or mobile device
     *   **`StarterGui`**: Scripts placed here are copied into each player's `PlayerGui` and are perfect for managing the UI.
     *   **ReplicatedFirst**: Code here runs before anything else is replicated, used for creating custom loading screens.
     *   A player's `Backpack` or `PlayerGui`.
+
+**IMPORTANT NOTE:** Since the client scripts in client [[roblox containers with replication]] will all run only once when the player enters the game, meaning `game.Loaded` event ([[events]]) is fired which signals that the game finishes loading, then there is no point to `WaitForChild()` [[Roblox APIs]]
 
 **Example Use Case**: A `LocalScript` inside a `TextButton` that detects a click and fires a `RemoteEvent` to the server.
 
@@ -69,7 +71,7 @@ end)
 
 ### `ModuleScript` (Reusable Code Libraries)
 
-A `ModuleScript` is fundamentally different. **It does not run on its own.** Instead, it acts as a library of functions and data that can be loaded and used by other scripts. It's the Roblox equivalent of a class, a singleton, or a module in other languages.
+A `ModuleScript` is a module, which means **It does not run on its own.** Instead, it acts as a library of functions and data that can be loaded and used by other scripts. It's the Roblox equivalent of a class, a singleton, or a module in other languages.
 
 *   **Execution Context**: *Inherited*. A `ModuleScript` runs in the context of the script that `require()`s it.
     *   If a server `Script` requires it, the module code runs on the **server**.

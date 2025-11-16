@@ -47,3 +47,7 @@ myPart.Parent = game.Workspace
 > **NOTE:** parenting the part will add the part to the world and replicate it to the clients. Meaning that the object is now replicatable, and thus all further changes will signal up for replication, therefore we should set all properties before parenting
 
 In this code, game.Workspace is the common way to access the Workspace service directly from a script. The game global variable is a reference to the root of the DataModel.
+
+
+# Building
+The Roblox engine does not guarantee the time or order in which objects are replicated from the server to the client.

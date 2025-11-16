@@ -83,3 +83,4 @@ Firstly to use them, we need to set up shell integration
 | `!fire`   | inverse-exact-match                     | Items that do not include `fire`             |
 | `!^music` | inverse-prefix-exact-match              | Items that do not start with `music`         |
 | `!.mp3$`  | inverse-suffix-exact-match              | Items that do not end with `.mp3`            |
+|           |                                         |                                              |

@@ -1,0 +1,2 @@
+- Region3 is just like an Area3D in godot
+- Part.Touched.Connect
