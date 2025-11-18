@@ -33,7 +33,7 @@ ch := make(chan int)
 ```
 
 ### Waiting for the result
-By default, sends and receives operations are block execution of their goroutine where they heppened, until the other side is ready.  
+By default, sends and receives operations are block execution of their [[goroutines]] where they heppened, until the other side is ready.  
 
 **Simple example**: calculating goroutine starts to execute algorithm, we encounter receive operation of channel that is in calculating goroutine, since algorithm is still processing (send operation is not encouintered), receive will block the further execution on its side, unitl we encounter send operation.
 

@@ -8,5 +8,6 @@
 - [[fzf]]
 - [[stow]]
 - `wc` - number of lines in a file
+- [[ffmpeg]]
 
 - ctrl-r: search in history of commands

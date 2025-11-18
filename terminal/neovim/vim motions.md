@@ -29,6 +29,7 @@
 - `gr` ⇒ go to reference
 - `gl` : select next
 - `gL`: select previous
+- `gF`: Takes the file path under your cursor (in this case `../lsp/gdscript.lua:11`) opens and jumps to the line 11
 - `gn`: search next match of pattern
 	- `cgn`: changes with a new pattern to be recorded and repeated with `.`
 - `C-o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_

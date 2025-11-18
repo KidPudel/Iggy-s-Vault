@@ -1,1 +1,1 @@
-	next_pass is a completely different draw call, while if we want to combine the two different textures into one we would use `mix`
+`next_pass` is a completely different draw call, while if we want to combine the two different textures into one we would use `mix`

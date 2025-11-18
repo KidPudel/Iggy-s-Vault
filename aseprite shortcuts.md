@@ -5,7 +5,7 @@
 - shift-o: outline tool
 - ctrl-shift-move: move layer
 - ctrl-b: custom brash based on selected area
-- shift-h: flip horizontally
+- shift-h: flip horizontally (reverse)
 	- shift-v: vertically
 - m: selection tool
 	- shift-m: cicrle
@@ -18,7 +18,10 @@
 - v: move tool
 - u: shape
 	- shift-u: for circle shape
-- x: switch between front and back color
+- x: switch/shift between front and back color
+- c: resize canvas
+- shift+draw: line
+- ctrl+opt+draw: resize brush
 
 
 
