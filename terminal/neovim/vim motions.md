@@ -32,8 +32,8 @@
 - `gF`: Takes the file path under your cursor (in this case `../lsp/gdscript.lua:11`) opens and jumps to the line 11
 - `gn`: search next match of pattern
 	- `cgn`: changes with a new pattern to be recorded and repeated with `.`
-- `C-o` ⇒ return to the previous position _**(IN A JUMP LIST (history))**_
-- `C-i` ⇒ return to the next position _**(IN A JUMP LIST (history))**_
+- `C-o` ⇒ return to the previous position _**(IN A JUMP LIST history)**_
+- `C-i` ⇒ return to the next position _**(IN A JUMP LIST history)**_
 - `C-e` ⇒ move window down
     - `C + y `⇒ up
     - `C-d `⇒ 1/2 window down

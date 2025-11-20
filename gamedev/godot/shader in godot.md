@@ -10,3 +10,5 @@ Here are the available types:
 math stuff -> [[shader math]]
 
 most of the stuff needed can be found in [official godot shader reference](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference)
+
+use `uniform` to expose variable
