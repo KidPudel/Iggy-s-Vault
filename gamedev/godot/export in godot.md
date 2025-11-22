@@ -1,9 +1,9 @@
-`@export` tells the godot to save their value (any type) along with the [[resource]] they are attached to, by adding metadata to a script. As well as exposed in the editor to set at the design time.
+`@export` tells the godot **to save** their value (any type) along with the [[resource]] they are attached to, by adding metadata to a script. As well as exposed in the editor to set at the design time.
 On scene load the engine restores the value before `_ready()`
 
-No difference. The @export simply allows you to preload/initialize from the Inspector. As a matter of fact you can add @export to the 2nd screen shot and will notice that the scene path is shown in inspector as well.
+- allows to change in inspector
+- allows for serialization when saving and loading
 
-Also we can @export_file which will export string as a path to a file
 
 
 # Example

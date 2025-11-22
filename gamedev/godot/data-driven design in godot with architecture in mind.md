@@ -246,7 +246,11 @@ Created when spawning/picking up, holds mutable state.
 # item_instance.gd
 class_name ItemInstance extends Resource
 
+
+# for read-only. reason to store in ItemDefinition and not to copy, is because it is reference, and we don't need to repeat ourselves 100x times
 @export var definition: ItemDefinition
+
+# for modifications
 @export var durability: int = -1
 @export var quantity: int = 1
 @export var custom_data: Dictionary = {}
@@ -916,3 +920,6 @@ This means you can:
 - Swap UI completely without touching systems
 - Run systems in tests without any nodes
 - Add new views that subscribe to same signals
+
+
+[[Systems access approaches in Godot]]
