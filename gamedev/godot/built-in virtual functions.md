@@ -14,9 +14,11 @@
 
 **_input(event)** Receives all unhandled input events. Runs before _unhandled_input(). Good for UI and high-priority input.
 
-**_unhandled_input(event)** Receives input events that weren't consumed by UI or _input(). Best for gameplay controls.
+**_unhandled_input(event)** Receives input events that weren't consumed by UI or _input(). Best for gameplay controls with exception for continuous movement, use _process_
 
 **_unhandled_key_input(event)** Like _unhandled_input() but only for keyboard events. Slightly faster if you only need keys.
+
+**_gui_input(event)**: **scoped to that Control's**, For Control nodes only, UI elements process input here, This is where UI "consumes" events
 
 **_notification(what)** Low-level callback receiving notifications (constants like NOTIFICATION_PAUSED). Use when other callbacks don't fit your needs.
 

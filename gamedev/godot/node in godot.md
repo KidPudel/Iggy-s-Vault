@@ -11,8 +11,16 @@ Medium [[Memory fragmentation]]
 
 A collection of nodes is called [[scene]]
 
+# Creating node
+`MyNode.new()` creates a **single node instance** from a script class. No children, no scene structure.
+`PackedScene.instantiate()` creates a **whole scene tree**, including all nodes defined inside the `.tscn` file. It’s not called `.initialize`; the real method is `instantiate()`.
+
+So the precise distinction is:
+- `Something.new()` → makes **one node only**, from a script.
+- `scene.tscn.instantiate()` → makes **the entire subtree** stored in the scene.
+
 # Node's readiness
-Node triggering when both node and its children entered a tree and all children's `_ready` are already finished
+After requesting adding node to the tree with `parent_node.add_child(node)` Node triggering when both node and its children entered a tree and all children's `_ready` are already finished
 It is called deferred
 
 Tree entered ->

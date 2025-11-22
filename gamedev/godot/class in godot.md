@@ -119,6 +119,7 @@ func _ready():
 
     e.position = Vector2(100, 100)
 
+	# This will add a node to the tree
     add_child(e)
 ```
 

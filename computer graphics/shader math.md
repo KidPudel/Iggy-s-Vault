@@ -68,7 +68,7 @@ step(0.5, 0.8) = 1.0
 # smoothstep(edge0, edge1, x) - smooth curve (ease-in, ease-out) step
 
 Returns a **smooth transition** from 0.0 to 1.0 indicating how much progress we've made as x moves from edge0 to edge1.
-```
+```c
 smoothstep(0.2, 0.8, 0.5) = ~0.5
 smoothstep(0.2, 0.8, 0.2) = 0.0
 smoothstep(0.2, 0.8, 0.8) = 1.0

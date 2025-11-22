@@ -4,8 +4,10 @@
   "cssTheme": "Minimal",
   "translucency": true,
   "interfaceFontFamily": "",
-  "textFontFamily": "Avenir,Apple Symbols,Lora,Brush Script MT,American Typewriter",
-  "baseFontSize": 20,
+  "textFontFamily": "Georgia,Avenir,Apple Symbols",
+  "baseFontSize": 22,
   "showViewHeader": true,
-  "nativeMenus": true
+  "nativeMenus": true,
+  "monospaceFontFamily": "Roboto Mono",
+  "baseFontSizeAction": false
 }

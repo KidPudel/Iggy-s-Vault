@@ -28,7 +28,7 @@ Examples of resource:
 - any sort of assets
 - animation
 - collision shape
-- *custom resources* for something like [[data-driven design in godot]]
+- *custom resources* for something like [[data-driven design in godot with architecture in mind]]
 
 Note: -  it’s _generally better to store the “owns many” relationship on the parent_ (e.g. Column has an array of Cards) rather than modeling “many-to-one” from the children’s side (e.g. each Card storing its own column_index).
 Because: Godot's resource system is hierarchical and tree-oriented, and data structures underneath benefits that approach. It is better to make owner to "own" its sub-resources, it makes it clear, who manages them, simplifies serialization, avoids dangling pointers.
