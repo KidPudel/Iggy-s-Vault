@@ -820,3 +820,99 @@ var total_damage: int:
 3. **Resource caching** — Godot caches loaded resources; use `ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_IGNORE)` if you need fresh copies
 4. **Export vars required for saving** — only `@export` properties are serialized by `ResourceSaver`
 5. **Circular references** — avoid instances referencing each other in ways that create cycles; Godot handles it but it complicates debugging
+
+
+### 1. Where instances live and how SaveManager accesses them
+
+Systems hold the instances. SaveManager gets them by **directly referencing the systems** (usually via Autoload or dependency injection):
+
+```gdscript
+# Systems are Autoloads or injected references
+# SaveManager.gd
+
+@onready var inventory: InventorySystem = GameSystems.inventory
+@onready var quest_system: QuestSystem = GameSystems.quests
+@onready var world_state: WorldStateSystem = GameSystems.world
+
+func save_game() -> void:
+    var save := SaveGame.new()
+    
+    # Directly pull data from systems
+    save.inventory_items = inventory.items
+    save.quest_states = quest_system.states
+    save.world_items = world_state.dropped_items
+    
+    ResourceSaver.save(save, SAVE_PATH)
+
+func load_game() -> void:
+    var save: SaveGame = ResourceLoader.load(SAVE_PATH)
+    
+    # Directly push data back into systems
+    inventory.items = save.inventory_items
+    quest_system.states = save.quest_states
+    world_state.dropped_items = save.world_items
+    
+    # Systems emit signals, views update automatically
+```
+
+Or systems expose getter methods:
+
+```gdscript
+# inventory_system.gd
+func get_all_items() -> Array[ItemInstance]:
+    return items.duplicate()
+
+func set_all_items(new_items: Array[ItemInstance]) -> void:
+    items = new_items
+    inventory_rebuilt.emit()  # views refresh
+```
+
+### 2. Dependency direction
+
+You're exactly right. Here's the flow:
+
+```
+        CALLS (downward)              SIGNALS (upward)
+        ─────────────────►            ◄─────────────────
+
+┌─────────────────────────────────────────────────────────────┐
+│                         VIEWS                               │
+│                                                             │
+│   inventory_ui.gd                                           │
+│   ├── has reference to: InventorySystem                     │
+│   ├── calls: inventory.add(item), inventory.use(index)      │
+│   └── listens to: item_added, item_removed, item_changed    │
+│                                                             │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ calls ▼         ▲ signals
+┌──────────────────────────▼──────────────────────────────────┐
+│                        SYSTEMS                              │
+│                                                             │
+│   inventory_system.gd                                       │
+│   ├── owns: Array[ItemInstance]                             │
+│   ├── modifies: item.durability, item.quantity              │
+│   └── emits: item_added, item_changed, item_removed         │
+│                                                             │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ owns/modifies
+┌──────────────────────────▼──────────────────────────────────┐
+│                          DATA                               │
+│                                                             │
+│   ItemInstance (durability, quantity, custom_data)          │
+│   └── references: ItemDefinition (static template)          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Rules:**
+
+- Views **know about** Systems (hold references, call methods)
+- Systems **don't know about** Views (only emit signals blindly)
+- Systems **own and modify** Data
+- Data **knows nothing** (pure state)
+
+This means you can:
+
+- Swap UI completely without touching systems
+- Run systems in tests without any nodes
+- Add new views that subscribe to same signals
