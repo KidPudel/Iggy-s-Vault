@@ -67,6 +67,7 @@ Firstly to use them, we need to set up shell integration
 - `CTRL-T` - Paste the selected files and directories onto the command-line
 - `CTRL-R` - Paste the selected command from history onto the command-line
 - `ALT-C` - cd into the selected directory
+- `ALT-A` - selects all
 - `ALT-Q` - add to quick list
 
 

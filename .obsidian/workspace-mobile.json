@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/roblox/client vs server and replication.md",
+                "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "client vs server and replication"
+              "title": "data-driven design in godot with architecture in mind"
             }
           }
         ]
@@ -169,6 +169,7 @@
   },
   "active": "1bdc7adda934dc37",
   "lastOpenFiles": [
+    "gamedev/roblox/client vs server and replication.md",
     "gamedev/card game design.md",
     "gamedev/godot/finite state machine in godot.md",
     "gamedev/godot/shader in godot.md",
@@ -193,7 +194,6 @@
     "backend/database/docker db.md",
     "backend/docker/docker basic terms.md",
     "gamedev/SDL.md",
-    "backend/network/Authentication and authorization.md",
-    "languages/golang/channel axioms.md"
+    "backend/network/Authentication and authorization.md"
   ]
 }

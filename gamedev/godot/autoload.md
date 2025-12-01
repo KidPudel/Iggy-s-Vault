@@ -42,7 +42,7 @@ Each scene keeps as many `AudioStreamPlayer` as it needs within itself.
 [[Call down, signal up]]
 
 # We need a shared data or functionality, but the autoload is unnecessary
-Instead of that we have [[static]] variables and functions, as well as [[resource]], that we can create, and then just include therefore share across.
+Instead of that we have [[static]] variables and functions, as well as [[Godot resource]], that we can create, and then just include therefore share across.
 
 Since autoload is not a part of the tree, you loose the ability of [[Call down, signal up]], since it is the outer entity.
 And therefore also it pollutes your code, since you have only the ability to globally call logic of autoload across whole project.

@@ -22,7 +22,7 @@ But this approach has several crucial problems:
 2. We can simply move scenes to other places, and the same error will happen
 3. Maintaining 100 objects is still hard taking into account 1st and 2nd problems.
 
-We can utilize godot specific feature called [[resource]], which is a data class/structure, which allows for modeling a [[static]] data.
+We can utilize godot specific feature called [[Godot resource]], which is a data class/structure, which allows for modeling a [[static]] data.
 ```gdscript
 class_name Item extends Resource
 
@@ -81,6 +81,7 @@ TLDR:
 # Data-Driven Design in Godot 4
 
 A reference for separating data from presentation, handling mutable state, and implementing save systems.
+By my experience this is way better than cluttered mess without architecture in mind
 
 ---
 
@@ -133,7 +134,7 @@ A reference for separating data from presentation, handling mutable state, and i
 ### Why This Order?
 
 1. **Data first** — Forces you to understand the problem before coding solutions
-2. **Systems second** — Logic that transforms data, testable without visuals
+2. **Systems second** — Logic that *transforms* data, as well as stores it runtime, testable without visuals.
 3. **Views last** — Just render current state, trivially replaceable
 
 ---
@@ -256,6 +257,7 @@ class_name ItemInstance extends Resource
 @export var custom_data: Dictionary = {}
 
 # Constructor
+# NOTE: Godot requires that the `_init()` method for Resources, and other `Object`-derived types that are instantiated by the engine (like Nodes), either be parameterless or have default values for all its parameters.
 func _init(def: ItemDefinition = null, qty: int = 1) -> void:
     if def:
         definition = def
@@ -480,7 +482,9 @@ func clear() -> void:
 
 ---
 
-## Database Pattern
+## Database Pattern for definition management
+
+Other patterns: [[Godot definition management approaches]]
 
 Central registry for looking up definitions by ID.
 
@@ -514,7 +518,9 @@ func create_instance(id: StringName, quantity: int = 1) -> ItemInstance:
     return null
 ```
 
-Usage:
+[[data access in godot]]
+
+Usage when needed (view, systems):
 
 ```gdscript
 var axe := ItemDatabase.create_instance(&"iron_axe")
@@ -522,6 +528,15 @@ inventory.add(axe)
 ```
 
 ---
+
+
+## What Manages What
+
+| Pattern      | Manages     | Lifetime                               |
+| ------------ | ----------- | -------------------------------------- |
+| **Database** | Definitions | Entire game (loaded once)              |
+| **System**   | Instances   | Runtime (created, modified, destroyed) |
+
 
 ## Save System
 
@@ -609,6 +624,72 @@ class_name WorldItemData extends Resource
 @export var item: ItemInstance
 @export var position: Vector3
 ```
+
+> NOTE: **you should duplicate on load. No need on save.**
+
+Here's why:
+
+## On Save: No Duplication Needed
+
+```gdscript
+func save_game() -> void:
+    var save := SaveGame.new()
+    save.inventory_items = inventory.items  # Direct reference is fine
+    ResourceSaver.save(save, SAVE_PATH)
+```
+
+**Why it's safe:** `ResourceSaver.save()` serializes the data immediately. It doesn't keep references to your live instances. Once saved, the `SaveGame` resource can be discarded.
+
+## On Load: MUST Duplicate
+
+```gdscript
+# BAD - Don't do this
+func load_game() -> void:
+    var save: SaveGame = ResourceLoader.load(SAVE_PATH)
+    inventory.items = save.inventory_items  # ❌ WRONG
+
+# GOOD - Duplicate the array
+func load_game() -> void:
+    var save: SaveGame = ResourceLoader.load(SAVE_PATH)
+    inventory.items = save.inventory_items.duplicate()  # ✅ CORRECT
+```
+
+**Why?** Godot caches loaded resources. If you assign directly:
+
+1. Load save file → `save.inventory_items` points to cached array
+2. Modify items during gameplay → you're modifying the _cached resource_
+3. Load save again → you get the modified version, not the original
+
+## The Deep Copy Problem
+
+`duplicate()` is shallow by default. For nested structures:
+
+```gdscript
+# If ItemInstance contains arrays/dictionaries
+inventory.items = save.inventory_items.duplicate(true)  # deep copy
+
+# Or be explicit
+func load_inventory(saved_items: Array[ItemInstance]) -> void:
+    inventory.items.clear()
+    for item in saved_items:
+        var new_item := ItemInstance.new(item.definition, item.quantity)
+        new_item.durability = item.durability
+        new_item.custom_data = item.custom_data.duplicate(true)
+        inventory.items.append(new_item)
+```
+
+## Better Pattern: Use CACHE_MODE_IGNORE on Load
+
+```gdscript
+func load_game() -> void:
+    var save: SaveGame = ResourceLoader.load(
+        SAVE_PATH, 
+        "", 
+        ResourceLoader.CACHE_MODE_IGNORE
+    )
+    inventory.items = save.inventory_items  # Now safe - fresh copy every time
+```
+This bypasses the cache entirely. Each load creates a new resource tree.
 
 ---
 

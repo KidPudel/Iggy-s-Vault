@@ -9,5 +9,6 @@
 - [[stow]]
 - `wc` - number of lines in a file
 - [[ffmpeg]]
+- [[imagemagic]]
 
 - ctrl-r: search in history of commands

@@ -8,6 +8,7 @@
 - It is necessary for `Object` instances that do not manage their own memory, like custom classes inheriting directly from `Object` (not `Node`), to prevent memory leaks.
 - While `free()` can be used on nodes, `queue_free()` is generally preferred for nodes within the scene tree to avoid potential errors related to immediate deletion.
 - Using `free()` on a node that is not in the scene tree or has no children is generally safe.
+- You can still call `free()` even on `RefCounted` objects to immediately cleanup memory instead of waiting for the [[garbage collector]]
 
 
 - **Validity Checks:**  When referencing objects that might be deleted, it's good practice to use `is_instance_valid(reference_to_object)` to check if the object still exists before attempting to access its properties or methods. or `node.is_marked_for_deletion()`

@@ -13,17 +13,17 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "general tech/function vs method.md",
+                "file": "terminal/cli-tools.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "function vs method"
+              "title": "cli-tools"
             }
           },
           {
-            "id": "949af1c48557aeea",
+            "id": "942bd8295fc0020f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -38,18 +38,18 @@
             }
           },
           {
-            "id": "0520e7d9c8ad0059",
+            "id": "65301543d0b2d6b7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
+                "file": "gamedev/godot/data access in godot.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "data-driven design in godot with architecture in mind"
+              "title": "data access in godot"
             }
           }
         ],
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "initialize",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -106,12 +106,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 357.5124969482422,
-    "collapsed": true
+    "width": 357.5124969482422
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
+                "file": "gamedev/godot/data access in godot.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "syste"
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of data-driven design in godot with architecture in mind"
+              "title": "Outline of data access in godot"
             }
           },
           {
@@ -210,8 +210,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -227,35 +226,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0520e7d9c8ad0059",
+  "active": "65301543d0b2d6b7",
   "lastOpenFiles": [
-    "gamedev/godot/export in godot.md",
+    "gamedev/godot/data access in godot.md",
     "gamedev/godot/data-driven design in godot with architecture in mind.md",
-    "gamedev/godot/godot project structure recommendation.md",
-    "gamedev/godot/Systems access approaches in Godot.md",
-    "gamedev/godot/canvas layer.md",
-    "architecture/clean architecture.md",
-    "gamedev/godot/built-in virtual functions.md",
-    "languages/zig/builtin functions.md",
-    "gamedev/godot/node in godot.md",
-    "gamedev/godot/class in godot.md",
-    "gamedev/godot/must have singletons.md",
-    "languages/golang/singleton pattern.md",
-    "computer graphics/shader math.md",
-    "computer graphics/shader.md",
-    "gamedev/godot/shader in godot.md",
-    "gamedev/godot/event bus.md",
-    "gamedev/godot/ways to reference node instance in a tree godot.md",
-    "gamedev/godot/SceneTree.md",
+    "architecture/data-driven design.md",
+    "terminal/fzf.md",
+    "gamedev/godot/gdscript type checking.md",
+    "gamedev/godot/bbcode.md",
+    "aseprite shortcuts.md",
     "gamedev/godot/viewport in godot.md",
-    "gamedev/godot/Godot control nodes.md",
-    "godot",
-    "gamedev/godot/autoload.md",
-    "gamedev/godot/load vs preload vs @export.md",
-    "inline functions.md",
-    "general tech/function vs method.md",
+    "computer graphics/viewport.md",
+    "roblox/quality tools.md",
+    "gamedev/roblox/Market advice.md",
+    "imagemagic.md",
     "terminal/cli-tools.md",
-    "gamedev/godot/resource.md",
+    "terminal/ffmpeg.md",
+    "terminal/terminal-commands.md",
+    "gamedev/godot/signal.md",
+    "gamedev/godot/Godot resource.md",
+    "terminal/neovim/vim command-line mode.md",
+    "gamedev/roblox/Project architecture.md",
+    "gamedev/godot/delete.md",
+    "gamedev/godot/Systems access approaches in Godot.md",
+    "general tech/function vs method.md",
+    "Godot definition management approaches.md",
+    "gamedev/godot/export in godot.md",
+    "gamedev/godot/godot project structure recommendation.md",
+    "gamedev/godot/canvas layer.md",
+    "godot",
     "Untitled 1.base",
     "Untitled.base",
     "roblox",

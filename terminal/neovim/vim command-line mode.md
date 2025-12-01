@@ -7,6 +7,8 @@
 - `:q`: exit
 - `:wq`: save and quit
 - `:q!`: quit without saving
+- `:s`: replace in a current line
+	- `:%s`: The `%` makes it search the entire buffer instead of just the current line
 - `:ls`: list open buffers
 - `:split`: split window horizontally
 	- `:vsplit`: vertically
@@ -99,6 +101,7 @@ basic syntax
 :%s/original/replacement/g(for global)c(ask)
 ```
 where `.` could mean any character
+The `%` makes it search the entire buffer instead of just the current line
 
 
 # Quickfix
