@@ -66,3 +66,9 @@ Used for communication between scripts **within the same context** server or cli
     *   **When to Use:**
         *   **Server → Server:** Allowing two different server-side services to communicate with each other.
         *   **Client → Client:** Allowing two different `LocalScript`s to communicate.
+
+
+
+
+there are unreliable events  they are high speed, but without guaranteed delivery perfect for visual effects, particle systems, or continuously changing data where losing a single event (like one frame of a particle effect) isn't game-breaking
+like [[TCP]] and [[UDP]]

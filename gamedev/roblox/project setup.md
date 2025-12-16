@@ -1,0 +1,3 @@
+- [rokit](https://github.com/rojo-rbx/rokit) : toolchain manager. 
+- [rojo](https://github.com/rojo-rbx/rojo) : tool that serves the external files and changes in them to the robox studio
+- [wally](https://github.com/UpliftGames/wally) : package manager [[must-have packages]]

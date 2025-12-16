@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/tilemap saving.md",
+                "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "tilemap saving"
+              "title": "data-driven design in godot with architecture in mind"
             }
           }
         ],
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "WaitForChild",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +96,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5124969482422
+    "width": 357.5124969482422,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -157,13 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/godot/tilemap saving.md",
+                "file": "flstudio/fl studio piano roll shortcuts.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of tilemap saving"
+              "title": "Outline of fl studio piano roll shortcuts"
             }
           },
           {
@@ -214,32 +215,33 @@
   },
   "active": "942bd8295fc0020f",
   "lastOpenFiles": [
-    "gamedev/godot/data access in godot.md",
+    "gamedev/godot/Call down, signal up.md",
+    "gamedev/godot/signal.md",
+    "gamedev/godot/input handling reference.md",
+    "gamedev/godot/gdscript type checking.md",
     "gamedev/godot/data-driven design in godot with architecture in mind.md",
+    "aseprite shortcuts.md",
+    "computer graphics/shader math.md",
+    "flstudio/fl studio piano roll shortcuts.md",
+    "roblox/api for finding objects.md",
+    "roblox/roblox containers with replication.md",
+    "gamedev/roblox/events.md",
+    "music scales.md",
+    "gamedev/roblox/tags and attributes state markers.md",
+    "terminal/neovim/vim motions.md",
+    "flstudio",
+    "languages/lua/require.md",
+    "gamedev/roblox/service based architecture.md",
+    "gamedev/roblox/must-have packages.md",
+    "gamedev/roblox/project setup.md",
+    "gamedev/roblox/Services.md",
+    "gamedev/roblox/cross platform input service.md",
     "gamedev/godot/tilemap saving.md",
+    "gamedev/godot/data access in godot.md",
     "architecture/data-driven design.md",
     "terminal/fzf.md",
-    "gamedev/godot/gdscript type checking.md",
     "gamedev/godot/bbcode.md",
-    "aseprite shortcuts.md",
     "gamedev/godot/viewport in godot.md",
-    "computer graphics/viewport.md",
-    "roblox/quality tools.md",
-    "gamedev/roblox/Market advice.md",
-    "imagemagic.md",
-    "terminal/cli-tools.md",
-    "terminal/ffmpeg.md",
-    "terminal/terminal-commands.md",
-    "gamedev/godot/signal.md",
-    "gamedev/godot/Godot resource.md",
-    "terminal/neovim/vim command-line mode.md",
-    "gamedev/roblox/Project architecture.md",
-    "gamedev/godot/delete.md",
-    "gamedev/godot/Systems access approaches in Godot.md",
-    "general tech/function vs method.md",
-    "Godot definition management approaches.md",
-    "gamedev/godot/export in godot.md",
-    "gamedev/godot/godot project structure recommendation.md",
     "godot",
     "Untitled 1.base",
     "Untitled.base",
@@ -261,7 +263,6 @@
     "Pasted image 20250512185611.png",
     "Pasted image 20250512185320.png",
     "computer graphics",
-    "backend/design",
     "gamedev/Untitled.canvas"
   ]
 }

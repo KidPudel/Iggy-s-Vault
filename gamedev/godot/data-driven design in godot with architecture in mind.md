@@ -87,7 +87,7 @@ By my experience this is way better than cluttered mess without architecture in 
 
 ## Core Concept
 
-**Data-driven design** separates _data_ from _code_ from _visuals_.
+**Data-driven design** separates *data* from *code* from *visuals*.
 
 ### The Philosophy
 
@@ -134,7 +134,7 @@ By my experience this is way better than cluttered mess without architecture in 
 ### Why This Order?
 
 1. **Data first** — Forces you to understand the problem before coding solutions
-2. **Systems second** — Logic that *transforms* data, as well as stores it runtime, testable without visuals.
+2. **Systems second** — Logic that *transforms* data, as well as stores it runtime, testable without visuals. Note For self-contained, ephemeral, single-scene mechanics, direct manipulation is fine.
 3. **Views last** — Just render current state, trivially replaceable
 
 ---
@@ -1004,3 +1004,33 @@ This means you can:
 
 
 [[Systems access approaches in Godot]]
+
+
+The pattern isn't universal—it solves specific problems.
+
+**Use Resources when:**
+
+- Many instances share identical template data (100 iron axes → 1 definition)
+- You need to save/load mutable state per-instance (durability, enchantments)
+- Same data is accessed from multiple contexts (inventory UI, tooltip, combat system, save file)
+- Designers need to tweak values in the editor without touching scenes
+
+**Just use scenes when:**
+
+- Objects are unique or few (boss types, specific NPCs)
+- No meaningful runtime state survives beyond the node's lifetime
+- The scene _is_ the definition—visual + behavior are tightly coupled
+- You're not serializing that object's state
+
+**For enemies specifically:** scenes are usually fine. An enemy spawns, fights, dies. You're not saving "this specific goblin's HP was 47." The scene defines its stats, behavior, mesh—all in one place. That's simpler.
+
+Where enemy Resources _would_ make sense:
+
+- A bestiary system that needs enemy stats without loading scenes
+- Spawner that picks from weighted enemy definitions
+- Save system tracking which specific enemies are dead in the world
+- Procedural enemies with randomized stats you need to persist
+
+The document is item-focused, where the pattern shines because items persist across sessions, stack, degrade, move between systems. Enemies usually don't have those requirements.
+
+Rule of thumb: if you can't articulate what mutable state the instance needs to track independently, you probably don't need the pattern.
