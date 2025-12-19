@@ -22,6 +22,7 @@
 - c: resize canvas
 - shift+draw: line
 - ctrl+opt+draw: resize brush
+- shift+g: gradient tool
 
 
 

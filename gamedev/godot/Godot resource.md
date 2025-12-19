@@ -1,4 +1,5 @@
 **Resources are data containers designed for serialization.** They inherit from `RefCounted`, meaning they're automatically freed when no longer referenced.
+**Resources are for data you need to reference/modify/save independently of where it's displayed.**
 
 ## Core Concept
 

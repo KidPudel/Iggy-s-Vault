@@ -76,7 +76,6 @@ TLDR:
 - *for the local scoped like current runtime state of the board game states like health of the card just a regular script with fields in it*
 
 ---
----
 
 # Data-Driven Design in Godot 4
 
@@ -87,7 +86,8 @@ By my experience this is way better than cluttered mess without architecture in 
 
 ## Core Concept
 
-**Data-driven design** separates *data* from *code* from *visuals*.
+**[[data-driven design]]** separates *data* from *code* from *visuals*.
+
 
 ### The Philosophy
 
@@ -134,7 +134,7 @@ By my experience this is way better than cluttered mess without architecture in 
 ### Why This Order?
 
 1. **Data first** — Forces you to understand the problem before coding solutions
-2. **Systems second** — Logic that *transforms* data, as well as stores it runtime, testable without visuals. Note For self-contained, ephemeral, single-scene mechanics, direct manipulation is fine.
+2. **Systems second** — Logic that *transforms* data, as well as stores it runtime, testable without visuals. Note For self-contained, ephemeral, single-scene mechanics, direct manipulation is fine. It is also a centralized for the *system*, the users. no need to spread a mess
 3. **Views last** — Just render current state, trivially replaceable
 
 ---
@@ -186,6 +186,9 @@ Separate into definition (never changes) and instance (changes at runtime):
 | max durability      | custom name        |
 | icon                | enchantments       |
 | base damage         | position in world  |
+
+- Definition = static domain knowledge (what IS a goblin)
+- Instance = runtime domain knowledge (what is THIS goblin's state right now)
 
 ### 3. What operations happen on this data?
 
@@ -954,8 +957,6 @@ func set_all_items(new_items: Array[ItemInstance]) -> void:
 
 ### 2. Dependency direction
 
-You're exactly right. Here's the flow:
-
 ```
         CALLS (downward)              SIGNALS (upward)
         ─────────────────►            ◄─────────────────
@@ -1006,31 +1007,70 @@ This means you can:
 [[Systems access approaches in Godot]]
 
 
+Advice:
+- if something is complicated try to boil it down to something easy and helpful like a new system or manager for the global agnostic player speed and position tracking
+
+
+# Data separation level
+
 The pattern isn't universal—it solves specific problems.
 
-**Use Resources when:**
+**Definition-only**
 
-- Many instances share identical template data (100 iron axes → 1 definition)
-- You need to save/load mutable state per-instance (durability, enchantments)
-- Same data is accessed from multiple contexts (inventory UI, tooltip, combat system, save file)
-- Designers need to tweak values in the editor without touching scenes
+Static template data extracted into a Resource.
 
-**Just use scenes when:**
+```gdscript
+# EnemyDefinition resource
+@export var max_health := 100
+@export var damage := 25
 
-- Objects are unique or few (boss types, specific NPCs)
-- No meaningful runtime state survives beyond the node's lifetime
-- The scene _is_ the definition—visual + behavior are tightly coupled
-- You're not serializing that object's state
+# Enemy node
+@export var definition: EnemyDefinition
+var health: int  # mutable state lives on the node
 
-**For enemies specifically:** scenes are usually fine. An enemy spawns, fights, dies. You're not saving "this specific goblin's HP was 47." The scene defines its stats, behavior, mesh—all in one place. That's simpler.
+func _ready():
+    health = definition.max_health
+```
 
-Where enemy Resources _would_ make sense:
+Benefits:
 
-- A bestiary system that needs enemy stats without loading scenes
-- Spawner that picks from weighted enemy definitions
-- Save system tracking which specific enemies are dead in the world
-- Procedural enemies with randomized stats you need to persist
+- Data editable without touching code
+- Shared across scenes (all goblins use `goblin.tres`)
+- Queryable without instantiation
 
-The document is item-focused, where the pattern shines because items persist across sessions, stack, degrade, move between systems. Enemies usually don't have those requirements.
+Use when: you want clean separation, even if the node is the source of truth at runtime.
 
-Rule of thumb: if you can't articulate what mutable state the instance needs to track independently, you probably don't need the pattern.
+---
+
+**Definition + Instance**
+
+Static template _plus_ a separate Resource for mutable runtime state.
+
+```gdscript
+# ItemDefinition (static)
+# ItemInstance (mutable, references definition)
+
+# Node just displays the instance
+```
+
+Additional benefits:
+
+- Thing exists without a node (inventory, save file)
+- Mutable state survives node destruction
+- Multiple views of same instance stay in sync
+
+Use when: the data's lifecycle is independent of any node.
+
+---
+
+**Decision:**
+
+| Question                             | Yes →                   |
+| ------------------------------------ | ----------------------- |
+| Want data out of code?               | Definition-only minimum |
+| Does mutable state outlive the node? | Need Instance layer     |
+
+The first is almost always worth it. The second depends on the problem.
+
+
+

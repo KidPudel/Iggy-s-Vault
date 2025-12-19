@@ -4,37 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "63f985eb049bdfbd",
+        "id": "b85737116a354bdd",
         "type": "tabs",
         "children": [
           {
-            "id": "b98a41c3aeea2278",
+            "id": "92591a95513a42b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "terminal/cli-tools.md",
+                "file": "architecture/data-driven design.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "cli-tools"
+              "title": "data-driven design"
             }
           },
           {
-            "id": "942bd8295fc0020f",
+            "id": "64b988c0726d0716",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
+                "file": "computer graphics/shader math.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "data-driven design in godot with architecture in mind"
+              "title": "shader math"
             }
           }
         ],
@@ -213,15 +213,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "942bd8295fc0020f",
+  "active": "64b988c0726d0716",
   "lastOpenFiles": [
+    "gamedev/godot/data-driven design in godot with architecture in mind.md",
+    "architecture/data-driven design.md",
+    "gamedev/godot/bbcode.md",
+    "gamedev/godot/tween.md",
+    "computer graphics/shader math.md",
+    "aseprite shortcuts.md",
+    "gamedev/godot/groups.md",
+    "terminal/cli-tools.md",
+    "gamedev/godot/Godot resource.md",
     "gamedev/godot/Call down, signal up.md",
     "gamedev/godot/signal.md",
     "gamedev/godot/input handling reference.md",
     "gamedev/godot/gdscript type checking.md",
-    "gamedev/godot/data-driven design in godot with architecture in mind.md",
-    "aseprite shortcuts.md",
-    "computer graphics/shader math.md",
     "flstudio/fl studio piano roll shortcuts.md",
     "roblox/api for finding objects.md",
     "roblox/roblox containers with replication.md",
@@ -236,12 +242,6 @@
     "gamedev/roblox/project setup.md",
     "gamedev/roblox/Services.md",
     "gamedev/roblox/cross platform input service.md",
-    "gamedev/godot/tilemap saving.md",
-    "gamedev/godot/data access in godot.md",
-    "architecture/data-driven design.md",
-    "terminal/fzf.md",
-    "gamedev/godot/bbcode.md",
-    "gamedev/godot/viewport in godot.md",
     "godot",
     "Untitled 1.base",
     "Untitled.base",

@@ -1,4 +1,4 @@
-# sin/cos - wave function
+	# sin/cos - wave function
 - `sin` is a wave function that take the input and return the value between -1 and 1 and repeats every 2π. (starts at 0)
 - `cos` is just like `sin`, but shifted left by pi/2 (starts at 1)
 
@@ -86,4 +86,18 @@ dot(a, b) = 0.0  // perpendicular. 90 degrees
 
 vec2 c = vec2(1.0, 1.0);
 dot(c, c) = 2.0  // max alignment with itself
+```
+
+
+# GODOT SPECIFIC
+# move_toward(from, to, delta) - move value from to by the rate of delta
+Moves `param from` toward `param to` by the `param delta` amount. Will not go past `param to`.
+
+Use a negative `param delta` value to move away.
+
+```python
+move_toward(5, 10, 4)    # Returns 9
+move_toward(10, 5, 4)    # Returns 6
+move_toward(5, 10, 9)    # Returns 10
+move_toward(10, 5, -1.5) # Returns 11.5
 ```

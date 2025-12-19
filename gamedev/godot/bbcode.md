@@ -7,13 +7,13 @@ Set the minimum size if in the special containers
 
 ## Text Formatting
 
-|Tag|Effect|Example|
-|---|---|---|
-|`[b]text[/b]`|Bold|`[b]bold[/b]`|
-|`[i]text[/i]`|Italic|`[i]italic[/i]`|
-|`[u]text[/u]`|Underline|`[u]underline[/u]`|
-|`[s]text[/s]`|Strikethrough|`[s]crossed out[/s]`|
-|`[code]text[/code]`|Monospace|`[code]code[/code]`|
+| Tag                 | Effect        | Example              |
+| ------------------- | ------------- | -------------------- |
+| `[b]text[/b]`       | Bold          | `[b]bold[/b]`        |
+| `[i]text[/i]`       | Italic        | `[i]italic[/i]`      |
+| `[u]text[/u]`       | Underline     | `[u]underline[/u]`   |
+| `[s]text[/s]`       | Strikethrough | `[s]crossed out[/s]` |
+| `[code]text[/code]` | Monospace     | `[code]code[/code]`  |
 
 ## Colors
 
@@ -27,16 +27,16 @@ Set the minimum size if in the special containers
 
 ## Layout & Alignment
 
-|Tag|Effect|
-|---|---|
-|`[center]text[/center]`|Center align|
-|`[left]text[/left]`|Left align|
-|`[right]text[/right]`|Right align|
-|`[fill]text[/fill]`|Justify (fill width)|
-|`[p]text[/p]`|Paragraph (supports options)|
-|`[indent]text[/indent]`|Indent text|
-|`[br]`|Line break|
-|`[hr]`|Horizontal rule|
+| Tag                     | Effect                       |
+| ----------------------- | ---------------------------- |
+| `[center]text[/center]` | Center align                 |
+| `[left]text[/left]`     | Left align                   |
+| `[right]text[/right]`   | Right align                  |
+| `[fill]text[/fill]`     | Justify (fill width)         |
+| `[p]text[/p]`           | Paragraph (supports options) |
+| `[indent]text[/indent]` | Indent text                  |
+| `[br]`                  | Line break                   |
+| `[hr]`                  | Horizontal rule              |
 
 ## Links & Tooltips
 
@@ -117,14 +117,14 @@ Example:
 
 ## Animated Effects
 
-|Effect| Syntax                                                   |
-|---|---|
-|Pulse| `[pulse freq=1.0 color=#ffffff40 ease=-2.0]text[/pulse]` |
-|Wave| `[wave amp=50.0 freq=5.0]text[/wave]`                    |
-|Tornado| `[tornado radius=10.0 freq=1.0]text[/tornado]`           |
-|Shake| `[shake rate=20.0 level=5]text[/shake]`                  |
-|Fade| `[fade start=4 length=14]text[/fade]`                    |
-|Rainbow| `[rainbow freq=1.0 sat=0.8 val=0.8]text[/rainbow]`       |
+| Effect  | Syntax                                                   |
+| ------- | -------------------------------------------------------- |
+| Pulse   | `[pulse freq=1.0 color=#ffffff40 ease=-2.0]text[/pulse]` |
+| Wave    | `[wave amp=50.0 freq=5.0]text[/wave]`                    |
+| Tornado | `[tornado radius=10.0 freq=1.0]text[/tornado]`           |
+| Shake   | `[shake rate=20.0 level=5]text[/shake]`                  |
+| Fade    | `[fade start=4 length=14]text[/fade]`                    |
+| Rainbow | `[rainbow freq=1.0 sat=0.8 val=0.8]text[/rainbow]`       |
 
 ## Critical Notes
 
