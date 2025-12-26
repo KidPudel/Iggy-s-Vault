@@ -6,7 +6,7 @@ A reference for organizing game logic, managing state, and handling client-serve
 
 ## Core Concept
 
-just like in [[data-driven design in godot with architecture in mind]], but with additional factor of multiplayer nature
+just like in [[data-driven design architecture in godot]], but with additional factor of multiplayer nature
 
 **Service-based architecture** separates game logic into specialized, independent modules called **Services** (server-side) and **Controllers** (client-side).
 

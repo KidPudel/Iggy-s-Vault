@@ -8,3 +8,5 @@
 - AnimationTree: Blending
 	- https://www.youtube.com/watch?v=n872lbC-_BU
 - AnimationPlayer: Animating any property
+- MeshInstance2D: because of the nature of the shape allows to place the shader as on the ColorRect surface in 2D
+- SpringArm3D: ray casting node that moves all of its children to the nearest collision point. Commonly used in combination with Camera3D to move it in a narrow space

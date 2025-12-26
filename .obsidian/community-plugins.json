@@ -1,5 +1,7 @@
 [
   "obsidian-git",
   "obsidian-minimal-settings",
-  "file-chucker"
+  "file-chucker",
+  "gdscript-syntax-highlighting",
+  "obsidian-plugin-toc"
 ]

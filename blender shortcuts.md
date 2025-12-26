@@ -11,7 +11,9 @@
 	- esc/right click: cancel the movement:
 	- left click: accept
 	- x, y, z: for moving along the chosen axis
+		- shift + axis: to exclude axis
 	- middle mouse: snap to the nearest axis
+	- control: snap to grids (move by 1 meter)
 - e: extrude creates a new connected geometry from selected elements ([[vertex]], [[edge]], [[faces]]) in a direction, usually normal to the selection
 	- alt+e: special extrude options
 - f12: take a photo/render
@@ -30,9 +32,14 @@
 - ctrl+tab: switch between interaction modes (object, editing, sculpting, etc)
 	- tab: to switch between 2 latest
 	- in timeline to go into graph view
+- 1, 2, 3:
+	- in edit mode:
+		- switch between selection modes (vertices, edges, faces)
+- p: in edit mode separate selection into a new mesh
 - w: change selection mode: rectangle, circle, lasso
 - f9: parameters of the object that are appeared when you create a new object
 - right click: commonly used commands on a selected item
+	- set origins etc
 - cmd+1: adds a subdivision surface modified. (which splits [[faces]] into smaller parts, making it appear smoother exponentially)
 - o: proportional editing: allows to edit along inside the area
 	- scroll to increase or decrease the influence area
@@ -53,7 +60,8 @@
 - ctrl+p: assign (1) child object to the (2) parent object
 - /: isolation mode toggle
 - ctrl+a: [[blender apply]] menu
-- a: select all
+- a: select all (like all faces or all meshes)
+- u: uv mapping setting
 - ctrl+b: in edit mode. Performs a **bevel** (chamfer) on selected **edges or vertices**. Splits the geometry ([[vertex]], [[edge]]) and inserts new edges, to soften or round edges
 	- ![[Pasted image 20250728120935.png|500]] example
 	- ctrl+shift+b: bevel the vertex
@@ -79,3 +87,6 @@
 - .: choose transform pivot point
 - t: in graph editor choose interpolation mode
 - shift+e: adds a F-curve extrapolation like cyclic animation
+- "\`": view options like focus on selected object
+- shift+s: snap options (like move cursor to selected objects )
+- alt+n: normals setting (like flipping normals to see inside instead of outside)

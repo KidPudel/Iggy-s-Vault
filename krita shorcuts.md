@@ -57,3 +57,9 @@
 - **F5**: Brush presets
 - **[** / **]**: Decrease/increase brush size
 - **Shift+[** / **Shift+]**: Decrease/increase brush softness
+
+
+
+- cmd+opt+i: resize
+- cmd+m: filter color adjustment
+- shift+w: preview tiling
