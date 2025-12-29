@@ -2,71 +2,6 @@
 
 A reference for separating data from presentation, handling mutable state, and implementing save systems.
 
-- [[#When to Use This Pattern|When to Use This Pattern]]
-- [[#Core Concept|Core Concept]]
-	- [[#Core Concept#The Philosophy|The Philosophy]]
-	- [[#Core Concept#Three Layers|Three Layers]]
-	- [[#Core Concept#Why This Order?|Why This Order?]]
-	- [[#Core Concept#System Ownership|System Ownership]]
-- [[#The Two Types of Data|The Two Types of Data]]
-	- [[#The Two Types of Data#Why Separate Them?|Why Separate Them?]]
-- [[#Storage Paths|Storage Paths]]
-	- [[#Storage Paths#`res://` — Project Resources (Immutable)|`res://` — Project Resources (Immutable)]]
-	- [[#Storage Paths#`user://` — User Data (Mutable)|`user://` — User Data (Mutable)]]
-- [[#Design Process: Data First|Design Process: Data First]]
-	- [[#Design Process: Data First#1. What data exists?|1. What data exists?]]
-	- [[#Design Process: Data First#2. What's static vs dynamic?|2. What's static vs dynamic?]]
-	- [[#Design Process: Data First#3. What operations happen on this data?|3. What operations happen on this data?]]
-	- [[#Design Process: Data First#4. What displays this data?|4. What displays this data?]]
-- [[#Implementation|Implementation]]
-	- [[#Implementation#Definition (Template)|Definition (Template)]]
-	- [[#Implementation#Instance (Runtime State)|Instance (Runtime State)]]
-	- [[#Implementation#System (Logic)|System (Logic)]]
-	- [[#Implementation#View (Node)|View (Node)]]
-- [[#Database Pattern|Database Pattern]]
-	- [[#Database Pattern#Option 1: ResourceLoader.list_directory() (Recommended)|Option 1: ResourceLoader.list_directory() (Recommended)]]
-	- [[#Database Pattern#Option 2: Explicit Export Array|Option 2: Explicit Export Array]]
-- [[#Systems vs Managers (Layer 0 vs Layer 1)|Systems vs Managers (Layer 0 vs Layer 1)]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Layer 0: Dumb Systems|Layer 0: Dumb Systems]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Layer 1: Smart Orchestration|Layer 1: Smart Orchestration]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Micro-Managers: Technical Complexity Isolation|Micro-Managers: Technical Complexity Isolation]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Wishlist-First Design|Wishlist-First Design]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#The Architecture Diagram|The Architecture Diagram]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Where Game Logic Lives|Where Game Logic Lives]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Communication Rules|Communication Rules]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#When Should Views Call Layer 0 vs Layer 1?|When Should Views Call Layer 0 vs Layer 1?]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#Layer 1 to Layer 1 Communication|Layer 1 to Layer 1 Communication]]
-	- [[#Systems vs Managers (Layer 0 vs Layer 1)#When to Split a Manager|When to Split a Manager]]
-- [[#Save System|Save System]]
-	- [[#Save System#Strategy|Strategy]]
-	- [[#Save System#SaveGame Resource|SaveGame Resource]]
-	- [[#Save System#Save Manager|Save Manager]]
-	- [[#Save System#How Definition References Survive Save/Load|How Definition References Survive Save/Load]]
-	- [[#Save System#Save: No Duplication Needed|Save: No Duplication Needed]]
-	- [[#Save System#Load: Use CACHE_MODE_IGNORE|Load: Use CACHE_MODE_IGNORE]]
-- [[#Manual Serialization Alternative|Manual Serialization Alternative]]
-- [[#Common Patterns|Common Patterns]]
-	- [[#Common Patterns#Spawning Items|Spawning Items]]
-	- [[#Common Patterns#Picking Up Items|Picking Up Items]]
-- [[#Extending the Pattern|Extending the Pattern]]
-	- [[#Extending the Pattern#Inheritance for Item Types|Inheritance for Item Types]]
-	- [[#Extending the Pattern#Instance-Specific State|Instance-Specific State]]
-- [[#Data Separation Levels|Data Separation Levels]]
-	- [[#Data Separation Levels#Definition-Only|Definition-Only]]
-	- [[#Data Separation Levels#Definition + Instance|Definition + Instance]]
-- [[#Quick Reference|Quick Reference]]
-- [[#Checklist|Checklist]]
-- [[#Gotchas|Gotchas]]
-- [[#Adapting for Small Projects|Adapting for Small Projects]]
-	- [[#Adapting for Small Projects#What to Keep|What to Keep]]
-	- [[#Adapting for Small Projects#What to Skip|What to Skip]]
-	- [[#Adapting for Small Projects#Lightweight Database|Lightweight Database]]
-	- [[#Adapting for Small Projects#Lightweight Save System|Lightweight Save System]]
-	- [[#Adapting for Small Projects#When to Upgrade|When to Upgrade]]
-	- [[#Adapting for Small Projects#Jam-Friendly Structure|Jam-Friendly Structure]]
-	- [[#Adapting for Small Projects#The Minimum Principle|The Minimum Principle]]
-
-
 ---
 
 ## When to Use This Pattern
@@ -109,12 +44,12 @@ This architecture pays off when:
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                         SYSTEMS                                 │
-│  Operate on data. Don't know about visuals or game context.     │
+│                   SYSTEMS & MANAGERS                            │
+│  Operate on data. Managers coordinate, Systems are shared ops.  │
 │                                                                 │
-│  - InventorySystem.add(instance)                                │
-│  - HealthSystem.take_damage(entity, amount)                     │
-│  - TurnSystem.next_turn()                                       │
+│  - CombatManager.start_combat() — game-specific coordination    │
+│  - HealthSystem.damage() — shared operation                     │
+│  - InventorySystem.add() — shared operation                     │
 └─────────────────────────────────────────────────────────────────┘
                                │
                                ▼
@@ -128,29 +63,29 @@ This architecture pays off when:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-> **Note:** This is a simplified view. The [[#Systems vs Managers (Layer 0 vs Layer 1)]] section refines this into Layer 0 (dumb systems) and Layer 1 (smart managers that orchestrate systems).
+> **Note:** Systems only exist for shared operations (used by multiple managers). Managers can contain data operations if they're not shared. See [[#Systems vs Managers]] for details.
 
 ### Why This Order?
 
 1. **Data first** — Forces you to understand the problem before coding
-2. **Systems second** — Logic that transforms data, testable without visuals
+2. **Logic second** — Managers coordinate, systems handle shared operations
 3. **Views last** — Just render current state, trivially replaceable
 
 ### System Ownership
 
 Systems extend `RefCounted` and get garbage collected if nothing holds a reference. They must be either:
 
-- **Owned by a Manager node** — the manager instantiates and holds the system
-- **Registered as Autoloads** — global singleton lifetime
+- **Owned by GameSystems autoload** — central container for shared systems
+- **Owned by a Manager** — if private to that manager
 
 ---
 
 ## The Two Types of Data
 
-| Type           | Purpose                                 | Mutability | Storage                                |
-| -------------- | --------------------------------------- | ---------- | -------------------------------------- |
-| **Definition** | Template describing _what_ something is | Read-only  | `.tres` files in `res://`              |
-| **Instance**   | Specific occurrence with runtime state  | Mutable    | Created at runtime, saved to `user://` |
+|Type|Purpose|Mutability|Storage|
+|---|---|---|---|
+|**Definition**|Template describing _what_ something is|Read-only|`.tres` files in `res://`|
+|**Instance**|Specific occurrence with runtime state|Mutable|Created at runtime, saved to `user://`|
 
 ### Why Separate Them?
 
@@ -158,6 +93,39 @@ Systems extend `RefCounted` and get garbage collected if nothing holds a referen
 - **Saving**: Only serialize what changed (durability: 47), not the entire definition
 - **Editing**: Change `IronAxeDefinition.damage` once, all axes update
 - **Clarity**: Obvious what's static vs dynamic
+
+### When Instance is Overkill
+
+**Don't create an Instance class when the node IS the runtime state:**
+
+```gdscript
+# Enemy that dies and is gone — no Instance needed
+extends CharacterBody3D
+
+@export var definition: EnemyDefinition
+var health: int
+
+func _ready() -> void:
+    health = definition.max_health
+
+func take_damage(amount: int) -> void:
+    health -= amount
+    if health <= 0:
+        queue_free()  # Node dies, data dies with it
+```
+
+The node holds mutable state. When it's destroyed, the data is gone. No save, no transfer.
+
+**Create an Instance class when:**
+
+|Situation|Why|
+|---|---|
+|Data survives node destruction|Inventory items persist after pickup|
+|Data transfers between scenes|Player stats carry across levels|
+|Data needs to be saved/loaded|Save file stores durability, enchantments|
+|Multiple views display same data|Inventory grid + tooltip show same item|
+
+**Rule:** Start with Definition-only. Add Instance when data needs to outlive its node.
 
 ---
 
@@ -491,207 +459,304 @@ inventory.add(axe)
 |**Database**|Definitions|Entire game (loaded once)|
 |**System**|Instances|Runtime (created, modified, destroyed)|
 
----
+### When Database is Overkill
 
-## Systems vs Managers (Layer 0 vs Layer 1)
-
-This architecture draws from Ricard Pillosu's approach (20+ years AAA, currently building Starfinder in Godot). The key insight: **systems should be dumb, managers should be smart**.
-
-Source: [Jonas Tyroller Podcast — "Industry Veteran About Coding for Games"](https://www.youtube.com/watch?v=Fxea6TG0PXk) (1:02:43 - 1:20:48)
-
-|Layer|Type|Extends|Role|
-|---|---|---|---|
-|**Layer 0**|System|RefCounted|Dumb. Data & state only. Zero game context.|
-|**Layer 1**|Manager|Node|Smart. Orchestrates systems. Contains game-specific flow.|
-
-### Layer 0: Dumb Systems
-
-A Layer 0 system:
-
-- Knows only its own data
-- Has zero dependencies on other systems
-- Doesn't know the game exists
-- Can be reused in a completely different game
-
-**The Dumb Test:** Can this system work in a completely different game without modification? If yes, it's properly Layer 0.
+**Don't create a Database when you know exactly what you need at edit time:**
 
 ```gdscript
-# turn_system.gd — Layer 0 (dumb)
-class_name TurnSystem extends RefCounted
+# Direct references — no database needed
+@export var goblin: EnemyDefinition    # Drag in inspector
+@export var skeleton: EnemyDefinition
+@export var boss: EnemyDefinition
 
-signal turn_changed(index: int)
-
-var current_index: int = 0
-var participant_count: int = 0
-
-
-func setup(count: int) -> void:
-    participant_count = count
-    current_index = 0
-
-
-func next_turn() -> int:
-    current_index = (current_index + 1) % participant_count
-    turn_changed.emit(current_index)
-    return current_index
-
-
-func get_current() -> int:
-    return current_index
+func spawn_wave_1() -> void:
+    spawn(goblin)
+    spawn(goblin)
+    spawn(skeleton)
 ```
 
-This system doesn't know:
+This works fine for small games. You know at edit time which enemies appear where.
 
-- Who is fighting
-- If someone died
-- What the UI should show
-- If combat is paused
-- That "combat" even exists
+**Create a Database when:**
 
-It only knows: there's a count, there's an index, here's how to advance.
+|Situation|Why|
+|---|---|
+|Spawning from string IDs|Data files, network messages, console commands|
+|10+ definitions and growing|Lookup is easier than managing many @export vars|
+|Multiple systems need same lookup|Avoid passing references everywhere|
+|Dynamic content|Mods, procedural generation|
 
-### Layer 1: Smart Orchestration
+**Rule:** Start with direct `@export` references or `preload()`. Add Database when lookup-by-ID becomes necessary.
 
-A Layer 1 manager:
+---
 
-- Connects Layer 0 systems together
-- Contains game-specific logic
-- Knows the context (combat, exploration, dialogue)
-- Coordinates flow between systems
+## Systems vs Managers
+
+This architecture draws from Ricard Pillosu's approach (20+ years AAA, currently building Starfinder in Godot).
+Source: [Jonas Tyroller Podcast — "Industry Veteran About Coding for Games"](https://www.youtube.com/watch?v=Fxea6TG0PXk) (1:02:43 - 1:20:48)
+
+### The Core Distinction
+
+| System                 | Manager                                |                                 |
+| ---------------------- | -------------------------------------- | ------------------------------- |
+| **Purpose**            | Shared operations on data              | Game-specific coordination      |
+| **Knows game context** | No                                     | Yes                             |
+| **When to create**     | Multiple managers need same operations | Event triggers multiple effects |
+| **Extends**            | RefCounted                             | Node                            |
+
+**The key insight:** A system only exists because multiple parts of your game need the same operations. If nothing shares it, keep the code in the manager.
+
+### When to Extract a System
+
+**Extract when multiple managers need the same operations:**
 
 ```gdscript
-# combat_manager.gd — Layer 1 (smart)
+# health_system.gd — extracted because shared
+class_name HealthSystem extends RefCounted
+
+# Used by: CombatManager, PlayerManager, TrapManager, PoisonManager
+func damage(entity, amount: int) -> void:
+    entity.health -= amount
+    if entity.health <= 0:
+        entity_died.emit(entity)
+```
+
+**Don't extract when only one manager uses it:**
+
+```gdscript
+# day_cycle_manager.gd — no DayCycleSystem needed
+class_name DayCycleManager extends Node
+
+var current_phase: DayPhaseDefinition
+var phase_timer: float = 0.0
+
+func _process(delta: float) -> void:
+    phase_timer += delta
+    if phase_timer >= current_phase.duration:
+        _advance_phase()
+
+func _advance_phase() -> void:
+    # This is data manipulation, but only DayCycleManager uses it
+    # No reason to extract to a separate system
+    current_phase_index = (current_phase_index + 1) % phases.size()
+    phase_timer = 0.0
+    
+    # Coordination part
+    GameSystems.spawning.set_multiplier(current_phase.spawn_rate)
+    MusicManager.crossfade(current_phase.music)
+    phase_changed.emit(current_phase)
+```
+
+DayCycleManager owns data AND operates on it. That's fine — it's the only thing that touches day/night logic.
+
+### When to Create a Manager
+
+**Create when an event triggers multiple effects:**
+
+```gdscript
+# combat_manager.gd
+func _on_enemy_killed(enemy: CombatantInstance) -> void:
+    # Multiple systems need coordination
+    var loot := loot_table.roll(enemy.definition)
+    inventory_system.add(loot)
+    quest_system.notify(&"enemy_killed", enemy)
+    audio_system.play(&"death_sound")
+    combat_ui.show_loot_popup(loot)
+```
+
+**Don't create when the action is one call:**
+
+```gdscript
+# Bad — SafeZoneManager just forwards a call
+func _on_body_entered(body):
+    SafeZoneManager.enter()  # which just calls PlayerManager.set_safe(true)
+
+# Good — direct call, no middleman
+func _on_body_entered(body):
+    PlayerManager.set_safe(true)
+```
+
+### The Decision Flow
+
+```
+Is this operation used by multiple managers?
+├── Yes → Extract to a System
+└── No  → Keep in the Manager
+
+Does this event trigger multiple effects?
+├── Yes → Create a Manager to coordinate
+└── No  → View can call System/Manager directly
+```
+
+### A Manager Can Own Data
+
+Managers aren't just coordinators — they can own data and operate on it:
+
+```gdscript
+# player_manager.gd
+class_name PlayerManager extends Node
+
+# Owns data
+var is_safe: bool = false
+var cold_damage_rate: float = 5.0
+
+# Operates on its own data
+func _process(delta: float) -> void:
+    if not is_safe:
+        GameSystems.health.damage(player, cold_damage_rate * delta)
+
+# Coordinates
+func set_safe(safe: bool) -> void:
+    is_safe = safe
+    if safe:
+        GameSystems.health.stop_dot(player, &"cold")
+    safety_changed.emit(safe)
+```
+
+Only extract to a system if another manager needs the same operations.
+
+### System Example (Shared Operations)
+
+```gdscript
+# health_system.gd
+class_name HealthSystem extends RefCounted
+
+signal health_changed(entity, new_health: int)
+signal entity_died(entity)
+
+func damage(entity, amount: int) -> void:
+    entity.health -= amount
+    health_changed.emit(entity, entity.health)
+    if entity.health <= 0:
+        entity_died.emit(entity)
+
+func heal(entity, amount: int) -> void:
+    entity.health = min(entity.health + amount, entity.max_health)
+    health_changed.emit(entity, entity.health)
+
+func is_dead(entity) -> bool:
+    return entity.health <= 0
+```
+
+This exists because CombatManager, PlayerManager, TrapManager all need `damage()`, `heal()`, `is_dead()`.
+
+### Manager Example (Game Coordination)
+
+```gdscript
+# combat_manager.gd
 class_name CombatManager extends Node
 
 var turn_system: TurnSystem
 var health_system: HealthSystem
-var inventory_system: InventorySystem
-
-var combatants: Array[CombatantInstance] = []
-
-@onready var combat_ui: CombatUI = $CombatUI
-
 
 func start_combat(participants: Array[CombatantInstance]) -> void:
-    combatants = participants
-    turn_system.setup(combatants.size())
+    turn_system.setup(participants.size())
     combat_ui.show()
     _process_turn()
 
-
 func _process_turn() -> void:
-    var current := turn_system.get_current()
-    var unit := combatants[current]
+    var unit := combatants[turn_system.get_current()]
     
-    # Ask HealthSystem (Layer 0): is this unit dead?
     if health_system.is_dead(unit):
         turn_system.next_turn()
         _process_turn()
         return
     
-    # Tell UI: show whose turn it is
     combat_ui.show_turn_indicator(unit)
-    
-    # Wait for player input or AI decision...
-
-
-func _on_enemy_killed(enemy: CombatantInstance) -> void:
-    # Orchestrate multiple Layer 0 systems
-    var loot := loot_table.roll(enemy.definition)
-    
-    for item in loot:
-        inventory_system.add(item)  # Layer 0 call
-        quest_system.notify_event(&"item_acquired", item)  # Layer 0 call
-    
-    combat_ui.show_loot_popup(loot)  # View call
 ```
 
-The CombatManager knows the game. The TurnSystem, HealthSystem, and InventorySystem don't.
+CombatManager knows the game — it knows what "combat" means, what should happen each turn, how death affects flow.
 
-### Micro-Managers: Technical Complexity Isolation
+### Micro-Systems: Technical Complexity Isolation
 
-For complex technical tasks that would clutter gameplay code, create specialized systems:
+For complex technical tasks that would clutter gameplay code:
 
 ```gdscript
-# targeting_system.gd — Micro-manager for raycasting/targeting
+# targeting_system.gd
 class_name TargetingSystem extends RefCounted
 
 var camera: Camera3D
-var valid_targets: Array[Node3D] = []
-
 
 func get_target_under_mouse() -> Node3D:
     var mouse_pos := camera.get_viewport().get_mouse_position()
     var from := camera.project_ray_origin(mouse_pos)
     var to := from + camera.project_ray_normal(mouse_pos) * 1000
-    
     # Raycast logic...
     return _find_closest_valid_target(from, to)
-
-
-func is_valid_target(node: Node3D) -> bool:
-    return node in valid_targets
 ```
 
-This keeps raycasting math out of your combat logic. The CombatManager just calls `targeting_system.get_target_under_mouse()`.
+Keeps raycasting math out of CombatManager. Not shared, but isolated for clarity.
 
 ### Wishlist-First Design
 
-Don't architect systems speculatively. Start with what the game needs:
+Don't architect speculatively. Start with what the game needs:
 
 ```
 Feature Wishlist:
 - Turn-based combat
 - Inventory with stacking
-- Dialogue with choices
 - Quest tracking
-- Save/load
+- Day/night cycle
 ```
 
-Then derive minimal systems to support those features:
+Then ask: **What operations are shared?**
 
 ```
-Layer 0 Systems needed:
-- TurnSystem (index tracking)
-- InventorySystem (item storage)
-- DialogueSystem (conversation state)
-- QuestSystem (objective tracking)
-- HealthSystem (HP management)
+Shared (extract to System):
+- Health operations (damage, heal) — used by combat, traps, environment
+- Inventory operations (add, remove) — used by loot, shops, crafting
+- Turn operations — used by combat, maybe dialogue
 
-Layer 1 Managers needed:
-- CombatManager (orchestrates combat flow)
-- ExplorationManager (orchestrates world interaction)
-- GameStateManager (orchestrates save/load, scene transitions)
+Not shared (keep in Manager):
+- Day/night progression — only DayCycleManager touches it
+- Combat flow logic — only CombatManager
+- Quest state changes — only QuestManager
 ```
 
-No generic engine-building. No "we might need this later." Only what the wishlist demands.
+### When NOT to Create a System
+
+|Situation|Do This Instead|
+|---|---|
+|Only one manager uses this operation|Keep it in the manager|
+|"Might need it later"|Wait until you actually need it|
+|Feels cleaner to separate|Not a good enough reason|
+|It's only 10 lines of code|Keep it in the manager|
+
+### When NOT to Create a Manager
+
+|Situation|Do This Instead|
+|---|---|
+|Action is just one call|View calls System directly|
+|Manager just forwards calls|Remove the middleman|
+|"Every feature needs a manager"|No, only coordination needs managers|
+|No shared state or multi-step logic|Keep it simple|
 
 ### The Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    LAYER 1: ORCHESTRATION                       │
-│                    (Smart — knows the game)                     │
+│                       MANAGERS                                  │
+│            (Smart — know the game, coordinate)                  │
 │                                                                 │
 │  ┌─────────────┐  ┌──────────────┐  ┌───────────────────────┐   │
-│  │CombatManager│  │ExploreManager│  │  GameStateManager     │   │
+│  │CombatManager│  │PlayerManager │  │  DayCycleManager      │   │
 │  └──────┬──────┘  └──────┬───────┘  └───────────┬───────────┘   │
 │         │                │                      │               │
 └─────────┼────────────────┼──────────────────────┼───────────────┘
-          │ calls          │ calls                │ calls
-          ▼                ▼                      ▼
+          │ calls          │ calls                │ may own data
+          ▼                ▼                      │ if not shared
 ┌─────────────────────────────────────────────────────────────────┐
-│                    LAYER 0: DATA & STATE                        │
-│                    (Dumb — no game context)                     │
+│                  SYSTEMS (Shared Operations)                    │
+│              (Dumb — reusable, no game context)                 │
 │                                                                 │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐            │
-│  │   Turn   │ │  Health  │ │Inventory │ │  Quest   │   ...      │
-│  │  System  │ │  System  │ │  System  │ │  System  │            │
-│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘            │
-│       │            │            │            │                  │
-└───────┼────────────┼────────────┼────────────┼──────────────────┘
-        │ owns       │ owns       │ owns       │ owns
-        ▼            ▼            ▼            ▼
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐                         │
+│  │  Health  │ │Inventory │ │   Turn   │                         │
+│  │  System  │ │  System  │ │  System  │   (only if shared)      │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘                         │
+│       │            │            │                               │
+└───────┼────────────┼────────────┼───────────────────────────────┘
+        │ owns       │ owns       │ owns
+        ▼            ▼            ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                         DATA                                    │
 │  ┌──────────────────┐  ┌──────────────────┐                     │
@@ -701,76 +766,73 @@ No generic engine-building. No "we might need this later." Only what the wishlis
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Where Game Logic Lives
+Note: Systems only exist if multiple managers need the same operations. Otherwise, keep the logic in the manager.
+
+### Where Logic Lives
 
 |Question|Answer|
 |---|---|
-|"What happens when a turn ends?"|Layer 1 (CombatManager)|
-|"How do I advance to the next turn?"|Layer 0 (TurnSystem)|
-|"What happens when an enemy dies?"|Layer 1 (CombatManager)|
-|"Is this unit dead?"|Layer 0 (HealthSystem)|
-|"What happens when I pick up an item?"|Layer 1 (ExplorationManager)|
-|"How do I add an item to inventory?"|Layer 0 (InventorySystem)|
+|"What happens when a turn ends?"|Manager (CombatManager) — game rule|
+|"How do I advance to the next turn?"|System (TurnSystem) — shared operation|
+|"What happens when an enemy dies?"|Manager (CombatManager) — game rule|
+|"Is this unit dead?"|System (HealthSystem) — shared operation|
+|"What happens when I enter safe zone?"|Manager (PlayerManager) — game rule|
+|"How do I damage an entity?"|System (HealthSystem) — shared operation|
 
-**Rule of thumb:** Layer 0 answers "how do I do X?" — Layer 1 answers "what should happen when X?"
+**Rule of thumb:** Managers answer "what should happen?" — Systems answer "how do I do it?"
 
 ### Communication Rules
 
-Layer 0 systems:
+Systems:
 
 - Emit signals (blindly, not knowing who listens)
-- Do NOT listen to other Layer 0 systems' signals
-- Do NOT call other Layer 0 systems directly
-
-If `HealthSystem` needs to affect `InventorySystem` when someone dies, that's **game logic** — it belongs in Layer 1.
+- Do NOT call other systems directly
+- If system A needs to affect system B, a manager listens to A and calls B
 
 |From|To|Method|
 |---|---|---|
-|View → Layer 0|Direct call|`inventory.add(item)`|
-|View → Layer 1|Direct call|`combat_manager.end_turn()`|
-|Layer 1 → Layer 0|Direct call|`health_system.take_damage(...)`|
-|Layer 0 → Layer 1|Signal|`entity_died.emit(...)`|
-|Layer 0 → View|Signal|`item_added.emit(...)`|
-|Layer 0 → Layer 0|**NEVER**|❌ This is game logic, belongs in Layer 1|
+|View → System|Direct call|`GameSystems.inventory.add(item)`|
+|View → Manager|Direct call|`CombatManager.end_turn()`|
+|Manager → System|Direct call|`health_system.damage(...)`|
+|System → Manager|Signal|`entity_died.emit(...)`|
+|System → View|Signal|`item_added.emit(...)`|
+|System → System|**NEVER**|❌ Manager coordinates this|
 
-**The key insight:** Layer 1 is the glue. When system A's event should affect system B, Layer 1 listens to A and calls B. The systems themselves stay dumb and decoupled.
-
-### When Should Views Call Layer 0 vs Layer 1?
+### When Should Views Call System vs Manager?
 
 |Situation|Call|Example|
 |---|---|---|
-|Simple data operation|Layer 0 directly|`inventory.add(item)`|
-|Single system, no side effects|Layer 0 directly|`health_system.get_current(entity)`|
-|Multiple systems need coordination|Layer 1|Pickup → quest update → achievement → sound|
-|Game-specific flow|Layer 1|`combat_manager.end_turn()`|
+|Simple data operation|System directly|`GameSystems.inventory.add(item)`|
+|Single operation, no side effects|System directly|`GameSystems.health.get_current(entity)`|
+|Multiple effects needed|Manager|Pickup → quest + achievement + sound|
+|Game-specific flow|Manager|`CombatManager.end_turn()`|
 
-For simple cases (like the `world_item._on_picked_up()` example), calling Layer 0 directly is fine. When an action triggers cascading effects across multiple systems, route through Layer 1.
+For simple cases, calling System directly is fine. When an action triggers multiple effects, route through a Manager.
 
-### Layer 1 to Layer 1 Communication
+### Manager to Manager Communication
 
-Managers can call each other directly when needed:
+Managers can call each other directly:
 
 ```gdscript
 # combat_manager.gd
 func _on_combat_ended(victory: bool) -> void:
     if victory:
-        dialogue_manager.start_dialogue(&"victory_speech")
-        exploration_manager.unlock_area(&"next_zone")
+        DialogueManager.start(&"victory_speech")
+        ExplorationManager.unlock(&"next_zone")
 ```
 
-However, if managers are constantly cross-calling, consider:
+If managers constantly cross-call, consider:
 
-1. **Missing Layer 0 system** — shared logic should move down
+1. **Missing shared system** — extract common operations
 2. **Overly broad manager** — split into focused managers
-3. **Event bus pattern** — for truly decoupled communication
+3. **Event bus** — for truly decoupled communication
 
 ### When to Split a Manager
 
 A manager is too big when:
 
-- It handles unrelated responsibilities (combat + inventory UI + saving)
+- It handles unrelated responsibilities
 - You can't describe its job in one sentence
-- Multiple developers need to edit it simultaneously
 - It's over ~500 lines with no clear sections
 
 Split by **game context**, not by technical function:
@@ -778,11 +840,189 @@ Split by **game context**, not by technical function:
 |Too Broad|Better Split|
 |---|---|
 |`GameManager` (does everything)|`CombatManager`, `ExplorationManager`, `UIManager`|
-|`PlayerManager` (movement + combat + inventory + quests)|`PlayerController` (movement), `CombatManager`, `InventoryManager`|
+|`PlayerManager` (movement + combat + inventory)|`PlayerController` (movement), `PlayerManager` (state)|
 
 Each manager should own one "mode" or "context" of gameplay.
 
-See also: [[Systems access approaches in Godot]]
+---
+
+## Accessing Systems and Managers
+
+Where do systems and managers live? How do you access them?
+
+### Recommended: Systems Container + Manager Autoloads
+
+```
+GameSystems (Autoload) — holds shared systems
+├── inventory: InventorySystem
+├── health: HealthSystem
+├── turn: TurnSystem
+└── quest: QuestSystem
+
+CombatManager (Autoload)
+ExplorationManager (Autoload)  
+SaveManager (Autoload)
+```
+
+```gdscript
+# game_systems.gd (Autoload)
+extends Node
+
+var inventory: InventorySystem
+var health: HealthSystem
+var turn: TurnSystem
+var quest: QuestSystem
+
+
+func _ready() -> void:
+    inventory = InventorySystem.new()
+    health = HealthSystem.new()
+    turn = TurnSystem.new()
+    quest = QuestSystem.new()
+```
+
+```gdscript
+# combat_manager.gd (Autoload)
+extends Node
+
+@onready var health: HealthSystem = GameSystems.health
+@onready var turn: TurnSystem = GameSystems.turn
+@onready var inventory: InventorySystem = GameSystems.inventory
+
+
+func _ready() -> void:
+    health.entity_died.connect(_on_entity_died)
+
+
+func _on_entity_died(entity) -> void:
+    if entity.is_enemy:
+        var loot := _roll_loot(entity)
+        inventory.add(loot)
+```
+
+**Access from anywhere:**
+
+```gdscript
+GameSystems.inventory.add(item)        # Shared system
+CombatManager.start_combat(enemies)    # Manager
+```
+
+### Why This Structure?
+
+|Benefit|Explanation|
+|---|---|
+|**Single source for systems**|All shared systems in one place: `GameSystems.x`|
+|**Clear ownership**|Systems don't float around — `GameSystems` owns them|
+|**No duplication**|Multiple managers share the same system instances|
+|**Easy to find**|Managers are named autoloads: `CombatManager`, `SaveManager`|
+
+### When GameSystems Container is Overkill
+
+For small games with 1-2 shared systems, just make them autoloads directly:
+
+```
+# Project Settings → Autoload
+InventorySystem → res://systems/inventory_system.gd
+CombatManager → res://managers/combat_manager.gd
+```
+
+```gdscript
+# Access directly
+InventorySystem.add(item)
+```
+
+**Use GameSystems container when:**
+
+- 3+ shared systems
+- You want to initialize them in a specific order
+- You want one place to find all systems
+
+### Alternative: Managers Own Their Systems
+
+Each manager instantiates the systems it needs:
+
+```gdscript
+# combat_manager.gd
+extends Node
+
+var turn_system: TurnSystem
+var health_system: HealthSystem
+
+
+func _ready() -> void:
+    turn_system = TurnSystem.new()
+    health_system = HealthSystem.new()
+```
+
+**Problem:** If both `CombatManager` and `ExplorationManager` need `HealthSystem`, who owns it? You get awkward cross-references or duplicated instances.
+
+**Use only when:** A system is truly private to one manager and never shared.
+
+### Alternative: Scene-Based Managers
+
+Managers as nodes in the scene tree, not autoloads:
+
+```
+Main.tscn
+├── World
+├── Player
+├── CombatManager (Node)
+└── DialogueManager (Node)
+```
+
+```gdscript
+# Access via group
+var combat := get_tree().get_first_node_in_group("combat_manager") as CombatManager
+
+# Or via explicit path/export
+@export var combat_manager: CombatManager
+```
+
+**Use when:**
+
+- Manager is scene-specific (puzzle manager only in puzzle levels)
+- Manager needs scene tree access (`$Path`, `get_tree()`)
+- Different scenes need different manager configurations
+
+### Summary: Where Things Live
+
+|Component|Where|Access Pattern|
+|---|---|---|
+|Shared Systems|`GameSystems` Autoload|`GameSystems.inventory`|
+|Global Managers (Save, Audio)|Individual Autoloads|`SaveManager.save_game()`|
+|Context Managers (Combat, Dialogue)|Autoloads or scene nodes|`CombatManager.x` or group/export|
+|Database|Autoload|`ItemDatabase.get_definition(id)`|
+
+### Project Setup
+
+In `Project → Project Settings → Autoload`:
+
+|Name|Path|
+|---|---|
+|GameSystems|`res://systems/game_systems.gd`|
+|ItemDatabase|`res://systems/item_database.gd`|
+|SaveManager|`res://managers/save_manager.gd`|
+|CombatManager|`res://managers/combat_manager.gd`|
+
+Folder structure:
+
+```
+res://
+├── systems/
+│   ├── game_systems.gd      # Autoload — holds shared systems
+│   ├── inventory_system.gd  # Shared system
+│   ├── health_system.gd     # Shared system
+│   └── turn_system.gd       # Shared system
+├── managers/
+│   ├── combat_manager.gd    # Autoload
+│   ├── save_manager.gd      # Autoload
+│   └── exploration_manager.gd
+├── data/
+│   └── items/
+│       └── *.tres
+└── scenes/
+    └── *.tscn
+```
 
 ---
 
@@ -1069,9 +1309,11 @@ Use when: data's lifecycle is independent of any node (inventory, saves, transfe
 |Save game|`ResourceSaver.save(save_game, path)`|
 |Load game|`ResourceLoader.load(path, "", CACHE_MODE_IGNORE)`|
 |Look up definition|`ItemDatabase.get_definition(id)`|
-|Add data operation|Layer 0 system method (e.g., `inventory.add()`)|
-|Add game-specific logic|Layer 1 manager (e.g., `CombatManager._on_kill()`)|
-|Isolate technical code|Micro-manager (e.g., `TargetingSystem`)|
+|Add shared operation|System (e.g., `GameSystems.health.damage()`)|
+|Add game-specific logic|Manager (e.g., `CombatManager._on_enemy_killed()`)|
+|Isolate technical code|Micro-system (e.g., `TargetingSystem`)|
+|Access a system|`GameSystems.inventory`, `GameSystems.health`|
+|Access a manager|`CombatManager.x`, `SaveManager.x` (Autoloads)|
 
 ---
 
@@ -1079,13 +1321,14 @@ Use when: data's lifecycle is independent of any node (inventory, saves, transfe
 
 - [ ] Definitions are `Resource` scripts with `@export` vars
 - [ ] Definitions are `.tres` files in `res://data/`
-- [ ] Instances hold reference to definition + mutable state
+- [ ] Instances hold reference to definition + mutable state (if needed)
 - [ ] Instances also extend `Resource` (for saving)
-- [ ] Nodes hold instance reference, not definition
+- [ ] Database exists only if lookup-by-ID is needed
 - [ ] Database uses `ResourceLoader.list_directory()` or explicit array (not `DirAccess`)
-- [ ] Layer 0 systems are dumb (pass the "different game" test)
-- [ ] Layer 0 systems never call or listen to other Layer 0 systems
-- [ ] Layer 1 managers orchestrate systems and contain game logic
+- [ ] Systems only exist for shared operations (multiple managers use them)
+- [ ] Systems never call other systems (managers coordinate)
+- [ ] Managers coordinate game-specific flows
+- [ ] Managers can own data if not shared
 - [ ] SaveGame resource wraps all saveable state
 - [ ] Load with `CACHE_MODE_IGNORE`
 

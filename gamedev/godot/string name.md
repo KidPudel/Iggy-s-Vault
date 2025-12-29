@@ -1,0 +1,4 @@
+- **String Interning**: The core feature of `StringName` is "string interning". This means that only one instance of any given name exists in memory. When you create two `StringName` objects with the same value (e.g., `"player"`), they both point to the same memory location.
+- **Fast Comparison**: Because they point to the same memory address, comparing two `StringName` objects is extremely fast, much faster than comparing regular `String` objects, which have to compare character by character.
+- **Performance Optimization**: `StringNames` are commonly used internally by Godot for things like node names, signal names, and input actions, where fast lookups and comparisons are critical and happen frequently (e.g., every frame).
+- **Automatic Conversion**: You can usually pass a regular `String` to any method that expects a `StringName`, and Godot will automatically handle the conversion.

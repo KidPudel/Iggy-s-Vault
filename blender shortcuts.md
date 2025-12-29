@@ -1,4 +1,4 @@
-- middle mouse for rotating around
+ middle mouse for rotating around
 	- ctrl+middle: zoom in and out
 	- shift+middle: move around
 	- alt/option+middle mouse: clip the view to axis
@@ -54,6 +54,8 @@
 	- sculpt mode:
 		- change the size of a brush in sculpting
 		- shift+f: change the strength of a brush
+		- ctrl + sculpt: reverse
+		- shift + sculpt: smoothout
 	- edit mode: fill at edge with face
 - ctrl+i: invert something like mask brush effect, to paint only on originally masked area
 - shift: invokes smooth brush type in any brush type
