@@ -30,13 +30,13 @@ The GPU renders all instances in a single batch using the same mesh and material
 
 ### What MultiMesh Handles
 
-|✅ Handles|❌ Does NOT Handle|
-|---|---|
-|Mesh rendering|Collisions|
-|Per-instance transforms|Scripts|
-|Per-instance color/custom data|Signals|
-|Material|Child nodes|
-|Shadows (as single batch)|Individual culling|
+| ✅ Handles                      | ❌ Does NOT Handle  |
+| ------------------------------ | ------------------ |
+| Mesh rendering                 | Collisions         |
+| Per-instance transforms        | Scripts            |
+| Per-instance color/custom data | Signals            |
+| Material                       | Child nodes        |
+| Shadows (as single batch)      | Individual culling |
 
 ### Node Structure
 

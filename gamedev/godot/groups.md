@@ -10,7 +10,7 @@ func _ready():
 
 Imagine you're creating an infiltration game. When an enemy spots the player, you want all guards and robots to be on alert.
 
-In the fictional example below, we use `SceneTree.call_group()` to alert all enemies that the player was spotted.
+In the fictional example below, we use `SceneTree.call_group()` to alert all enemies that the player was spotted. This is way better than getting all elements from the loop to perform for example queue_free
 
 ```gdscript
 func _on_player_spotted():
