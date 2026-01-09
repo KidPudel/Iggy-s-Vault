@@ -11,10 +11,15 @@
             "id": "064c3c9695bc3a4a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "gamedev/godot/Layered architecture in Godot.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Layered architecture in Godot"
             }
           }
         ]

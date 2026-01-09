@@ -1,7 +1,5 @@
 # MultiMesh Instancing in Godot
 
-#godot #optimization #3d #instancing #tool
-
 ## The Problem
 
 Rendering many identical objects (trees, grass, rocks) individually is expensive:

@@ -1,5 +1,7 @@
-**Resources are data containers designed for serialization.** They inherit from `RefCounted`, meaning they're automatically freed when no longer referenced.
+**Resources are data containers designed for serialization that exists outside the scene tree.** They inherit from `RefCounted`, meaning they're automatically freed when no longer referenced.
 **Resources are for data you need to reference/modify/save independently of where it's displayed.**
+**In one sentence:** A Resource is a data object you can save to a file, share between nodes, and serialize automatically.
+Data type that is easier to serialize to store and share in godot.
 
 ## Core Concept
 

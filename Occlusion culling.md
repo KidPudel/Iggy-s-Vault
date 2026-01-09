@@ -1,0 +1,1 @@
+Rendering technique that discards/[[Culling]] something even if it is in direction of the view, but it is blocked by some object. (unlike [[Frustum Culling]])

@@ -1,4 +1,4 @@
-[[declarative]] package manager
+[[declarative style]] package manager
 ```zsh
 $ sh <(curl -L https://nixos.org/nix/install)
 ```

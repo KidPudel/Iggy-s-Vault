@@ -19,7 +19,7 @@ Build system can help with:
 
 ---
 
-> **NOTE:** the build script may seem [[imperative]], but it is [[declarative]], on a way of constructing a build graph that will be executed by an external runner. Meaning even though it feels like imperative, we just declare the end result, that we want.
+> **NOTE:** the build script may seem [[imperative style]], but it is [[declarative style]], on a way of constructing a build graph that will be executed by an external runner. Meaning even though it feels like imperative, we just declare the end result, that we want.
 
 ## Simple executable
 

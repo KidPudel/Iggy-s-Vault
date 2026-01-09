@@ -1,0 +1,1 @@
+Statement that allocates memory and provides the actual implementation for declared (using [[declaration in programming]]) entity.

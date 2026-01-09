@@ -9,7 +9,7 @@ Same principle as: HTML is the document (fuel), browser is the renderer (engine)
 ddd is a quality improvement approach where you introduce the aspect where code can be fired from making decisions. Data + state + systems - decision makers
 
 you extract what can be stored as:
-- [[declarative]]/static data. content = raw data describing what exists in the world
+- [[declarative style]]/static data. content = raw data describing what exists in the world
 - Parametrized behavior, data value, that influence on runtime logic. Behavior = logic that is data-driven
 
 # Difference
@@ -51,4 +51,4 @@ class BehaviorSystem:
 ```
 
 
-[[data-driven design architecture in godot]]
+[[Data-driven design in Godot]]
