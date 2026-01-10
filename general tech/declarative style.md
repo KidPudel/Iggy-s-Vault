@@ -1,2 +1,5 @@
 Paradigm where you just declare what you want as a result and system knows enough information to figure out instructions. It is about describing **what** you want as the final result, without explicitly detailing the steps to get there.
 Opposite to [[imperative style]]
+
+
+Not to confuse with [[declaration in programming]] statement
