@@ -184,6 +184,7 @@ With data-driven design:
 ## Three Layers
 
 This is the foundational pattern for game entities that need persistence and visual representation.
+> [!note] This is conceptual representation for mental organization. In reality regarding resources there are only the .tres files and ram representation, both based from the class definition ([[definition in programming]]) that extends the `Resource`
 
 ### Conceptual Layers
 
@@ -192,7 +193,7 @@ This is the foundational pattern for game entities that need persistence and vis
 | **Purpose**    | Template, the "platonic ideal" of data | Runtime state, "this specific one", representing latest state saved | Visual/interactive form |
 | **Class**      | `ItemData`                             | `ItemState`                                                         | `WorldItem` (Node3D)    |
 | **Mutability** | Read-only                              | Mutable                                                             | Rebuilt on change       |
-| **Answers**    | "What CAN this be?"                    | "What IS this now?"                                                 | "How does it appear?"   |
+| **Answers**    | "What is the ultimate truth of it?"    | "What IS this now?"                                                 | "How does it appear?"   |
 
 ```
 DATA (iron_axe.tres):                STATE (player's axe):           REPRESENTATION (world):
@@ -207,11 +208,11 @@ DATA (iron_axe.tres):                STATE (player's axe):           REPRESENTAT
 
 Understanding the relationship between disk files and RAM objects:
 
-| Layer              | In RAM (Runtime)                                    | On Disk (Persistent)                                   |
-| ------------------ | --------------------------------------------------- | ------------------------------------------------------ |
-| **Data**           | `ItemData` object (loaded, cached, read-only)       | `res://data/items/iron_axe.tres` (created from editor) |
-| **State**          | `ItemState` object (created with `.new()`, mutable) | `user://saves/slot1.tres` (when saved)                 |
-| **Representation** | `WorldItem` node (in scene tree)                    | Not saved (recreated from State)                       |
+| Layer              | In RAM (Runtime)                                                       | On Disk (Persistent)                                   |
+| ------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------ |
+| **Data**           | `ItemData` object (loaded, cached, exported, *intended* for read-only) | `res://data/items/iron_axe.tres` (created from editor) |
+| **State**          | `ItemState` object (created with `.new()`, loaded, mutable)            | `user://saves/slot1.tres` (when saved)                 |
+| **Representation** | `WorldItem` node (in scene tree)                                       | Not saved (recreated from State)                       |
 
 **Key distinction:**
 
