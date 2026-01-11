@@ -1,4 +1,4 @@
-`@export` tells the godot **to save** their value (any type) along with the [[Godot resource]] they are attached to, by adding metadata to a script. As well as exposed in the editor to set at the design time.
+`@export` tells the godot **to save** their value (any type) along with the [[Godot Resource]] they are attached to, by adding metadata to a script. As well as exposed in the editor to set at the design time.
 On scene load the engine restores the value before `_ready()`
 
 - allows to change in inspector

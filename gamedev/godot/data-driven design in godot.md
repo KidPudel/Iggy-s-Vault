@@ -4,6 +4,157 @@
 
 ---
 
+## Prerequisites
+
+This guide assumes you understand Godot Resources. If you're not familiar with how Resources work, serialization, or caching, read [[Resources in Godot]] first.
+
+---
+
+## Mental Model: RAM vs Disk
+
+Understanding the relationship between objects in memory and files on disk is crucial.
+
+### What Actually Happens at Runtime
+
+```gdscript
+// At runtime, you work with OBJECTS IN RAM
+var item_data = ItemData.new()  // Creates object in memory
+item_data.damage = 25            // Modifies RAM object
+```
+
+**At this point:**
+
+- `item_data` is a regular object in RAM (memory)
+- It's just a class instance with fields
+- It exists ONLY while the game is running
+- When the game closes, it's gone forever
+
+### What `.tres` Files Actually Are
+
+```gdscript
+// Saving converts RAM → Disk
+ResourceSaver.save(item_state, "user://data/sword.tres")
+```
+
+**What just happened:**
+
+1. Godot takes your RAM object
+2. Serializes it (converts to text format)
+3. Writes a `.tres` file to disk (hard drive)
+4. That file persists after the game closes
+
+**The `.tres` file is:**
+
+- A text file on your hard drive
+- A saved snapshot of the object's state
+- Persistent storage (survives game restart)
+- NOT an object you interact with directly
+
+### Loading Brings Files Back to RAM
+
+```gdscript
+// Loading converts Disk → RAM
+var loaded_state = load("user://data/sword.tres")
+```
+
+**What just happened:**
+
+1. Godot reads the `.tres` file from disk
+2. Deserializes it (converts text back to object)
+3. Creates a new object in RAM
+4. Returns that RAM object to you
+
+**Now `loaded_state` is:**
+
+- A regular object in RAM
+- Identical to the original object that was saved
+- What you actually interact with in code
+
+### The Complete Flow
+
+```
+DEVELOPMENT TIME:                RUNTIME:
+┌──────────────────┐            ┌─────────────────┐
+│ Create in Editor │            │ Game starts     │
+│ Save as .tres    │            │                 │
+└────────┬─────────┘            └────────┬────────┘
+         │                               │
+         ▼                               ▼
+┌──────────────────┐            ┌─────────────────┐
+│ sword.tres       │ ─load()──> │ ItemState object│ <── You code with this
+│ (on disk)        │            │ (in RAM)        │
+│ Persistent ✓     │            │ Temporary       │
+└──────────────────┘            └─────────────────┘
+                                         │
+                                         │ .new()
+                                         ▼
+                                ┌─────────────────┐
+                                │ ItemState object│ <── You code with this
+                                │ (in RAM)        │
+                                │ Temporary       │
+                                └────────┬────────┘
+                                         │
+                                         │ ResourceSaver.save()
+                                         ▼
+                                ┌─────────────────┐
+                                │ save_slot1.tres │
+                                │ (on disk)       │
+                                │ Persistent ✓    │
+                                └─────────────────┘
+```
+
+### Key Insights
+
+**In your code, you ALWAYS work with objects in RAM:**
+
+```gdscript
+var data: ItemData = load("res://sword.tres")  // RAM object
+var state: ItemState = ItemState.new(data)     // RAM object
+state.durability = 50                           // Modifying RAM
+```
+
+**"Resource" just means:**
+
+- The class inherits from `Resource`
+- It can be serialized (converted to `.tres` format)
+- You can save it with `ResourceSaver.save()`
+- You can load it with `load()` or `preload()`
+
+**It does NOT mean:**
+
+- You're working with the file directly
+- The object is magically stored on disk
+- Changes automatically save to disk
+
+### Practical Example
+
+```gdscript
+# Load data from disk → creates RAM object
+var sword_data: ItemData = load("res://data/sword.tres")
+
+# Create new state in RAM
+var player_sword: ItemState = ItemState.new(sword_data)
+player_sword.durability = 80  // Modifying RAM object
+
+# At this point, nothing is saved to disk yet!
+
+# Later, explicitly save to disk
+var save_game = SaveGame.new()
+save_game.inventory.append(player_sword)
+ResourceSaver.save(save_game, "user://saves/slot1.tres")
+
+# Now it's on disk and will persist
+```
+
+**Think of it like this:**
+
+- `.tres` files are like save files or blueprints
+- At runtime, you load them into RAM as objects
+- You work with those RAM objects
+- When you want to persist changes, you explicitly save back to disk
+
+---
+
 ## The Problem
 
 Without data-driven design:
@@ -32,9 +183,9 @@ With data-driven design:
 
 ## Three Layers
 
-This is the foundational pattern.
+This is the foundational pattern for game entities that need persistence and visual representation.
 
-|Layer|Data (Blueprint)|State (Runtime)|Representation (Node)|
+|Layer|Data|State|Representation|
 |---|---|---|---|
 |**What**|Template, the "platonic ideal"|Runtime state, "this specific one"|Visual/interactive form|
 |**Class**|`ItemData`|`ItemState`|`WorldItem` (Node3D)|
@@ -42,7 +193,7 @@ This is the foundational pattern.
 |**Lifetime**|Shipped with game|Created during play|Created/destroyed as needed|
 |**Location**|`res://` (serialized .tres)|Memory or `user://` (saves)|Scene tree|
 |**Sharing**|One per type, shared by all|One per occurrence, unique|One per visible occurrence|
-|**Created By**|`ResourceSaver.save()`|`.new()` constructor|`instantiate()`|
+|**Created By**|Editor or `ResourceSaver.save()`|`.new()` constructor|`instantiate()`|
 
 ```
 DATA (iron_axe.tres):                STATE (player's axe):           REPRESENTATION (world):
@@ -53,56 +204,9 @@ DATA (iron_axe.tres):                STATE (player's axe):           REPRESENTAT
 └─ icon: axe.png
 ```
 
-**Data (Blueprint)** answers: "What CAN this be?" (max durability, base damage)  
-**State (Runtime)** answers: "What IS this now?" (current durability, applied mods)  
-**Representation (Node)** answers: "How does this appear?" (mesh, collision, interaction)
-
----
-
-## Understanding OOP Instances vs Resources
-
-This is critical to avoid confusion.
-
-### Two Different Meanings of "Instance"
-
-**OOP Instance** (created with `.new()`):
-
-- Runtime object in memory
-- Created by calling constructor: `ItemState.new()`
-- Lives in [[RAM]], dies when reference count hits zero
-- Can be serialized to disk as a Resource
-
-**Serialized Resource** (created with `ResourceSaver.save()`):
-
-- Data file on disk (`.tres`)
-- Created in editor or by calling `ResourceSaver.save()`
-- Lives in `res://` or `user://`
-- Loaded into memory as OOP instance when needed
-
-```gdscript
-# OOP Instance - lives in RAM
-var state := ItemState.new(iron_axe_data)
-
-# Serialized Resource - lives on disk
-ResourceSaver.save(state, "user://saves/player_axe.tres")
-
-# Loading creates new OOP instance from serialized data
-var loaded_state := ResourceLoader.load("user://saves/player_axe.tres")
-```
-
-### Why We Renamed ItemInstance → ItemState
-
-The word "instance" is overloaded in programming:
-
-- In OOP: any object created with `.new()`
-- In Godot: serialized `.tres` files are called "resource instances"
-- In game design: "an instance of an enemy" could mean the blueprint OR the runtime state
-
-**ItemState** is clearer because:
-
-- It describes what it holds: mutable runtime state
-- It avoids confusion with OOP terminology
-- It pairs clearly with ItemData (blueprint)
+**Data** answers: "What CAN this be?" (max durability, base damage)  
+**State** answers: "What IS this now?" (current durability, applied mods)  
+**Representation** answers: "How does this appear?" (mesh, collision, interaction)
 
 ---
 
@@ -139,7 +243,7 @@ Does data need to outlive the node?
 |Transfers between scenes?|Player stats cross levels|
 |Gets saved to disk?|Save file needs current durability|
 |Multiple nodes show same data?|Inventory slot + tooltip + equipped mesh|
-|Variations of same blueprint?|Two axes with different durability|
+|Variations of same data?|Two axes with different durability|
 
 ### Quick Reference
 
@@ -156,7 +260,7 @@ Does data need to outlive the node?
 
 ## Implementation
 
-### Data (Resource)
+### Data Layer (Resource)
 
 ```gdscript
 class_name ItemData
@@ -167,12 +271,20 @@ extends Resource
 @export var icon: Texture2D
 @export var max_durability: int = 100
 @export var max_stack: int = 1
+@export var damage: int = 10
 ```
 
 Create: `Right-click → New Resource → ItemData`  
 Save as: `res://data/items/iron_axe.tres`
 
-### State (Resource)
+**Key characteristics:**
+
+- Defines what something CAN be
+- Immutable at runtime
+- Shared by all instances
+- Stored in `res://`
+
+### State Layer (Resource)
 
 ```gdscript
 class_name ItemState
@@ -190,9 +302,14 @@ func _init(item_data: ItemData = null, qty: int = 1) -> void:
         quantity = qty
 ```
 
-> [!warning] Constructor Must Have Defaults Godot needs parameterless construction for loading. Always use defaults.
+**Key characteristics:**
 
-### Representation (Node)
+- Holds current/mutable values
+- References Data (doesn't copy it)
+- One per logical occurrence
+- Saved to `user://` (if persistent)
+
+### Representation Layer (Node)
 
 ```gdscript
 class_name WorldItem
@@ -204,11 +321,24 @@ func setup(item_state: ItemState) -> void:
     state = item_state
     $Mesh.mesh = state.data.mesh
     $Label.text = state.data.display_name
+    
+func _on_interact() -> void:
+    if Inventory.add(state):
+        queue_free()  # Node dies, state lives
 ```
 
-### Database (for ID Lookup)
+**Key characteristics:**
 
-When you need lookup by string ID (loot tables, saves, console commands):
+- Visual/interactive form
+- Displays State data
+- Can be destroyed/recreated without losing state
+- Lives in scene tree
+
+---
+
+## Database Pattern
+
+Use when you need to look up data by string ID (loot tables, saves, console commands).
 
 ```gdscript
 # item_database.gd (Autoload)
@@ -234,9 +364,14 @@ func create_state(id: StringName, qty: int = 1) -> ItemState:
 
 > [!danger] Never Use DirAccess for res:// `DirAccess.open("res://")` breaks on export. Use `ResourceLoader.list_directory()`.
 
-**When you DON'T need a database:** Few types, manually placed in editor → just use `@export var goblin_data: EnemyData`.
+**When you DON'T need a database:**  
+Few types, manually placed in editor → just use `@export var goblin_data: EnemyData`.
 
-### Saving
+---
+
+## Saving and Loading
+
+### Save Structure
 
 ```gdscript
 class_name SaveGame
@@ -247,15 +382,33 @@ extends Resource
 @export var quest_states: Dictionary = {}
 ```
 
+### Save/Load Operations
+
 ```gdscript
-# Save
+# Saving is straightforward
 ResourceSaver.save(save_data, "user://saves/slot_1.tres")
 
-# Load — MUST use CACHE_MODE_IGNORE
-var save := ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_IGNORE)
+# Loading MUST use CACHE_MODE_IGNORE
+var save := ResourceLoader.load(
+    "user://saves/slot_1.tres",
+    "",
+    ResourceLoader.CACHE_MODE_IGNORE
+)
 ```
 
-> [!danger] Always Use CACHE_MODE_IGNORE Without it, Godot returns cached resource. Mutations corrupt the cache. This is especially critical for save files where each load must create a fresh OOP instance.
+> [!danger] Always Use CACHE_MODE_IGNORE for Save Files Without it, Godot returns the cached Resource. Mutations corrupt the cache, breaking subsequent loads. See [[Resources in Godot]] for details.
+
+**What to save:**
+
+- State layer (current durability, enchantments, quantity)
+- Player progress (position, quest completion)
+- World changes (opened chests, defeated bosses)
+
+**What NOT to save:**
+
+- Data layer (already in `res://`)
+- Nodes/scenes (recreate from state on load)
+- Computed values (recalculate from saved data)
 
 ---
 
@@ -291,7 +444,24 @@ func drop(state: ItemState, position: Vector3) -> void:
     world.add_child(node)
 ```
 
-### Extending Types
+### Transferring Between Scenes
+
+```gdscript
+# Scene A: Store state before changing scenes
+Global.player_state = player.get_state()
+get_tree().change_scene_to_file("res://scenes/level_2.tscn")
+
+# Scene B: Restore state after loading
+func _ready() -> void:
+    if Global.player_state:
+        player.restore_state(Global.player_state)
+```
+
+---
+
+## Extending Data Types
+
+### Inheritance Approach
 
 ```gdscript
 class_name WeaponData
@@ -299,117 +469,189 @@ extends ItemData
 
 @export var damage: int = 10
 @export var attack_speed: float = 1.0
+@export var weapon_type: WeaponType
 ```
 
-Or use composition:
+**Pros:** Type-safe, clear hierarchy  
+**Cons:** Deep hierarchies get messy
+
+### Composition Approach
 
 ```gdscript
 class_name ItemData
 extends Resource
 
 @export var id: StringName
+@export var display_name: String
 @export var weapon_data: WeaponData  # null if not a weapon
 @export var consumable_data: ConsumableData  # null if not consumable
+@export var armor_data: ArmorData  # null if not armor
 ```
+
+**Pros:** Flexible, supports multiple "aspects"  
+**Cons:** More null checks, less type safety
+
+Choose based on your game's needs. Simple games → inheritance. Complex games with many overlapping features → composition.
 
 ---
 
-## Gotchas
+## Architecture Guidelines
+
+### Ownership Flows Downward
+
+```gdscript
+# ✅ Good: Parent owns children
+class_name Inventory
+extends Resource
+@export var items: Array[ItemState] = []
+
+# ❌ Bad: Child points to parent
+class_name ItemState
+extends Resource
+@export var inventory: Inventory  # Circular reference!
+```
+
+Store "owns many" relationships on the parent, not "belongs to" on children. This prevents circular references and simplifies serialization.
+
+### Separate Static from Mutable
+
+|Path|Mutability|Use For|
+|---|---|---|
+|`res://`|Read-only|Data (templates, definitions)|
+|`user://`|Read-write|State (saves, settings, progress)|
+
+Never modify Resources loaded from `res://` at runtime. If you need mutable versions, create State instances that reference the Data.
+
+### Keep Logic in Systems, Data in Resources
+
+```gdscript
+# ❌ Bad: Logic in data
+class_name ItemData
+extends Resource
+func use(player: Player) -> void:
+    player.heal(healing_amount)
+
+# ✅ Good: Logic in system
+class_name ItemSystem
+func use_item(item_state: ItemState, player: Player) -> void:
+    if item_state.data.consumable_data:
+        player.heal(item_state.data.consumable_data.healing_amount)
+```
+
+Resources define data. Systems interpret data and apply logic.
+
+---
+
+## Common Pitfalls
 
 |Smell|Problem|Fix|
 |---|---|---|
 |`item_data.damage = 999`|Mutates shared data|Mutate state, not data|
-|`state.duplicate()`|Shallow copy, nested arrays shared|Use `duplicate(true)` or reconstruct|
+|`state.duplicate()`|Shallow copy, nested arrays shared|Use `duplicate(true)`|
 |`resource_path` as ID|Breaks if you move files|Use explicit `id: StringName`|
 |Missing `@export`|Field won't serialize|Add `@export` to all saved fields|
-|Constructor with required params|Godot can't load it|Use defaults for all params|
+|Logic in Resources|Hard to test, couples data to behavior|Move logic to Systems|
 |`DirAccess` for res://|Breaks on export|Use `ResourceLoader.list_directory()`|
-|`ResourceLoader.load()` without cache mode|Returns cached, corrupted on mutation|Use `CACHE_MODE_IGNORE`|
-|Calling data "blueprint"|Inconsistent terminology|Use Data/State terminology|
+|Loading without `CACHE_MODE_IGNORE`|Corrupted save data|Always use for mutable files|
 
 ---
 
-## Quick Reference
-
-### Project Structure
+## Project Structure
 
 ```
 res://
-├── data/
+├── data/                           # All data definitions
 │   ├── items/
-│   │   ├── iron_axe.tres        (ItemData - blueprint)
-│   │   └── health_potion.tres   (ItemData - blueprint)
+│   │   ├── iron_axe.tres          (ItemData)
+│   │   ├── steel_sword.tres       (WeaponData)
+│   │   └── health_potion.tres     (ItemData)
 │   ├── enemies/
-│   │   └── goblin.tres          (EnemyData - blueprint)
+│   │   └── goblin.tres            (EnemyData)
 │   └── quests/
-│       └── main_quest.tres      (QuestData - blueprint)
+│       └── main_quest.tres        (QuestData)
 ├── scripts/
-│   ├── data/
+│   ├── data/                      # Data layer classes
 │   │   ├── item_data.gd
+│   │   ├── weapon_data.gd
 │   │   └── enemy_data.gd
-│   ├── state/
+│   ├── state/                     # State layer classes
 │   │   ├── item_state.gd
 │   │   └── quest_state.gd
-│   └── databases/
-│       └── item_database.gd
+│   ├── systems/                   # Game logic
+│   │   ├── inventory_system.gd
+│   │   └── combat_system.gd
+│   └── databases/                 # Autoloads
+│       ├── item_database.gd
+│       └── quest_database.gd
 └── scenes/
-    └── world_item.tscn          (WorldItem - representation)
+    ├── world_item.tscn            (WorldItem - representation)
+    └── enemy.tscn                 (Enemy - representation)
 ```
 
-### Storage Paths
+---
 
-|Path|Access|Use For|
-|---|---|---|
-|`res://`|Read-only|Data (blueprints), scenes, scripts|
-|`user://`|Read-write|Saves (State), settings, logs|
+## Checklist
 
-### Checklist
-
-**Data (Blueprints):**
+### Data Layer
 
 - [ ] Extend `Resource`
 - [ ] All fields `@export`
 - [ ] Include `id: StringName`
 - [ ] Saved as `.tres` in `res://data/`
 - [ ] NEVER modified at runtime
+- [ ] Defines what something CAN be
 
-**State (Runtime):**
+### State Layer
 
 - [ ] Extend `Resource`
-- [ ] Hold reference to data (not copy)
+- [ ] References Data (doesn't copy it)
 - [ ] All saved fields `@export`
 - [ ] Constructor has defaults
 - [ ] Only this layer is mutable
+- [ ] Represents what something IS now
 
-**Representation (Node):**
+### Representation Layer
 
 - [ ] Holds reference to State
 - [ ] Updates visuals when state changes
 - [ ] Can be destroyed/recreated without losing state
+- [ ] Handles user interaction
 
-**Database:**
+### Database
 
 - [ ] Use `ResourceLoader.list_directory()`
 - [ ] NOT `DirAccess`
+- [ ] Indexes by `id: StringName`
 
-**Saving/Loading:**
+### Saving/Loading
 
 - [ ] Use `CACHE_MODE_IGNORE` on load
-- [ ] Only save State layer (data is already in res://)
+- [ ] Only save State layer
+- [ ] Data layer stays in `res://`
 
 ---
 
 ## The Payoff
 
-1. **Designers edit `.tres`, not code** — faster iteration
-2. **Save system is trivial** — Resources serialize themselves
-3. **New content = new data files** — no code changes
-4. **Memory efficient** — thousands of states, few data blueprints
-5. **Clear reasoning** — "what can it be?" vs "what is it now?" vs "how does it look?" never confused
+1. **Designers edit `.tres`, not code** — faster iteration, no programming needed
+2. **Save system is trivial** — Resources serialize themselves automatically
+3. **New content = new data files** — no code changes required
+4. **Memory efficient** — thousands of states, few data templates
+5. **Clear separation** — "what can it be?" vs "what is it now?" vs "how does it look?"
 6. **Flexible representation** — same state can appear in inventory UI, world, and equipment slots
+7. **Easy to test** — data is isolated from logic
 
 > [!quote] The Ultimate Test Can someone create a new item type by ONLY creating a `.tres` file?
 
+If yes, you've achieved true data-driven design.
+
 ---
 
-_For code organization (Systems, Managers, Nodes), see [[Layered Architecture in Godot]]._
+## Further Reading
+
+- [[Resources in Godot]] — Foundation for understanding serialization
+- [[Layered Architecture in Godot]] — How to organize systems and managers
+
+---
+
+**Remember:** Data is the game. Code just interprets it.
