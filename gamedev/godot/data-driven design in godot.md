@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-This guide assumes you understand Godot Resources. If you're not familiar with how Resources work, serialization, or caching, read [[Resources in Godot]] first.
+This guide assumes you understand Godot Resources. If you're not familiar with how Resources work, serialization, or caching, read [[Godot Resource]] first.
 
 ---
 
@@ -33,7 +33,7 @@ item_data.damage = 25            // Modifies RAM object
 
 ```gdscript
 // Saving converts RAM → Disk
-ResourceSaver.save(item_state, "user://data/sword.tres")
+ResourceSaver.save(item_data, "res://data/sword.tres")
 ```
 
 **What just happened:**
@@ -54,7 +54,7 @@ ResourceSaver.save(item_state, "user://data/sword.tres")
 
 ```gdscript
 // Loading converts Disk → RAM
-var loaded_state = load("user://data/sword.tres")
+var loaded_data = load("res://data/sword.tres")
 ```
 
 **What just happened:**
@@ -64,7 +64,7 @@ var loaded_state = load("user://data/sword.tres")
 3. Creates a new object in RAM
 4. Returns that RAM object to you
 
-**Now `loaded_state` is:**
+**Now `loaded_data` is:**
 
 - A regular object in RAM
 - Identical to the original object that was saved
@@ -81,7 +81,7 @@ DEVELOPMENT TIME:                RUNTIME:
          │                               │
          ▼                               ▼
 ┌──────────────────┐            ┌─────────────────┐
-│ sword.tres       │ ─load()──> │ ItemState object│ <── You code with this
+│ sword.tres       │ ─load()──> │ ItemData object │ <── You code with this
 │ (on disk)        │            │ (in RAM)        │
 │ Persistent ✓     │            │ Temporary       │
 └──────────────────┘            └─────────────────┘
@@ -185,15 +185,14 @@ With data-driven design:
 
 This is the foundational pattern for game entities that need persistence and visual representation.
 
-|Layer|Data|State|Representation|
-|---|---|---|---|
-|**What**|Template, the "platonic ideal"|Runtime state, "this specific one"|Visual/interactive form|
-|**Class**|`ItemData`|`ItemState`|`WorldItem` (Node3D)|
-|**Mutability**|Read-only|Mutable|Rebuilt on change|
-|**Lifetime**|Shipped with game|Created during play|Created/destroyed as needed|
-|**Location**|`res://` (serialized .tres)|Memory or `user://` (saves)|Scene tree|
-|**Sharing**|One per type, shared by all|One per occurrence, unique|One per visible occurrence|
-|**Created By**|Editor or `ResourceSaver.save()`|`.new()` constructor|`instantiate()`|
+### Conceptual Layers
+
+| Layer          | Data                                   | State                                                               | Representation          |
+| -------------- | -------------------------------------- | ------------------------------------------------------------------- | ----------------------- |
+| **Purpose**    | Template, the "platonic ideal" of data | Runtime state, "this specific one", representing latest state saved | Visual/interactive form |
+| **Class**      | `ItemData`                             | `ItemState`                                                         | `WorldItem` (Node3D)    |
+| **Mutability** | Read-only                              | Mutable                                                             | Rebuilt on change       |
+| **Answers**    | "What CAN this be?"                    | "What IS this now?"                                                 | "How does it appear?"   |
 
 ```
 DATA (iron_axe.tres):                STATE (player's axe):           REPRESENTATION (world):
@@ -204,9 +203,40 @@ DATA (iron_axe.tres):                STATE (player's axe):           REPRESENTAT
 └─ icon: axe.png
 ```
 
-**Data** answers: "What CAN this be?" (max durability, base damage)  
-**State** answers: "What IS this now?" (current durability, applied mods)  
-**Representation** answers: "How does this appear?" (mesh, collision, interaction)
+### Where They Live at Runtime
+
+Understanding the relationship between disk files and RAM objects:
+
+| Layer              | In RAM (Runtime)                                    | On Disk (Persistent)                                   |
+| ------------------ | --------------------------------------------------- | ------------------------------------------------------ |
+| **Data**           | `ItemData` object (loaded, cached, read-only)       | `res://data/items/iron_axe.tres` (created from editor) |
+| **State**          | `ItemState` object (created with `.new()`, mutable) | `user://saves/slot1.tres` (when saved)                 |
+| **Representation** | `WorldItem` node (in scene tree)                    | Not saved (recreated from State)                       |
+
+**Key distinction:**
+
+- **Data layer** = `.tres` file in `res://` → loaded once → cached RAM object (shared, read-only)
+- **State layer** = RAM object created at runtime → optionally saved to `user://` as `.tres` with `ResourceSaver.save()`
+- **Representation layer** = Node in scene tree → never saved (always recreated)
+
+**Example flow:**
+
+```gdscript
+# Load data from disk → creates cached RAM object
+var iron_axe_data: ItemData = load("res://data/items/iron_axe.tres")
+
+# Create state in RAM (not saved yet)
+var player_axe: ItemState = ItemState.new(iron_axe_data)
+player_axe.durability = 47  # Modify RAM object
+
+# Create representation in scene tree
+var world_item: WorldItem = preload("res://scenes/world_item.tscn").instantiate()
+world_item.setup(player_axe)  # Links to state
+add_child(world_item)
+
+# Later: explicitly save state to disk
+ResourceSaver.save(player_axe, "user://saves/player_items/axe_001.tres")
+```
 
 ---
 
