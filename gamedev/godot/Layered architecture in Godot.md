@@ -151,7 +151,7 @@ Q4: Does logic need Node capabilities (timers, tree, process)?
 |Externalized data|`InventorySystem` owns ItemInstances|
 |Shared pool|`HealthSystem` stores `{entity_id → hp}` for all entities|
 
-Systems are `RefCounted`—pure logic, no scene tree, testable in isolation.
+Systems are `RefCounted`—pure logic, no scene tree, testable in isolation, they are purely truth machines.
 
 ### Why Managers
 
@@ -250,8 +250,26 @@ If you need shared **logic** but not shared **state**, use a helper—not a Syst
 
 **Why Systems only emit signals:** They're pure truth—announce changes, don't control flow.
 
+---
+
 **Why Systems never call Systems:** Hidden dependencies. Manager coordinates instead.
 
+Systems shouldn't listen to other systems because *systems are supposed to be pure truth machines*. They:
+- Hold data
+- Apply rules
+- Announce changes
+- **That's it**
+
+> [!danger] The moment `PlayerSystem` listens to `CampfireSystem`, it's no longer just *"truth about player."*. That's not a System's job. That's a **Manager's** job.
+
+Otherwise we get:
+1. dependency on others
+2. uncontrolled flow and order of it
+3. scattered logic
+
+Everything becomes more complicated than it is.
+
+---
 ### Manager → Node Communication
 
 |Relationship|Mechanism|

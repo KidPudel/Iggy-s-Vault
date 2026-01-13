@@ -1,0 +1,7 @@
+- [resource table](https://godotengine.org/asset-library/asset/1479) better way to view and change multiple resource instances (tres)
+- [limbo ai](https://github.com/limbonaut/limboai) complex ai state machine
+- [shaker](https://github.com/Eneskp3441/Shaker) easy advanced shake effects
+- [Phantom camera](https://github.com/ramokz/phantom-camera) advanced featured packed camera
+- [Dialogic](https://github.com/dialogic-godot/dialogic) Complete dialogue system
+	- [Dialogue nodes](https://github.com/nagidev/DialogueNodes) dialogue system
+- [Anima](https://github.com/ceceppa/anima) more complex animations than [[tween]] with less code
