@@ -1,0 +1,6 @@
+- `Disabled` (default): No stretching happens at all. One unit in the scene corresponds to one pixel on the screen. Meaning in this mode the base window size (viewport size) and the **Stretch Aspect** has not effect.
+	- Recommended for non-game projects.
+- `Canvas Items`: Takes the base window size from settings and uses it as coordinate space, calculates scale factor to actual screen, then renders 2D elements directly at screen resolution with scaled coordinates, while 3D rendered without stretching at all, just like in `Disabled`.
+	- Recommended for 3D games
+- `Viewport`: Takes the base window size from settings renders everything to that and then resulting viewport gets stretched to fit the size of a window.
+	- - Recommended for 2D games with pixel art style.

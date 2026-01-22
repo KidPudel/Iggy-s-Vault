@@ -1,0 +1,4 @@
+- FLEX: presets!
+- Fruty Balancer: I used it to then right click on the volume nob to create automation to fade in the sound
+- Effector: convenient effects like lofi, grain and others
+- 

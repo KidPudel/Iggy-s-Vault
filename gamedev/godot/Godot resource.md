@@ -84,6 +84,8 @@ When Godot loads a Resource from a `.tres` file:
 
 > [!danger] Constructor Arguments Are Not Stored Only `@export` properties are serialized. Constructor parameters are lost on save/load.
 
+> [!note] `_init` is only to use `.new()`, otherwise you don't need it
+
 This means:
 
 - `_init()` **must work with no arguments**

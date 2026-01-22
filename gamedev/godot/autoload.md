@@ -2,6 +2,9 @@ It is a [[singleton pattern]] object, that is allocated once on the [[heap]], ac
 Low [[Memory fragmentation]]
 [[cache locality]] is hight
 
+> [!note] Autoload could be just a script/node or a whole scene. When you autoload a scene, all of its child nodes are automatically part of that scene's hierarchy, which keeps the structure self-contained and easier to manage.
+
+
 Autoload should follow these **rules**:
 1. Tracks all of its own data internally
 2. Should exist in isolation
@@ -15,9 +18,11 @@ Autoload can be used if **satisfy following requirements *for the usecase***:
 3. Manage system with wide enough scope. Like weather system if your majority of the game is under the sky.
 4. Are used by everything, regardless of context, and *not* belong to the individual component
 
-> **NOTE:** It all depends on what you want to do.
+> [!note] It all depends on what you want to do.
 > For example: You want to build a scene manager. what is the goals? all or nothing solution, or rebuild from specific part? or mix of both?
 > In conclusion: It is just depends on the scope of operation that you want to implement. If you are limited to only rebuild from parent, then go for child scene, otherwise you can operate with autoload. In my opinion it is a good separation of concerns.
+
+
 
 ---
 Otherwise try to think of other solutions instead of the autoload, Or the following problems could arise

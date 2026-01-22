@@ -17,13 +17,13 @@ Set the minimum size if in the special containers
 
 ## Colors
 
-|Tag|Effect|
-|---|---|
-|`[color=name]text[/color]`|Named color (red, green, blue, etc.)|
-|`[color=#RRGGBB]text[/color]`|Hex color (6 digits)|
-|`[color=#RRGGBBAA]text[/color]`|Hex with alpha (8 digits)|
-|`[bgcolor=color]text[/bgcolor]`|Background color|
-|`[fgcolor=color]text[/fgcolor]`|Foreground color (for "redacting")|
+| Tag                             | Effect                               |
+| ------------------------------- | ------------------------------------ |
+| `[color=name]text[/color]`      | Named color (red, green, blue, etc.) |
+| `[color=#RRGGBB]text[/color]`   | Hex color (6 digits)                 |
+| `[color=#RRGGBBAA]text[/color]` | Hex with alpha (8 digits)            |
+| `[bgcolor=color]text[/bgcolor]` | Background color                     |
+| `[fgcolor=color]text[/fgcolor]` | Foreground color (for "redacting")   |
 
 ## Layout & Alignment
 

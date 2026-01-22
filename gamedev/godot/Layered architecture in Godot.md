@@ -19,7 +19,7 @@ Without architecture, code becomes a web where everything depends on everything.
 │                        SYSTEMS                                  │
 │                    "What IS true?"                              │
 ├─────────────────────────────────────────────────────────────────┤
-│  Pure data and logic. Zero visuals/UI/sound.                    │
+│  Pure data and logic. Zero visuals/UI/sound. They are isolated. │
 │  Extends RefCounted. Emits signals. Testable without scene.     │
 │                                                                 │
 │  Example: HealthSystem knows health values and damage formulas. │
@@ -263,9 +263,9 @@ Systems shouldn't listen to other systems because *systems are supposed to be p
 > [!danger] The moment `PlayerSystem` listens to `CampfireSystem`, it's no longer just *"truth about player."*. That's not a System's job. That's a **Manager's** job.
 
 Otherwise we get:
-1. dependency on others
-2. uncontrolled flow and order of it
-3. scattered logic
+1. Dependency on others
+2. Uncontrolled flow AND order of it
+3. Scattered logic
 
 Everything becomes more complicated than it is.
 

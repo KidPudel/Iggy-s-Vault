@@ -187,9 +187,9 @@ vec3 col_z = texture(side_texture, world_pos.xy * scale).rgb;
 
 ## Related Topics
 
-- [[UV Mapping]]
+- [[UV coordinates]]
 - [[Godot Shaders]]
-- [[Normal Mapping]]
+- [[normals]]
 - [[PBR Texturing]]
 
 ---
