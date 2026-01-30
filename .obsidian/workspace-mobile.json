@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/Layered architecture in Godot.md",
+                "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Layered architecture in Godot"
+              "title": "Csharp Quick Reference for Polyglot Programmers"
             }
           }
         ]
@@ -144,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
+            "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -172,6 +172,8 @@
   },
   "active": "064c3c9695bc3a4a",
   "lastOpenFiles": [
+    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
+    "gamedev/godot/Layered architecture in Godot.md",
     "gamedev/roblox/service based architecture.md",
     "gamedev/godot/data-driven design in godot with architecture in mind.md",
     "languages/lua/table.md",
@@ -195,8 +197,6 @@
     "computer graphics/shader.md",
     "computer graphics/vertex shader.md",
     "computer graphics/scissor.md",
-    "procedures.md",
-    "backend/database/sharding.md",
-    "backend/database/docker db.md"
+    "procedures.md"
   ]
 }

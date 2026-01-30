@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "c0b7ff9c5676a271",
+        "id": "f856bb4b9d61fe10",
         "type": "tabs",
         "children": [
           {
-            "id": "bc4dcd10f8397ddc",
+            "id": "7927f0f7bc8e9145",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/godot/Layered architecture in Godot.md",
+                "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Layered architecture in Godot"
+              "title": "Csharp Quick Reference for Polyglot Programmers"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "l**",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gamedev/godot/Layered architecture in Godot.md",
+                "file": "computer graphics/shader math.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Layered architecture in Godot"
+              "title": "Backlinks for shader math"
             }
           },
           {
@@ -115,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gamedev/godot/Layered architecture in Godot.md",
+                "file": "krita shorcuts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Layered architecture in Godot"
+              "title": "Outgoing links from krita shorcuts"
             }
           },
           {
@@ -144,13 +144,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/godot/Layered architecture in Godot.md",
+                "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Layered architecture in Godot"
+              "title": "Outline of Csharp Quick Reference for Polyglot Programmers"
             }
           },
           {
@@ -177,7 +177,8 @@
               "title": "All properties"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -197,44 +198,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bc4dcd10f8397ddc",
+  "active": "7927f0f7bc8e9145",
   "lastOpenFiles": [
-    "gamedev/godot/bbcode.md",
-    "computer graphics/Triplanar Mapping.md",
-    "PBR Texturing.md",
-    "UV Mapping.md",
+    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
+    "gamedev/unity/ScriptableObjects.md",
+    "languages/c_sharp/Csharp interface.md",
+    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
+    "gamedev/unity/MonoBehaviour Lifecycle.md",
+    "gamedev/unity/Unity Essential Components Reference.md",
+    "gamedev/unity/Project Structure in Unity.md",
+    "gamedev/unity/Unity Day 0 Setup Guide for Godot Developers.md",
+    "terminal/neovim/vim command-line mode.md",
+    "gamedev/unity/Data-Driven Design in Unity.md",
+    "gamedev/unity/Essential Unity Packages & Assets.md",
+    "languages/c_sharp",
+    "gamedev/unity/Unity Static Classes & Singletons.md",
+    "gamedev/unity/Scene Management in Unity.md",
+    "gamedev/unity/Transform & Hierarchy.md",
+    "gamedev/unity/GameObject & Component Model.md",
+    "gamedev/unity/Component-Based Design in Unity.md",
+    "gamedev/unity/Common Patterns Cookbook in Unity.md",
+    "gamedev/unity/Prefabs.md",
+    "gamedev/unity/Layered Architecture in Unity.md",
+    "gamedev/unity/Unity Gotchas for Godot Developers.md",
+    "gamedev/unity/Serialization & Inspector in Unity.md",
+    "gamedev/unity/Execution Order.md",
+    "gamedev/unity/Communication Patterns in Unity.md",
+    "Layered Architecture in Unity.md",
+    "gamedev/godot/godot project structure recommendation.md",
+    "gamedev/godot/static keyword.md",
+    "gamedev/unity",
     "Untitled 3.base",
     "Untitled 1.canvas",
     "Untitled 2.base",
-    "computer graphics/UV coordinates.md",
-    "gamedev/godot/input handling reference.md",
-    "gamedev/godot/atlas.md",
-    "gamedev/godot/must have singletons.md",
-    "gamedev/godot/audio bus effects.md",
-    "gamedev/godot/Stretch mode in Godot.md",
-    "gamedev/godot/viewport in godot.md",
-    "computer graphics/viewport.md",
-    "gamedev/godot/SceneTree.md",
-    "gamedev/godot/gdscript type checking.md",
-    "gamedev/godot/Godot Resource.md",
-    "gamedev/godot/Data-Driven Design in Godot.md",
-    "gamedev/godot/Layered architecture in Godot.md",
-    "gamedev/godot/string name.md",
-    "gamedev/godot/tool.md",
-    "architecture/data-driven design.md",
-    "gamedev/godot/reflection in gdscript.md",
-    "gamedev/godot/autoload.md",
-    "static.md",
-    "gamedev/godot/raycasting from camera.md",
-    "flstudio/plugins.md",
-    "gamedev/godot/math for the headbob.md",
     "godot",
     "flstudio",
     "Untitled 1.base",
     "Untitled.base",
     "roblox",
     "languages/lua",
-    "gamedev/roblox",
     "test canvas.canvas",
     "Untitled.canvas",
     "Pasted image 20250510180227.png",
@@ -242,7 +244,6 @@
     "Pasted image 20250512191336.png",
     "Pasted image 20250728120935.png",
     "Pasted image 20251006004155.png",
-    "languages/language processing",
     "Pasted image 20250708184512.png",
     "Pasted image 20250512190638.png",
     "Pasted image 20250512185907.png",

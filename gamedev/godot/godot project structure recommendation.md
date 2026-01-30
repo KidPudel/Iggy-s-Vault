@@ -12,12 +12,11 @@ res://
   project.godot
   addons/          # third-party plugins or assets
   common/          # standalone
-  utilities/       # helpers like game and level manager, 
+  utils/           # helpers like game and level manager, 
   ui/              # menus & HUD that are reused everywhere
-  actors or entities/          # player, enemies, NPCs – one sub-folder each
-  levels/          # each playable level/world map scene
-  assets_raw/      # .blend, .psd, wav masters – ignored by Godot
-  assets/          # global to the game, like soundtrack.
+  actors/          # player, enemies, NPCs – one sub-folder each
+  stages/          # each playable level/world map scene
+  assets/          # global to the game, like fonts
 ```
 
 ```
