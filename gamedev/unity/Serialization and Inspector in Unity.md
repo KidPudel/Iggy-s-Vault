@@ -20,34 +20,34 @@ Serialization converts objects to a saveable format. Unity uses it for:
 
 ### What Unity Serializes by Default
 
-|Field Type|Serialized?|
-|---|---|
-|`public` field|✅ Yes|
-|`private` field|❌ No|
-|`private` with `[SerializeField]`|✅ Yes|
-|`public` with `[NonSerialized]`|❌ No|
-|`static` field|❌ Never|
-|`const` field|❌ Never|
-|`readonly` field|❌ Never|
-|Property|❌ No (unless backing field)|
+| Field Type                        | Serialized?                 |
+| --------------------------------- | --------------------------- |
+| `public` field                    | ✅ Yes                       |
+| `private` field                   | ❌ No                        |
+| `private` with `[SerializeField]` | ✅ Yes                       |
+| `public` with `[NonSerialized]`   | ❌ No                        |
+| `static` field                    | ❌ Never                     |
+| `const` field                     | ❌ Never                     |
+| `readonly` field                  | ❌ Never                     |
+| Property                          | ❌ No (unless backing field) |
 
 ### Serializable Types
 
-|Type|Serialized?|
-|---|---|
-|Primitives (`int`, `float`, `bool`, `string`)|✅|
-|Unity types (`Vector3`, `Color`, `AnimationCurve`)|✅|
-|`enum`|✅|
-|Arrays and `List<T>` of serializable types|✅|
-|Unity Object references (`GameObject`, `Transform`, `ScriptableObject`, etc.)|✅|
-|`[System.Serializable]` classes/structs|✅|
-|`Dictionary<K,V>`|❌ No|
-|Interfaces|❌ No|
-|Abstract classes|❌ No (unless `[SerializeReference]`)|
+| Type                                                                          | Serialized?                          |
+| ----------------------------------------------------------------------------- | ------------------------------------ |
+| Primitives (`int`, `float`, `bool`, `string`)                                 | ✅                                    |
+| Unity types (`Vector3`, `Color`, `AnimationCurve`)                            | ✅                                    |
+| `enum`                                                                        | ✅                                    |
+| Arrays and `List<T>` of serializable types                                    | ✅                                    |
+| Unity Object references (`GameObject`, `Transform`, `ScriptableObject`, etc.) | ✅                                    |
+| `[System.Serializable]` classes/structs                                       | ✅                                    |
+| `Dictionary<K,V>`                                                             | ❌ No                                 |
+| Interfaces                                                                    | ❌ No                                 |
+| Abstract classes                                                              | ❌ No (unless `[SerializeReference]`) |
 
 ---
 
-## [SerializeField]
+## `[SerializeField]`
 
 Exposes private fields to Inspector while keeping them private in code.
 

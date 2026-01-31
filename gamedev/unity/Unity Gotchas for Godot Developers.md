@@ -107,7 +107,7 @@ private void Awake()
 
 **Fix:** Use `[DefaultExecutionOrder]` or explicit initialization.
 
-See [[Execution Order]].
+See [[Execution Order in Unity]].
 
 ---
 

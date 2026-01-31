@@ -1,4 +1,4 @@
-1. `queue_free()` for Nodes:
+queue_free()` for Nodes:
 - This function is called on a Node instance (e.g., `my_node.queue_free()`).
 - It marks the node for deletion at the end of the current frame, ensuring proper cleanup and preventing errors that might occur if a node is immediately freed while other parts of the game are still trying to access it.
 - When `queue_free()` is called on a parent node, all of its child nodes are also freed automatically.

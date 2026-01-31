@@ -8,7 +8,7 @@
 
 A ScriptableObject is a **data container** saved as an asset (`.asset` file).
 
-Unlike MonoBehaviours ([[MonoBehaviour Lifecycle]]):
+Unlike MonoBehaviours ([[MonoBehaviour Reference]]):
 
 - Not attached to GameObjects
 - Not in scenes

@@ -171,7 +171,7 @@
 
 See specific documents for details:
 
-- [[MonoBehaviour Lifecycle]]
+- [[MonoBehaviour Reference]]
 - [[Communication Patterns in Unity]]
-- [[Execution Order]]
+- [[Execution Order in Unity]]
 - [[Unity Gotchas for Godot Developers]]

@@ -2148,7 +2148,7 @@ public void ReallyOldMethod() { }
 [Conditional("DEBUG")]                        // Only compiled in debug
 public void DebugLog(string msg) { }
 
-[System.Serializable]                         // For Unity/JSON serialization
+[**System**.Serializable]                         // For Unity/JSON serialization
 public class SaveData { }
 
 [System.NonSerialized]                        // Exclude from serialization

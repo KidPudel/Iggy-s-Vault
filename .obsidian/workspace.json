@@ -4,41 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "6c9bf93b90eb0971",
+        "id": "eb91d3dbff2f308b",
         "type": "tabs",
         "children": [
           {
-            "id": "2945d3896a31587e",
+            "id": "2cd7725c0bf39e8c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/unity/Common Patterns Cookbook in Unity.md",
+                "file": "gamedev/unity/Single Entry Point.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Common Patterns Cookbook in Unity"
-            }
-          },
-          {
-            "id": "0c8a819c3cc44bd2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "gamedev/unity/Unity Post-Processing.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "Unity Post-Processing"
+              "title": "Single Entry Point"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -70,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "DontDestroyOnLoad",
+                "query": "Input",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5124969482422
+    "width": 357.5124969482422,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -160,13 +145,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/unity/Unity Post-Processing.md",
+                "file": "gamedev/unity/Single Entry Point.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Unity Post-Processing"
+              "title": "Outline of Single Entry Point"
             }
           },
           {
@@ -215,35 +200,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0c8a819c3cc44bd2",
+  "active": "2cd7725c0bf39e8c",
   "lastOpenFiles": [
-    "gamedev/unity/Unity Lighting.md",
-    "gamedev/unity/MonoBehaviour Lifecycle.md",
-    "gamedev/unity/Unity Static Classes and Singletons.md",
-    "gamedev/unity/Scene Management in Unity.md",
-    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
-    "gamedev/unity/Prefabs.md",
+    "gamedev/unity/Execution Order in Unity.md",
+    "gamedev/unity/Single Entry Point.md",
     "gamedev/unity/Unity Reference Guilde.md",
+    "gamedev/unity/Input System in Unity.md",
+    "gamedev/unity/Essential Unity Packages and Assets.md",
     "gamedev/unity/Common Patterns Cookbook in Unity.md",
-    "gamedev/unity/Unity Gotchas for Godot Developers.md",
-    "gamedev/unity/Unity Essential Components Reference.md",
-    "gamedev/unity/Unity Day 0 Setup Guide for Godot Developers.md",
-    "gamedev/unity/Unity Shaders.md",
-    "Untitled.md",
-    "gamedev/unity/Unity Post-Processing.md",
-    "unity",
-    "gamedev/unity/Unity Camera Componen.md",
-    "gamedev/unity/Unity Render Texture and Scriptable Render Pipeline Reference.md",
+    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
+    "gamedev/godot/input handling reference in Godot.md",
+    "gamedev/godot/delete object in godot.md",
+    "gamedev/unity/MonoBehaviour Reference.md",
+    "gamedev/godot/bbcode.md",
+    "gamedev/godot/built-in virtual functions.md",
+    "gamedev/godot/SceneTree.md",
+    "gamedev/unity/Serialization and Inspector in Unity.md",
     "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "languages/c_sharp/Csharp Built-in Interfaces Reference.md",
-    "computer graphics/shader math.md",
-    "gamedev/unity/Essential Unity Packages and Assets.md",
-    "gamedev/unity/GameObject and Component Model.md",
     "gamedev/unity/Transform and Hierarchy.md",
-    "gamedev/unity/Serialization and Inspector in Unity.md",
-    "gamedev/unity/ScriptableObjects.md",
     "gamedev/unity/Project Structure in Unity.md",
-    "terminal/neovim/vim command-line mode.md",
+    "gamedev/unity/Prefabs.md",
+    "gamedev/unity/GameObject and Component Model.md",
+    "gamedev/unity/Scene Management in Unity.md",
+    "gamedev/unity/Unity Essential Components Reference.md",
+    "gamedev/unity/Data-Driven Design in Unity.md",
+    "gamedev/unity/Component-Based Design in Unity.md",
+    "gamedev/unity/Communication Patterns in Unity.md",
+    "gamedev/unity/Unity Gotchas for Godot Developers.md",
+    "unity",
     "languages/c_sharp",
     "gamedev/unity",
     "Untitled 3.base",
