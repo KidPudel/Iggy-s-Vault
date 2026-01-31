@@ -27,6 +27,70 @@ Unity thinking:
 
 ---
 
+## The Fundamental Rule
+
+**A Component cannot have its own Transform (position/rotation/scale). Only GameObjects have Transforms.**
+
+This single rule determines when you add a component vs when you create a child GameObject.
+
+```
+"I need to add X to my Player"
+            │
+            ▼
+   Does X need its own position/rotation
+   that's DIFFERENT from the Player's?
+            │
+     ┌──────┴──────┐
+    YES           NO
+     │             │
+     ▼             ▼
+  Child        Component
+  GameObject   on Player
+```
+
+### Examples
+
+|Thing|Needs own position?|Solution|
+|---|---|---|
+|Health|No (it's data)|Component|
+|Movement script|No (moves the Player)|Component|
+|Collider|No (at Player's position)|Component|
+|Camera|Yes (offset behind player)|Child GameObject|
+|Weapon in hand|Yes (at hand position)|Child GameObject|
+|Footstep particles|Yes (at feet, not center)|Child GameObject|
+
+### Applied to a Player
+
+```
+Player (GameObject)
+├── MeshRenderer      ← same position as Player → Component
+├── Rigidbody         ← same position as Player → Component
+├── CapsuleCollider   ← same position as Player → Component
+├── Health            ← no position (just data) → Component
+├── PlayerController  ← no position (just logic) → Component
+│
+├── CameraRig (GameObject) [localPosition: 0, 2, -5]
+│   └── Camera        ← DIFFERENT position (behind/above) → Child GameObject
+│
+└── WeaponSlot (GameObject) [localPosition: 0.5, 1.2, 0.3]
+    └── Sword (GameObject)  ← DIFFERENT position (at hand) → Child GameObject
+        ├── MeshRenderer
+        └── WeaponStats
+```
+
+### Why Godot Feels Different
+
+In Godot, **every Node has a Transform** — even nodes that don't need one. You add a Health node? It has a transform (you just ignore it).
+
+Unity separates the concepts: **GameObjects have Transforms, Components don't.** This is more explicit about what has spatial meaning.
+
+**Think of it this way:**
+
+- **Components** = aspects/properties of a GameObject (health, physics, rendering)
+- **Child GameObjects** = separate parts with their own positions (camera, weapons, attachments)
+
+---
+
 ## GameObject
 
 A GameObject is an empty container. It has:
@@ -183,7 +247,7 @@ transform.localPosition = Vector3.zero;
 transform.SetParent(otherTransform);
 ```
 
-See [[Transform & Hierarchy]] for details.
+See [[Transform and Hierarchy]] for details.
 
 ---
 
@@ -207,13 +271,13 @@ See [[Transform & Hierarchy]] for details.
 
 ## Godot Comparison
 
-| Godot                                                                       | Unity                                      | Note                               |
-| --------------------------------------------------------------------------- | ------------------------------------------ | ---------------------------------- |
-| Node                                                                        | GameObject                                 | Container                          |
-| Script on Node                                                              | MonoBehaviour component                    | Behavior                           |
-| Node inheritance (`extends CharacterBody3D`) + node composition as children | Component composition                      | Different paradigm                 |
-| `get_node()`                                                                | `transform.Find()` or serialized reference | Unity prefers Inspector references |
-| `$Child`                                                                    | `transform.Find("Child")`                  | Or `[SerializeField]`              |
+|Godot|Unity|Note|
+|---|---|---|
+|Node|GameObject|Container|
+|Script on Node|MonoBehaviour component|Behavior|
+|Node inheritance (`extends CharacterBody3D`)|Component composition|Different paradigm|
+|`get_node()`|`transform.Find()` or serialized reference|Unity prefers Inspector references|
+|`$Child`|`transform.Find("Child")`|Or `[SerializeField]`|
 
 The key difference: In Godot, you pick a node type and extend it. In Unity, you start with an empty GameObject and add what you need.
 

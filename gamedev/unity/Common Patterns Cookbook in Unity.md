@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 GameManager.Instance.DoSomething();
 ```
 
-For persistent singletons, use a dedicated scene instead of `DontDestroyOnLoad`. See [[Scene Management]].
+For persistent singletons, use a dedicated scene instead of `DontDestroyOnLoad`. See [[Scene Management in Unity]].
 
 ---
 

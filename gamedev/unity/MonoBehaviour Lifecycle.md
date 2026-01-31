@@ -41,14 +41,14 @@ Enemy enemy = gameObject.AddComponent<Enemy>();
 
 ### MonoBehaviour vs Plain C# Class
 
-|MonoBehaviour|Plain C# Class|
-|---|---|
-|Attaches to GameObject|Standalone object|
-|Unity manages lifetime|You manage lifetime|
-|Has lifecycle methods|No lifecycle methods|
-|Visible in Inspector|Not visible (unless `[Serializable]`)|
-|Can't use `new`|Use `new` normally|
-|Use for: components, behaviors|Use for: data, systems, logic|
+| MonoBehaviour                  | Plain C# Class                        |
+| ------------------------------ | ------------------------------------- |
+| Attaches to GameObject         | Standalone object                     |
+| Unity manages lifetime         | You manage lifetime                   |
+| Has lifecycle methods          | No lifecycle methods                  |
+| Visible in Inspector           | Not visible (unless `[Serializable]`) |
+| Can't use `new`                | Use `new` normally                    |
+| Use for: components, behaviors | Use for: data, systems, logic         |
 
 **When to use plain C# classes:** Data containers, systems, state machines, anything that doesn't need to be a component. See [[Layered Architecture in Unity]].
 

@@ -4,6 +4,8 @@
 
 ---
 
+TODO: add explanation and tips, but insightful and not cluttering
+
 ## Core
 
 ### Application

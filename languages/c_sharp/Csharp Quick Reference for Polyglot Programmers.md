@@ -2310,6 +2310,8 @@ else
 
 How inheritance works with generics.
 
+TLDR; `out` means for output and therefore it needs strip down safety. `in` means input therefore implementation needs strip down safety
+
 ### Covariance (out) — Can Return Derived Types
 > Producer widens the gates and catch as wide as we need, as usage will strip down as it needs.
 
