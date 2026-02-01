@@ -258,7 +258,11 @@ HealthBar (Component-as-View) displays it
 
 ## Accessing Systems
 
-### Static Container
+How do Components and Managers get references to Systems?
+
+### Option 1: Static Container
+
+Simplest approach. Systems are created once at startup.
 
 ```csharp
 public static class GameSystems
@@ -272,17 +276,97 @@ public static class GameSystems
 GameSystems.Health.Damage(entityId, 10);
 ```
 
-### Service Locator
+**Pros:** Simple, fast, IDE autocomplete works. **Cons:** Can't swap implementations, systems live forever.
+
+### Option 2: Service Locator
+
+More flexible. Systems register/unregister dynamically.
 
 ```csharp
 public static class Services
 {
-    private static Dictionary<Type, object> _services = new();
+    private static readonly Dictionary<Type, object> _services = new();
     
-    public static void Register<T>(T service) => _services[typeof(T)] = service;
-    public static T Get<T>() => (T)_services[typeof(T)];
+    public static void Register<T>(T service)
+    {
+        _services[typeof(T)] = service;
+    }
+    
+    public static void Register<TInterface, TImplementation>(TImplementation service) 
+        where TImplementation : TInterface
+    {
+        _services[typeof(TInterface)] = service;
+    }
+    
+    public static void Unregister<T>()
+    {
+        _services.Remove(typeof(T));
+    }
+    
+    public static T Get<T>()
+    {
+        if (_services.TryGetValue(typeof(T), out var service))
+            return (T)service;
+        throw new InvalidOperationException($"Service {typeof(T)} not registered");
+    }
+    
+    public static bool TryGet<T>(out T service)
+    {
+        if (_services.TryGetValue(typeof(T), out var obj))
+        {
+            service = (T)obj;
+            return true;
+        }
+        service = default;
+        return false;
+    }
+    
+    public static void Clear() => _services.Clear();
 }
 ```
+
+**Interface-based registration** hides implementation details:
+
+```csharp
+// Registration (in bootstrap)
+Services.Register<IAudioService, AudioService>(new AudioService());
+
+// Usage (consumer only sees interface)
+Services.Get<IAudioService>().PlaySound(clip);
+// Consumer can't access AudioService internals — only IAudioService methods
+```
+
+**Lifecycle management:**
+
+```csharp
+// In GameInitiator or Bootstrap
+private void InitializeSystems()
+{
+    Services.Register(new HealthSystem());
+    Services.Register(new InventorySystem());
+    Services.Register<IAudioService, AudioService>(new AudioService());
+}
+
+private void OnDestroy()
+{
+    Services.Clear();  // Clean up on game end
+}
+```
+
+**Pros:** Swap implementations (testing), memory managed, interface hiding. **Cons:** Runtime errors if service missing, no compile-time checking.
+
+### Option 3: Dependency Injection
+
+For larger projects, use a DI framework (VContainer, Zenject). See [[Communication Patterns in Unity]] for details.
+
+### Which to Choose
+
+|Project|Recommendation|
+|---|---|
+|Prototype|Static Container|
+|Small game|Static Container or Service Locator|
+|Team project|Service Locator or DI|
+|Need testing/mocking|Service Locator (interface-based) or DI|
 
 ---
 

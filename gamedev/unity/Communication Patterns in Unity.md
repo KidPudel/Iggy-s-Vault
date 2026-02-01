@@ -6,7 +6,7 @@
 
 ## The Problem
 
-Objects need to talk to each other. Options range from tight coupling (direct references) to loose coupling (events). No single answer — pick based on relationship.
+Objects need to talk to each other. Options range from tight coupling (direct references) to loose coupling (events). No single answer â€” pick based on relationship.
 
 ---
 
@@ -82,7 +82,7 @@ if (TryGetComponent<Health>(out var health))
 
 ## Find Methods
 
-**Find objects in scene. Slow — use sparingly, cache results.**
+**Find objects in scene. Slow â€” use sparingly, cache results.**
 
 ```csharp
 // By type (searches entire scene)
@@ -168,7 +168,7 @@ public class Button : MonoBehaviour
 }
 ```
 
-Designers wire up responses in Inspector — no code needed for subscribers.
+Designers wire up responses in Inspector, no code needed for subscribers.
 
 **When to use:**
 
@@ -315,7 +315,122 @@ private void OnDisable() => GameEvents.OnGamePaused -= HandlePause;
 
 ---
 
+## Dependency Resolution
+
+Events handle "something happened, who cares?" (one-to-many). **Dependency resolution** handles "I need access to X" (one-to-one service access).
+
+### The Evolution
+
+|Stage|Technique|Verdict|
+|---|---|---|
+|1. Find|`GameObject.Find()`, `FindObjectOfType()`|Avoid — slow, fragile, runtime errors|
+|2. Serialized|`[SerializeField]` in Inspector|Good foundation — explicit, visible|
+|3. Singleton|`public static Instance`|Trap — works for prototypes, scales poorly|
+|4. Service Locator|`Services.Get<T>()`|Professional — controlled access, memory managed|
+|5. Dependency Injection|Constructor injection|Industry standard — automatic, enforced|
+
+### Why Singletons Become Problems
+
+```csharp
+// Looks convenient
+AudioManager.Instance.PlaySound(clip);
+```
+
+**The traps:**
+
+- **Memory:** Static references never release (menu data stays during gameplay)
+- **Hidden dependencies:** You don't know a class needs AudioManager until it crashes
+- **No access control:** Any class can call any singleton
+- **Testing:** Can't substitute mock implementations
+
+Fine for game jams. Dangerous at scale.
+
+### Service Locator (Manual DI)
+
+A dictionary mapping types to instances. See [[Layered Architecture in Unity]] for full implementation.
+
+```csharp
+public static class Services
+{
+    private static Dictionary<Type, object> _services = new();
+    
+    public static void Register<T>(T service) => _services[typeof(T)] = service;
+    public static void Unregister<T>() => _services.Remove(typeof(T));
+    public static T Get<T>() => (T)_services[typeof(T)];
+    public static bool TryGet<T>(out T service)
+    {
+        if (_services.TryGetValue(typeof(T), out var obj))
+        {
+            service = (T)obj;
+            return true;
+        }
+        service = default;
+        return false;
+    }
+}
+```
+
+**Advantages over Singleton:**
+
+- Services can be unregistered (memory freed)
+- Register interface → implementation (hide internals)
+- Explicit registration during initialization
+
+**Disadvantage:** Still "pulls" dependencies (code asks for what it needs).
+
+### Dependency Injection (Automatic)
+
+Instead of _asking_ for dependencies, classes _declare_ what they need:
+
+```csharp
+// Service Locator: class asks for dependencies
+public class EnemySpawner : MonoBehaviour
+{
+    private IObjectPool _pool;
+    
+    private void Awake()
+    {
+        _pool = Services.Get<IObjectPool>();  // Pulls dependency
+    }
+}
+
+// DI: class receives dependencies
+public class EnemySpawner : MonoBehaviour
+{
+    private IObjectPool _pool;
+    
+    [Inject]  // DI container provides this automatically
+    public void Construct(IObjectPool pool)
+    {
+        _pool = pool;
+    }
+}
+```
+
+**Key insight:** The class never searches for anything. Dependencies arrive automatically.
+
+### DI Frameworks
+
+|Framework|Focus|Notes|
+|---|---|---|
+|**VContainer**|Performance|Faster, lighter, recommended for most projects|
+|**Zenject**|Features|More powerful, steeper learning curve|
+
+### When to Use What
+
+|Project Size|Recommendation|
+|---|---|
+|Game jam / prototype|Singletons fine|
+|Small game (solo/small team)|Service Locator|
+|Medium+ game (team, long-term)|Dependency Injection|
+
+See [[Essential Unity Packages and Assets]] for VContainer setup.
+
+---
+
 ## Choosing a Pattern
+
+### Communication (Events)
 
 |Relationship|Pattern|
 |---|---|
@@ -327,6 +442,15 @@ private void OnDisable() => GameEvents.OnGamePaused -= HandlePause;
 |Cross-scene / decoupled systems|ScriptableObject events|
 |Polymorphic behavior|Interfaces|
 |Truly global (rare)|Static events|
+
+### Service Access (Dependencies)
+
+|Situation|Pattern|
+|---|---|
+|Prototype / game jam|Singleton|
+|Small project, explicit control|Service Locator|
+|Team project, long-term|Dependency Injection|
+|Need to swap implementations|Interface + Service Locator or DI|
 
 ---
 
@@ -353,3 +477,6 @@ private void OnDisable() => GameEvents.OnGamePaused -= HandlePause;
 4. **Interfaces** for polymorphic contracts
 5. **Always unsubscribe** from events in OnDisable
 6. **Cache** GetComponent and Find results
+7. **Singletons are a trap** — convenient early, painful later
+8. **Service Locator** for explicit service access without DI framework
+9. **Dependency Injection** for team/long-term projects

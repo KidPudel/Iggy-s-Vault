@@ -141,20 +141,81 @@ Keep everything for one feature **together**.
 For larger projects, use `.asmdef` files to:
 
 - Speed up compilation (only recompile what changed)
-- Enforce dependency rules
+- **Enforce architectural boundaries** (prevent bad dependencies)
 - Enable unit testing
+
+### Basic Setup
 
 ```
 Assets/
 ├── _Project/
 │   ├── _Project.asmdef          # Main game assembly
-│   ├── Systems/
-│   │   └── Systems.asmdef       # Pure C# (no Unity deps)
+│   ├── Core/
+│   │   └── Core.asmdef          # Core systems (no gameplay deps)
+│   ├── Gameplay/
+│   │   └── Gameplay.asmdef      # Gameplay code (depends on Core)
 │   └── Tests/
 │       └── Tests.asmdef         # Unit tests
 ```
 
-**When to add:** If recompilation time annoys you.
+### Architectural Enforcement
+
+Assembly definitions physically prevent bad dependencies. If Core tries to reference Gameplay, **the code won't compile**.
+
+```
+Core.asmdef
+├── References: (none or Unity only)
+└── Contains: Audio, Save System, Input, Services
+
+Gameplay.asmdef
+├── References: Core
+└── Contains: Player, Enemies, Weapons, Levels
+```
+
+**The rule:** Core can NEVER see Gameplay. Gameplay CAN see Core.
+
+This prevents "upward coupling" — a generic audio service can never accidentally depend on a specific enemy type.
+
+```csharp
+// In Core assembly — this WON'T COMPILE
+public class AudioService
+{
+    public void PlayEnemySound(Enemy enemy)  // ERROR: Enemy is in Gameplay
+    {
+    }
+}
+
+// Correct: Core doesn't know about Enemy
+public class AudioService
+{
+    public void PlaySound(AudioClip clip) { }  // Works — no Gameplay dependency
+}
+```
+
+### Circular Dependency Prevention
+
+If Assembly A references B, and B tries to reference A → **compile error**.
+
+This forces clean, linear dependency trees. No spaghetti.
+
+### When to Add
+
+|Situation|Recommendation|
+|---|---|
+|Solo prototype|Skip — overhead not worth it|
+|Recompilation annoying (5+ seconds)|Add for speed|
+|Team project|Add for architectural enforcement|
+|Building reusable packages|Required|
+
+### Creating Assembly Definitions
+
+Right-click folder → Create → Assembly Definition
+
+Configure in Inspector:
+
+- **Name:** Assembly name (e.g., "MyGame.Core")
+- **References:** Other assemblies this one can access
+- **Platforms:** Which platforms to include (usually all)
 
 ---
 

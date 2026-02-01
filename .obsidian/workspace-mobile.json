@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
+                "file": "CS/SOLID.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Csharp Quick Reference for Polyglot Programmers"
+              "title": "SOLID"
             }
           }
         ]
@@ -159,7 +159,6 @@
   "left-ribbon": {
     "hiddenItems": {
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false,
       "publish:Publish changes...": false,
       "markdown-importer:Open format converter": false,
       "switcher:Open quick switcher": false,
@@ -167,11 +166,13 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "064c3c9695bc3a4a",
   "lastOpenFiles": [
+    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "gamedev/unity/Unity Fundamentals for Godot Developers.md",
     "gamedev/godot/Layered architecture in Godot.md",
     "gamedev/roblox/service based architecture.md",
@@ -196,7 +197,6 @@
     "gamedev/delta time.md",
     "computer graphics/shader.md",
     "computer graphics/vertex shader.md",
-    "computer graphics/scissor.md",
-    "procedures.md"
+    "computer graphics/scissor.md"
   ]
 }

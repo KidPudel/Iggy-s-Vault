@@ -6,7 +6,7 @@
 
 ## Built-in Packages (Package Manager)
 
-Window → Package Manager → Unity Registry
+Window Package Manager nity Registry
 
 ---
 
@@ -66,7 +66,7 @@ _text.fontSize = 24;
 **Setup:**
 
 1. Add `CinemachineBrain` to Main Camera
-2. Create Virtual Cameras (Cinemachine → Create Virtual Camera)
+2. Create Virtual Cameras (Cinemachine â†’ Create Virtual Camera)
 3. Set Follow and Look At targets
 4. Cinemachine handles the rest
 
@@ -84,7 +84,7 @@ No code needed for basic use. Just configure in Inspector.
 
 **Install:** `com.unity.probuilder`
 
-**Use:** Tools → ProBuilder → ProBuilder Window
+**Use:** Tools â†’ ProBuilder â†’ ProBuilder Window
 
 ---
 
@@ -162,7 +162,7 @@ public class HealthTests
 
 **Install:** `com.unity.recorder`
 
-**Use:** Window → General → Recorder → Recorder Window
+**Use:** Window â†’ General â†’ Recorder â†’ Recorder Window
 
 ---
 
@@ -193,7 +193,7 @@ Asset Store: https://assetstore.unity.com (filter by price: Free)
 
 **Why:** Animate anything with one line. Sequences, easing, callbacks. Industry standard.
 
-**Install:** Asset Store → "DOTween (HOTween v2)"
+**Install:** Asset Store â†’ "DOTween (HOTween v2)"
 
 ```csharp
 using DG.Tweening;
@@ -227,7 +227,7 @@ seq.Join(transform.DORotate(new Vector3(0, 180, 0), 0.3f));
 
 **Why:** `JsonUtility` can't do dictionaries, polymorphism, or pretty printing. This can.
 
-**Install:** Package Manager → `com.unity.nuget.newtonsoft-json`
+**Install:** Package Manager â†’ `com.unity.nuget.newtonsoft-json`
 
 ```csharp
 using Newtonsoft.Json;
@@ -271,13 +271,60 @@ async UniTaskVoid Start()
 
 ---
 
+### VContainer
+
+**What:** Fast, lightweight dependency injection for Unity.
+
+**Why:** Automates dependency resolution. Constructor injection, interface binding, lifecycle management. Faster than Zenject.
+
+**Install:** https://github.com/hadashiA/VContainer (via Package Manager git URL)
+
+```csharp
+using VContainer;
+using VContainer.Unity;
+
+// 1. Define a Lifetime Scope (container configuration)
+public class GameLifetimeScope : LifetimeScope
+{
+    protected override void Configure(IContainerBuilder builder)
+    {
+        // Register services
+        builder.Register<HealthSystem>(Lifetime.Singleton);
+        builder.Register<IAudioService, AudioService>(Lifetime.Singleton);
+        
+        // Register MonoBehaviours
+        builder.RegisterComponentInHierarchy<Player>();
+    }
+}
+
+// 2. Classes declare dependencies via constructor or [Inject]
+public class EnemySpawner : MonoBehaviour
+{
+    private HealthSystem _healthSystem;
+    private IAudioService _audio;
+    
+    [Inject]
+    public void Construct(HealthSystem health, IAudioService audio)
+    {
+        _healthSystem = health;
+        _audio = audio;
+    }
+}
+```
+
+**When to use:** Team projects, testable architecture, long-term codebases.
+
+See [[Communication Patterns in Unity]] for the evolution from Singletons → Service Locator → DI.
+
+---
+
 ### NaughtyAttributes
 
 **What:** Inspector enhancements via attributes.
 
 **Why:** Better Inspector UX with minimal effort. Buttons, conditionals, validation.
 
-**Install:** Asset Store → "NaughtyAttributes"
+**Install:** Asset Store â†’ "NaughtyAttributes"
 
 ```csharp
 using NaughtyAttributes;
@@ -318,7 +365,7 @@ public class Enemy : MonoBehaviour
 
 **Why:** Even free version adds scene validation, project scanning.
 
-**Install:** Asset Store → "Odin Validator"
+**Install:** Asset Store â†’ "Odin Validator"
 
 (Full Odin is paid but exceptional if you need extensive Inspector customization)
 
@@ -330,7 +377,7 @@ public class Enemy : MonoBehaviour
 
 **Why:** Professional VFX without creating from scratch. Fire, smoke, magic, impacts.
 
-**Install:** Asset Store → "Unity Particle Pack"
+**Install:** Asset Store â†’ "Unity Particle Pack"
 
 ---
 
@@ -338,7 +385,7 @@ public class Enemy : MonoBehaviour
 
 **What:** Massive collection of free art (2D, 3D, UI, audio).
 
-**Why:** Prototype with quality assets. CC0 license — use commercially.
+**Why:** Prototype with quality assets. CC0 license â€” use commercially.
 
 **Install:** https://kenney.nl/assets or Asset Store
 
@@ -350,7 +397,7 @@ public class Enemy : MonoBehaviour
 
 **Why:** Production-ready player controllers using Input System. Good starting point.
 
-**Install:** Asset Store → "Starter Assets - First Person" or "Third Person"
+**Install:** Asset Store â†’ "Starter Assets - First Person" or "Third Person"
 
 ---
 
@@ -422,6 +469,11 @@ public class Enemy : MonoBehaviour
 - [ ] Recorder (trailers)
 - [ ] NaughtyAttributes (better Inspector)
 
+**For team/architecture:**
+
+- [ ] VContainer (dependency injection)
+- [ ] UniTask (better async)
+
 ---
 
 ## Package Manager Sources
@@ -430,12 +482,12 @@ public class Enemy : MonoBehaviour
 |---|---|
 |Unity Registry|Built-in packages|
 |Asset Store|Free/paid assets (import via Package Manager)|
-|Git URL|GitHub packages (Package Manager → + → Add from git URL)|
+|Git URL|GitHub packages (Package Manager â†’ + â†’ Add from git URL)|
 |OpenUPM|Community packages (https://openupm.com)|
 
 ### Adding Git Package
 
-Package Manager → + → Add package from git URL:
+Package Manager â†’ + â†’ Add package from git URL:
 
 ```
 https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask
