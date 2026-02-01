@@ -36,13 +36,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
+                "file": "architecture/design patterns.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Csharp Quick Reference for Polyglot Programmers"
+              "title": "design patterns"
             }
           }
         ]
@@ -225,10 +225,10 @@
   },
   "active": "0882f30f08074963",
   "lastOpenFiles": [
-    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
-    "gamedev/unity/Game design patterns.md",
-    "gamedev/unity/Layered Architecture in Unity.md",
     "architecture/design patterns.md",
+    "gamedev/unity/Game design patterns.md",
+    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
+    "gamedev/unity/Layered Architecture in Unity.md",
     "languages/c_sharp/cli commands in c sharp.md",
     "languages/c_sharp/interface vs abstract class.md",
     "CS/SOLID.md",

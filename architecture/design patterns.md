@@ -1382,3 +1382,41 @@ Console.WriteLine(editor.Content);  // Hello
 | Iterator                | Behavioral | Sequential access without exposing structure |
 | Interpreter             | Behavioral | Define and interpret a grammar               |
 | Memento                 | Behavioral | Capture and restore state                    |
+|                         |            |                                              |
+
+
+# When to Use What
+
+## Object Creation Problems
+
+**Need to create objects without specifying exact class?** → Factory Method  
+**Need families of related objects?** → Abstract Factory  
+**Need to construct complex objects step by step?** → Builder  
+**Need copies of existing objects?** → Prototype  
+**Need exactly one global instance?** → Singleton _(use sparingly)_
+
+## Structure & Composition Problems
+
+**Need to adapt incompatible interfaces?** → Adapter  
+**Need tree/hierarchical structures?** → Composite  
+**Need lazy loading or access control?** → Proxy  
+**Need memory efficiency with many similar objects?** → Flyweight  
+**Need to simplify a complex subsystem?** → Facade  
+**Need abstraction and implementation to vary independently?** → Bridge  
+**Need to add behavior without subclassing?** → Decorator
+
+## Behavior & Communication Problems
+
+**Need swappable algorithms?** → Strategy  
+**Need object behavior to change with its state?** → State  
+**Need to notify multiple objects of changes?** → Observer  
+**Need undo/redo or replay?** → Command + Memento  
+**Need request handled by one of many handlers?** → Chain of Responsibility  
+**Need to reduce chaotic dependencies?** → Mediator
+
+## Algorithm & Processing Problems
+
+**Need algorithm skeleton with varying steps?** → Template Method  
+**Need to traverse collection without exposing internals?** → Iterator  
+**Need to add operations without modifying classes?** → Visitor  
+**Need a simple scripting/rules language?** → Interpreter
