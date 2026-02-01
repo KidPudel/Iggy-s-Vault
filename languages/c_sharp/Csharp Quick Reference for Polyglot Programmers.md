@@ -925,14 +925,16 @@ public class Config
 }
 ```
 
-||`const`|`readonly`|`static readonly`|
-|---|---|---|---|
-|When set|Compile time|Declaration/constructor|Declaration/static constructor|
-|Can be instance|No (implicit static)|Yes|No|
-|Can use runtime values|No|Yes|Yes|
-|Inlined at compile time|Yes|No|No|
+| `const`                 | `readonly`           | `static readonly`       |                                |
+| ----------------------- | -------------------- | ----------------------- | ------------------------------ |
+| When set                | Compile time         | Declaration/constructor | Declaration/static constructor |
+| Can be instance         | No (implicit static) | Yes                     | No                             |
+| Can use runtime values  | No                   | Yes                     | Yes                            |
+| Inlined at compile time | Yes                  | No                      | No                             |
 
 **Use `const` for:** True constants that never change (math values, fixed strings) **Use `readonly` for:** Values set once per instance **Use `static readonly` for:** Runtime-computed values shared across instances
+
+> [!danger] `static` won't be garbage collected, because static is always reachable, whether it is class or variable.
 
 ### partial — Split Across Files
 

@@ -282,7 +282,7 @@ Level01.unity (loaded additively)
 
 The Initiator lives in Boot. Level content lives in separate scenes loaded additively.
 
-See [[Scene Management in Unity]] for additive loading **patterns**.
+See [[Scene Management in Unity]] for additive loading patterns.
 
 ---
 
@@ -425,9 +425,9 @@ private async UniTask InitializeServices()
     var questSystem = new QuestSystem();
     
     // Register for global access
-    GameSystems.Register(healthSystem);
-    GameSystems.Register(inventorySystem);
-    GameSystems.Register(questSystem);
+    Services.Register(healthSystem);
+    Services.Register(inventorySystem);
+    Services.Register(questSystem);
     
     // Systems exist before any GameObjects
 }
@@ -436,11 +436,76 @@ private async UniTask CreateObjects()
 {
     // Components can now safely access Systems in their Awake/OnEnable
     _player = Instantiate(_playerPrefab);
-    // Player.OnEnable() can call GameSystems.Health.Register() — system exists
+    // Player.OnEnable() can call Services.Get<HealthSystem>() — system exists
 }
 ```
 
 **Layered Architecture** defines runtime responsibilities. **Single Entry Point** ensures everything exists in the right order.
+
+---
+
+## Integration with Dependency Injection
+
+When using a DI framework (VContainer), the container replaces manual Service Locator registration:
+
+```csharp
+// The LifetimeScope IS your Single Entry Point for registration
+public class GameLifetimeScope : LifetimeScope
+{
+    [SerializeField] private GameConfig _config;
+    
+    protected override void Configure(IContainerBuilder builder)
+    {
+        // Plain C# systems — container CREATES and OWNS these
+        builder.Register<HealthSystem>(Lifetime.Singleton);
+        builder.Register<InventorySystem>(Lifetime.Singleton);
+        builder.Register<QuestSystem>(Lifetime.Singleton);
+        
+        // MonoBehaviours in Persistent scene — container FINDS these
+        // (You created them in the scene; container wires them up)
+        builder.RegisterComponentInHierarchy<AudioManager>().As<IAudioService>();
+        
+        // Config — just make it available for injection
+        builder.RegisterInstance(_config);
+        
+        // Entry points — container calls these after building
+        builder.RegisterEntryPoint<GameInitiator>();
+    }
+}
+
+// GameInitiator receives dependencies via injection
+public class GameInitiator : IAsyncStartable
+{
+    private readonly HealthSystem _health;
+    private readonly IAudioService _audio;
+    private readonly GameConfig _config;
+    
+    public GameInitiator(HealthSystem health, IAudioService audio, GameConfig config)
+    {
+        _health = health;
+        _audio = audio;
+        _config = config;
+    }
+    
+    public async UniTask StartAsync(CancellationToken cancellation)
+    {
+        // All dependencies already injected — no manual registration needed
+        await LoadLevelAsync();
+        // ...
+    }
+}
+```
+
+**Key insight:** The DI container handles _what_ gets created and _who_ gets what. The Single Entry Point pattern (phases, explicit ordering) still applies — it's just automated.
+
+|Without DI|With DI|
+|---|---|
+|Manual `new HealthSystem()`|`builder.Register<HealthSystem>()`|
+|Manual `Services.Register()`|Container tracks automatically|
+|Manual `Services.Get<T>()` in Awake|`[Inject]` or constructor injection|
+|You control creation order|Container resolves dependency graph|
+
+See [[Communication Patterns in Unity]] for DI lifetime details and problem of Singleton.
 
 ---
 

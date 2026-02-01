@@ -15,9 +15,10 @@ Core concepts you need before writing any code.
 5. [[Serialization and Inspector in Unity]] — How Unity saves data, `[SerializeField]`, what shows in Inspector
 6. [[ScriptableObjects]] — Data containers, why never to modify at runtime, event channels and patterns
 7. [[Scene Management in Unity]] — Loading scenes, additive loading, why to avoid `DontDestroyOnLoad`
-8. [[Communication Patterns in Unity]] — Events, UnityEvents, ScriptableObject channels (Unity has no built-in signals)
-9. [[Execution Order in Unity]] — Script execution is undefined by default, how to control it
-10. [[Input System in Unity]] — Modern Input system in Unity
+8. [[Reference Objects in Unity]] — Referencing/Accessing other parts to of code (Static, Singleton, Service Locator, Dependency Injection)
+9. [[Communication Patterns in Unity]] — Events, UnityEvents, ScriptableObject channels (Unity has no built-in signals)
+10. [[Execution Order in Unity]] — Script execution is undefined by default, how to control it
+11. [[Input System in Unity]] — Modern Input system in Unity
 
 ---
 
@@ -25,8 +26,8 @@ Core concepts you need before writing any code.
 
 How to structure your project for maintainability.
 
-1. [[Scene Management in Unity]] — Pattern showing scene management and managers persistency.
-2. [[Communication Patterns in Unity]] — Patterns for accessing other parts to communicate (Static, Singleton, Service Locator, Dependency Injection)
+1. [[Scene Management in Unity]] — Pattern showing scene management and managers persistency (singleton that live in a scene).
+2. [[Communication Patterns in Unity]] — Events, UnityEvents, ScriptableObject channels (Unity has no built-in signals)
 3. [[Component-Based Design in Unity]] — Single responsibility, reusable components, the 70/30 rule
 4. [[Layered Architecture in Unity]] — Systems/Managers/Components, separating simulation from presentation
 5. [[Data-Driven Design in Unity]] — Data/State/Representation separation, ScriptableObjects as definitions

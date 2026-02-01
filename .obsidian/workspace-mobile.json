@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/SOLID.md",
+                "file": "gamedev/unity/Unity Reference Guilde.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "SOLID"
+              "title": "Unity Reference Guilde"
             }
           }
         ]
@@ -50,7 +50,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "Unity guide",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": false,
@@ -111,7 +111,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
+            "file": "gamedev/unity/Unity Reference Guilde.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -144,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
+            "file": "gamedev/unity/Unity Reference Guilde.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -154,7 +154,7 @@
         }
       }
     ],
-    "currentTab": 2
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,6 +172,15 @@
   },
   "active": "064c3c9695bc3a4a",
   "lastOpenFiles": [
+    "gamedev/unity/Communication Patterns in Unity.md",
+    "gamedev/unity/Unity Lighting.md",
+    "gamedev/unity/Unity Camera Componen.md",
+    "gamedev/unity/Game design patterns.md",
+    "backend/backend and systems design questions.md",
+    "CS/SOLID.md",
+    "Untitled 4.base",
+    "languages/c_sharp/cli commands in c sharp.md",
+    "languages/c_sharp/interface vs abstract class.md",
     "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "gamedev/unity/Unity Fundamentals for Godot Developers.md",
     "gamedev/godot/Layered architecture in Godot.md",
@@ -189,14 +198,6 @@
     "gamedev/godot/godot project structure recommendation.md",
     "gamedev/godot/SceneTree.md",
     "architecture/data-driven design.md",
-    "architecture/data-driven architecture.md",
-    "computer graphics/draw call.md",
-    "computer graphics/text rendering.md",
-    "backend/database/database basics.md",
-    "computer graphics/sampler.md",
-    "gamedev/delta time.md",
-    "computer graphics/shader.md",
-    "computer graphics/vertex shader.md",
-    "computer graphics/scissor.md"
+    "architecture/data-driven architecture.md"
   ]
 }
