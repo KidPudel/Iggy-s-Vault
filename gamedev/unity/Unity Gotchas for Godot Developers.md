@@ -74,6 +74,7 @@ private void Start()
 **Fix:** Never modify ScriptableObjects. Use plain C# classes for mutable state.
 
 See [[ScriptableObjects]] for the Data/State pattern.
+See [[Data-Driven Design in Unity]] on more about saving
 
 ---
 
@@ -87,7 +88,7 @@ See [[ScriptableObjects]] for the Data/State pattern.
 - UnityEvents (Inspector-configurable)
 - ScriptableObject event channels
 
-See [[Communication Patterns]] for options.
+See [[Communication Patterns in Unity]] for options.
 
 ---
 

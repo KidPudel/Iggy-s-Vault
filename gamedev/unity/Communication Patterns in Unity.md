@@ -6,7 +6,7 @@
 
 ## The Problem
 
-Objects need to talk to each other. Options range from tight coupling (direct references) to loose coupling (events). No single answer â€” pick based on relationship.
+Objects need to talk to each other. Options range from tight coupling (direct references) to loose coupling (events). No single answer pick based on relationship.
 
 ---
 

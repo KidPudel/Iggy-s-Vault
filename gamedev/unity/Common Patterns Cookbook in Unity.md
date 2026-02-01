@@ -22,7 +22,7 @@ These patterns appear in almost every Unity project. Knowing them saves you from
 
 ### The Problem
 
-You need exactly one instance of something (GameManager, AudioManager) accessible from anywhere. Without this pattern, you'd have to pass references through every object or use `FindObjectOfType` repeatedly (slow).
+You need exactly *one instance (meaning with own state)* of something (GameManager, AudioManager) accessible from anywhere. Without this pattern, you'd have to pass references through every object or use `FindObjectOfType` repeatedly (slow).
 
 ### When to Use
 
@@ -70,7 +70,7 @@ If you load a scene containing a GameManager while one already exists, you'd hav
 
 ### Better Alternative: Persistent Scene
 
-Instead of singletons, put managers in a Persistent scene that never unloads (see [[Scene Management]]). You can see managers in the hierarchy, easier to debug.
+Instead of singletons, put managers in a Persistent scene that never unloads (see [[Scene Management in Unity]]). You can see managers in the hierarchy, easier to debug.
 
 ---
 

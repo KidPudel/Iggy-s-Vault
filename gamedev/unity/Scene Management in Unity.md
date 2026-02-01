@@ -4,7 +4,7 @@
 
 ---
 
-## What is a Scene?
+# What is a Scene?
 
 A Scene (`.unity` file) is Unity's equivalent of a Godot scene (`.tscn`). It contains:
 
@@ -16,7 +16,7 @@ When you open Unity, you're editing a scene. When you press Play, Unity runs tha
 
 ---
 
-## The Problem: What Happens When You Load a New Scene?
+# The Problem: What Happens When You Load a New Scene?
 
 In Godot, when you call `change_scene_to_file()`, the old scene is freed and the new one loads. Simple.
 
@@ -28,7 +28,7 @@ SceneManager.LoadScene("Level02");
 
 This **destroys everything** in the current scene and loads Level02. Your player? Gone. Your GameManager? Gone. Your score? Gone.
 
-### The Old Solution: DontDestroyOnLoad
+## The Old Solution: DontDestroyOnLoad
 
 Unity developers needed a way to keep certain objects alive between scene loads. Unity's answer was `DontDestroyOnLoad`:
 
@@ -54,7 +54,7 @@ This moves the GameObject to a special hidden scene called "DontDestroyOnLoad" t
 
 ---
 
-## The Better Solution: Additive Scene Loading
+# The Better Solution: Additive Scene Loading
 
 Unity can load **multiple scenes at the same time**. This is the key insight.
 
@@ -70,7 +70,7 @@ With additive loading, nothing is destroyed. The new scene loads alongside exist
 
 ---
 
-## The Pattern: Boot + Persistent + Content
+# The Pattern: Boot + Persistent + Content
 
 Instead of using DontDestroyOnLoad, structure your game like this:
 
@@ -82,7 +82,7 @@ Level01.unity     → Level content
 Level02.unity     → Level content
 ```
 
-### What is the Boot Scene?
+## What is the Boot Scene?
 
 The Boot scene is a pattern, not a Unity feature. It's a nearly-empty scene that exists only to load your other scenes. You create it yourself.
 
@@ -111,7 +111,7 @@ After this runs, you have three scenes loaded:
 - Persistent (your managers)
 - MainMenu (the actual menu)
 
-### What is the Persistent Scene?
+## What is the Persistent Scene?
 
 The Persistent scene is also a pattern you create. It holds all the GameObjects that should never be destroyed:
 
@@ -146,7 +146,7 @@ Your managers survived because you never unloaded their scene.
 
 ---
 
-## Setting the First Scene (Build Settings)
+# Setting the First Scene (Build Settings)
 
 Unity needs to know which scene to load first when the game starts.
 
@@ -166,9 +166,9 @@ The scene at index 0 is the entry point. Make it your Boot scene.
 
 ---
 
-## Loading and Unloading
+# Loading and Unloading
 
-### Synchronous (Freezes Game)
+## Synchronous (Freezes Game)
 
 ```csharp
 SceneManager.LoadScene("Level01", LoadSceneMode.Additive);
@@ -176,7 +176,7 @@ SceneManager.LoadScene("Level01", LoadSceneMode.Additive);
 
 The game freezes until the scene is fully loaded. Fine for tiny scenes, bad for large ones.
 
-### Asynchronous (Smooth)
+## Asynchronous (Smooth)
 
 ```csharp
 await SceneManager.LoadSceneAsync("Level01", LoadSceneMode.Additive);
@@ -184,7 +184,7 @@ await SceneManager.LoadSceneAsync("Level01", LoadSceneMode.Additive);
 
 Loads in the background. The game keeps running.
 
-### Unloading
+## Unloading
 
 ```csharp
 SceneManager.UnloadSceneAsync("Level01");
@@ -192,7 +192,7 @@ SceneManager.UnloadSceneAsync("Level01");
 
 Destroys all GameObjects in that scene. Only works for additively-loaded scenes.
 
-### Active Scene
+## Active Scene
 
 When you have multiple scenes loaded, Unity needs to know which one is "active" — this determines where newly instantiated objects go.
 
@@ -203,7 +203,7 @@ SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level01"));
 
 ---
 
-## Typical Flow
+# Typical Flow
 
 ```
 Game starts
@@ -232,7 +232,7 @@ Throughout all of this, Persistent.unity stays loaded. Your managers never die.
 
 ---
 
-## API Quick Reference
+# API Quick Reference
 
 ```csharp
 // Load
@@ -258,7 +258,7 @@ SceneManager.MoveGameObjectToScene(obj, scene);
 
 ---
 
-## Godot Comparison
+# Godot Comparison
 
 |Godot|Unity|
 |---|---|
@@ -269,7 +269,7 @@ SceneManager.MoveGameObjectToScene(obj, scene);
 
 ---
 
-## Key Takeaways
+# Key Takeaways
 
 1. **Default LoadScene destroys everything** — that's why DontDestroyOnLoad exists
 2. **DontDestroyOnLoad has problems** — hidden scene, duplicates, hard to debug

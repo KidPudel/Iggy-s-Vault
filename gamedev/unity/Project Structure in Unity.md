@@ -260,7 +260,7 @@ Scenes/
     └── Level02.unity
 ```
 
-See [[Scene Management]] for loading patterns.
+See [[Scene Management in Unity]] for loading patterns.
 
 ---
 

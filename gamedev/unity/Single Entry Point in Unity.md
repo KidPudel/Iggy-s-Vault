@@ -114,7 +114,7 @@ public class GameInitiator : MonoBehaviour
     [SerializeField] private GameUI _uiPrefab;
     [SerializeField] private LoadingScreen _loadingScreenPrefab;
     
-    [Header("Configuration")]
+    [Header("Configuration (design-time, static)")]
     [SerializeField] private GameConfig _config;
     
     // Created instances
@@ -122,10 +122,16 @@ public class GameInitiator : MonoBehaviour
     private GameUI _ui;
     private LoadingScreen _loadingScreen;
     
+    // Runtime state (loaded or created)
+    private GameState _state;
+    
     private async void Start()
     {
         // Show loading immediately
         _loadingScreen = Instantiate(_loadingScreenPrefab);
+        
+        // 0. Load runtime state
+        _state = SaveSystem.Load() ?? new GameState();
         
         // 1. Initialize (services, pure C#)
         await InitializeServices();
@@ -155,7 +161,7 @@ public class GameInitiator : MonoBehaviour
     private async UniTask CreateObjects()
     {
         // Load level scene additively
-        await SceneManager.LoadSceneAsync("Level01", LoadSceneMode.Additive);
+        await SceneManager.LoadSceneAsync($"Level{_state.CurrentLevel}", LoadSceneMode.Additive);
         
         // Instantiate prefabs (disabled by default or disable after)
         _player = Instantiate(_playerPrefab);
@@ -171,8 +177,12 @@ public class GameInitiator : MonoBehaviour
         var spawnPoint = FindObjectOfType<SpawnPoint>();
         _player.transform.position = spawnPoint.Position;
         
-        _ui.SetLevelText(_config.CurrentLevel);
-        _ui.SetScore(0);
+        // Config = static design-time values
+        _player.SetMaxHealth(_config.PlayerMaxHealth);
+        
+        // State = runtime progress
+        _ui.SetLevelText(_state.CurrentLevel);
+        _ui.SetScore(_state.Score);
     }
     
     private void BeginGame()
@@ -189,6 +199,38 @@ public class GameInitiator : MonoBehaviour
     }
 }
 ```
+
+### Config vs State
+
+The Initiator needs both:
+
+```csharp
+// CONFIGURATION — ScriptableObject, static, design-time values
+// Lives in Assets/Data/GameConfig.asset
+[CreateAssetMenu(menuName = "Game/Config")]
+public class GameConfig : ScriptableObject
+{
+    [field: SerializeField] public int PlayerMaxHealth { get; private set; } = 100;
+    [field: SerializeField] public float BaseDifficulty { get; private set; } = 1f;
+    [field: SerializeField] public int StartingLives { get; private set; } = 3;
+}
+
+// STATE — plain C# class, mutable, runtime values
+// Loaded from save file or created fresh
+[System.Serializable]
+public class GameState
+{
+    public int CurrentLevel = 1;
+    public int Score = 0;
+    public int Lives = 3;
+    public Vector3 LastCheckpoint;
+    public List<string> CollectedItems = new();
+}
+```
+
+**Config** answers: "What are the rules?" (never changes at runtime) **State** answers: "Where is the player in their journey?" (changes constantly)
+
+See [[Data-Driven Design in Unity]] for the full Data/State separation pattern.
 
 ### Prefab Bindings
 
@@ -240,7 +282,7 @@ Level01.unity (loaded additively)
 
 The Initiator lives in Boot. Level content lives in separate scenes loaded additively.
 
-See [[Scene Management in Unity]] for additive loading patterns.
+See [[Scene Management in Unity]] for additive loading **patterns**.
 
 ---
 
@@ -362,11 +404,11 @@ public class LevelUI : MonoBehaviour
     }
 }
 
-// In Initiator:
-_ui.SetLevel(_config.CurrentLevel);
+// In Initiator (using runtime state, not config):
+_ui.SetLevel(_state.CurrentLevel);
 ```
 
-LevelUI no longer knows LevelManager exists. It just receives data.
+LevelUI no longer knows LevelManager or GameState exist. It just receives data.
 
 ---
 

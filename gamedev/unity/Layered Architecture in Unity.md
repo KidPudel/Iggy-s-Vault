@@ -4,7 +4,7 @@
 
 ---
 
-## The Problem
+# The Problem
 
 Without architecture, code becomes a web where everything depends on everything. Change one thing, break ten others. Can't test in isolation. Can't reason about flow.
 
@@ -12,7 +12,7 @@ Without architecture, code becomes a web where everything depends on everything.
 
 ---
 
-## The Three Layers
+# The Three Layers
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -63,7 +63,7 @@ Without architecture, code becomes a web where everything depends on everything.
 
 ---
 
-## Systems
+# Systems
 
 Pure logic. No Unity dependencies. Plain C# classes.
 
@@ -110,7 +110,7 @@ public class HealthSystem
 - Announce changes via events
 - **That's it**
 
-### Why Plain C#?
+## Why Plain C#?
 
 - Testable without Unity (NUnit, no Play Mode)
 - No lifecycle confusion
@@ -119,7 +119,7 @@ public class HealthSystem
 
 ---
 
-## Managers
+# Managers
 
 Orchestrate responses to events. May need Unity capabilities.
 
@@ -165,7 +165,7 @@ public class CombatManager : MonoBehaviour
 
 ---
 
-## Components
+# Components
 
 MonoBehaviours on GameObjects. Handle type-specific behavior.
 
@@ -206,7 +206,7 @@ public class Enemy : MonoBehaviour
 
 ---
 
-## Source of Truth
+# Source of Truth
 
 **"Truth"** = where authoritative state lives.
 
@@ -216,7 +216,7 @@ public class Enemy : MonoBehaviour
 |**Component**|Self-contained, local state|`Door` owns its open/closed state|
 |**Manager**|Rare — game-wide state only it tracks|`DayCycleManager` owns current time|
 
-### Two Kinds of Components
+## Two Kinds of Components
 
 |Kind|Truth lives...|Component's job|
 |---|---|---|
@@ -235,7 +235,7 @@ HealthBar (Component-as-View) displays it
 
 ---
 
-## Communication Rules
+# Communication Rules
 
 ```
 ┌─────────────────────┬───────────────────────────────────────────┐
@@ -256,11 +256,13 @@ HealthBar (Component-as-View) displays it
 
 ---
 
-## Accessing Systems
+# Accessing Systems
 
 How do Components and Managers get references to Systems?
 
-### Option 1: Static Container
+## Option 1: Static Container
+
+> Or singleton ([[Common Patterns Cookbook in Unity]])
 
 Simplest approach. Systems are created once at startup.
 
@@ -278,7 +280,7 @@ GameSystems.Health.Damage(entityId, 10);
 
 **Pros:** Simple, fast, IDE autocomplete works. **Cons:** Can't swap implementations, systems live forever.
 
-### Option 2: Service Locator
+## Option 2: Service Locator
 
 More flexible. Systems register/unregister dynamically.
 
@@ -355,11 +357,11 @@ private void OnDestroy()
 
 **Pros:** Swap implementations (testing), memory managed, interface hiding. **Cons:** Runtime errors if service missing, no compile-time checking.
 
-### Option 3: Dependency Injection
+## Option 3: Dependency Injection
 
 For larger projects, use a DI framework (VContainer, Zenject). See [[Communication Patterns in Unity]] for details.
 
-### Which to Choose
+## Which to Choose
 
 |Project|Recommendation|
 |---|---|
@@ -370,7 +372,7 @@ For larger projects, use a DI framework (VContainer, Zenject). See [[Communicati
 
 ---
 
-## When to Create What
+# When to Create What
 
 ```
 Q1: Is state in a shared pool (multiple entities)?
@@ -389,7 +391,7 @@ Q4: Is this just local state for one object?
     YES → Component-as-Truth (owns itself)
 ```
 
-### Examples
+## Examples
 
 |Feature|Shared Pool?|Ripple?|Result|
 |---|---|---|---|
@@ -402,7 +404,7 @@ Q4: Is this just local state for one object?
 
 ---
 
-## Keep It Simple
+# Keep It Simple
 
 > [!warning] Architecture is a tool, not a religion.
 
@@ -419,7 +421,7 @@ Most game objects are simple. A door, trigger, decoration — just own themselve
 
 ---
 
-## The 70/30 Rule
+# The 70/30 Rule
 
 Jonas Tyroller's guideline:
 
@@ -430,7 +432,7 @@ Don't try to abstract everything. Generalize where it makes sense. Game-specific
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 Assets/
@@ -452,7 +454,7 @@ Assets/
 
 ---
 
-## Checklist
+# Checklist
 
 **Systems:**
 
@@ -483,7 +485,7 @@ Assets/
 
 ---
 
-## Key Takeaways
+# Key Takeaways
 
 1. **Systems** = pure truth (plain C#, events only)
 2. **Managers** = orchestration (when order/ripples matter)

@@ -2120,9 +2120,23 @@ public class CollisionManager : MonoBehaviour
 
 ---
 
-## When to Use What
+# When to Use What
 
-### Behavior & State Problems
+## Object Creation Problems
+
+**Need to spawn many objects efficiently?** → Factory + Object Pool  
+**Need copies of objects with variations?** → Prototype  
+**Need to construct complex objects step by step?** → Builder  
+**Need one global instance?** → Singleton _(use sparingly)_
+
+## Structure & Decoupling Problems
+
+**Need to compose entities from reusable parts?** → Component  
+**Need to add behavior without subclassing?** → Decorator  
+**Need to simplify a complex subsystem?** → Facade  
+**Need global service access without tight coupling?** → Service Locator _(prefer DI)_
+
+## Behavior & State Problems
 
 **Need swappable algorithms?** → Strategy  
 **Need object behavior to change with its state?** → State  
@@ -2130,35 +2144,21 @@ public class CollisionManager : MonoBehaviour
 **Need deferred or decoupled event handling?** → Event Queue  
 **Need undo/redo or replay systems?** → Command
 
-### Object Creation Problems
-
-**Need to spawn many objects efficiently?** → Factory + Object Pool  
-**Need copies of objects with variations?** → Prototype  
-**Need to construct complex objects step by step?** → Builder  
-**Need one global instance?** → Singleton _(use sparingly)_
-
-### Structure & Decoupling Problems
-
-**Need to compose entities from reusable parts?** → Component  
-**Need to add behavior without subclassing?** → Decorator  
-**Need to simplify a complex subsystem?** → Facade  
-**Need global service access without tight coupling?** → Service Locator _(prefer DI)_
-
-### Data-Driven Design Problems
+## Data-Driven Design Problems
 
 **Need designer-configurable data?** → ScriptableObjects  
 **Need types defined as data, not code?** → Type Object  
 **Need shared utilities for ability/spell systems?** → Subclass Sandbox  
 **Need fully scriptable behaviors or modding support?** → Bytecode
 
-### Performance & Optimization Problems
+## Performance & Optimization Problems
 
 **Need memory efficiency with many similar objects?** → Flyweight  
 **Need to avoid redundant expensive updates?** → Dirty Flag  
 **Need cache-friendly data layout?** → Data Locality  
 **Need fast position-based queries?** → Spatial Partition
 
-### Sequencing & Timing Problems
+## Sequencing & Timing Problems
 
 **Need consistent state during simultaneous updates?** → Double Buffer  
 **Need to understand the core update cycle?** → Game Loop  
