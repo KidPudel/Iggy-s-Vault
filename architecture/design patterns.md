@@ -1,12 +1,12 @@
-# Design Patterns in C#
+# Design Patterns
 
 ---
 
-## What Are These Categories?
+# What Are These Categories?
 
 Design patterns are grouped into three categories based on **what problem they solve**:
 
-### Creational Patterns
+## Creational Patterns
 
 **Problem:** How do I create objects?
 
@@ -14,7 +14,7 @@ These patterns deal with object creation mechanisms. Instead of instantiating ob
 
 **Think:** "I need to make something, but I want control over how it's made."
 
-### Structural Patterns
+## Structural Patterns
 
 **Problem:** How do I compose objects into larger structures?
 
@@ -22,7 +22,7 @@ These patterns deal with relationships between objects—how classes and objects
 
 **Think:** "I have existing pieces, how do I connect them together?"
 
-### Behavioral Patterns
+## Behavioral Patterns
 
 **Problem:** How do objects communicate and share responsibilities?
 

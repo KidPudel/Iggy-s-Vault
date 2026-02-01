@@ -618,6 +618,417 @@ enemies[0] = enemy;
 
 ---
 
+## Access Modifiers and Inheritance Keywords
+
+### Access Modifiers
+
+Control who can see and use your code.
+
+```csharp
+public class Example
+{
+    public int PublicField;           // Anyone can access
+    private int _privateField;        // Only this class
+    protected int ProtectedField;     // This class + derived classes
+    internal int InternalField;       // Same assembly only
+    protected internal int ProtectedInternalField;  // Same assembly OR derived classes
+    private protected int PrivateProtectedField;    // Derived classes in same assembly only
+}
+```
+
+|Modifier|Same Class|Derived (Same Assembly)|Derived (Other Assembly)|Same Assembly|Other Assembly|
+|---|---|---|---|---|---|
+|`public`|✓|✓|✓|✓|✓|
+|`private`|✓|✗|✗|✗|✗|
+|`protected`|✓|✓|✓|✗|✗|
+|`internal`|✓|✓|✗|✓|✗|
+|`protected internal`|✓|✓|✓|✓|✗|
+|`private protected`|✓|✓|✗|✗|✗|
+
+**When to use:**
+
+- `public` — API that others should use
+- `private` — Implementation details (default for fields)
+- `protected` — Intended for subclasses to use/override
+- `internal` — Share within your assembly, hide from external code
+- `protected internal` — Rare; library extension points
+- `private protected` — Rare; restrict inheritance to same assembly
+
+```csharp
+public class Player : MonoBehaviour
+{
+    // Public API
+    public int Health { get; private set; }
+    public void TakeDamage(int amount) { }
+    
+    // Internal implementation
+    private float _invincibilityTimer;
+    private void UpdateInvincibility() { }
+    
+    // For subclasses
+    protected virtual void OnDeath() { }
+}
+```
+
+### virtual — Allow Override
+
+Marks a method/property as overridable by derived classes.
+
+```csharp
+public class Enemy
+{
+    public virtual void Attack()
+    {
+        Debug.Log("Basic attack");
+    }
+    
+    public virtual int Damage => 10;
+}
+
+public class Boss : Enemy
+{
+    public override void Attack()
+    {
+        Debug.Log("Powerful attack!");
+    }
+    
+    public override int Damage => 50;
+}
+```
+
+**Without `virtual`:**
+
+```csharp
+public class Enemy
+{
+    public void Attack() { }  // NOT virtual
+}
+
+public class Boss : Enemy
+{
+    public void Attack() { }  // This HIDES, doesn't override
+}
+
+Enemy enemy = new Boss();
+enemy.Attack();  // Calls Enemy.Attack(), not Boss.Attack()!
+```
+
+### override — Replace Base Implementation
+
+Must be used when overriding a `virtual` or `abstract` member.
+
+```csharp
+public class Orc : Enemy
+{
+    public override void Attack()
+    {
+        // Can call base implementation
+        base.Attack();
+        
+        // Then add behavior
+        PlayRoarSound();
+    }
+}
+```
+
+**Common mistake:**
+
+```csharp
+// WRONG — forgot 'override'
+public class Orc : Enemy
+{
+    public void Attack() { }  // Warning: hides inherited member
+}
+
+// RIGHT
+public class Orc : Enemy
+{
+    public override void Attack() { }
+}
+```
+
+### abstract — Must Be Implemented
+
+Cannot be instantiated. Forces derived classes to implement.
+
+```csharp
+// Abstract class — can't do: new Enemy()
+public abstract class Enemy
+{
+    public int Health { get; protected set; }
+    
+    // Abstract method — no body, derived MUST implement
+    public abstract void Attack();
+    
+    // Abstract property
+    public abstract int Damage { get; }
+    
+    // Can still have normal methods
+    public void TakeDamage(int amount)
+    {
+        Health -= amount;
+    }
+}
+
+public class Goblin : Enemy
+{
+    // MUST implement abstract members
+    public override void Attack()
+    {
+        Debug.Log("Goblin stab!");
+    }
+    
+    public override int Damage => 5;
+}
+```
+
+**When to use:**
+
+- Base class that doesn't make sense on its own
+- Force all subclasses to implement specific behavior
+- Template method pattern
+
+**abstract vs interface:**
+
+- Abstract class: Can have implementation, fields, one inheritance only
+- Interface: No implementation (mostly), multiple inheritance allowed
+
+### sealed — Prevent Inheritance
+
+Stops further inheritance or overriding.
+
+```csharp
+// Sealed class — cannot be inherited
+public sealed class FinalBoss : Enemy
+{
+    // No one can derive from FinalBoss
+}
+
+// Sealed method — stops override chain
+public class Boss : Enemy
+{
+    public sealed override void Attack()
+    {
+        // Derived classes can't override Attack anymore
+    }
+}
+```
+
+**Why seal?**
+
+- Security: Prevent someone overriding your validation logic
+- Performance: Compiler can optimize sealed calls
+- Design: Signal "this is final, don't extend"
+
+```csharp
+// Common pattern: seal leaf classes in hierarchies
+public abstract class Enemy { }
+public class Orc : Enemy { }           // Could seal
+public sealed class OrcChieftain : Orc { }  // Can't extend further
+```
+
+### new — Hide Inherited Member
+
+Explicitly hide a base class member (usually a warning sign).
+
+```csharp
+public class Base
+{
+    public void DoSomething() => Debug.Log("Base");
+}
+
+public class Derived : Base
+{
+    // Hides Base.DoSomething (NOT polymorphic)
+    public new void DoSomething() => Debug.Log("Derived");
+}
+
+Derived d = new Derived();
+d.DoSomething();           // "Derived"
+
+Base b = d;
+b.DoSomething();           // "Base" — NOT "Derived"!
+```
+
+**When to use `new`:**
+
+- Almost never intentionally
+- Usually indicates design problem
+- Legitimate use: Returning more specific type
+
+```csharp
+public class AnimalShelter
+{
+    public virtual Animal GetPet() => new Animal();
+}
+
+public class CatShelter : AnimalShelter
+{
+    // Return more specific type
+    public new Cat GetPet() => new Cat();
+}
+```
+
+### static — Belongs to Type, Not Instance
+
+```csharp
+public class Enemy
+{
+    // Instance member — each enemy has its own
+    public int Health { get; set; }
+    
+    // Static member — shared by all enemies
+    public static int TotalKilled { get; private set; }
+    
+    // Static method
+    public static void ResetKillCount() => TotalKilled = 0;
+    
+    public void Die()
+    {
+        TotalKilled++;  // Increment shared counter
+    }
+}
+
+// Access via type name
+Enemy.TotalKilled
+Enemy.ResetKillCount();
+```
+
+**Static class:**
+
+```csharp
+public static class GameUtils
+{
+    public static float Remap(float value, float from1, float to1, float from2, float to2)
+    {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
+}
+```
+
+### const vs readonly vs static readonly
+
+```csharp
+public class Config
+{
+    // const: Compile-time constant. Inlined everywhere. Can't be changed.
+    public const int MaxPlayers = 4;
+    public const string Version = "1.0.0";
+    
+    // readonly: Set at declaration or in constructor only
+    public readonly int Seed;
+    public Config(int seed) { Seed = seed; }
+    
+    // static readonly: Like const but computed at runtime
+    public static readonly DateTime StartTime = DateTime.Now;
+    public static readonly int ProcessorCount = Environment.ProcessorCount;
+}
+```
+
+||`const`|`readonly`|`static readonly`|
+|---|---|---|---|
+|When set|Compile time|Declaration/constructor|Declaration/static constructor|
+|Can be instance|No (implicit static)|Yes|No|
+|Can use runtime values|No|Yes|Yes|
+|Inlined at compile time|Yes|No|No|
+
+**Use `const` for:** True constants that never change (math values, fixed strings) **Use `readonly` for:** Values set once per instance **Use `static readonly` for:** Runtime-computed values shared across instances
+
+### partial — Split Across Files
+
+Split a class/struct/interface across multiple files.
+
+```csharp
+// Player.cs
+public partial class Player
+{
+    public int Health { get; set; }
+    public void TakeDamage(int amount) { }
+}
+
+// Player.Movement.cs
+public partial class Player
+{
+    public float Speed { get; set; }
+    public void Move(Vector3 direction) { }
+}
+
+// Player.Combat.cs
+public partial class Player
+{
+    public void Attack() { }
+    public void Block() { }
+}
+```
+
+**When to use:**
+
+- Large classes organized by concern
+- Code generation (Unity serialization, protobuf)
+- Separate auto-generated code from manual code
+
+### Inheritance Keywords Summary
+
+|Keyword|On Class|On Member|Purpose|
+|---|---|---|---|
+|`virtual`|-|✓|Allow derived classes to override|
+|`override`|-|✓|Replace base implementation|
+|`abstract`|✓|✓|Force derived classes to implement|
+|`sealed`|✓|✓|Prevent inheritance/override|
+|`new`|-|✓|Hide (not override) base member|
+|`static`|✓|✓|Belongs to type, not instance|
+|`partial`|✓|✓|Split across files|
+
+### Common Patterns
+
+**Template Method:**
+
+```csharp
+public abstract class GameMode
+{
+    // Template method — defines the algorithm
+    public void StartGame()
+    {
+        InitializePlayers();
+        SpawnEnemies();
+        StartTimer();
+    }
+    
+    protected abstract void InitializePlayers();
+    protected abstract void SpawnEnemies();
+    protected virtual void StartTimer() { /* default implementation */ }
+}
+
+public class SurvivalMode : GameMode
+{
+    protected override void InitializePlayers() { /* ... */ }
+    protected override void SpawnEnemies() { /* endless waves */ }
+    // Uses default StartTimer
+}
+```
+
+**Protected virtual for Unity:**
+
+```csharp
+public class Character : MonoBehaviour
+{
+    protected virtual void Awake() { /* base setup */ }
+    protected virtual void Start() { /* base init */ }
+    protected virtual void Update() { /* base loop */ }
+}
+
+public class Player : Character
+{
+    protected override void Awake()
+    {
+        base.Awake();  // Don't forget base!
+        // Player-specific setup
+    }
+}
+```
+
+---
+
 ## Records (C# 9+)
 
 Immutable reference types with value equality. Perfect for data transfer objects.
@@ -2148,7 +2559,7 @@ public void ReallyOldMethod() { }
 [Conditional("DEBUG")]                        // Only compiled in debug
 public void DebugLog(string msg) { }
 
-[**System**.Serializable]                         // For Unity/JSON serialization
+[System.Serializable]                         // For Unity/JSON serialization
 public class SaveData { }
 
 [System.NonSerialized]                        // Exclude from serialization
@@ -2313,6 +2724,7 @@ How inheritance works with generics.
 TLDR; `out` means for output and therefore it needs strip down safety. `in` means input therefore implementation needs strip down safety
 
 ### Covariance (out) — Can Return Derived Types
+
 > Producer widens the gates and catch as wide as we need, as usage will strip down as it needs.
 
 ```csharp
@@ -2328,12 +2740,12 @@ foreach (object obj in objects) {
 }
 ```
 
-
 If implementation states it produces (outputting data `out`) `Dog`s, it's safe to treat it as producing `Animal`s, because every `Dog` is an `Animal`, and returning type of the results of `IEnumerable` will return any of the `Animal`
 
-implementation set to return `Dog` -> the usage catches *any* `Animal` | END
+implementation set to return `Dog` -> the usage catches _any_ `Animal` | END
 
-### Contravariance (in) — Can Accept Base Types  (consumer)
+### Contravariance (in) — Can Accept Base Types (consumer)
+
 > Consumer. tightens the gates as the implementation will strip down to what it can
 
 ```csharp
@@ -2348,9 +2760,10 @@ Action<string> printString = printObject;
 printString("World"); 
 ```
 
-If implementation states it consumes (and doing something with it readonly `in`) `Animal`, it is allowed since interface states that using it can handle *up to* `Dog`s, therefore the implementation itself only will use that part that is == or < than the ceiling.
+If implementation states it consumes (and doing something with it readonly `in`) `Animal`, it is allowed since interface states that using it can handle _up to_ `Dog`s, therefore the implementation itself only will use that part that is == or < than the ceiling.
 
 implementation set to handle `Animal` -> the usage passing `Dog` | END
+
 ### Practical Example
 
 ```csharp
@@ -2479,3 +2892,15 @@ for (int i = 0; i < 5; i++)
 |Conditional compilation|`#if` / `#endif`|
 |Metadata on code|Attributes `[...]`|
 |Organize code|Namespaces|
+|Visible to all|`public`|
+|Hidden, this class only|`private`|
+|Subclasses only|`protected`|
+|Same assembly only|`internal`|
+|Allow override|`virtual`|
+|Replace base behavior|`override`|
+|Force implementation|`abstract`|
+|Prevent inheritance|`sealed`|
+|Belongs to type|`static`|
+|Compile-time constant|`const`|
+|Set once (instance)|`readonly`|
+|Set once (shared)|`static readonly`|

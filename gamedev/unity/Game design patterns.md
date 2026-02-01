@@ -2,9 +2,9 @@
 
 ---
 
-## Behavioral Patterns
+# Behavioral Patterns
 
-### Strategy Pattern
+## Strategy Pattern
 
 Define a family of algorithms and swap them at runtime without changing the client code.
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
 ---
 
-### State Pattern
+## State Pattern
 
 Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
@@ -166,7 +166,7 @@ public class PlayerStateMachine : MonoBehaviour
 
 ---
 
-### Observer Pattern
+## Observer Pattern
 
 Define a one-to-many dependency so that when one object changes state, all dependents are notified automatically.
 
@@ -254,7 +254,7 @@ public class GameEvent : ScriptableObject
 
 ---
 
-### Command Pattern
+## Command Pattern
 
 Encapsulate a request as an object, allowing you to parameterize, queue, or undo operations.
 
@@ -345,7 +345,7 @@ public class PlayerInput : MonoBehaviour
 
 ---
 
-### Subclass Sandbox Pattern
+## Subclass Sandbox Pattern
 
 Define behavior in a base class using abstract operations that subclasses implement. The base class provides protected methods that subclasses can use to compose their behavior.
 
@@ -429,7 +429,7 @@ public class ShockwavePower : Superpower
 
 ---
 
-### Bytecode Pattern
+## Bytecode Pattern
 
 Create a simple virtual machine with instructions that can be composed to define behavior. Lets designers or modders create complex behaviors without touching game code.
 
@@ -557,9 +557,9 @@ public class SpellCaster : MonoBehaviour
 
 ---
 
-## Creational Patterns
+# Creational Patterns
 
-### Factory Pattern
+## Factory Pattern
 
 Create objects without specifying the exact class. Centralizes creation logic.
 
@@ -618,7 +618,7 @@ public class EnemyFactory : MonoBehaviour
 
 ---
 
-### Abstract Factory Pattern
+## Abstract Factory Pattern
 
 Create families of related objects without specifying their concrete classes.
 
@@ -696,7 +696,7 @@ public class UIManager
 
 ---
 
-### Prototype Pattern
+## Prototype Pattern
 
 Create new objects by cloning existing ones rather than instantiating from scratch.
 
@@ -775,7 +775,7 @@ var eliteGoblin = spawner.SpawnVariant("goblin", m => {
 
 ---
 
-### Singleton Pattern
+## Singleton Pattern
 
 Ensure a class has only one instance and provide a global access point.
 
@@ -855,7 +855,7 @@ public class AudioManager : Singleton<AudioManager>
 
 ---
 
-### Object Pool Pattern
+## Object Pool Pattern
 
 Reuse objects instead of creating/destroying them repeatedly. Critical for performance.
 
@@ -937,7 +937,7 @@ public class Bullet : MonoBehaviour
 
 ---
 
-### Builder Pattern
+## Builder Pattern
 
 Construct complex objects step by step. Separates construction from representation.
 
@@ -1019,9 +1019,9 @@ public class CharacterCreator : MonoBehaviour
 
 ---
 
-## Structural Patterns
+# Structural Patterns
 
-### Component Pattern
+## Component Pattern
 
 Compose objects from smaller, reusable components. **Unity's core architecture.**
 
@@ -1079,7 +1079,7 @@ public class AttackComponent : MonoBehaviour
 
 ---
 
-### Decorator Pattern
+## Decorator Pattern
 
 Attach additional responsibilities to objects dynamically without subclassing.
 
@@ -1102,11 +1102,11 @@ public class Sword : IWeapon
 
 public abstract class WeaponDecorator : IWeapon
 {
-    protected readonly IWeapon _weapon;
+    protected readonly IWeapon _weapon;  // 1. HOLDS a weapon
     
-    protected WeaponDecorator(IWeapon weapon) => _weapon = weapon;
+    protected WeaponDecorator(IWeapon weapon) => _weapon = weapon;  // 2. Receives it
     
-    public virtual int Damage => _weapon.Damage;
+    public virtual int Damage => _weapon.Damage;  // 3. DELEGATES to it
     public virtual string Description => _weapon.Description;
     public virtual void Attack() => _weapon.Attack();
 }
@@ -1139,14 +1139,14 @@ public class PoisonEnchantment : WeaponDecorator
 
 // Usage: Stack decorators
 IWeapon weapon = new Sword();                           // 10 damage
-weapon = new FireEnchantment(weapon);                   // 15 damage
-weapon = new PoisonEnchantment(weapon);                 // 18 damage
+weapon = new FireEnchantment(weapon);                   // Wraps Sword 15 damage
+weapon = new PoisonEnchantment(weapon);                 // Wraps Fire(Sword) 18 damage
 Debug.Log(weapon.Description);                          // "Poisoned Flaming Sword"
 ```
 
 ---
 
-### Flyweight Pattern
+## Flyweight Pattern
 
 Share common state between many objects to minimize memory usage.
 
@@ -1221,7 +1221,7 @@ public class Forest : MonoBehaviour
 
 ---
 
-### Facade Pattern
+## Facade Pattern
 
 Provide a simplified interface to a complex subsystem.
 
@@ -1285,7 +1285,7 @@ var loaded = saveManager.LoadGame<PlayerData>("slot1");
 
 ---
 
-### Service Locator Pattern
+## Service Locator Pattern
 
 Provide a global point of access to services without hard-coding dependencies.
 
@@ -1358,9 +1358,9 @@ public class Player : MonoBehaviour
 
 ---
 
-## Sequencing Patterns
+# Sequencing Patterns
 
-### Game Loop Pattern
+## Game Loop Pattern
 
 The heartbeat of every game. Processes input, updates game state, and renders—repeatedly, as fast as possible (or at a fixed rate).
 
@@ -1436,7 +1436,7 @@ public class UnityGameLoop : MonoBehaviour
 
 ---
 
-### Update Method Pattern
+## Update Method Pattern
 
 Each game entity has an Update() method called once per frame. Entities manage their own behavior.
 
@@ -1509,7 +1509,7 @@ public class SkeletonEnemy : MonoBehaviour
 
 ---
 
-### Double Buffer Pattern
+## Double Buffer Pattern
 
 Maintain two copies of state: one being read (current) while the other is written (next). Swap when done. Prevents readers from seeing incomplete state.
 
@@ -1601,9 +1601,9 @@ public class GameOfLife : MonoBehaviour
 
 ---
 
-## Decoupling Patterns
+# Decoupling Patterns
 
-### Event Queue Pattern
+## Event Queue Pattern
 
 Decouple event senders from receivers using a queue. Events are sent to the queue and processed later.
 
@@ -1718,9 +1718,9 @@ public class AudioManager : MonoBehaviour
 
 ---
 
-## Data-Driven Patterns
+# Data-Driven Patterns
 
-### ScriptableObject Pattern
+## ScriptableObject Pattern
 
 Use ScriptableObjects for data containers that exist outside of scenes.
 
@@ -1782,7 +1782,7 @@ public class ScoreManager : MonoBehaviour
 
 ---
 
-### Type Object Pattern
+## Type Object Pattern
 
 Define "types" as data instead of code, allowing runtime flexibility.
 
@@ -1821,9 +1821,9 @@ public class Monster : MonoBehaviour
 
 ---
 
-## Optimization Patterns
+# Optimization Patterns
 
-### Dirty Flag Pattern
+## Dirty Flag Pattern
 
 Track when data has changed to avoid unnecessary expensive operations.
 
@@ -1906,7 +1906,7 @@ public class TransformNode
 
 ---
 
-### Data Locality Pattern
+## Data Locality Pattern
 
 Organize data to maximize CPU cache utilization. Keep data that's accessed together stored together.
 
@@ -1996,7 +1996,7 @@ public class WorldGood
 
 ---
 
-### Spatial Partition Pattern
+## Spatial Partition Pattern
 
 Organize objects by position for faster lookups. Avoid O(n²) collision checks.
 
@@ -2087,40 +2087,40 @@ public class CollisionManager : MonoBehaviour
 
 ---
 
-## Quick Reference
+# Quick Reference
 
-|Pattern|Category|Primary Use Case|
-|---|---|---|
-|Strategy|Behavioral|Swappable algorithms (AI, movement)|
-|State|Behavioral|State machines (player, game flow)|
-|Observer|Behavioral|Event systems (UI updates, achievements)|
-|Command|Behavioral|Input handling, undo/redo, replays|
-|Subclass Sandbox|Behavioral|Spell/ability systems with shared utilities|
-|Bytecode|Behavioral|Data-driven scripting, modding support|
-|Factory|Creational|Object instantiation (enemies, items)|
-|Abstract Factory|Creational|Themed content families|
-|Prototype|Creational|Cloning objects with variations|
-|Singleton|Creational|Global managers (use sparingly)|
-|Object Pool|Creational|Performance (bullets, particles)|
-|Builder|Creational|Complex object construction|
-|Component|Structural|Entity composition (Unity's core)|
-|Decorator|Structural|Runtime modifications (buffs, enchantments)|
-|Flyweight|Structural|Sharing data (terrain, trees)|
-|Facade|Structural|Complex system simplification|
-|Service Locator|Structural|Decoupled service access|
-|Game Loop|Sequencing|Core update cycle|
-|Update Method|Sequencing|Per-entity behavior|
-|Double Buffer|Sequencing|Consistent state during updates|
-|Event Queue|Decoupling|Deferred, decoupled events|
-|ScriptableObject|Data-Driven|Data containers, events|
-|Type Object|Data-Driven|Designer-configurable types|
-|Dirty Flag|Optimization|Avoiding redundant updates|
-|Data Locality|Optimization|Cache-friendly data layout|
-|Spatial Partition|Optimization|Position-based queries|
+| Pattern           | Category     | Primary Use Case                            |
+| ----------------- | ------------ | ------------------------------------------- |
+| Strategy          | Behavioral   | Swappable algorithms (AI, movement)         |
+| State             | Behavioral   | State machines (player, game flow)          |
+| Observer          | Behavioral   | Event systems (UI updates, achievements)    |
+| Command           | Behavioral   | Input handling, undo/redo, replays          |
+| Subclass Sandbox  | Behavioral   | Spell/ability systems with shared utilities |
+| Bytecode          | Behavioral   | Data-driven scripting, modding support      |
+| Factory           | Creational   | Object instantiation (enemies, items)       |
+| Abstract Factory  | Creational   | Themed content families                     |
+| Prototype         | Creational   | Cloning objects with variations             |
+| Singleton         | Creational   | Global managers (use sparingly)             |
+| Object Pool       | Creational   | Performance (bullets, particles)            |
+| Builder           | Creational   | Complex object construction                 |
+| Component         | Structural   | Entity composition (Unity's core)           |
+| Decorator         | Structural   | Runtime modifications (buffs, enchantments) |
+| Flyweight         | Structural   | Sharing data (terrain, trees)               |
+| Facade            | Structural   | Complex system simplification               |
+| Service Locator   | Structural   | Decoupled service access                    |
+| Game Loop         | Sequencing   | Core update cycle                           |
+| Update Method     | Sequencing   | Per-entity behavior                         |
+| Double Buffer     | Sequencing   | Consistent state during updates             |
+| Event Queue       | Decoupling   | Deferred, decoupled events                  |
+| ScriptableObject  | Data-Driven  | Data containers, events                     |
+| Type Object       | Data-Driven  | Designer-configurable types                 |
+| Dirty Flag        | Optimization | Avoiding redundant updates                  |
+| Data Locality     | Optimization | Cache-friendly data layout                  |
+| Spatial Partition | Optimization | Position-based queries                      |
 
 ---
 
-## When to Use What
+# When to Use What
 
 **Need swappable behavior?** → Strategy or State  
 **Need event communication?** → Observer or Event Queue  

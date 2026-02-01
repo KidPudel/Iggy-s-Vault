@@ -6,6 +6,7 @@
       {
         "id": "23eb38df7cf51490",
         "type": "tabs",
+        "dimension": 50.24193548387097,
         "children": [
           {
             "id": "0882f30f08074963",
@@ -13,13 +14,35 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "architecture/design patterns.md",
+                "file": "gamedev/unity/Game design patterns.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "design patterns"
+              "title": "Game design patterns"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b57cab781d720329",
+        "type": "tabs",
+        "dimension": 49.75806451612903,
+        "children": [
+          {
+            "id": "454b9ce3fcd60d2d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Csharp Quick Reference for Polyglot Programmers"
             }
           }
         ]
@@ -145,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS/SOLID.md",
+                "file": "gamedev/unity/Game design patterns.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SOLID"
+              "title": "Outline of Game design patterns"
             }
           },
           {
@@ -202,13 +225,16 @@
   },
   "active": "0882f30f08074963",
   "lastOpenFiles": [
-    "CS/SOLID.md",
-    "architecture/design patterns.md",
+    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "gamedev/unity/Game design patterns.md",
+    "gamedev/unity/Layered Architecture in Unity.md",
+    "architecture/design patterns.md",
+    "languages/c_sharp/cli commands in c sharp.md",
+    "languages/c_sharp/interface vs abstract class.md",
+    "CS/SOLID.md",
     "gamedev/unity/Input System in Unity.md",
     "gamedev/unity/Essential Unity Packages and Assets.md",
     "gamedev/unity/Project Structure in Unity.md",
-    "gamedev/unity/Layered Architecture in Unity.md",
     "gamedev/unity/Communication Patterns in Unity.md",
     "gamedev/unity/Single Entry Point.md",
     "gamedev/unity/Execution Order in Unity.md",
@@ -222,12 +248,9 @@
     "gamedev/godot/built-in virtual functions.md",
     "gamedev/godot/SceneTree.md",
     "gamedev/unity/Serialization and Inspector in Unity.md",
-    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "languages/c_sharp/Csharp Built-in Interfaces Reference.md",
     "gamedev/unity/Transform and Hierarchy.md",
     "gamedev/unity/Prefabs.md",
-    "gamedev/unity/GameObject and Component Model.md",
-    "gamedev/unity/Scene Management in Unity.md",
     "unity",
     "languages/c_sharp",
     "gamedev/unity",
