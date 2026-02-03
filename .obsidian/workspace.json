@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/unity/Unity Index Book of References.md",
+                "file": "Awareness reminder for documents.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Unity Index Book of References"
+              "title": "Awareness reminder for documents"
             }
           }
         ]
@@ -202,12 +202,12 @@
   },
   "active": "03c1852c5c111d28",
   "lastOpenFiles": [
-    "gamedev/unity/Unity Static Classes and Singletons.md",
     "gamedev/unity/Unity Index Book of References.md",
+    "Awareness reminder for documents.md",
+    "gamedev/unity/Unity Static Classes and Singletons.md",
     "gamedev/unity/Godot Math to Unity Reference.md",
     "gamedev/unity/Essential Unity Packages and Assets.md",
     "gamedev/unity/Unity Component Reference for Godot Developer.md",
-    "Awareness reminder for documents.md",
     "gamedev/unity/Layered Architecture in Unity.md",
     "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "gamedev/unity/Unity Fundamentals for Godot Developers.md",

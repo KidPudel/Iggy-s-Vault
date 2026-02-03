@@ -4,9 +4,9 @@
 
 
 How to balance the convenience and honest learning?
-Don't delegate the job of exploring and coming to solutions to someone else (like AI). Do it for yourself. Instead you can utilize sparingly two things, but at different stages of learning:
+Don't delegate the job of exploring and coming to solutions to someone else (like AI). Do it for yourself. Instead you can utilize sparingly two types, but at different stages of learning:
 1. post-struggle — teachings and crystalized truths on best decisions. Because after you've struggled (been a beginner and progressed through fighting), you understand the struggles, so you understand solutions now.
-2. pre-struggle *for experienced* — context building. This way it allows for more efficient way to utilize what you've already build.
+2. pre-struggle *for experienced* — direct translations or concept explanations, that map into *existing* context knowledge and experience. This way it allows for more efficient way to utilize what you've already build.
 
 Everything else like pre-struggle solution references, are just harmful and overwhelming.
 

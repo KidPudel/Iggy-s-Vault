@@ -11,6 +11,8 @@
 
 # Unity Fundamentals
 
+> [!warning] Pre-struggle for experienced
+
 Core concepts you need before writing any code.
 
 1. [[GameObject and Component Model]] — The fundamental paradigm: composition over inheritance, when to use child GameObjects vs components
@@ -29,6 +31,8 @@ Core concepts you need before writing any code.
 
 # Architecture Patterns
 
+> [!warning] Post-struggle only
+
 How to structure your project for maintainability.
 
 1. [[Scene Management in Unity]] — Pattern showing scene management and managers persistency (global game objects that are not static ).
@@ -43,6 +47,8 @@ How to structure your project for maintainability.
 
 # Reference
 
+> [!warning] Pre-struggle for experienced
+
 Quick lookup when you need it.
 
 1. [[Common Patterns Cookbook in Unity]] — Patterns for Singleton, object pool, state machine, save/load, and more
@@ -56,6 +62,8 @@ Quick lookup when you need it.
 ---
 
 # C# reference
+
+> [!warning] Pre-struggle for experienced
 
 1. [[Csharp Quick Reference for Polyglot Programmers]] — C# features with "why" and "when" for polyglot programmers
 2. [[Csharp Built-in Interfaces Reference]]
