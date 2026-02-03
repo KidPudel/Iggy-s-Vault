@@ -13,13 +13,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Awareness reminder for documents.md",
+                "file": "math/euler angles.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Awareness reminder for documents"
+              "title": "euler angles"
+            }
+          },
+          {
+            "id": "9011981b8732e944",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "math/euler angles.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "euler angles"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "848ce88edee99651",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c285682cfbab3313",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "math/Quaternions.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Quaternions"
             }
           }
         ]
@@ -97,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gamedev/godot/math for the headbob.md",
+                "file": "math/Quaternions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +144,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for math for the headbob"
+              "title": "Backlinks for Quaternions"
             }
           },
           {
@@ -116,12 +153,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gamedev/godot/math for the headbob.md",
+                "file": "math/Quaternions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from math for the headbob"
+              "title": "Outgoing links from Quaternions"
             }
           },
           {
@@ -145,13 +182,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/godot/math for the headbob.md",
+                "file": "math/Quaternions.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of math for the headbob"
+              "title": "Outline of Quaternions"
             }
           },
           {
@@ -178,8 +215,7 @@
               "title": "All properties"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -200,17 +236,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "03c1852c5c111d28",
+  "active": "c285682cfbab3313",
   "lastOpenFiles": [
-    "gamedev/unity/Unity Index Book of References.md",
-    "Awareness reminder for documents.md",
-    "gamedev/unity/Unity Static Classes and Singletons.md",
-    "gamedev/unity/Godot Math to Unity Reference.md",
-    "gamedev/unity/Essential Unity Packages and Assets.md",
+    "math/scalar.md",
+    "math/Quaternions.md",
+    "math/euler angles.md",
+    "math/dot product.md",
+    "math/identity matrix.md",
+    "computer graphics/normals.md",
+    "gamedev/godot/3D Transformations in Godot Complete Foundation reference.md",
+    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
     "gamedev/unity/Unity Component Reference for Godot Developer.md",
+    "gamedev/unity/Godot Math to Unity Reference.md",
+    "Awareness reminder for documents.md",
+    "gamedev/unity/Unity Index Book of References.md",
+    "gamedev/unity/Unity Static Classes and Singletons.md",
+    "gamedev/unity/Essential Unity Packages and Assets.md",
     "gamedev/unity/Layered Architecture in Unity.md",
     "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
-    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
     "gamedev/unity/Unity Gotchas for Godot Developers.md",
     "gamedev/godot/math for the headbob.md",
     "gamedev/godot/nodes in essence.md",
@@ -221,13 +264,6 @@
     "gamedev/unity/Transform and Hierarchy.md",
     "gamedev/unity/MonoBehaviour Reference.md",
     "gamedev/unity/Component-Based Design in Unity.md",
-    "architecture/design patterns.md",
-    "gamedev/unity/Game design patterns.md",
-    "languages/c_sharp/cli commands in c sharp.md",
-    "gamedev/unity/Project Structure in Unity.md",
-    "gamedev/unity/Communication Patterns in Unity.md",
-    "gamedev/unity/Reference Objects in Unity.md",
-    "gamedev/unity/Scene Management in Unity.md",
     "Untitled 4.base",
     "unity",
     "languages/c_sharp",
