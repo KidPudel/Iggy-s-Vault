@@ -1,67 +1,228 @@
-# Input System
+# Unity Input System
 
-> Unity's new input system. Action-based, supports rebinding, multiple devices.
+> **Action-based input** that supports rebinding, multiple devices, and control scheme switching. Replaces the old `Input.GetKey()` API.
 
 **Package:** `com.unity.inputsystem`
 
 ---
 
-## Setup
+## Why Use This
 
-1. Package Manager → Install "Input System"
-2. Edit → Project Settings → Player → Active Input Handling → **Both** (or Input System Package)
-3. Create Input Actions asset: Right-click → Create → Input Actions
+| Old Input System                     | New Input System                          |
+| ------------------------------------ | ----------------------------------------- |
+| Hard-coded key names                 | Action names (rebindable)                 |
+| `if (Input.GetKey(KeyCode.Space))`   | `if (_input.Player.Jump.triggered)`       |
+| Device-specific code                 | Automatic device switching                |
+| Manual rebinding logic               | Built-in rebinding                        |
+| No control schemes                   | Switch between KB+M, Gamepad, Touch       |
+
+Use the new system when you need rebinding, gamepad support, or multi-device games. Stick with old system for prototypes or single-platform projects.
 
 ---
 
-## Core Concepts
+## Initial Setup
 
-|Concept|What It Is|
-|---|---|
-|**Input Actions Asset**|Container for all your input mappings (.inputactions file)|
-|**Action Map**|Group of actions (e.g., "Player", "UI", "Vehicle")|
-|**Action**|Single input (e.g., "Jump", "Move", "Fire")|
-|**Binding**|What triggers the action (Space key, A button, etc.)|
-|**Control Scheme**|Device grouping (Keyboard+Mouse, Gamepad)|
+### 1. Install Package
 
-```
-InputActions.inputactions
+Package Manager → Input System
+
+### 2. Enable Input System
+
+Edit → Project Settings → Player → Active Input Handling → **Input System Package** (or Both during migration)
+
+Unity will restart.
+
+### 3. Create Input Actions Asset
+
+Right-click in Project → Create → Input Actions
+
+Name it (e.g., `PlayerControls`). This creates a `.inputactions` file.
+
+---
+
+## Define Your Actions
+
+Double-click the `.inputactions` asset to open the editor. You'll see three columns:
+
+**Action Maps** (left column) → Groups of related actions  
+**Actions** (middle column) → What the player does  
+**Bindings** (right column) → Physical inputs that trigger it
+
+### Example Setup
+
+~~~
+PlayerControls.inputactions
 ├── Player (Action Map)
-│   ├── Move (Action) → WASD, Left Stick
-│   ├── Jump (Action) → Space, South Button
-│   └── Fire (Action) → Left Click, Right Trigger
+│   ├── Move (Action)
+│   │   └── Type: Value, Control Type: Vector2
+│   ├── Jump (Action)
+│   │   └── Type: Button
+│   └── Fire (Action)
+│       └── Type: Button
 └── UI (Action Map)
-    ├── Navigate → Arrow Keys, D-Pad
-    └── Submit → Enter, South Button
-```
+    ├── Navigate (Action)
+    └── Submit (Action)
+~~~
+
+### Add Bindings
+
+1. Select the **Move** action
+2. Click **+** → Add 2D Vector Composite → WASD
+3. Expand the composite, assign:
+   - Up: W
+   - Down: S
+   - Left: A
+   - Right: D
+4. Click **+** again → Add Binding → Left Stick (for gamepad)
+
+5. Select the **Jump** action
+6. Click **+** → Add Binding → Space
+7. Click **+** → Add Binding → Button South (gamepad A button)
+
+### Action Types
+
+- **Button:** On/off input (Jump, Fire, Interact)
+- **Value:** Continuous input (Move, Look, Trigger pressure)
+- **Pass Through:** All inputs fire without conflict resolution (rare)
+
+**Save** the asset (Ctrl+S).
 
 ---
 
-## Action Types
+## Choose Your Workflow
 
-|Type|Returns|Use For|
-|---|---|---|
-|**Value**|Continuous value|Movement, look, triggers|
-|**Button**|Press state|Jump, fire, interact|
-|**Pass Through**|All inputs (no conflict resolution)|Multiple players, debug|
+There are **two completely different ways** to use Input Actions. Pick one:
 
 ---
 
-## Reading Input
+# Workflow A: Generated C# Class (Recommended)
 
-### Option 1: PlayerInput Component (Easiest)
+**Best for:** Programmers who want full control and type safety.
 
-Add `PlayerInput` component to GameObject, assign Input Actions asset.
+## Step 1: Generate the Class
 
-**Send Messages** (default):
+1. Select your `.inputactions` asset
+2. In Inspector: check **Generate C# Class**
+3. Click **Apply**
 
-```csharp
+Unity creates a `.cs` file with the same name as your asset.
+
+## Step 2: Use in Code
+
+~~~csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerController : MonoBehaviour
+{
+    private PlayerControls _input; // Name matches your .inputactions file
+    private Vector2 _moveInput;
+    
+    private void Awake()
+    {
+        _input = new PlayerControls(); // Instantiate the generated class
+    }
+    
+    private void OnEnable()
+    {
+        _input.Player.Enable(); // Enable the "Player" action map
+        
+        // Subscribe to button events
+        _input.Player.Jump.performed += OnJump;
+        _input.Player.Fire.performed += OnFire;
+    }
+    
+    private void OnDisable()
+    {
+        // Always unsubscribe
+        _input.Player.Jump.performed -= OnJump;
+        _input.Player.Fire.performed -= OnFire;
+        
+        _input.Player.Disable();
+    }
+    
+    private void Update()
+    {
+        // Read continuous input every frame
+        _moveInput = _input.Player.Move.ReadValue<Vector2>();
+        
+        if (_moveInput != Vector2.zero)
+            Move(_moveInput);
+    }
+    
+    private void OnJump(InputAction.CallbackContext context)
+    {
+        Jump();
+    }
+    
+    private void OnFire(InputAction.CallbackContext context)
+    {
+        Fire();
+    }
+    
+    private void Move(Vector2 direction)
+    {
+        // Your movement code
+    }
+    
+    private void Jump()
+    {
+        // Your jump code
+    }
+    
+    private void Fire()
+    {
+        // Your fire code
+    }
+}
+~~~
+
+## Key Points
+
+**No component in Inspector.** The generated class is just C# code.
+
+**Two input patterns:**
+- **Continuous** (move, look): Read in `Update()` with `ReadValue<T>()`
+- **Event-driven** (jump, fire): Subscribe to `.performed` callback
+
+**Enable/Disable:**
+- Enable in `OnEnable()`, disable in `OnDisable()`
+- This ensures proper cleanup when object is destroyed
+
+**Action map structure:**
+~~~csharp
+_input.Player.Move    // "Player" is the action map name
+_input.Player.Jump
+_input.UI.Navigate    // "UI" is another action map
+~~~
+
+---
+
+# Workflow B: PlayerInput Component (Alternative)
+
+**Best for:** Quick setup, designers, or when you want Inspector configuration.
+
+## Step 1: Add Component
+
+1. Select your player GameObject
+2. Add Component → Player Input
+3. Assign your `.inputactions` asset to **Actions** field
+4. Set **Behavior** to **Send Messages**
+
+## Step 2: Write Handler Methods
+
+~~~csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
+
 public class Player : MonoBehaviour
 {
-    // Method names must match action names: "On" + ActionName
+    // Method names MUST match action names with "On" prefix
+    
     public void OnMove(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
+        Move(input);
     }
     
     public void OnJump(InputValue value)
@@ -72,418 +233,366 @@ public class Player : MonoBehaviour
     
     public void OnFire(InputValue value)
     {
-        // value.isPressed for button down
+        if (value.isPressed)
+            Fire();
+    }
+    
+    private void Move(Vector2 direction)
+    {
+        // Your movement code
+    }
+    
+    private void Jump()
+    {
+        // Your jump code
+    }
+    
+    private void Fire()
+    {
+        // Your fire code
     }
 }
-```
+~~~
 
-**Invoke Unity Events:**
+## Key Points
 
-- Set Behavior to "Invoke Unity Events"
-- Wire up in Inspector like UI buttons
+**Component required.** The `PlayerInput` component must be on the same GameObject as your script.
 
-**Invoke C# Events:**
+**Method naming convention:**
+- Action named "Move" → Method named `OnMove`
+- Action named "Jump" → Method named `OnJump`
+- Must be public
 
-```csharp
-PlayerInput playerInput;
+**Unity calls these automatically** when input happens.
 
-void Awake()
-{
-    playerInput = GetComponent<PlayerInput>();
-    playerInput.onActionTriggered += OnAction;
-}
-
-void OnAction(InputAction.CallbackContext context)
-{
-    if (context.action.name == "Jump" && context.performed)
-        Jump();
-}
-```
+**Downsides:**
+- String-based method names (typos won't show errors)
+- Harder to refactor
+- Less control over when actions are enabled
 
 ---
 
-### Option 2: Generated C# Class (Recommended for Code)
+# Common Patterns (Works with Both Workflows)
 
-1. Select Input Actions asset
-2. Inspector → Generate C# Class → Apply
+## Switching Action Maps
 
-```csharp
-public class Player : MonoBehaviour
+When opening a menu, disable Player controls and enable UI controls:
+
+**Generated Class Approach:**
+~~~csharp
+private void OpenMenu()
 {
-    private PlayerInputActions _input; // Generated class name
-    
-    void Awake()
-    {
-        _input = new PlayerInputActions();
-    }
-    
-    void OnEnable()
-    {
-        _input.Player.Enable(); // Enable the "Player" action map
-        
-        _input.Player.Jump.performed += OnJump;
-        _input.Player.Jump.canceled += OnJumpReleased;
-    }
-    
-    void OnDisable()
-    {
-        _input.Player.Jump.performed -= OnJump;
-        _input.Player.Jump.canceled -= OnJumpReleased;
-        
-        _input.Player.Disable();
-    }
-    
-    void Update()
-    {
-        // Continuous reading
-        Vector2 move = _input.Player.Move.ReadValue<Vector2>();
-        Move(move);
-    }
-    
-    void OnJump(InputAction.CallbackContext context)
-    {
-        Jump();
-    }
-    
-    void OnJumpReleased(InputAction.CallbackContext context)
-    {
-        // Released
-    }
+    _input.Player.Disable();
+    _input.UI.Enable();
+    _pauseMenu.SetActive(true);
 }
-```
+
+private void CloseMenu()
+{
+    _input.UI.Disable();
+    _input.Player.Enable();
+    _pauseMenu.SetActive(false);
+}
+~~~
+
+**PlayerInput Component Approach:**
+~~~csharp
+private PlayerInput _playerInput;
+
+private void Awake()
+{
+    _playerInput = GetComponent<PlayerInput>();
+}
+
+private void OpenMenu()
+{
+    _playerInput.SwitchCurrentActionMap("UI");
+    _pauseMenu.SetActive(true);
+}
+
+private void CloseMenu()
+{
+    _playerInput.SwitchCurrentActionMap("Player");
+    _pauseMenu.SetActive(false);
+}
+~~~
 
 ---
 
-### Option 3: Direct Device Access
+## Action Callbacks (Generated Class Only)
 
-No Input Actions asset needed. Quick and dirty.
+Actions have three callback phases:
 
-```csharp
-using UnityEngine.InputSystem;
+~~~csharp
+_input.Player.Jump.started += OnJumpStarted;      // Input began
+_input.Player.Jump.performed += OnJumpPerformed;  // Input completed (use this most)
+_input.Player.Jump.canceled += OnJumpCanceled;    // Input released
+~~~
 
-void Update()
+**Most of the time, use `.performed`.**
+
+**Use `.canceled` for:**
+- Variable jump height (hold longer = jump higher)
+- Charge attacks (release to fire)
+
+~~~csharp
+private bool _isJumping;
+
+private void OnEnable()
 {
-    var keyboard = Keyboard.current;
-    if (keyboard == null) return;
-    
-    if (keyboard.spaceKey.wasPressedThisFrame)
-        Jump();
-    
-    if (keyboard.wKey.isPressed)
-        MoveForward();
-    
-    var mouse = Mouse.current;
-    Vector2 mouseDelta = mouse.delta.ReadValue();
-    Vector2 mousePos = mouse.position.ReadValue();
-    
-    if (mouse.leftButton.wasPressedThisFrame)
-        Fire();
-    
-    var gamepad = Gamepad.current;
-    if (gamepad != null)
-    {
-        Vector2 stick = gamepad.leftStick.ReadValue();
-        float trigger = gamepad.rightTrigger.ReadValue();
-        
-        if (gamepad.buttonSouth.wasPressedThisFrame) // A on Xbox
-            Jump();
-    }
+    _input.Player.Jump.performed += ctx => _isJumping = true;
+    _input.Player.Jump.canceled += ctx => _isJumping = false;
 }
-```
+~~~
 
----
+### Callback Context
 
-## Callback Context
-
-```csharp
-void OnJump(InputAction.CallbackContext context)
+~~~csharp
+private void OnJump(InputAction.CallbackContext context)
 {
-    // Phase
-    if (context.started)  { }   // Just pressed
-    if (context.performed) { }  // Fully pressed (after hold time if set)
-    if (context.canceled) { }   // Released
-    
     // Read value
     float value = context.ReadValue<float>();
     Vector2 vec = context.ReadValue<Vector2>();
+    bool pressed = context.ReadValueAsButton();
+    
+    // Check phase
+    if (context.started) { /* Just started */ }
+    if (context.performed) { /* Main callback */ }
+    if (context.canceled) { /* Released */ }
     
     // Timing
-    double time = context.time;
-    double duration = context.duration;
+    double time = context.time;           // When input occurred
+    double duration = context.duration;   // How long held
     
-    // What triggered it
-    InputControl control = context.control;
+    // Device info
     InputDevice device = context.control.device;
 }
-```
-
----
-
-## Common Bindings
-
-### Composite Bindings (WASD → Vector2)
-
-In Input Actions editor:
-
-1. Add Action, set type to **Value**, control type to **Vector2**
-2. Add Binding → Add 2D Vector Composite
-3. Assign Up/Down/Left/Right
-
-```
-Move (Value, Vector2)
-├── WASD [2D Vector]
-│   ├── Up: W
-│   ├── Down: S
-│   ├── Left: A
-│   └── Right: D
-└── Left Stick [Binding]
-```
-
-### Modifiers
-
-```
-Sprint (Button)
-└── Left Shift [Binding]
-    └── Hold (Interaction) - time: 0.2
-    
-Fire (Button)  
-└── Left Click [Binding]
-    └── Tap (Interaction) - for quick press only
-```
+~~~
 
 ---
 
 ## Interactions
 
-|Interaction|Triggers When|
-|---|---|
-|**Press**|On press (default)|
-|**Hold**|Held for duration|
-|**Tap**|Pressed and released quickly|
-|**SlowTap**|Held briefly then released|
-|**MultiTap**|Double/triple tap|
+Add interactions to change when `.performed` fires:
 
-```csharp
-// Hold example: performed fires after hold time
-_input.Player.Interact.performed += ctx => 
-{
-    // Only fires after holding for set duration
-    InteractLong();
-};
+| Interaction | Performed Fires                          | Use For              |
+| ----------- | ---------------------------------------- | -------------------- |
+| Press       | On press (default)                       | Standard button      |
+| **Hold**    | After held for duration                  | Charge attacks       |
+| **Tap**     | Pressed and released quickly             | Double-tap dash      |
+| **Multi Tap**| Multiple quick presses                  | Combo inputs         |
 
-_input.Player.Interact.canceled += ctx =>
-{
-    // Released before hold completed
-};
-```
+**How to add:**
+1. Open `.inputactions` editor
+2. Select a binding (e.g., Space for Jump)
+3. Click **+** → Add Interaction → Hold
+4. Set duration (e.g., 0.5 seconds)
 
----
+**Code:**
+~~~csharp
+// performed now only fires after holding for 0.5s
+_input.Player.Interact.performed += ctx => StartInteraction();
 
-## Switching Action Maps
-
-```csharp
-// Disable one, enable another
-_input.Player.Disable();
-_input.UI.Enable();
-
-// Or with PlayerInput component
-playerInput.SwitchCurrentActionMap("UI");
-```
-
-Common pattern:
-
-```csharp
-void OpenMenu()
-{
-    _input.Player.Disable();
-    _input.UI.Enable();
-    Time.timeScale = 0;
-}
-
-void CloseMenu()
-{
-    _input.UI.Disable();
-    _input.Player.Enable();
-    Time.timeScale = 1;
-}
-```
+// canceled fires if released early
+_input.Player.Interact.canceled += ctx => CancelInteraction();
+~~~
 
 ---
 
 ## Rebinding
 
-```csharp
-private InputActionRebindingExtensions.RebindingOperation _rebindOp;
+~~~csharp
+using UnityEngine.InputSystem;
 
-public void StartRebind(InputAction action)
+public class RebindManager : MonoBehaviour
 {
-    action.Disable();
+    private PlayerControls _input;
+    private InputActionRebindingExtensions.RebindingOperation _rebindOp;
     
-    _rebindOp = action.PerformInteractiveRebinding()
-        .WithControlsExcluding("Mouse")  // Optional filters
-        .OnMatchWaitForAnother(0.1f)     // Wait for modifier release
-        .OnComplete(operation => 
-        {
-            operation.Dispose();
-            action.Enable();
-            SaveBindings();
-        })
-        .OnCancel(operation =>
-        {
-            operation.Dispose();
-            action.Enable();
-        })
-        .Start();
-}
-
-public void CancelRebind()
-{
-    _rebindOp?.Cancel();
-}
-```
-
-### Save/Load Bindings
-
-```csharp
-// Save
-string bindings = _input.asset.SaveBindingOverridesAsJson();
-PlayerPrefs.SetString("InputBindings", bindings);
-
-// Load
-string bindings = PlayerPrefs.GetString("InputBindings", string.Empty);
-if (!string.IsNullOrEmpty(bindings))
-    _input.asset.LoadBindingOverridesFromJson(bindings);
-```
-
----
-
-## Multiple Players (Local)
-
-```csharp
-// PlayerInputManager handles player joining
-// Add PlayerInputManager component to scene
-
-PlayerInputManager.instance.onPlayerJoined += OnPlayerJoined;
-
-void OnPlayerJoined(PlayerInput player)
-{
-    int index = player.playerIndex; // 0, 1, 2...
-    InputDevice device = player.devices[0];
-}
-```
-
-Or manual:
-
-```csharp
-// Assign specific device to player
-PlayerInput.Instantiate(playerPrefab, 
-    controlScheme: "Gamepad", 
-    pairWithDevice: Gamepad.all[1]);
-```
-
----
-
-## Device Detection
-
-```csharp
-// Current device changed
-InputSystem.onActionChange += (obj, change) =>
-{
-    if (change == InputActionChange.ActionPerformed)
+    public void StartRebind(InputAction action, int bindingIndex)
     {
-        var action = (InputAction)obj;
-        var device = action.activeControl.device;
+        action.Disable();
         
-        if (device is Gamepad)
-            ShowGamepadIcons();
-        else if (device is Keyboard || device is Mouse)
-            ShowKeyboardIcons();
+        _rebindOp = action.PerformInteractiveRebinding(bindingIndex)
+            .WithControlsExcluding("Mouse")  // Ignore mouse movement
+            .OnMatchWaitForAnother(0.1f)     // Wait for modifiers
+            .OnComplete(operation => 
+            {
+                operation.Dispose();
+                action.Enable();
+                SaveBindings();
+            })
+            .OnCancel(operation =>
+            {
+                operation.Dispose();
+                action.Enable();
+            })
+            .Start();
     }
-};
+    
+    public void CancelRebind()
+    {
+        _rebindOp?.Cancel();
+    }
+    
+    // Display current binding for UI
+    public string GetBindingText(InputAction action, int bindingIndex)
+    {
+        return action.GetBindingDisplayString(bindingIndex);
+        // Returns: "Space", "A" (Xbox), "Cross" (PlayStation)
+    }
+    
+    // Save bindings
+    private void SaveBindings()
+    {
+        string json = _input.asset.SaveBindingOverridesAsJson();
+        PlayerPrefs.SetString("InputBindings", json);
+    }
+    
+    // Load bindings
+    private void LoadBindings()
+    {
+        string json = PlayerPrefs.GetString("InputBindings", string.Empty);
+        if (!string.IsNullOrEmpty(json))
+            _input.asset.LoadBindingOverridesFromJson(json);
+    }
+}
+~~~
 
-// Device connected/disconnected
-InputSystem.onDeviceChange += (device, change) =>
+---
+
+## Device Detection & Icon Switching
+
+Detect which device the player is using to show correct button icons:
+
+~~~csharp
+private void OnEnable()
 {
-    if (change == InputDeviceChange.Added)
-        Debug.Log($"Device added: {device.displayName}");
-    if (change == InputDeviceChange.Removed)
-        Debug.Log($"Device removed: {device.displayName}");
-};
-```
+    _input.Player.Jump.performed += DetectDevice;
+}
+
+private void DetectDevice(InputAction.CallbackContext context)
+{
+    var device = context.control.device;
+    
+    if (device is Keyboard || device is Mouse)
+    {
+        ShowKeyboardIcons();
+    }
+    else if (device is Gamepad gamepad)
+    {
+        ShowGamepadIcons();
+    }
+}
+~~~
+
+Or listen globally:
+
+~~~csharp
+private void Awake()
+{
+    InputSystem.onActionChange += (obj, change) =>
+    {
+        if (change == InputActionChange.ActionPerformed)
+        {
+            var action = (InputAction)obj;
+            var device = action.activeControl.device;
+            UpdateButtonPrompts(device);
+        }
+    };
+}
+~~~
 
 ---
 
 ## UI Integration
 
-For UI navigation with new Input System:
+Replace `StandaloneInputModule` with `InputSystemUIInputModule`:
 
-1. Replace `StandaloneInputModule` with `InputSystemUIInputModule`
-2. Assign Input Actions asset to it
-3. UI actions map automatically to Navigate, Submit, Cancel, etc.
+1. Select EventSystem GameObject
+2. Remove Standalone Input Module component
+3. Add Component → Input System UI Input Module
+4. Assign your `.inputactions` asset
 
-```csharp
-// Cursor lock with UI
-void Update()
+UI navigation (Navigate, Submit, Cancel actions) will work automatically.
+
+---
+
+# Common Issues
+
+| Problem                          | Cause                          | Fix                                      |
+| -------------------------------- | ------------------------------ | ---------------------------------------- |
+| Input not working                | Action map not enabled         | Call `_input.Player.Enable()`            |
+| Null reference on `.current`     | Device not connected           | Check `if (Keyboard.current != null)`    |
+| Input works in editor, not build | Wrong Active Input Handling    | Project Settings → Input System Package  |
+| Callbacks fire multiple times    | Multiple subscriptions         | Unsubscribe in `OnDisable`               |
+| Can't click UI                   | Wrong input module             | Use `InputSystemUIInputModule`           |
+| Action not found in generated class | Didn't regenerate after changes | Click "Apply" after editing actions   |
+| Method not called (PlayerInput)  | Wrong method name              | Must match "On" + ActionName exactly     |
+
+---
+
+# Quick Reference
+
+## Generated Class Approach
+
+~~~csharp
+// Setup
+private PlayerControls _input;
+
+private void Awake()
 {
-    if (_input.UI.Cancel.WasPressedThisFrame())
-    {
-        if (Cursor.lockState == CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-    }
+    _input = new PlayerControls();
 }
-```
 
----
+private void OnEnable()
+{
+    _input.Player.Enable();
+    _input.Player.Jump.performed += OnJump;
+}
 
-## Common Gotchas
-
-|Issue|Cause|Fix|
-|---|---|---|
-|Input not working|Action map not enabled|Call `.Enable()` on action map|
-|Input not working in build|Wrong Active Input Handling|Project Settings → Both or Input System|
-|`Keyboard.current` is null|No keyboard connected / wrong backend|Check for null, ensure Input System active|
-|Events fire multiple times|Subscribed multiple times|Unsubscribe in `OnDisable`|
-|UI not responding|Wrong input module|Use `InputSystemUIInputModule`|
-|Rebind shows "Button South"|Raw binding path displayed|Use `GetBindingDisplayString()`|
-
----
-
-## Quick Reference
-
-```csharp
-// Button states (direct device)
-keyboard.spaceKey.wasPressedThisFrame  // Just pressed
-keyboard.spaceKey.wasReleasedThisFrame // Just released  
-keyboard.spaceKey.isPressed            // Currently held
+private void OnDisable()
+{
+    _input.Player.Jump.performed -= OnJump;
+    _input.Player.Disable();
+}
 
 // Reading values
-action.ReadValue<float>()
-action.ReadValue<Vector2>()
-action.IsPressed()
-action.WasPressedThisFrame()
-action.WasReleasedThisFrame()
+Vector2 move = _input.Player.Move.ReadValue<Vector2>();
+bool pressed = _input.Player.Jump.IsPressed();
+bool justPressed = _input.Player.Jump.WasPressedThisFrame();
+bool justReleased = _input.Player.Jump.WasReleasedThisFrame();
 
-// Action phases
-context.started    // Input started
-context.performed  // Input performed (main callback)
-context.canceled   // Input stopped
+// Switching action maps
+_input.Player.Disable();
+_input.UI.Enable();
+~~~
 
-// Enable/disable
-actionMap.Enable()
-actionMap.Disable()
-action.Enable()
-action.Disable()
+## PlayerInput Component Approach
 
-// Display names for UI
-action.GetBindingDisplayString() // "Space" or "A"
-```
+~~~csharp
+// Add PlayerInput component in Inspector
+// Set Behavior to "Send Messages"
+
+// Methods auto-called by Unity
+public void OnMove(InputValue value)
+{
+    Vector2 input = value.Get<Vector2>();
+}
+
+public void OnJump(InputValue value)
+{
+    if (value.isPressed)
+        Jump();
+}
+
+// Switching action maps
+GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
+~~~
 
 ---
 
-## Godot Comparison
+# Godot Comparison
 
 | Godot                            | Unity Input System                  |
 | -------------------------------- | ----------------------------------- |
@@ -493,3 +602,27 @@ action.GetBindingDisplayString() // "Space" or "A"
 | `Input.get_vector()`             | `action.ReadValue<Vector2>()`       |
 | Action name strings              | Generated C# class with type safety |
 | Built-in                         | Requires package install            |
+
+---
+
+# Recommendations
+
+**Use Generated C# Class if:**
+- You're comfortable with code
+- You want type safety and refactoring support
+- You need precise control over when actions are enabled
+
+**Use PlayerInput Component if:**
+- You want minimal code
+- You're prototyping quickly
+- Designers need to configure input in Inspector
+
+**Start with Generated Class.** It's the more flexible approach and scales better to larger projects.
+
+---
+
+# Related
+
+- [[Communication Patterns in Unity]] — Event-driven input handling
+- [[Reference Objects in Unity]] — Accessing InputManager as a service
+- [[Scene Management in Unity]] — Persistent input managers across scenes

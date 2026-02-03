@@ -4,8 +4,6 @@
 
 ---
 
-TODO: add explanation and tips, but insightful and not cluttering
-
 ## Core
 
 ### Application
@@ -215,7 +213,7 @@ Resources.UnloadAsset(asset);
 Resources.UnloadUnusedAssets();
 ```
 
-> ⚠️ **Prefer [SerializeField] references over Resources.Load.** Resources folder contents always ship with build.
+> ⚠️ **Prefer `[SerializeField]` references over Resources.Load.** Resources folder contents always ship with build.
 
 ### Addressables (Package)
 

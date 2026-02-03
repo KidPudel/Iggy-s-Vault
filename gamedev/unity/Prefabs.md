@@ -70,7 +70,8 @@ public class Spawner : MonoBehaviour
 }
 ```
 
-> [!warning] Prefab Reference vs Instance. The `[SerializeField]` field holds the **asset** reference, not a scene instance. Instantiate creates a **new instance** in the scene.
+> [!warning] Prefab Reference vs Instance.
+> The `[SerializeField]` field holds the **asset** reference, not a scene instance. Instantiate creates a **new instance** in the scene.
 
 `[SerializeField] private GameObject _enemyPrefab;` is like holding a `PackedScene` reference — it's the template asset, not a live object. You call `Instantiate(_enemyPrefab)` to create an actual instance in the scene, just like `packed_scene.instantiate()` in Godot.
 

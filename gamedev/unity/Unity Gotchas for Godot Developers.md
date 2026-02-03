@@ -249,12 +249,6 @@ DestroyImmediate(gameObject);  // Destroys NOW (avoid in runtime)
 
 ---
 
-## Arrays Start at 0 (Same as Godot)
-
-This isn't a gotcha — just confirming C# arrays are 0-indexed like GDScript.
-
----
-
 ## Coroutines vs await
 
 **Godot:** `await` with signals and timers.

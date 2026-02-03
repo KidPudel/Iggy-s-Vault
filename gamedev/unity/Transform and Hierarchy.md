@@ -100,7 +100,8 @@ foreach (Transform child in transform)
 }
 ```
 
-> [!warning] Prefer Serialized References `transform.Find()` is fragile — rename breaks it. Use `[SerializeField]` when possible.
+> [!warning] Prefer Serialized References
+>  `transform.Find()` is fragile — rename breaks it. Use `[SerializeField]` when possible.
 
 ```csharp
 // Better: assign in Inspector

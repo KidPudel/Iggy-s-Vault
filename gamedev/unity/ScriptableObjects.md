@@ -9,7 +9,6 @@
 A ScriptableObject is a **data container** saved as an asset (`.asset` file).
 
 Unlike MonoBehaviours ([[MonoBehaviour Reference]]):
-
 - Not attached to GameObjects
 - Not in scenes
 - Exists in Project as an asset
@@ -24,7 +23,8 @@ MonoBehaviour                    ScriptableObject
 └── Destroyed with GameObject    └── Persists in project
 ```
 
-Similar to Godot Resources (`.tres`), but with important behavioral differences.
+Similar to Godot Resources (`.tres`) that we place inside of `res://`, but with important behavioral differences.
+- They are connected with hooks that persist in [[RAM]] instances, resulting in pointing to the same reference (all instances will be triggered and automatically save changes in editor (not in a built)
 
 ---
 

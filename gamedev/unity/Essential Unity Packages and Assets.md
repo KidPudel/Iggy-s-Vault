@@ -66,7 +66,7 @@ _text.fontSize = 24;
 **Setup:**
 
 1. Add `CinemachineBrain` to Main Camera
-2. Create Virtual Cameras (Cinemachine â†’ Create Virtual Camera)
+2. Create Virtual Cameras (Cinemachine , Create Virtual Camera)
 3. Set Follow and Look At targets
 4. Cinemachine handles the rest
 
@@ -84,7 +84,7 @@ No code needed for basic use. Just configure in Inspector.
 
 **Install:** `com.unity.probuilder`
 
-**Use:** Tools â†’ ProBuilder â†’ ProBuilder Window
+**Use:** Tools , ProBuilder , ProBuilder Window
 
 ---
 
@@ -162,7 +162,7 @@ public class HealthTests
 
 **Install:** `com.unity.recorder`
 
-**Use:** Window â†’ General â†’ Recorder â†’ Recorder Window
+**Use:** Window , General , Recorder , Recorder Window
 
 ---
 
@@ -193,7 +193,7 @@ Asset Store: https://assetstore.unity.com (filter by price: Free)
 
 **Why:** Animate anything with one line. Sequences, easing, callbacks. Industry standard.
 
-**Install:** Asset Store â†’ "DOTween (HOTween v2)"
+**Install:** Asset Store , "DOTween (HOTween v2)"
 
 ```csharp
 using DG.Tweening;
@@ -227,7 +227,7 @@ seq.Join(transform.DORotate(new Vector3(0, 180, 0), 0.3f));
 
 **Why:** `JsonUtility` can't do dictionaries, polymorphism, or pretty printing. This can.
 
-**Install:** Package Manager â†’ `com.unity.nuget.newtonsoft-json`
+**Install:** Package Manager , `com.unity.nuget.newtonsoft-json`
 
 ```csharp
 using Newtonsoft.Json;
@@ -324,7 +324,7 @@ See [[Communication Patterns in Unity]] for the evolution from Singletons → Se
 
 **Why:** Better Inspector UX with minimal effort. Buttons, conditionals, validation.
 
-**Install:** Asset Store â†’ "NaughtyAttributes"
+**Install:** Asset Store , "NaughtyAttributes"
 
 ```csharp
 using NaughtyAttributes;
@@ -365,7 +365,7 @@ public class Enemy : MonoBehaviour
 
 **Why:** Even free version adds scene validation, project scanning.
 
-**Install:** Asset Store â†’ "Odin Validator"
+**Install:** Asset Store , "Odin Validator"
 
 (Full Odin is paid but exceptional if you need extensive Inspector customization)
 
@@ -377,7 +377,7 @@ public class Enemy : MonoBehaviour
 
 **Why:** Professional VFX without creating from scratch. Fire, smoke, magic, impacts.
 
-**Install:** Asset Store â†’ "Unity Particle Pack"
+**Install:** Asset Store , "Unity Particle Pack"
 
 ---
 
@@ -397,7 +397,7 @@ public class Enemy : MonoBehaviour
 
 **Why:** Production-ready player controllers using Input System. Good starting point.
 
-**Install:** Asset Store â†’ "Starter Assets - First Person" or "Third Person"
+**Install:** Asset Store , "Starter Assets - First Person" or "Third Person"
 
 ---
 
@@ -482,12 +482,12 @@ public class Enemy : MonoBehaviour
 |---|---|
 |Unity Registry|Built-in packages|
 |Asset Store|Free/paid assets (import via Package Manager)|
-|Git URL|GitHub packages (Package Manager â†’ + â†’ Add from git URL)|
+|Git URL|GitHub packages (Package Manager , + , Add from git URL)|
 |OpenUPM|Community packages (https://openupm.com)|
 
 ### Adding Git Package
 
-Package Manager â†’ + â†’ Add package from git URL:
+Package Manager , + , Add package from git URL:
 
 ```
 https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask

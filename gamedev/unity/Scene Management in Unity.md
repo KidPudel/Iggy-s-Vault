@@ -50,7 +50,7 @@ This moves the GameObject to a special hidden scene called "DontDestroyOnLoad" t
 - If you load a scene that also has a GameManager, now you have two
 - You need extra singleton logic to prevent duplicates
 - No clean way to "reset" the game without restarting
-- Hard to debug â€” you can't see this hidden scene easily
+- Hard to debug , you can't see this hidden scene easily
 
 ---
 
@@ -75,11 +75,11 @@ With additive loading, nothing is destroyed. The new scene loads alongside exist
 Instead of using DontDestroyOnLoad, structure your game like this:
 
 ```
-Boot.unity        â†’ Tiny scene, just loads the others
-Persistent.unity  â†’ Managers that live forever (GameManager, AudioManager, etc.)
-MainMenu.unity    â†’ Main menu UI
-Level01.unity     â†’ Level content
-Level02.unity     â†’ Level content
+Boot.unity        // Tiny scene, just loads the others
+Persistent.unity  // Managers that live forever (GameManager, AudioManager, etc.)
+MainMenu.unity    // Main menu UI
+Level01.unity     // Level content
+Level02.unity     // Level content
 ```
 
 ## What is the Boot Scene?
@@ -91,7 +91,7 @@ The Boot scene is a pattern, not a Unity feature. It's a nearly-empty scene that
 Unity needs a "first scene" to run when the game starts. Instead of making MainMenu or Level01 the first scene (which creates complications), you create a tiny Boot scene whose only job is to set up your scene structure.
 
 ```csharp
-// Boot.cs â€” the only script in Boot.unity
+// Boot.cs , the only script in Boot.unity
 public class Boot : MonoBehaviour
 {
     private void Start()
@@ -117,11 +117,11 @@ The Persistent scene is also a pattern you create. It holds all the GameObjects 
 
 ```
 Persistent.unity contains:
-â”œâ”€â”€ GameManager
-â”œâ”€â”€ AudioManager  
-â”œâ”€â”€ InputManager
-â”œâ”€â”€ MusicPlayer
-â””â”€â”€ EventSystem (for UI)
+- GameManager
+- AudioManager  
+- InputManager
+- MusicPlayer
+- EventSystem (for UI)
 ```
 
 **Why this replaces DontDestroyOnLoad:**
@@ -176,7 +176,7 @@ See [[Communication Patterns in Unity]] for Service Locator vs DI details and pr
 
 Unity needs to know which scene to load first when the game starts.
 
-**File â†’ Build Settings:**
+**File // Build Settings:**
 
 ```
 Scenes In Build:
@@ -220,7 +220,7 @@ Destroys all GameObjects in that scene. Only works for additively-loaded scenes.
 
 ## Active Scene
 
-When you have multiple scenes loaded, Unity needs to know which one is "active" â€” this determines where newly instantiated objects go.
+When you have multiple scenes loaded, Unity needs to know which one is "active" , this determines where newly instantiated objects go.
 
 ```csharp
 // Set Level01 as active (new Instantiate calls will put objects here)
@@ -233,25 +233,25 @@ SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level01"));
 
 ```
 Game starts
-    â””â”€â”€ Unity loads Boot.unity (index 0)
-        â””â”€â”€ Boot.cs Start() runs
-            â”œâ”€â”€ Loads Persistent.unity (additive)
-            â””â”€â”€ Loads MainMenu.unity (additive)
+    - Unity loads Boot.unity (index 0)
+        - Boot.cs Start() runs
+            - Loads Persistent.unity (additive)
+            - Loads MainMenu.unity (additive)
 
 Player clicks "Start Game"
-    â””â”€â”€ GameManager.StartGame()
-        â”œâ”€â”€ Loads Level01.unity (additive)
-        â””â”€â”€ Unloads MainMenu.unity
+    - GameManager.StartGame()
+        - Loads Level01.unity (additive)
+        - Unloads MainMenu.unity
 
 Player beats level
-    â””â”€â”€ GameManager.LoadNextLevel()
-        â”œâ”€â”€ Loads Level02.unity (additive)
-        â””â”€â”€ Unloads Level01.unity
+    - GameManager.LoadNextLevel()
+        - Loads Level02.unity (additive)
+        - Unloads Level01.unity
 
 Player quits to menu
-    â””â”€â”€ GameManager.ReturnToMenu()
-        â”œâ”€â”€ Loads MainMenu.unity (additive)
-        â””â”€â”€ Unloads Level02.unity
+    - GameManager.ReturnToMenu()
+        - Loads MainMenu.unity (additive)
+        - Unloads Level02.unity
 ```
 
 Throughout all of this, Persistent.unity stays loaded. Your managers never die.
@@ -297,9 +297,9 @@ SceneManager.MoveGameObjectToScene(obj, scene);
 
 # Key Takeaways
 
-1. **Default LoadScene destroys everything** â€” that's why DontDestroyOnLoad exists
-2. **DontDestroyOnLoad has problems** â€” hidden scene, duplicates, hard to debug
-3. **Additive loading is better** â€” multiple scenes coexist
-4. **Boot scene** â€” a pattern (you create it) to set up your scene structure
-5. **Persistent scene** â€” a pattern (you create it) to hold managers that never unload
-6. **Build Settings** â€” scenes must be added here to load at runtime, index 0 is entry point
+1. **Default LoadScene destroys everything** , that's why DontDestroyOnLoad exists
+2. **DontDestroyOnLoad has problems** , hidden scene, duplicates, hard to debug
+3. **Additive loading is better** , multiple scenes coexist
+4. **Boot scene** , a pattern (you create it) to set up your scene structure
+5. **Persistent scene** , a pattern (you create it) to hold managers that never unload
+6. **Build Settings** , scenes must be added here to load at runtime, index 0 is entry point

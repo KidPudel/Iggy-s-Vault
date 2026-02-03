@@ -4,43 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "58c98216924f1b58",
+        "id": "07e0f5ced5afb3dd",
         "type": "tabs",
         "children": [
           {
-            "id": "be49933a708a27e3",
+            "id": "03c1852c5c111d28",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/unity/Unity Reference Guilde.md",
+                "file": "gamedev/unity/Unity Index Book of References.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Unity Reference Guilde"
-            }
-          }
-        ]
-      },
-      {
-        "id": "3ac621101ecd0d26",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "dd392efee32bd23e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "gamedev/unity/Reference Objects in Unity.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "Reference Objects in Unity"
+              "title": "Unity Index Book of References"
             }
           }
         ]
@@ -118,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gamedev/unity/Unity Reference Guilde.md",
+                "file": "gamedev/godot/math for the headbob.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +107,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Unity Reference Guilde"
+              "title": "Backlinks for math for the headbob"
             }
           },
           {
@@ -137,12 +116,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gamedev/unity/Unity Reference Guilde.md",
+                "file": "gamedev/godot/math for the headbob.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Unity Reference Guilde"
+              "title": "Outgoing links from math for the headbob"
             }
           },
           {
@@ -166,13 +145,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/unity/Unity Reference Guilde.md",
+                "file": "gamedev/godot/math for the headbob.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Unity Reference Guilde"
+              "title": "Outline of math for the headbob"
             }
           },
           {
@@ -204,7 +183,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -220,35 +200,35 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "be49933a708a27e3",
+  "active": "03c1852c5c111d28",
   "lastOpenFiles": [
-    "gamedev/unity/Reference Objects in Unity.md",
-    "gamedev/unity/Unity Reference Guilde.md",
-    "gamedev/unity/Communication Patterns in Unity.md",
-    "gamedev/unity/Game design patterns.md",
-    "Untitled 4.base",
-    "gamedev/unity/Single Entry Point in Unity.md",
-    "gamedev/unity/Scene Management in Unity.md",
-    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
-    "gamedev/unity/Common Patterns Cookbook in Unity.md",
-    "gamedev/unity/Layered Architecture in Unity.md",
     "gamedev/unity/Unity Static Classes and Singletons.md",
+    "gamedev/unity/Unity Index Book of References.md",
+    "gamedev/unity/Godot Math to Unity Reference.md",
+    "gamedev/unity/Essential Unity Packages and Assets.md",
+    "gamedev/unity/Unity Component Reference for Godot Developer.md",
+    "Awareness reminder for documents.md",
+    "gamedev/unity/Layered Architecture in Unity.md",
+    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "gamedev/unity/Unity Fundamentals for Godot Developers.md",
     "gamedev/unity/Unity Gotchas for Godot Developers.md",
-    "gamedev/unity/ScriptableObjects.md",
-    "gamedev/unity/Scene in Unity.md",
-    "Scene Management.md",
-    "gamedev/unity/Project Structure in Unity.md",
-    "gamedev/unity/Data-Driven Design in Unity.md",
-    "architecture/design patterns.md",
-    "languages/c_sharp/cli commands in c sharp.md",
-    "languages/c_sharp/interface vs abstract class.md",
-    "CS/SOLID.md",
+    "gamedev/godot/math for the headbob.md",
+    "gamedev/godot/nodes in essence.md",
     "gamedev/unity/Input System in Unity.md",
-    "gamedev/unity/Essential Unity Packages and Assets.md",
-    "gamedev/unity/Execution Order in Unity.md",
-    "gamedev/godot/input handling reference in Godot.md",
-    "gamedev/godot/delete object in godot.md",
+    "gamedev/unity/Common Patterns Cookbook in Unity.md",
+    "gamedev/unity/GameObject and Component Model.md",
+    "computer graphics/input assembler.md",
+    "gamedev/unity/Transform and Hierarchy.md",
+    "gamedev/unity/MonoBehaviour Reference.md",
+    "gamedev/unity/Component-Based Design in Unity.md",
+    "architecture/design patterns.md",
+    "gamedev/unity/Game design patterns.md",
+    "languages/c_sharp/cli commands in c sharp.md",
+    "gamedev/unity/Project Structure in Unity.md",
+    "gamedev/unity/Communication Patterns in Unity.md",
+    "gamedev/unity/Reference Objects in Unity.md",
+    "gamedev/unity/Scene Management in Unity.md",
+    "Untitled 4.base",
     "unity",
     "languages/c_sharp",
     "gamedev/unity",

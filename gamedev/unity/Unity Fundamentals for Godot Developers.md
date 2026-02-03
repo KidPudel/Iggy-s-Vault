@@ -6,17 +6,17 @@
 
 ## Core Concepts
 
-|Godot|Unity|
-|---|---|
-|Node|GameObject|
-|Script (extends Node)|MonoBehaviour (component)|
-|Scene (.tscn)|Prefab (.prefab)|
-|Resource (.tres)|ScriptableObject (.asset)|
-|Autoload|Singleton + DontDestroyOnLoad or Persistent Scene|
-|Signal|C# event / UnityEvent|
-|Group|Tag / Layer|
-|PackedScene|Prefab reference|
-|RefCounted|Plain C# class|
+| Godot                 | Unity                                             |
+| --------------------- | ------------------------------------------------- |
+| Node                  | GameObject                                        |
+| Script (extends Node) | MonoBehaviour (component)                         |
+| Scene (.tscn)         | Prefab (.prefab)                                  |
+| Resource (.tres)      | ScriptableObject (.asset)                         |
+| Autoload              | Singleton + DontDestroyOnLoad or Persistent Scene |
+| Signal                | C# event / UnityEvent                             |
+| Group                 | Tag / Layer                                       |
+| PackedScene           | Prefab reference                                  |
+| RefCounted            | Plain C# class                                    |
 
 ---
 
@@ -109,11 +109,11 @@
 
 ## Input
 
-|Godot|Unity (old)|Unity (new Input System)|
-|---|---|---|
-|`Input.is_action_pressed()`|`Input.GetButton()`|`action.IsPressed()`|
-|`Input.is_action_just_pressed()`|`Input.GetButtonDown()`|`action.WasPressedThisFrame()`|
-|`Input.get_axis()`|`Input.GetAxis()`|`action.ReadValue<float>()`|
+| Godot                            | Unity (old)             | Unity (new Input System)       |
+| -------------------------------- | ----------------------- | ------------------------------ |
+| `Input.is_action_pressed()`      | `Input.GetButton()`     | `action.IsPressed()`           |
+| `Input.is_action_just_pressed()` | `Input.GetButtonDown()` | `action.WasPressedThisFrame()` |
+| `Input.get_axis()`               | `Input.GetAxis()`       | `action.ReadValue<float>()`    |
 
 ---
 
