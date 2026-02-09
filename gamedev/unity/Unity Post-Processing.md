@@ -25,20 +25,15 @@ Common effects include: bloom, color grading, depth of field, motion blur, ambie
 3. Install package
 
 ### 2.2 Basic Setup
-
 1. **Create Post-Process Volume:**
-    
     - GameObject → Volume → Global Volume (or Box Volume for local)
 2. **Create Profile:**
-    
     - In Volume component, click "New" next to Profile
     - Or: Project → Create → Volume Profile
 3. **Add Effects:**
-    
     - Click "Add Override" in Volume Inspector
     - Select desired effect
 4. **Configure Camera (Built-in RP):**
-    
     - Add Post-Process Layer component to camera
     - Set Layer to match Volume's layer
 

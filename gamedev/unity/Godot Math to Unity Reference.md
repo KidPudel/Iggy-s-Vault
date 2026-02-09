@@ -4,47 +4,47 @@ Comprehensive reference for developers transitioning from Godot (GDScript) to Un
 
 ## Basic Math Functions
 
-| Operation | Godot (GDScript) | Unity (C#) |
-|-----------|------------------|------------|
-| Absolute value | `abs(x)` | `Mathf.Abs(x)` |
-| Ceiling | `ceil(x)` | `Mathf.Ceil(x)` |
-| Floor | `floor(x)` | `Mathf.Floor(x)` |
-| Round | `round(x)` | `Mathf.Round(x)` |
-| Square root | `sqrt(x)` | `Mathf.Sqrt(x)` |
-| Power | `pow(x, y)` | `Mathf.Pow(x, y)` |
-| Sign | `sign(x)` | `Mathf.Sign(x)` |
-| Min | `min(a, b)` | `Mathf.Min(a, b)` |
-| Max | `max(a, b)` | `Mathf.Max(a, b)` |
-| Clamp | `clamp(value, min, max)` | `Mathf.Clamp(value, min, max)` |
-| Wrap | `wrap(value, min, max)` | Custom function needed |
-| Ping pong | `pingpong(value, length)` | `Mathf.PingPong(value, length)` |
+| Operation      | Godot (GDScript)          | Unity (C#)                      |
+| -------------- | ------------------------- | ------------------------------- |
+| Absolute value | `abs(x)`                  | `Mathf.Abs(x)`                  |
+| Ceiling        | `ceil(x)`                 | `Mathf.Ceil(x)`                 |
+| Floor          | `floor(x)`                | `Mathf.Floor(x)`                |
+| Round          | `round(x)`                | `Mathf.Round(x)`                |
+| Square root    | `sqrt(x)`                 | `Mathf.Sqrt(x)`                 |
+| Power          | `pow(x, y)`               | `Mathf.Pow(x, y)`               |
+| Sign           | `sign(x)`                 | `Mathf.Sign(x)`                 |
+| Min            | `min(a, b)`               | `Mathf.Min(a, b)`               |
+| Max            | `max(a, b)`               | `Mathf.Max(a, b)`               |
+| Clamp          | `clamp(value, min, max)`  | `Mathf.Clamp(value, min, max)`  |
+| Wrap           | `wrap(value, min, max)`   | Custom function needed          |
+| Ping pong      | `pingpong(value, length)` | `Mathf.PingPong(value, length)` |
 
 ## Trigonometric Functions
 
 All functions work in **radians** in both engines.
 
-| Operation | Godot (GDScript) | Unity (C#) |
-|-----------|------------------|------------|
-| Sine | `sin(x)` | `Mathf.Sin(x)` |
-| Cosine | `cos(x)` | `Mathf.Cos(x)` |
-| Tangent | `tan(x)` | `Mathf.Tan(x)` |
-| Arc sine | `asin(x)` | `Mathf.Asin(x)` |
-| Arc cosine | `acos(x)` | `Mathf.Acos(x)` |
-| Arc tangent | `atan(x)` | `Mathf.Atan(x)` |
-| Arc tangent 2 | `atan2(y, x)` | `Mathf.Atan2(y, x)` |
-| Hyperbolic sine | `sinh(x)` | `Mathf.Sinh(x)` (via Math.Sinh) |
-| Hyperbolic cosine | `cosh(x)` | `Mathf.Cosh(x)` (via Math.Cosh) |
-| Hyperbolic tangent | `tanh(x)` | `Mathf.Tanh(x)` (via Math.Tanh) |
+| Operation          | Godot (GDScript) | Unity (C#)                      |
+| ------------------ | ---------------- | ------------------------------- |
+| Sine               | `sin(x)`         | `Mathf.Sin(x)`                  |
+| Cosine             | `cos(x)`         | `Mathf.Cos(x)`                  |
+| Tangent            | `tan(x)`         | `Mathf.Tan(x)`                  |
+| Arc sine           | `asin(x)`        | `Mathf.Asin(x)`                 |
+| Arc cosine         | `acos(x)`        | `Mathf.Acos(x)`                 |
+| Arc tangent        | `atan(x)`        | `Mathf.Atan(x)`                 |
+| Arc tangent 2      | `atan2(y, x)`    | `Mathf.Atan2(y, x)`             |
+| Hyperbolic sine    | `sinh(x)`        | `Mathf.Sinh(x)` (via Math.Sinh) |
+| Hyperbolic cosine  | `cosh(x)`        | `Mathf.Cosh(x)` (via Math.Cosh) |
+| Hyperbolic tangent | `tanh(x)`        | `Mathf.Tanh(x)` (via Math.Tanh) |
 ****
 ## Mathematical Constants
 
-| Constant | Godot (GDScript) | Unity (C#) |
-|----------|------------------|------------|
-| Pi (π) | `PI` | `Mathf.PI` |
-| Tau (2π) | `TAU` | `Mathf.PI * 2` |
-| Euler's number | `exp(1)` | `Mathf.Exp(1)` |
-| Infinity | `INF` | `Mathf.Infinity` |
-| Not a Number | `NAN` | `float.NaN` |
+| Constant       | Godot (GDScript) | Unity (C#)       |
+| -------------- | ---------------- | ---------------- |
+| Pi (π)         | `PI`             | `Mathf.PI`       |
+| Tau (2π)       | `TAU`            | `Mathf.PI * 2`   |
+| Euler's number | `exp(1)`         | `Mathf.Exp(1)`   |
+| Infinity       | `INF`            | `Mathf.Infinity` |
+| Not a Number   | `NAN`            | `float.NaN`      |
 
 ## Angle Conversion
 
@@ -200,6 +200,7 @@ Godot uses a 3x4 matrix (Basis + origin). Unity uses Transform component with se
 | Inverse transform point                                                                             | `transform.affine_inverse() * point`        | `transform.InverseTransformPoint(point)`    |
 
 ## Rotation & Quaternions
+([[Quaternions]], [[Euler angles]])
 
 | Operation | Godot (GDScript) | Unity (C#) |
 |-----------|------------------|------------|

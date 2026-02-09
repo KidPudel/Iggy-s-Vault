@@ -213,9 +213,9 @@ Transform child = transform.Find("ChildName");
 
 ## Rotation is Quaternion
 
-**Godot:** Rotation is typically Euler angles (degrees).
+**Godot:** Rotation is typically [[Euler angles]] (degrees).
 
-**Unity:** Internal rotation is `Quaternion`. Euler angles are converted.
+**Unity:** Internal rotation is [[Quaternions]]. Euler angles are converted.
 
 ```csharp
 // Quaternion (internal)

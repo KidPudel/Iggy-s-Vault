@@ -38,8 +38,8 @@ How to structure your project for maintainability.
 1. [[Scene Management in Unity]] — Pattern showing scene management and managers persistency (global game objects that are not static ).
 2. [[Communication Patterns in Unity]] — Events, UnityEvents, ScriptableObject channels (Unity has no built-in signals)
 3. [[Component-Based Design in Unity]] — Single responsibility, reusable components, the 70/30 rule
-4. [[Data-Driven Design in Unity]] — Data/State/Representation separation, ScriptableObjects as definitions
-5. [[Layered Architecture in Unity]] — Systems/Managers/Components, separating simulation from presentation
+4. [[Data-Driven Design]] — Data/State/Representation separation, ScriptableObjects as definitions
+5. [[Layered Architecture]] — Systems/Managers/Components, separating simulation from presentation
 6. [[Single Entry Point in Unity]] — Controlled initialization, empty scenes, eliminating race conditions
 7. [[Project Structure in Unity]] — Folder organization, feature-based structure, naming conventions
 
@@ -58,6 +58,10 @@ Quick lookup when you need it.
 5. [[Unity Fundamentals for Godot Developers]] — Side-by-side mapping of Godot → Unity concepts
 6. [[Unity Gotchas for Godot Developers]] — Important differences between Godot and Unity
 7. [[Godot Math to Unity Reference]]
+8. [[Movement in Unity game for Godot developer]] — TODO: i feel like this is a super nuanced topic, and we need to define what other topics also like that
+9. [[Unity Post-Processing]]
+	1. [[Unity Shaders]]
+	2. [[Unity Lighting]]
 
 ---
 

@@ -25,14 +25,6 @@ Without inheriting from MonoBehaviour, your class is just a plain C# class — U
 
 ---
 
-## Why is it Called "MonoBehaviour"?
-
-Historical naming from Unity's early days. "Mono" refers to the Mono runtime (the C# implementation Unity used). "Behaviour" because it defines behavior for GameObjects. The name stuck.
-
-Don't overthink it. MonoBehaviour = "script that attaches to GameObject."
-
----
-
 ## Creating MonoBehaviours: The Rules
 
 ### You Cannot Use `new`
@@ -634,7 +626,7 @@ Not everything should be a MonoBehaviour.
 |Needs coroutines|Can use async/await instead|
 |Examples: PlayerController, Enemy, Projectile|Examples: HealthSystem, InventoryData, StateMachine|
 
-See [[Layered Architecture in Unity]] for when to use plain C# classes.
+See [[Layered Architecture]] for when to use plain C# classes.
 
 ---
 

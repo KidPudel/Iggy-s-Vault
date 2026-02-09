@@ -34,9 +34,9 @@ Assets/
 ```
 Assets/
 ├── _Project/                    # Your game (underscore = top of list)
-│   ├── Common/                  # Shared utilities
-│   ├── Systems/                 # Pure C# systems
-│   ├── Managers/                # MonoBehaviour managers
+│   ├── Common/                  # Shared utilities, extensions
+│   ├── Systems/                 # Pure C# systems (shared logic pools)
+│   ├── Managers/                # MonoBehaviour managers (orchestrators)
 │   │
 │   ├── Player/                  # Everything player-related
 │   │   ├── Player.prefab
@@ -65,6 +65,8 @@ Assets/
 ```
 
 **Principle:** Delete `Player/` folder → player feature is gone. No orphans elsewhere.
+
+**Note:** This is a hybrid layout — feature folders for gameplay content, type folders (Systems/, Managers/, Common/) for cross-cutting code that doesn't belong to any single feature. Pure feature-based would put everything in feature folders, but in practice, shared systems and utilities need a home. This hybrid is the pragmatic standard.
 
 ---
 
@@ -123,16 +125,166 @@ Keep everything for one feature **together**.
 
 ## Naming Conventions
 
+### Files and Folders
+
 |Item|Convention|Example|
 |---|---|---|
 |Folders|PascalCase|`PlayerCharacter/`|
-|C# scripts|PascalCase|`PlayerController.cs`|
+|C# scripts|PascalCase (match class name)|`PlayerController.cs`|
 |Prefabs|PascalCase|`Enemy.prefab`|
 |ScriptableObjects|PascalCase|`SwordData.asset`|
 |Scenes|PascalCase|`Level01_Forest.unity`|
 |Sprites/Textures|snake_case|`player_idle.png`|
-|Materials|PascalCase or snake|`PlayerMaterial.mat`|
-|Private fields|_camelCase|`private int _health;`|
+|Materials|PascalCase|`PlayerMaterial.mat`|
+|Animations|PascalCase or snake_case|`player_idle.anim`|
+
+**Never use spaces in file or folder names.** Unity's command line tools don't handle paths with spaces well. Use PascalCase or snake_case instead.
+
+### C# Code Naming
+
+|Item|Convention|Example|
+|---|---|---|
+|Classes, Structs|PascalCase|`PlayerController`, `DamageInfo`|
+|Interfaces|PascalCase with `I` prefix|`IDamageable`, `IInteractable`|
+|Methods|PascalCase, start with verb|`TakeDamage()`, `FindTarget()`|
+|Public properties|PascalCase|`public int MaxHealth { get; }`|
+|Private fields|_camelCase (underscore prefix)|`private int _health;`|
+|Local variables|camelCase|`int damageAmount = 10;`|
+|Parameters|camelCase|`void TakeDamage(int amount)`|
+|Constants|PascalCase or UPPER_SNAKE|`const int MaxPlayers = 4;`|
+|Enums|PascalCase (singular name)|`enum WeaponType { Sword, Bow }`|
+|Events|PascalCase, verb phrase|`public event Action OnDied;`|
+|Namespaces|PascalCase|`namespace MyGame.Combat`|
+
+### Semantic Naming — What Makes a Name Good
+
+Beyond casing, the **meaning** of your names matters more than the format.
+
+**Variables — use nouns** that describe what the thing is:
+
+```csharp
+// BAD: vague
+int val;
+float t;
+GameObject obj;
+
+// GOOD: descriptive
+int currentHealth;
+float moveSpeed;
+GameObject spawnedProjectile;
+```
+
+**Booleans — prefix with a verb to form a question:**
+
+```csharp
+// BAD: ambiguous — is this a noun or a state?
+bool dead;
+bool fire;
+bool collision;
+
+// GOOD: reads as a yes/no question
+bool isDead;
+bool hasFired;
+bool canJump;
+bool isGrounded;
+bool wasHitThisFrame;
+```
+
+Common prefixes: `is`, `has`, `can`, `was`, `should`, `will`.
+
+**Methods — start with a verb** that describes the action:
+
+```csharp
+// BAD: noun-like, unclear what it does
+void Damage(int amount);
+void Player();
+void Reset();      // Reset WHAT?
+
+// GOOD: verb + context
+void ApplyDamage(int amount);
+void InitializePlayer();
+void ResetHealth();
+void FindNearestEnemy();
+```
+
+**Methods returning bool — ask a question:**
+
+```csharp
+bool IsGameOver();
+bool HasStartedTurn();
+bool CanAfford(int cost);
+```
+
+**Events — use verb phrases describing what happened or is about to happen:**
+
+```csharp
+// Past participle = already happened
+public event Action HealthChanged;
+public event Action Died;
+public event Action DoorOpened;
+
+// Present participle = about to happen (for "before" events)
+public event Action DoorOpening;
+
+// The method that raises the event uses "On" prefix
+private void OnDied() => Died?.Invoke();
+```
+
+**Don't repeat the class name in member names:**
+
+```csharp
+// BAD: redundant — we know we're in Player
+public class Player : MonoBehaviour
+{
+    private int _playerHealth;
+    private float _playerSpeed;
+    public void PlayerJump() { }
+}
+
+// GOOD: context is implied
+public class Player : MonoBehaviour
+{
+    private int _health;
+    private float _speed;
+    public void Jump() { }
+}
+```
+
+### Script Class Suffixes
+
+Common suffixes help communicate what a script's role is at a glance:
+
+|Suffix|Role|Example|
+|---|---|---|
+|`Controller`|Drives a specific entity (can have multiple instances)|`PlayerController`, `EnemyController`|
+|`Manager`|Singleton/static orchestrator of a game system|`AudioManager`, `CombatManager`|
+|`System`|Pure C# logic, no Unity dependencies|`HealthSystem`, `InventorySystem`|
+|`Data`|ScriptableObject definition / read-only config|`WeaponData`, `EnemyData`|
+|`UI` or `Panel`|UI-related MonoBehaviour|`HealthBarUI`, `PauseMenuPanel`|
+|`Handler`|Reacts to events, coordinates responses|`DeathHandler`, `CollisionHandler`|
+|`Settings`|ScriptableObject for configuration/tuning|`AudioSettings`, `DifficultySettings`|
+
+The distinction between **Manager** and **Controller**: a Manager is typically one per game (singleton/static) and orchestrates a system. A Controller is one per entity instance and drives that entity's behavior.
+
+### Namespaces
+
+Use namespaces to avoid name collisions and organize code logically:
+
+```csharp
+namespace MyGame.Combat
+{
+    public class DamageCalculator { }
+}
+
+namespace MyGame.Inventory
+{
+    public class Item { }
+}
+```
+
+Without namespaces, if you and a third-party asset both define a `Timer` class, you get a compile error. With namespaces, they coexist.
+
+**Convention:** `CompanyOrProject.Feature` — e.g., `MyGame.Combat`, `MyGame.UI`, `MyGame.Core`.
 
 ---
 
@@ -352,6 +504,8 @@ UserSettings/
 |No assembly definitions|Slow recompilation|Add asmdef files|
 |Scenes at root|Clutter|Put in Scenes/ folder|
 |Mixed naming conventions|Confusion|Pick one style, stick to it|
+|Spaces in file/folder names|Command line tools break|Use PascalCase or snake_case|
+|No namespaces|Name collisions with assets/plugins|Use `ProjectName.Feature` namespaces|
 
 ---
 
@@ -361,5 +515,7 @@ UserSettings/
 2. **`_Project/`** — your code, separate from plugins
 3. **Avoid Resources/** — prefer direct references
 4. **Assembly definitions** — for larger projects
-5. **Consistent naming** — PascalCase for most, snake_case for art
-6. **Delete folder = delete feature** — no scattered dependencies
+5. **Consistent naming** — PascalCase for most, snake_case for art, no spaces ever
+6. **Semantic names** — verbs for methods, questions for bools, nouns for variables
+7. **Namespaces** — protect against collisions, organize code logically
+8. **Delete folder = delete feature** — no scattered dependencies

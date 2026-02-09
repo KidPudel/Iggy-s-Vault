@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/unity/Unity Reference Guilde.md",
+                "file": "gamedev/unity/GameObject and Component Model.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Unity Reference Guilde"
+              "title": "GameObject and Component Model"
             }
           }
         ]
@@ -111,7 +111,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "gamedev/godot/data-driven design in godot with architecture in mind.md",
+            "file": "gamedev/unity/GameObject and Component Model.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "languages/golang/concurrency in go.md",
+            "file": "gamedev/unity/GameObject and Component Model.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -144,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "gamedev/unity/Unity Reference Guilde.md",
+            "file": "gamedev/unity/GameObject and Component Model.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -154,7 +154,7 @@
         }
       }
     ],
-    "currentTab": 2
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,6 +172,9 @@
   },
   "active": "064c3c9695bc3a4a",
   "lastOpenFiles": [
+    "gamedev/unity/Component-Based Design in Unity.md",
+    "gamedev/unity/GameObject and Component Model.md",
+    "gamedev/unity/Unity Index Book of References.md",
     "architecture/design patterns.md",
     "gamedev/unity/Communication Patterns in Unity.md",
     "gamedev/unity/ScriptableObjects.md",
@@ -194,9 +197,6 @@
     "architecture/data-driven design.md",
     "architecture/data-driven architecture.md",
     "computer graphics/draw call.md",
-    "computer graphics/text rendering.md",
-    "backend/database/database basics.md",
-    "computer graphics/sampler.md",
-    "gamedev/delta time.md"
+    "computer graphics/text rendering.md"
   ]
 }

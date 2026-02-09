@@ -1,4 +1,4 @@
-> [[euler angles]] are the directions (turn left, look up), while quaternions are coordinates (you are here)
+> [[Euler angles]] are the directions (turn left, look up), while quaternions are coordinates (you are here)
 
 4 numbers describe an orientation in 4D, where each number is equally important.
 - w: [[scalar]] that balances others 3 coordinates. like a slider bar.

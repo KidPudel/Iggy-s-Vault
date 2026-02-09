@@ -1,19 +1,12 @@
 # ScriptableObjects
 
-> [!quote] The Core Insight ScriptableObjects store data outside of scenes. They are assets, not scene objects.
+ScriptableObjects are data containers saved as project assets — not scene objects. They're Unity's tool for separating data from prefabs. **You don't always need them.** If your game has a handful of enemy types, putting stats directly on prefab components is simpler and perfectly fine. SOs become valuable when you have many variations, need data without instantiation, or want designers editing values separately from prefabs.
 
 ---
 
-## What ScriptableObjects Are
+# What They Are
 
-A ScriptableObject is a **data container** saved as an asset (`.asset` file).
-
-Unlike MonoBehaviours ([[MonoBehaviour Reference]]):
-- Not attached to GameObjects
-- Not in scenes
-- Exists in Project as an asset
-- Shared across scenes
-- One instance in memory (when loaded)
+A ScriptableObject is a data container that lives as an `.asset` file in your project. Not in scenes, not on GameObjects.
 
 ```
 MonoBehaviour                    ScriptableObject
@@ -23,14 +16,13 @@ MonoBehaviour                    ScriptableObject
 └── Destroyed with GameObject    └── Persists in project
 ```
 
-Similar to Godot Resources (`.tres`) that we place inside of `res://`, but with important behavioral differences.
-- They are connected with hooks that persist in [[RAM]] instances, resulting in pointing to the same reference (all instances will be triggered and automatically save changes in editor (not in a built)
+**The key behavior:** When loaded, a ScriptableObject is a **single shared instance** in memory. All references point to the same object. This is what makes them work as data templates — one definition, many readers.
 
 ---
 
-## Creating a ScriptableObject
+# Creating ScriptableObjects
 
-### Define the Class
+## Define the Class
 
 ```csharp
 [CreateAssetMenu(fileName = "NewItem", menuName = "Game/ItemData")]
@@ -46,340 +38,160 @@ public class ItemData : ScriptableObject
 
 `[CreateAssetMenu]` adds it to the right-click Create menu.
 
-### Create Asset Instances
+## Create Assets
 
 Right-click in Project → Create → Game → ItemData
-
 Save as: `Assets/Data/Items/Sword.asset`
 
----
+Fill in values in the Inspector. Multiple objects can reference the same asset.
 
-## Using ScriptableObjects
-
-### Reference in MonoBehaviour
+## Reference from MonoBehaviours or Other SOs
 
 ```csharp
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] private ItemData _itemData;  // Assign in Inspector
-    
-    public void OnPickup()
-    {
-        Debug.Log($"Picked up {_itemData.DisplayName}");
-        Inventory.Add(_itemData);
-    }
 }
 ```
 
-Multiple pickups can reference the **same** `ItemData` asset.
-
-### Reference in Other ScriptableObjects
-
 ```csharp
-[CreateAssetMenu(fileName = "NewRecipe", menuName = "Game/Recipe")]
+[CreateAssetMenu(menuName = "Game/Recipe")]
 public class Recipe : ScriptableObject
 {
     [SerializeField] private ItemData[] _ingredients;
     [SerializeField] private ItemData _result;
-    [SerializeField] private int _resultAmount;
 }
 ```
 
+SOs can hold references to any asset type — prefabs, meshes, materials, sprites, other SOs. A reference is just a pointer, not a copy.
+
 ---
 
-## Critical Behavior: Shared Instance
+# Don't Modify Data SOs at Runtime
 
-When loaded, a ScriptableObject is a **single shared instance** in memory.
+Because all references share one instance:
 
 ```csharp
-// These both point to the SAME object in memory
-[SerializeField] private ItemData _sword;  // On object A
-[SerializeField] private ItemData _sword;  // On object B
+// On object A and object B — same memory
+[SerializeField] private ItemData _sword;
 
-// Modify one → both see the change
-_sword.runtimeValue = 999;  // BAD: affects everyone
+_sword.Value = 999;  // BAD: every reference now sees 999
 ```
 
-> [!danger] Never Modify ScriptableObjects at Runtime In Editor: runtime changes **persist** after exiting Play Mode (because it's an asset). In Build: changes are lost on restart. Either way, you get inconsistent behavior. Treat ScriptableObjects as **read-only** at runtime.
+**In Editor:** Changes during Play Mode persist to the `.asset` file on disk. Unity's serialization hooks write them back automatically. You'll corrupt your data without realizing it.
+
+**In Build:** Changes exist only in RAM and are lost on restart. But they still affect every reference during that session.
+
+**The rule for data SOs:** Read-only at runtime. For mutable per-instance state, use plain C# classes. If you reach a point where you need formal Data/State separation, see [[Data-Driven Design]].
 
 ---
 
-## Data vs State Pattern
+# ScriptableObject + Prefab Relationship
 
-For mutable data, separate **Definition** (ScriptableObject) from **Instance** (plain C# class).
+SOs hold **data** (what/rules). Prefabs hold **scene objects** (where/visuals). They connect in two directions.
+
+## Catalog: SO References Prefabs
+
+The SO acts as a database — it knows about things that could be created. A manager reads the catalog and decides what to instantiate.
 
 ```csharp
-// Definition — immutable template (ScriptableObject)
-[CreateAssetMenu(menuName = "Game/ItemData")]
-public class ItemData : ScriptableObject
+[CreateAssetMenu(menuName = "Game/EnemyDatabase")]
+public class EnemyDatabase : ScriptableObject
 {
-    public string id;
-    public string displayName;
-    public int maxDurability;
+    public EnemyEntry[] enemies;
 }
 
-// Instance — mutable runtime state (plain C# class)
 [System.Serializable]
-public class ItemInstance
+public class EnemyEntry
 {
-    public string dataId;
-    public int currentDurability;
-    public int quantity;
-    
-    [System.NonSerialized]
-    private ItemData _cachedData;
-    
-    public ItemData Data => _cachedData ??= ItemDatabase.Get(dataId);
-    
-    public ItemInstance(ItemData data, int qty = 1)
-    {
-        dataId = data.id;
-        _cachedData = data;
-        currentDurability = data.maxDurability;
-        quantity = qty;
-    }
+    public EnemyData data;          // another SO with stats
+    public GameObject prefab;       // the prefab to spawn
 }
 ```
 
-See [[Data-Driven Design in Unity]] for the full pattern.
+**Use when:** A system needs to pick from many possible things to create — spawn managers, loot tables, shop inventories.
 
----
+## Identity: Prefab References SO
 
-## Common Patterns
-
-### 1. Configuration Data
-
-Static game data that designers edit:
-
-```csharp
-[CreateAssetMenu(menuName = "Game/EnemyConfig")]
-public class EnemyConfig : ScriptableObject
-{
-    public int maxHealth;
-    public float moveSpeed;
-    public float attackDamage;
-    public float attackCooldown;
-}
-```
+The SO acts as an identity card — it tells the object what it is. The prefab's component references the SO in the Inspector.
 
 ```csharp
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyConfig _config;
-    
+    [SerializeField] private EnemyData _data;  // assigned in prefab Inspector
+
     private int _currentHealth;
-    
+
     private void Start()
     {
-        _currentHealth = _config.maxHealth;  // Read from config
+        _currentHealth = _data.MaxHealth;  // Read template values
     }
 }
 ```
 
-### 2. Database / Registry
+Multiple instances of the same prefab share one SO. Change the SO → all instances read the new values.
 
-Central lookup for all items:
+**Use when:** An object needs to know its own data (stats, configuration).
 
-```csharp
-[CreateAssetMenu(menuName = "Game/ItemDatabase")]
-public class ItemDatabase : ScriptableObject
-{
-    [SerializeField] private ItemData[] _allItems;
-    
-    private Dictionary<string, ItemData> _lookup;
-    
-    public void Initialize()
-    {
-        _lookup = _allItems.ToDictionary(item => item.id);
-    }
-    
-    public ItemData Get(string id) => _lookup.GetValueOrDefault(id);
-}
+## Both Together
+
+Common in real projects:
+
+```
+EnemyDatabase (SO) — catalog, used by SpawnManager
+├── references GoblinData (SO) + Goblin (Prefab)
+├── references DragonData (SO) + Dragon (Prefab)
+└── references SkeletonData (SO) + Skeleton (Prefab)
+
+Goblin (Prefab) — identity, knows it's a goblin
+└── Enemy component → references GoblinData (SO)
 ```
 
-### 3. Event Channels
+| Question | Pattern |
+|---|---|
+| System needs to create/manage things? | SO references Prefabs (Catalog) |
+| Object needs to know what it is? | Prefab references SO (Identity) |
+| Both? | Manager picks from catalog → spawns prefab → prefab knows its data |
 
-Decoupled communication between systems:
-
-```csharp
-[CreateAssetMenu(menuName = "Events/Void Event")]
-public class VoidEvent : ScriptableObject
-{
-    private Action _listeners;
-    
-    public void Register(Action listener) => _listeners += listener;
-    public void Unregister(Action listener) => _listeners -= listener;
-    public void Raise() => _listeners?.Invoke();
-}
-```
-
-```csharp
-[CreateAssetMenu(menuName = "Events/Int Event")]
-public class IntEvent : ScriptableObject
-{
-    private Action<int> _listeners;
-    
-    public void Register(Action<int> listener) => _listeners += listener;
-    public void Unregister(Action<int> listener) => _listeners -= listener;
-    public void Raise(int value) => _listeners?.Invoke(value);
-}
-```
-
-**Usage:**
-
-```csharp
-// Publisher
-public class Player : MonoBehaviour
-{
-    [SerializeField] private IntEvent _onHealthChanged;
-    [SerializeField] private VoidEvent _onPlayerDied;
-    
-    public void TakeDamage(int amount)
-    {
-        _health -= amount;
-        _onHealthChanged.Raise(_health);
-        
-        if (_health <= 0)
-            _onPlayerDied.Raise();
-    }
-}
-
-// Subscriber
-public class HealthUI : MonoBehaviour
-{
-    [SerializeField] private IntEvent _onHealthChanged;
-    
-    private void OnEnable() => _onHealthChanged.Register(UpdateDisplay);
-    private void OnDisable() => _onHealthChanged.Unregister(UpdateDisplay);
-    
-    private void UpdateDisplay(int health) => _text.text = health.ToString();
-}
-```
-
-**Why this works:** Both reference the same ScriptableObject asset. No direct dependency between Player and HealthUI.
-
-### 4. Runtime Sets
-
-Track all active instances of something:
-
-```csharp
-[CreateAssetMenu(menuName = "Game/Runtime Set")]
-public class EnemyRuntimeSet : ScriptableObject
-{
-    private List<Enemy> _items = new();
-    
-    public IReadOnlyList<Enemy> Items => _items;
-    public int Count => _items.Count;
-    
-    public void Add(Enemy item) => _items.Add(item);
-    public void Remove(Enemy item) => _items.Remove(item);
-    
-    private void OnEnable() => _items.Clear();  // Reset on play
-}
-```
-
-```csharp
-public class Enemy : MonoBehaviour
-{
-    [SerializeField] private EnemyRuntimeSet _enemySet;
-    
-    private void OnEnable() => _enemySet.Add(this);
-    private void OnDisable() => _enemySet.Remove(this);
-}
-```
-
-Now anything can query `_enemySet.Items` without finding objects.
-
-### 5. Shared Variables
-
-A single value accessible anywhere:
-
-```csharp
-[CreateAssetMenu(menuName = "Variables/Int Variable")]
-public class IntVariable : ScriptableObject
-{
-    public int value;
-    
-    // Optional: event when changed
-    public event Action<int> OnChanged;
-    
-    public void SetValue(int newValue)
-    {
-        value = newValue;
-        OnChanged?.Invoke(value);
-    }
-}
-```
-
-> [!warning] Use Sparingly This is essentially a global variable. Good for things like "player score" that many systems read. Don't overuse.
+> [!tip] Ask: **who needs to know?** A system that creates things needs a catalog. An object that exists needs an identity. Often both.
 
 ---
 
-## ScriptableObject Lifecycle
+# Lifecycle
 
 ```csharp
 public class MyData : ScriptableObject
 {
     private void OnEnable()
     {
-        // Called when asset is loaded
+        // Called when asset is loaded into memory
         // Good place to initialize runtime collections
     }
-    
+
     private void OnDisable()
     {
         // Called when asset is unloaded
     }
-    
+
     private void OnValidate()
     {
         // Editor only: called when values change in Inspector
+        // Useful for validation and auto-filling derived fields
     }
 }
 ```
 
 ---
 
-## Godot Comparison
+# Key Takeaways
 
-| Godot Resource                     | Unity ScriptableObject                                                   |
-| ---------------------------------- | ------------------------------------------------------------------------ |
-| `.tres` file                       | `.asset` file                                                            |
-| `extends Resource`                 | `: ScriptableObject`                                                     |
-| `@export`                          | `[SerializeField]` or `[field: SerializeField]`                          |
-| `load("res://...")`                | `Resources.Load<T>()` or Inspector reference                             |
-| Cached when loaded                 | Cached when loaded                                                       |
-| Can modify at runtime (be careful) | Can modify but **don't** (persists (0nly) in Editor because of the hook) |
-
-**Key difference:** In Godot, modifying a loaded Resource at runtime is a common pattern (with care). In Unity, modifying ScriptableObjects at runtime causes Editor persistence issues. Use plain C# classes for mutable state.
-
-> [!note] Unity's Editor has automatic serialization hooks that write changes back to disk immediately when you modify the object through the Inspector or during play mode.
+1. **SOs are shared assets** — all references point to one instance in memory
+2. **Don't modify data SOs at runtime** — use plain C# classes for mutable state
+3. **SO = data (what/rules), Prefab = scene object (where/visuals)**
+4. **Catalog pattern:** SO references Prefabs — for systems that create things
+5. **Identity pattern:** Prefab references SO — for objects that need to know what they are
+6. **`[CreateAssetMenu]`** makes them designer-friendly — editable in Inspector, zero code
 
 ---
 
-## When to Use ScriptableObjects
-
-**Use for:**
-
-- Game configuration (enemy stats, item definitions)
-- Shared data across scenes
-- Event channels (decoupled communication)
-- Databases/registries
-- Designer-editable data
-
-**Don't use for:**
-
-- Per-instance mutable state (use plain C# class)
-- Anything that changes at runtime
-- Save data (use JSON/binary to `persistentDataPath`)
-
----
-
-## Key Takeaways
-
-1. **ScriptableObjects are assets** — not scene objects
-2. **Shared instance in memory** — all references point to same object
-3. **Never modify at runtime** — use for read-only data
-4. **Data vs State** — SO for definition, plain C# for instance
-5. **Event channels** — powerful decoupling pattern
-6. **Designer-friendly** — editable in Inspector without code
+When you outgrow values-on-prefabs, see [[Data-Driven Design]] for the full Data/State/Representation pattern.

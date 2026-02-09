@@ -4,59 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "07e0f5ced5afb3dd",
+        "id": "b7c3361bb394ae2c",
         "type": "tabs",
         "children": [
           {
-            "id": "03c1852c5c111d28",
+            "id": "b52468dde58cc618",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "math/euler angles.md",
+                "file": "gamedev/Layered Architecture.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "euler angles"
-            }
-          },
-          {
-            "id": "9011981b8732e944",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "math/euler angles.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "euler angles"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "848ce88edee99651",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c285682cfbab3313",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "math/Quaternions.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "Quaternions"
+              "title": "Layered Architecture"
             }
           }
         ]
@@ -112,13 +75,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 357.5124969482422,
-    "collapsed": true
+    "width": 357.5124969482422
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -134,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "math/Quaternions.md",
+                "file": "gamedev/unity/Layered Architecture in Unity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Quaternions"
+              "title": "Backlinks for Layered Architecture in Unity"
             }
           },
           {
@@ -153,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "math/Quaternions.md",
+                "file": "gamedev/Layered Architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Quaternions"
+              "title": "Outgoing links from Layered Architecture"
             }
           },
           {
@@ -182,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "math/Quaternions.md",
+                "file": "gamedev/Layered Architecture.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Quaternions"
+              "title": "Outline of Layered Architecture"
             }
           },
           {
@@ -215,12 +176,12 @@
               "title": "All properties"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -236,34 +197,34 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c285682cfbab3313",
+  "active": "039133efe5b78d25",
   "lastOpenFiles": [
-    "math/scalar.md",
-    "math/Quaternions.md",
-    "math/euler angles.md",
-    "math/dot product.md",
-    "math/identity matrix.md",
-    "computer graphics/normals.md",
-    "gamedev/godot/3D Transformations in Godot Complete Foundation reference.md",
-    "gamedev/unity/Unity Fundamentals for Godot Developers.md",
-    "gamedev/unity/Unity Component Reference for Godot Developer.md",
-    "gamedev/unity/Godot Math to Unity Reference.md",
-    "Awareness reminder for documents.md",
     "gamedev/unity/Unity Index Book of References.md",
-    "gamedev/unity/Unity Static Classes and Singletons.md",
-    "gamedev/unity/Essential Unity Packages and Assets.md",
+    "gamedev/Data-Driven Design.md",
+    "architecture/design patterns.md",
+    "gamedev/unity/Game design patterns.md",
+    "gamedev/godot/Data-Driven Design in Godot.md",
+    "gamedev/unity/Data-Driven Design in Unity.md",
+    "architecture/What is data-driven design.md",
+    "gamedev/unity/ScriptableObjects.md",
+    "gamedev/Layered Architecture.md",
+    "gamedev/godot/Layered architecture in Godot.md",
     "gamedev/unity/Layered Architecture in Unity.md",
-    "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
-    "gamedev/unity/Unity Gotchas for Godot Developers.md",
-    "gamedev/godot/math for the headbob.md",
-    "gamedev/godot/nodes in essence.md",
-    "gamedev/unity/Input System in Unity.md",
-    "gamedev/unity/Common Patterns Cookbook in Unity.md",
-    "gamedev/unity/GameObject and Component Model.md",
-    "computer graphics/input assembler.md",
-    "gamedev/unity/Transform and Hierarchy.md",
-    "gamedev/unity/MonoBehaviour Reference.md",
+    "gamedev/unity/Awareness reminder for documents.md",
+    "backend/database/indexes.md",
+    "gamedev/unity/Prefabs.md",
     "gamedev/unity/Component-Based Design in Unity.md",
+    "Movement in Unity game for Godot developer.md",
+    "gamedev/unity/Unity Shaders.md",
+    "gamedev/unity/Unity Camera Component.md",
+    "gamedev/godot/shader in godot.md",
+    "Godot Shaders.md",
+    "gamedev/unity/Project Structure in Unity.md",
+    "gamedev/unity/GameObject and Component Model.md",
+    "krita shorcuts.md",
+    "blender shortcuts.md",
+    "blender handle bad fbx.md",
+    "gamedev/unity/Essential Unity Packages and Assets.md",
     "Untitled 4.base",
     "unity",
     "languages/c_sharp",

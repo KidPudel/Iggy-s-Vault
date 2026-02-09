@@ -50,7 +50,7 @@ This moves the GameObject to a special hidden scene called "DontDestroyOnLoad" t
 - If you load a scene that also has a GameManager, now you have two
 - You need extra singleton logic to prevent duplicates
 - No clean way to "reset" the game without restarting
-- Hard to debug , you can't see this hidden scene easily
+- Hard to debug, you can't see this hidden scene easily
 
 ---
 

@@ -505,7 +505,7 @@ public class GameInitiator : IAsyncStartable
 |Manual `Services.Get<T>()` in Awake|`[Inject]` or constructor injection|
 |You control creation order|Container resolves dependency graph|
 
-See [[Communication Patterns in Unity]] for DI lifetime details and problem of Singleton.
+See [[Reference Objects in Unity]] for DI lifetime details and problem of Singleton.
 
 ---
 

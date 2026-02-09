@@ -51,4 +51,4 @@ class BehaviorSystem:
 ```
 
 
-[[Data-Driven Design in Godot]]
+[[Data-Driven Design]]
