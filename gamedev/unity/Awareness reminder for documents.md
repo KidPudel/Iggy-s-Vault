@@ -1,46 +1,32 @@
-> [!note] Not all documents created equal. Not all documents actually here to help you.
-> 
-> When you make it easier for yourself, most of the time you shortcutting the process of getting external information into internal knowledge (memory).
+# Awareness Reminder
 
+## The Two Types of Knowledge
 
-How to balance the convenience and honest learning?
-Don't delegate the job of exploring and coming to solutions to someone else (like AI). Do it for yourself. Instead you can utilize sparingly two types, but at different stages of learning:
-1. post-struggle — teachings and crystalized truths on best decisions. Because after you've struggled (been a beginner and progressed through fighting), you understand the struggles, so you understand solutions now.
-2. pre-struggle *for experienced* — direct translations or concept explanations, that map into *existing* context knowledge and experience. This way it allows for more efficient way to utilize what you've already build.
+**Stable facts** — tools, APIs, syntax, specific engine behaviors.
+You look these up. Reference docs are the right format. ScriptableObjects, MonoBehaviour lifecycle, Prefab variants — these are facts you reuse, not concepts you internalize through struggle.
 
-Everything else like pre-struggle solution references, are just harmful and overwhelming.
+**Thinking patterns** — architecture, design decisions, how to structure a project.
+These CANNOT live in a document. They live in your brain, built through practice and mistakes. A reference doc for these gives a false sense of security — you feel like you "have" the knowledge because it's written down, but you haven't made it yours.
 
 ---
 
-## Example illustrating Why pre-struggle for experienced Works Without Breaking Rules
+## How to Act
 
-Because they doesn't solve _your specific game problems_. It explains tools. Compare:
+When you're about to create or read a document, ask:
 
-**Bad (Components Reference):**
+**"Is this a stable fact I look up, or a thinking pattern I need to own?"**
 
-```csharp
-// "Use CharacterController for FPS movement"
-controller.Move(velocity * Time.deltaTime);
-```
+- **Stable fact** → write/read the reference doc. Done.
+- **Thinking pattern** → STOP. Close the doc. Open your Socratic partner AI chat. Work through it yourself with your own thinking process. Use non-linear cues (mind map, infinite canvas). The doc is not the goal — your understanding is.
 
-→ You copy-paste before understanding velocity, deltaTime, or why they multiply.
-
-**Good (C# Reference):**
-
-```
-// "String interpolation exists because concatenation is verbose"
-// Old: "Player " + name + " has " + score
-// New: $"Player {name} has {score}"
-```
-
-You understand _why_ the feature exists, then apply it when you encounter verbose concatenation in your code.
+If you catch yourself writing a detailed architecture reference and thinking "now I understand it" — that's the trap. You stored it on a page, not in your brain.
 
 ---
 
-# Test: Am I experienced enough for pre-struggle context?
+## The Rules
 
-- [ ] Can I explain why this tool exists and what problem it solves _before_ looking at the reference?
-- [ ] Have I already used 3+ similar tools in this domain successfully?
-- [ ] Am I looking for efficiency (faster recall) or learning (first exposure)?
+1. **Reference docs must be mental-model agnostic** — state what the tool IS and HOW it works. Never frame how the reader should think. No "the right way," no decision trees, no prescribed workflows. The reader builds their own mental model through experience.
 
-If you answer "learning" or can't explain the tool category's purpose, you're not experienced enough. Use post-struggle resources instead.
+2. **Don't delegate understanding to a document** — if you're confused, the answer is not a better document. The answer is asking questions until YOU understand. Use AI as a Socratic partner — to challenge and trigger your thinking, not to hand you conclusions.
+
+3. **Note-taking is retrieval cues, not storage** — a note should trigger what you already know, not replace knowing it. If you can't explain it without the note, you haven't learned it yet.

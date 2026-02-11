@@ -1,6 +1,6 @@
 # ScriptableObjects
 
-ScriptableObjects are data containers saved as project assets — not scene objects. They're Unity's tool for separating data from prefabs. **You don't always need them.** If your game has a handful of enemy types, putting stats directly on prefab components is simpler and perfectly fine. SOs become valuable when you have many variations, need data without instantiation, or want designers editing values separately from prefabs.
+ScriptableObjects are data containers saved as project assets — not scene objects. They're Unity's tool for storing data as reusable asset files.
 
 ---
 
@@ -82,80 +82,51 @@ _sword.Value = 999;  // BAD: every reference now sees 999
 
 **In Build:** Changes exist only in RAM and are lost on restart. But they still affect every reference during that session.
 
-**The rule for data SOs:** Read-only at runtime. For mutable per-instance state, use plain C# classes. If you reach a point where you need formal Data/State separation, see [[Data-Driven Design]].
+**The rule for data SOs:** Read-only at runtime. For mutable per-instance state, use plain C# classes. See [[Data-Driven Design]] for the Data/State/Representation pattern.
 
 ---
 
 # ScriptableObject + Prefab Relationship
 
-SOs hold **data** (what/rules). Prefabs hold **scene objects** (where/visuals). They connect in two directions.
+SOs and Prefabs do different things. SOs store data (values, rules). Prefabs store structure (components, hierarchy, visuals). Two ways they connect:
 
-## Catalog: SO References Prefabs
+## Catalog: SO Holds References to Prefabs
 
-The SO acts as a database — it knows about things that could be created. A manager reads the catalog and decides what to instantiate.
+SO acts as a database of things a system can create.
 
 ```csharp
 [CreateAssetMenu(menuName = "Game/EnemyDatabase")]
 public class EnemyDatabase : ScriptableObject
 {
-    public EnemyEntry[] enemies;
-}
-
-[System.Serializable]
-public class EnemyEntry
-{
-    public EnemyData data;          // another SO with stats
-    public GameObject prefab;       // the prefab to spawn
+    public GameObject[] enemyPrefabs;
 }
 ```
 
-**Use when:** A system needs to pick from many possible things to create — spawn managers, loot tables, shop inventories.
+A spawn manager, loot table, or shop reads the catalog and picks what to instantiate. The SO doesn't care what's inside the prefabs — it just knows they exist.
 
-## Identity: Prefab References SO
+## Identity: Prefab Holds a Reference to an SO
 
-The SO acts as an identity card — it tells the object what it is. The prefab's component references the SO in the Inspector.
+A component on the prefab holds a reference to a data SO. The prefab knows its own data.
 
 ```csharp
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyData _data;  // assigned in prefab Inspector
+    [SerializeField] private EnemyData _data;
 
     private int _currentHealth;
 
     private void Start()
     {
-        _currentHealth = _data.MaxHealth;  // Read template values
+        _currentHealth = _data.MaxHealth;  // Read from the SO
     }
 }
 ```
 
-Multiple instances of the same prefab share one SO. Change the SO → all instances read the new values.
+The reference can be assigned in the Inspector, passed through code, or set any other way — it just depends 0n amount of prefabs. The result is the same: the component reads from a shared SO instance. Multiple prefab instances referencing the same SO all read the same values.
 
-**Use when:** An object needs to know its own data (stats, configuration).
+## They're Independent
 
-## Both Together
-
-Common in real projects:
-
-```
-EnemyDatabase (SO) — catalog, used by SpawnManager
-├── references GoblinData (SO) + Goblin (Prefab)
-├── references DragonData (SO) + Dragon (Prefab)
-└── references SkeletonData (SO) + Skeleton (Prefab)
-
-Goblin (Prefab) — identity, knows it's a goblin
-└── Enemy component → references GoblinData (SO)
-```
-
-| Question | Pattern |
-|---|---|
-| System needs to create/manage things? | SO references Prefabs (Catalog) |
-| Object needs to know what it is? | Prefab references SO (Identity) |
-| Both? | Manager picks from catalog → spawns prefab → prefab knows its data |
-
-> [!tip] Ask: **who needs to know?** A system that creates things needs a catalog. An object that exists needs an identity. Often both.
-
----
+Catalog is about a system knowing what it can create. Identity is about an object knowing its own data. A prefab in a catalog can also have Identity. A prefab with Identity doesn't need to be in a catalog. Use either or both — they solve different problems.
 
 # Lifecycle
 
@@ -187,11 +158,12 @@ public class MyData : ScriptableObject
 
 1. **SOs are shared assets** — all references point to one instance in memory
 2. **Don't modify data SOs at runtime** — use plain C# classes for mutable state
-3. **SO = data (what/rules), Prefab = scene object (where/visuals)**
-4. **Catalog pattern:** SO references Prefabs — for systems that create things
-5. **Identity pattern:** Prefab references SO — for objects that need to know what they are
-6. **`[CreateAssetMenu]`** makes them designer-friendly — editable in Inspector, zero code
+3. **SO = data (values, rules), Prefab = structure (components, hierarchy, visuals)**
+4. **Catalog** — SO holds prefab references so a system knows what it can create
+5. **Identity** — prefab holds an SO reference so it knows its own data
+6. **They're independent** — use either or both
+7. **`[CreateAssetMenu]`** makes them designer-friendly — editable in Inspector, zero code
 
 ---
 
-When you outgrow values-on-prefabs, see [[Data-Driven Design]] for the full Data/State/Representation pattern.
+See [[Data-Driven Design]] for the Data/State/Representation pattern.
