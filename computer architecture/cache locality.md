@@ -1,1 +1,0 @@
-How well program's memory access patterns align with how [[CPU cache]] work. how often [[cache hit]] and [[cache miss]]

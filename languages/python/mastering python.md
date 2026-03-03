@@ -1,7 +1,0 @@
-- [ ] Asyncio ([[concurrency in python]])
-- [ ] coroutine ([[concurrency in python]])
-- [ ] object relational mapping ([[Pydantic]])
-- [ ] GUI
-- [ ] CLI
-- [ ] FFI
-- [ ] metaprogramming

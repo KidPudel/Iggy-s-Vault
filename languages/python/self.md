@@ -1,1 +1,0 @@
-keyword for indicating essence of the class, like a indicating that you are talking about class

@@ -1,7 +1,67 @@
-# Coroutines
+# Kotlin Coroutines
 
-**it's a component that allows execution to be suspended and resumed**. (they are workers in the construction (thread))  
-They **can be launched on other threads (Dispateched.IO, Default, etc.)** or they **could be launched on the same main thread**, _that would block the UI for example, but it would certanly finish their job_.  
+A concurrency mechanism in Kotlin that allows execution to be suspended and resumed without blocking a thread.
+
+## What it does
+
+- A coroutine is an instance of suspendable computation that is not bound to any specific thread
+- `launch` starts a coroutine and returns a `Job`; used for fire-and-forget work
+- `async` starts a coroutine and returns a `Deferred<T>`; used to compute a result
+- `await()` suspends the current coroutine until the `Deferred` result is available
+- **Dispatchers** control which thread a coroutine runs on: `Dispatchers.Main` (UI), `Dispatchers.IO` (network/disk), `Dispatchers.Default` (CPU-intensive)
+- `withContext(Dispatcher)` switches dispatcher mid-coroutine without creating a new coroutine
+- `runBlocking` bridges blocking and non-blocking code; blocks the calling thread until complete
+- `Job.join()` suspends the caller until the job finishes; `Job.cancel()` cancels it
+- `CoroutineScope` controls the lifetime of coroutines: `GlobalScope`, `lifecycleScope`, `viewModelScope`
+- Two suspend functions in one coroutine run sequentially by default; use `async`/`await` for parallel execution
+- `withTimeout(millis)` cancels a coroutine if it exceeds the time limit
+
+## Code
+
+```kotlin
+// Launch: fire and forget
+GlobalScope.launch(Dispatchers.IO) {
+    val result = fetchData()
+    withContext(Dispatchers.Main) {
+        textView.text = result
+    }
+}
+
+// Async: parallel execution
+val a = async { fetchA() }
+val b = async { fetchB() }
+println("${a.await()} ${b.await()}")
+
+// runBlocking: bridge for tests/main
+runBlocking {
+    delay(1000L)
+    println("done")
+}
+```
+
+## Sources
+
+- https://kotlinlang.org/docs/coroutines-overview.html
+
+## Related
+
+- [[suspend-function]]
+- [[thread]]
+- [[green-threads]]
+- [[concurrency]]
+
+## Process
+
+- How does a coroutine dispatcher differ from a thread pool?
+- What is the difference between structured concurrency (lifecycleScope) and GlobalScope?
+- Why does `withContext` not create a new coroutine while changing the dispatcher?
+- How does `async`/`await` achieve parallel execution when two coroutines run on the same dispatcher?
+- What happens to child coroutines when a parent scope is cancelled?
+
+---
+<!-- original content preserved below -->
+**it's a component that allows execution to be suspended and resumed**. (they are workers in the construction (thread))
+They **can be launched on other threads (Dispateched.IO, Default, etc.)** or they **could be launched on the same main thread**, _that would block the UI for example, but it would certanly finish their job_.
 
 ### Reminder on how it would look with all those coroutines in threads  
 ![image](https://user-images.githubusercontent.com/63263301/220064187-11e14ccf-30c2-42c6-9ab0-9819ae081690.png)  

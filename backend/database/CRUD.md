@@ -1,1 +1,0 @@
-4 functions to implement persistent storage 

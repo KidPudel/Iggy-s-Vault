@@ -4,7 +4,7 @@
 # utility
 - `godotenv`: parse dotenv file
 # architecture/flow
-- `goeventbus`: go implementation of [[event bus]]
+- `goeventbus`: go implementation of [[CS/architecture/event bus]]
 # logging
 - `zap`: fast alternative to default `log`
 - `zerolog`: very high performance JSON logger

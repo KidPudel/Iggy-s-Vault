@@ -1,1 +1,0 @@
-linter is static analyzer for a possible errors, code quality issues and inefficiencies

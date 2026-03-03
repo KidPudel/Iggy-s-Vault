@@ -1,1 +1,0 @@
-Functions that provided by the compiler and are prefixed with `@`

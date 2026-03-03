@@ -1,1 +1,0 @@
-Golang Virtual Management

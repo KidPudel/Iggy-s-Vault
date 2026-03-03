@@ -1,2 +1,0 @@
-Language Server Protocol, is a standardized way of communicating between an editor and a language server.
-Provides code completion, definitions, suggestion, documentation, error warnings, navigations, code actions

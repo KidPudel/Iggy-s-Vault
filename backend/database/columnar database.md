@@ -1,9 +1,31 @@
-Columnar or column-orientated representation is [[DBMS]] that stores data in columns instead of rows.
-It makes reading data or aggregating queries (sum, average, max, min) very quickly, by **instead of reading all of columns from left to right like in row-based orientation, we read only necessary columns from top to bottom**
-And in this orientation, this system is acknowledged of which data is corresponding to which column, by assigning a number to each row of data
-It is also highly recommended to order the data, allowing for much faster queries
+# Columnar Database
 
-But this is makes inserting **new row** somewhere in the middle very slow
-But inserting a batches of rows at once is very fast, because it is optimized for high-throughputs
+A database storage format that organizes data by column rather than by row.
 
-Updates are very slow
+## What it does
+
+In a columnar layout, all values for a single column are stored contiguously on disk. A row identifier links values across columns.
+
+Aggregate queries (SUM, AVG, COUNT) only read the relevant column(s), skipping unneeded data. This makes read-heavy analytical workloads fast.
+
+Ordering data within columns enables further compression and range scan acceleration.
+
+Bulk inserts are fast (appending to column files). Single-row inserts in the middle of the dataset and updates are slow because they require rewriting column segments.
+
+## Sources
+
+- https://clickhouse.com/docs/en/intro
+- https://cassandra.apache.org/doc/latest/
+
+## Related
+
+- [[OLAP]]
+- [[DBMS]]
+- [[partitioning]]
+- [[ClickHouse]]
+
+## Process
+
+- Why is a columnar layout faster for SUM(revenue) than a row-based layout?
+- What makes single-row updates expensive in a columnar store?
+- Where does a columnar database fit relative to OLTP vs OLAP workloads?

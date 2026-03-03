@@ -1,1 +1,0 @@
-string is just an array of characters `u8`, so if we want to create a basic string, it is a `[]const u8`

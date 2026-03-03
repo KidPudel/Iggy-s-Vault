@@ -1,1 +1,0 @@
-Is the returned function/logic, which allows as to return ***a whole functionality with any data we want***

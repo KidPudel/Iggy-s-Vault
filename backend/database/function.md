@@ -1,31 +1,43 @@
-General-purpose computations, returning values like number, strings, booleans, rows, sets of rows
-Can be invoked in queries (`SELECT`, `UPDATE`,`INSERT`)
-Process that could be executed using `EXECUTE FUNCTION` for example in a [[trigger]]
-```
-CREATE [ OR REPLACE ] FUNCTION
-    _`name`_ ( [ [ _`argmode`_ ] [ _`argname`_ ] _`argtype`_ [ { DEFAULT | = } _`default_expr`_ ] [, ...] ] )
-    [ RETURNS _`rettype`_
-      | RETURNS TABLE ( _`column_name`_ _`column_type`_ [, ...] ) ]
-  { LANGUAGE _`lang_name`_
-    | TRANSFORM { FOR TYPE _`type_name`_ } [, ... ]
-    | WINDOW
-    | { IMMUTABLE | STABLE | VOLATILE }
-    | [ NOT ] LEAKPROOF
-    | { CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT | STRICT }
-    | { [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER }
-    | PARALLEL { UNSAFE | RESTRICTED | SAFE }
-    | COST _`execution_cost`_
-    | ROWS _`result_rows`_
-    | SUPPORT _`support_function`_
-    | SET _`configuration_parameter`_ { TO _`value`_ | = _`value`_ | FROM CURRENT }
-    | AS '_`definition`_'
-    | AS '_`obj_file`_', '_`link_symbol`_'
-    | _`sql_body`_
-  } ...
+# Database Function
+
+A named, reusable block of SQL or procedural code stored in the database that accepts parameters and returns a value or result set.
+
+## What it does
+
+Functions can return a scalar value, a row, or a set of rows (`RETURNS TABLE`). They are invoked inside queries (`SELECT`, `INSERT`, `UPDATE`) or via `EXECUTE FUNCTION` in a trigger.
+
+The function body is delimited with `$$` and uses `BEGIN`/`END` for procedural logic (PL/pgSQL).
+
+Volatility categories:
+- `IMMUTABLE` — same inputs always give same output; no side effects
+- `STABLE` — consistent within a single query; may depend on query context
+- `VOLATILE` (default) — may produce different results or have side effects
+
+## Code
+
+```sql
+CREATE OR REPLACE FUNCTION add_tax(price NUMERIC)
+RETURNS NUMERIC AS $$
+BEGIN
+  RETURN price * 1.2;
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT add_tax(100); -- 120
 ```
 
-Regular function accepts parameters like `(arg int, arg2 boolean)`
-Returns a value of a specified type (e.g., `INTEGER`, `TEXT`, `TABLE`, etc.). like `RETURNS INT`
+## Sources
 
-To calculate the result in a function we should tell PostgreSQL where the function starts, we do it with a **delimiter** with any characters, but common is `$$`.
-and inside that we could define a scope of the procedural logic of the function scope with a `BEGIN` and `END;`
+- https://www.postgresql.org/docs/current/sql-createfunction.html
+
+## Related
+
+- [[trigger function]]
+- [[trigger]]
+- [[transactions]]
+
+## Process
+
+- What is the difference between a function and a stored procedure in PostgreSQL?
+- How does the `IMMUTABLE` volatility category affect query planning?
+- What happens when a function declared `IMMUTABLE` has side effects?

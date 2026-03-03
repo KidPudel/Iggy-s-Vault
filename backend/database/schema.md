@@ -1,7 +1,33 @@
-Schema in a database context refers to the **structure and organization of data within a database**. It defines how data is arranged in tables, including the relationships between different tables, the data types of fields, and any constraints on the data. A schema essentially acts as a blueprint for how information is stored and accessed in a database.
+# Database Schema
 
+The structure definition of a database: tables, columns, data types, constraints, and relationships.
 
-1. In some database systems (like PostgreSQL or Oracle), a schema is a **named container for database objects such as tables, views, and stored procedures**. It's a way to logically group related objects and manage permissions.
-2. In other database systems (like MySQL), the terms "schema" and "database" are often used interchangeably.
+## What it does
 
-DataGrip uses the term "schema" to represent both of these concepts, depending on the database system you're working with. In the DataGrip interface, you'll typically see schemas listed in the database explorer, allowing you to navigate and manage the objects within each schema.
+A schema defines what objects exist in a database and how they are shaped. It specifies:
+- Table names and column names
+- Data types for each column
+- Constraints (primary key, foreign key, NOT NULL, UNIQUE, CHECK)
+- Relationships between tables
+
+In PostgreSQL and Oracle, "schema" also refers to a named namespace that groups database objects (tables, views, functions). Multiple schemas can coexist in one database, each with its own permission set.
+
+In MySQL, "schema" and "database" are synonymous.
+
+## Sources
+
+- https://www.postgresql.org/docs/current/ddl-schemas.html
+
+## Related
+
+- [[RDBMS]]
+- [[migrations]]
+- [[foreign key]]
+- [[primary key]]
+- [[constraints]]
+
+## Process
+
+- What is the difference between a schema change and a data change in the context of migrations?
+- How does PostgreSQL use schemas differently from MySQL?
+- What does a schema-less database give up compared to a schema-defined one?

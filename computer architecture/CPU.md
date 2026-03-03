@@ -1,1 +1,0 @@
-Central processing unit - brain of the computer.

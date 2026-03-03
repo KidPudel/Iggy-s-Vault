@@ -1,18 +1,36 @@
-> SSL - Security Socket Layer. Digital signature that verifies website’s identity, therefore encrypts connection. Security protocol (system of rules) generates encrypted link between web server and web browser
+# SSL/TLS
 
-Socket - Communication endpoint that allows two computers to communicate with each other
+A cryptographic protocol that establishes an encrypted channel between a client and server over a network.
 
-# TSL
+## What it does
 
-> TSL - Transfer Socket Protocol. A new version of SSL, but it’s still commonly called SSL
+TLS (Transport Layer Security) is the current name; SSL (Secure Sockets Layer) is the deprecated predecessor but the name persists.
 
-# Process
+The TLS handshake sequence:
+1. Client sends `ClientHello` with supported cipher suites and TLS version
+2. Server responds with `ServerHello`, chosen cipher suite, and its certificate
+3. Client verifies the certificate against a trusted CA
+4. Key exchange occurs (e.g. ECDHE) to produce a shared session key
+5. Both sides confirm with a `Finished` message encrypted with the session key
+6. Application data flows encrypted with symmetric encryption (e.g. AES-GCM)
 
-1. SSL handshake
-    1. browser/server ties to connect to web server secured by SSL
-    2. browser/server asks to identify web server
-    3. web server sends copy of SSL certificate
-    4. browser verifies identity by trusting SSL
-        1. trusts, sends signal to web server
-    5. web server sends digitally signed certificate to start SSL encrypted session
-    6. data sharing now encrypted between two sides
+A TLS certificate binds a public key to a domain name, signed by a Certificate Authority.
+
+## Sources
+
+- https://www.rfc-editor.org/rfc/rfc8446
+
+## Related
+
+- [[three-way-handshake]]
+- [[HTTP]]
+- [[TCP]]
+- [[certificates]]
+- [[hashing]]
+
+## Process
+
+- What happens if the CA that signed a server's certificate is compromised?
+- How does TLS fit on top of TCP — which handshake runs first?
+- What is the difference between symmetric and asymmetric encryption in the context of a TLS session?
+- Where does certificate pinning change the normal TLS flow?

@@ -1,1 +1,0 @@
-Document Object Model, language-independent interface that threats HTML or XML as a tree structure, where each node is an object representing a part of a document.

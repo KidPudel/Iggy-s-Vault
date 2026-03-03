@@ -1,1 +1,0 @@
-if you have schema_migrations

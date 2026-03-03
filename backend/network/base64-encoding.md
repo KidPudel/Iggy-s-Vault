@@ -1,28 +1,32 @@
-Base64 encoding is a way of representing binary data in an ASCII string format.
+# Base64 Encoding
 
-# encoding
-1. Converting a data into a binary
-2. Binary data is broken down to the 6-bit chunks `101100 011011 000110 111100 100000...`
-3. each of those 6-bit chunks then mapped to the one of 64 printable ASCII characters `SGVs bG8g d29y bGQ=`
-4. if the binary data length is not a multiple of 3 bytes (24 bits), pad the end with one or two `=` characters
+An encoding scheme that represents binary data as a string of 64 printable ASCII characters.
 
-# decoding
-1. Remove padding characters from the end `=`
-2. Map each Base64 character into 6-bit binary chunk
-3. Combine those 6-bits into 8-bit bytes to reconstruct the original binary data. `011010000110010101101100011011000...`
-4. convert binary back to the original data
+## What it does
 
+Converts binary to ASCII in three steps:
+1. Break binary into 6-bit chunks
+2. Map each 6-bit chunk to one of 64 characters (`A-Z`, `a-z`, `0-9`, `+`, `/`)
+3. Pad output with `=` if the input length is not a multiple of 3 bytes
 
+Decoding reverses the process. Output is ~33% larger than input.
 
----
-The character set used for Base64 encoding consists of:
-- The uppercase letters A-Z
-- The lowercase letters a-z
-- The digits 0-9
-- The plus (+) and forward slash (/) characters
+Base64URL replaces `+` with `-` and `/` with `_` for safe use in URLs and HTTP headers (used in JWT).
 
-It is commonly used in:
-- binary data transmissions over protocols like HTTP, SMTP, XML-RPC
-- encoding images, audio, or video data for embedding in HTML or other text-based format
-- encoding authentication credentials for Basic Authentication type of [[Authorization header]]
-- encoding encrypted data or digital signatures
+Encoding is not encryption — anyone can decode it.
+
+## Sources
+
+- https://www.rfc-editor.org/rfc/rfc4648
+
+## Related
+
+- [[JWT]]
+- [[Authorization header]]
+- [[headers]]
+
+## Process
+
+- What problem does encoding binary as ASCII solve when transmitting over HTTP or SMTP?
+- Where does Base64URL differ from standard Base64, and why does that matter for JWTs?
+- Base64 is not encryption — what does that mean for data stored in JWT payloads?

@@ -1,1 +1,0 @@
-Caching the value from the previous iterations to improve performance

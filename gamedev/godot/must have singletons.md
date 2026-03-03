@@ -1,5 +1,0 @@
-- [ResourceLoader](https://docs.godotengine.org/en/stable/classes/class_resourceloader.html)
-- [ResourceSaver]()
-- FileAccess
-- Input: singleton for handling input
-- AudioServer: allows access for bus effects

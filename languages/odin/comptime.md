@@ -1,1 +1,0 @@
-compile time build-in procedurals are marked with `#` sign like `#load()`

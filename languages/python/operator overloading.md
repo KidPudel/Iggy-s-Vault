@@ -1,4 +1,4 @@
-We can overload operators like + - * / using [[magic]] methods a.k.a dunder methods
+We can overload operators like + - * / using [[Python magic methods]] methods a.k.a dunder methods
 
 For example, we need to create a vector type `Vector2` so that it can add, multiply etc
 ```python

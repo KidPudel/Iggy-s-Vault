@@ -1,10 +1,40 @@
-Claims are statements about an entity (typically, the user) and additional data.
+# JWT Claims
 
-3 types of claims:
-- [**Registered claims**](https://tools.ietf.org/html/rfc7519#section-4.1): These are a set of predefined claims which are not mandatory but recommended, to provide a set of useful, interoperable claims. Some of them are: **iss** (issuer), **exp** (expiration time), **sub** (subject), **aud** (audience), and [others](https://tools.ietf.org/html/rfc7519#section-4.1).
-- [**Public claims**](https://tools.ietf.org/html/rfc7519#section-4.2): These can be defined at will by those using JWTs. But to avoid collisions they **should be** defined in the [IANA JSON Web Token Registry](https://www.iana.org/assignments/jwt/jwt.xhtml) or be defined as a URI that contains a collision resistant namespace. 
-- [**Private claims**](https://tools.ietf.org/html/rfc7519#section-4.3): These are the custom claims created to share information between parties that agree on using them and are neither _registered_ or _public_ claims.
+Key-value pairs in a JWT payload that carry statements about the subject or token metadata.
+
+## What it does
+
+Three categories:
+- **Registered** — predefined, interoperable names from RFC 7519: `iss` (issuer), `sub` (subject), `aud` (audience), `exp` (expiration), `iat` (issued at)
+- **Public** — custom claims registered in the IANA JWT registry to avoid collisions
+- **Private** — custom claims agreed upon between specific parties; not registered anywhere
+
+Claims are Base64URL-encoded but not encrypted — anyone with the token can read them.
+
+## Code
+
 ```json
-{ "sub": "1234567890", "name": "John Doe", "admin": true }
+{
+  "sub": "user_id_123",
+  "iat": 1700000000,
+  "exp": 1700003600,
+  "admin": true
+}
 ```
 
+## Sources
+
+- https://www.rfc-editor.org/rfc/rfc7519#section-4
+
+## Related
+
+- [[JWT]]
+- [[authorization]]
+- [[base64-encoding]]
+- [[Payload]]
+
+## Process
+
+- Since claims are readable without the secret, what data should never be put in a claim?
+- How does `exp` enforcement work on the server side if the server never stores tokens?
+- What happens if `aud` is set but the server doesn't validate it?

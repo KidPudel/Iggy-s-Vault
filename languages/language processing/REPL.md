@@ -1,2 +1,2 @@
 Read Evaluate Print Loop.
-This is the process of basically a console or interactive mode, that lets user to input something, sends to the [[interpreter]] for evaluation, prints to the user back, and repeats.
+This is the process of basically a console or interactive mode, that lets user to input something, sends to the [[languages/language processing/interpreter]] for evaluation, prints to the user back, and repeats.

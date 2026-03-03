@@ -1,41 +1,37 @@
-A server that hosts the [[message queue]] and serves the clients
+# Message Broker
 
-> 	Intermediate layer that allows two sides to communicate with each other through messaging protocol, by ***asynchronously***  sending messages to not wait for the response, and just hit the  and maintaining a message queue, as well as following some rules on how to send message
+An intermediary server that receives messages from producers, routes them, and delivers them to consumers asynchronously.
 
-**Intermediate layer** of software that allows two sides to communicate with each other by *translating messages between format messaging protocols*, this allows them "talk" with each other even on different technologies (languages) ***asynchronously** to not wait the consumer to receive the message* and *be sure that message will be delivered* maintaining a [[message queue]]
+## What it does
 
-It is responsible for routing from sender to receiver as well as formatting and filtering messages based on the rules.
+A message broker decouples the sender from the receiver. The sender publishes a message and continues without waiting for the consumer to process it. The broker stores the message in a queue until the consumer retrieves it.
 
-There are several [[message patterns]] to utilize
+The broker handles:
+- Routing messages from sender to the correct receiver
+- Storing messages until the consumer is ready
+- Message format translation between protocols (in some implementations)
+- Delivery guarantees (at-least-once, exactly-once depending on config)
 
-# message broker vs api
-## [[API]]
-It is best used for synchronous request/reply. API is designed for immediate response, so if the client is down, then the sending service will be blocked while it awaits the reply
+Two common patterns: **point-to-point** (one consumer gets the message) and **pub/sub** (message goes to all subscribers of a topic).
 
-## [[message broker]]
-Message brokers enable asynchronous communications, so it doesn't wait for reply from receiver and it can also keep track of consumer state. This improves fault tolerance and resiliency.
+## Sources
 
+- https://www.rabbitmq.com/docs
+- https://kafka.apache.org/documentation/
 
-# message broker vs event streaming platform
-Event streaming is only allows for pub/sub messaging patter. 
-Event streaming designed for use with high-volume of messaging, so it is readily scalable.
-They are capable of ordering streams of messages into categories called [[topic]]s and store them for predefined amount of time.
-But unlike message brokers, event streams cannot guarantee the message delivery or track which consumer get the message.
+## Related
 
-They are more scalable than message brokers, but offer a fewer features for fault tolerance (*like message resending*), as well as more limited message routing and queueing capabilities.
+- [[message queue]]
+- [[RabbitMQ]]
+- [[Kafka]]
+- [[topic]]
+- [[producer]]
+- [[consumer]]
+- [[message patterns]]
 
+## Process
 
-# message broker vs [[ESB]]
-[[ESB]] is challenging to integrate, difficult to maintain, difficult to troubleshoot, not easy to scale.
-Message brokers are "lightweight" alternative to [[ESB]], which provides similar functionality - *a mechanism for inter-service communication* - with more simplicity and lower cost.
-
-
-# use cases
-- **Financial transactions and payment processing:** since using point-to-point allows you to get the message once, and be sure that it will be delivered to the person who must receive it.
-- **E-commerce order processing and fulfillment:** for fault tolerance 
-- **Protecting highly sensitive data at rest and in transit:**
-- **Event streaming use cases like taxi position**: with pub/sub
-
-# examples of message brokers
-- RabbitMQ - classic message broker
-- [[Kafka]] - message broker that designed for higher amount of data load (better throughput), which makes it event streaming platform with message broker functionality 
+- What happens to a message if the broker crashes before delivery?
+- How does a message broker differ from a direct HTTP call in terms of failure handling?
+- Where does message ordering become a concern, and which brokers handle it differently?
+- What is the difference between a message broker and an event streaming platform like Kafka?

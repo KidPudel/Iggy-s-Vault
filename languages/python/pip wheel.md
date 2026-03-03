@@ -1,1 +1,0 @@
-`pip wheel` is the command for building a [[wheel]] files from Python packages.

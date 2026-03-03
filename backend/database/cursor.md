@@ -1,10 +1,39 @@
-Cursor is the structure (object), that allows to traverse through a data. It acts/serves as a pointer to the row, that allows to read that data
+# Database Cursor
 
+A server-side pointer that tracks position in a query result set and fetches rows one at a time or in batches.
 
-Database cursor is the defined database object that acts like a pointer, that allows as to read the records of the query result.
+## What it does
 
-The base process
-- SQL query gets executed and the result set containing records is stored in database server
-- cursor *fetches* the result set (one at the time, or a whole bunch), by sending the request to the database server, and returning the result
-- cursor then shifts to the next record (if any), since cursor keeps track of where it should be.
-- close the cursor, to release the database resources
+1. A query executes and the result set is held on the database server
+2. The cursor is opened, pointing to the first row
+3. `FETCH` retrieves the current row (or a batch) and advances the pointer
+4. The cursor tracks the current position and knows when the result set is exhausted
+5. The cursor is closed to release server resources
+
+Cursors are useful when the full result set is too large to load into memory at once.
+
+## Code
+
+```sql
+DECLARE my_cursor CURSOR FOR SELECT id, name FROM users;
+OPEN my_cursor;
+FETCH NEXT FROM my_cursor;
+CLOSE my_cursor;
+DEALLOCATE my_cursor;
+```
+
+## Sources
+
+- https://www.postgresql.org/docs/current/plpgsql-cursors.html
+
+## Related
+
+- [[transactions]]
+- [[database basics]]
+- [[connection pool]]
+
+## Process
+
+- What happens to a cursor if the transaction it belongs to is rolled back?
+- How does a cursor differ from loading the entire result set into application memory?
+- What resource does an open cursor hold on the server, and why does failing to close it matter?

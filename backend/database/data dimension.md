@@ -1,6 +1,28 @@
-Is a set of data attributes (element) that is related to something of ***interest to a business***, which are ***entry points to a numeric [[data fact]]***
-Example of dimensions: "customers", "products", "stores", "time"
-Real-world example: "Business want to know how may Xs were **sold** at a specific *store* in *Los Angeles* last *month*"
+# Data Dimension
 
-Here is the [[OLAP cube]]
-![What is a Data Dimension?](https://data-warehouses.net/images/datadimensions.jpg)
+A categorical attribute in a data warehouse that provides context for measuring numeric facts.
+
+## What it does
+
+Dimensions are the entry points by which facts are filtered, grouped, or aggregated. Common dimensions: customer, product, store, time.
+
+In an OLAP cube, each axis represents a dimension. A fact (e.g. "units sold") sits at the intersection of dimension values (e.g. product=Widget, store=LA, month=January).
+
+Dimension tables in a star schema contain descriptive attributes (name, region, category) and a primary key that foreign keys in the fact table reference.
+
+## Sources
+
+- [TODO: find source]
+
+## Related
+
+- [[OLAP]]
+- [[OLAP cube]]
+- [[data fact]]
+- [[multi-dimensional data]]
+
+## Process
+
+- What is the relationship between a dimension and the fact table in a star schema?
+- How does adding a new dimension change the shape of the OLAP cube?
+- What is the difference between a dimension value and a fact value?

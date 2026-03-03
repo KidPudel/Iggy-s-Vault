@@ -1,1 +1,0 @@
-to search for commands type `kitten`

@@ -1,1 +1,0 @@
-works directly with bytes
