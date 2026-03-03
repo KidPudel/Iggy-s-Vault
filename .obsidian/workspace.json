@@ -11,10 +11,15 @@
             "id": "2ce3a5052aa4e7d2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Obsidian Vault Restructure Atomic Wiki Notes.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Obsidian Vault Restructure Atomic Wiki Notes"
             }
           }
         ]
@@ -90,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Obsidian Vault Restructure Atomic Wiki Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Obsidian Vault Restructure Atomic Wiki Notes"
             }
           },
           {
@@ -191,19 +197,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2ce3a5052aa4e7d2",
+  "active": "039133efe5b78d25",
   "lastOpenFiles": [
+    "languages/golang/commands.md",
+    "general tech/Vault revamp backlog batch 1.md",
+    "languages/golang/go-di.md",
     "images/Pasted image 20250512190638.png",
     "images/Pasted image 20250512191336.png",
     "images/Pasted image 20250512190641.png",
     "computer architecture/rule of CPU vs GPU computation.md",
     "computer architecture/CPU.md",
     "computer architecture/CPU cache.md",
-    "general tech/Vault revamp backlog batch 1.md",
     "gamedev/godot/Input singleton in Godot.md",
     "gamedev/godot/Godot input callbacks.md",
     "gamedev/godot/Godot input propagation.md",
-    "general tech/Vault revamp protocol.md",
+    "Obsidian Vault Restructure Atomic Wiki Notes.md",
     "gamedev/godot/Local vs global transform in Godot.md",
     "gamedev/godot/Basis in Godot.md",
     "CS/design/KISS.md",
@@ -220,7 +228,6 @@
     "architecture/design patterns.md",
     "architecture/event bus.md",
     "architecture/message patterns.md",
-    "architecture/Design.md",
     "CS/design",
     "cheat-sheets",
     "lookups",

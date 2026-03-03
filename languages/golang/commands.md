@@ -3,3 +3,4 @@
 - `go mod tidy` add missing and remove redundant
 - `go build`, compile and link
 - `go run` just executes a file
+- `go fix` fixes go files
