@@ -1,223 +1,23 @@
 # Godot 4.x Input Handling Reference
 
-## Overview
+Converted to atomic index.
 
-Godot provides two complementary systems for handling input: **event-driven** callbacks that respond to specific input events, and **polling** via the `Input` singleton for continuous checks. Understanding when to use each—and how input propagates through the scene tree—is essential for responsive, bug-free controls.
+## Core Concepts
 
----
+- [[Godot input propagation]]
+- [[Godot input callbacks]]
+- [[Input singleton in Godot]]
 
-## Input Propagation Order
+## Related Notes
 
-Input events travel through your scene in a specific order. Understanding this prevents "why isn't my input working?" bugs.
+- [[scene]]
+- [[node in godot]]
+- [[signal]]
+- [[Call down, signal up]]
 
-```
-1. Node._input()           → First chance, catches everything
-2. Control._gui_input()    → UI elements (buttons, panels, etc.)
-3. Node._shortcut_input()  → Keyboard/joypad shortcuts only
-4. Node._unhandled_key_input() → Unhandled keyboard events only
-5. Node._unhandled_input() → Everything the GUI didn't consume
-6. Physics picking         → 3D/2D collision objects
-```
+## Rule
 
-**Key insight:** Events propagate in **reverse tree order** (deepest children first, then parents). Any node can stop propagation by calling `get_viewport().set_input_as_handled()`.
-
----
-
-## Core Input Methods
-
-### 1. `_unhandled_input()` — Gameplay Input (Recommended)
-
-Best for gameplay controls. Only receives events the GUI didn't consume.
-
-```gdscript
-func _unhandled_input(event: InputEvent) -> void:
-    if event.is_action_pressed("jump"):
-        velocity.y = -jump_force
-        get_viewport().set_input_as_handled()
-```
-
-**When to use:**
-
-- Player movement, shooting, abilities
-- Camera controls
-- Any gameplay input that should be blocked by UI
-
----
-
-### 2. `_input()` — Global Input
-
-Receives ALL input events before the GUI. Use sparingly.
-
-```gdscript
-func _input(event: InputEvent) -> void:
-    if event.is_action_pressed("pause"):
-        # Pause menu should work even when GUI has focus
-        toggle_pause()
-        get_viewport().set_input_as_handled()
-```
-
-**When to use:**
-
-- System-level commands (pause, screenshot)
-- Input that must work regardless of UI state
-- Debug controls
-
----
-
-### 3. `_gui_input()` — Control Nodes Only
-
-Only available on Control-derived nodes. Receives mouse events within the control's rect.
-
-```gdscript
-extends Button
-
-func _gui_input(event: InputEvent) -> void:
-    if event is InputEventMouseButton and event.pressed:
-        if event.button_index == MOUSE_BUTTON_RIGHT:
-            show_context_menu()
-            accept_event()  # Stops propagation for Controls
-```
-
-**Gotcha:** Keyboard events only reach `_gui_input()` if the Control has focus. Use `grab_focus()` or set `focus_mode`.
-
----
-
-### 4. `_shortcut_input()` — Shortcuts Only
-
-Receives only `InputEventKey`, `InputEventShortcut`, and `InputEventJoypadButton`.
-
-```gdscript
-func _shortcut_input(event: InputEvent) -> void:
-    if event.is_action_pressed("quick_save"):
-        save_game()
-        get_viewport().set_input_as_handled()
-```
-
----
-
-### 5. `_unhandled_key_input()` — Keyboard Only
-
-Like `_unhandled_input()` but filtered to keyboard events only.
-
-```gdscript
-func _unhandled_key_input(event: InputEvent) -> void:
-    if event is InputEventKey and event.pressed:
-        match event.keycode:
-            KEY_F1:
-                toggle_help()
-            KEY_F11:
-                toggle_fullscreen()
-```
-
----
-
-## Input Singleton (Polling)
-
-Poll input state directly via the `Input` singleton. Best for continuous input like movement.
-
-### Action State Methods
-
-|Method|Returns `true` when...|
-|---|---|
-|`is_action_pressed("action")`|Action is currently held|
-|`is_action_just_pressed("action")`|Action was pressed THIS frame|
-|`is_action_just_released("action")`|Action was released THIS frame|
-
-```gdscript
-func _physics_process(delta: float) -> void:
-    if Input.is_action_pressed("sprint"):
-        speed = run_speed
-    
-    if Input.is_action_just_pressed("interact"):
-        interact_with_nearest()
-```
-
-**Gotcha:** `is_action_just_pressed()` only works in `_process()` or `_physics_process()`. In `_input()`, use `event.is_action_pressed()` instead—the event IS the "just pressed" moment.
-
----
-
-### Movement Input Methods
-
-#### `Input.get_vector()` — 2D Movement (Circular Deadzone)
-
-```gdscript
-func _physics_process(delta: float) -> void:
-    var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-    velocity = direction * speed
-```
-
-**Behavior:**
-
-- Returns `Vector2` with length clamped to 1.0
-- Applies **circular deadzone** (good for analog sticks)
-- Deadzone averaged from all four actions (or override with 5th parameter)
-
-**Gotcha:** Circular deadzone means you can't get pure horizontal/vertical input near the deadzone threshold. For platformers needing precise cardinal directions, use `get_axis()` instead.
-
----
-
-#### `Input.get_axis()` — Single Axis (Per-Axis Deadzone)
-
-```gdscript
-func _physics_process(delta: float) -> void:
-    var horizontal := Input.get_axis("move_left", "move_right")
-    var vertical := Input.get_axis("move_up", "move_down")
-    velocity = Vector2(horizontal, vertical).limit_length() * speed
-```
-
-**When to use over `get_vector()`:**
-
-- Platformers requiring precise left/right
-- When you need per-axis deadzone behavior
-- Mixing keyboard and gamepad on same actions
-
----
-
-#### `Input.get_action_strength()` — Analog Value
-
-```gdscript
-var trigger_pressure := Input.get_action_strength("accelerate")
-car_speed = max_speed * trigger_pressure
-```
-
-**Returns:** `0.0` to `1.0` based on how far past the deadzone the input is.
-
-- Digital inputs (keyboard) return `0.0` or `1.0`
-- Analog inputs (triggers, sticks) return intermediate values
-
----
-
-#### `Input.get_action_raw_strength()` — Ignores Deadzone
-
-Same as above but ignores the action's configured deadzone.
-
----
-
-## InputEvent Types
-
-### Type Checking Pattern
-
-```gdscript
-func _unhandled_input(event: InputEvent) -> void:
-    if event is InputEventKey:
-        handle_key(event)
-    elif event is InputEventMouseButton:
-        handle_mouse_button(event)
-    elif event is InputEventMouseMotion:
-        handle_mouse_motion(event)
-    elif event is InputEventJoypadButton:
-        handle_joypad_button(event)
-    elif event is InputEventJoypadMotion:
-        handle_joypad_axis(event)
-```
-
-### Common InputEvent Types
-
-|Type|Use Case|Key Properties|
-|---|---|---|
-|`InputEventKey`|Keyboard|`keycode`, `physical_keycode`, `unicode`, `pressed`, `echo`|
-|`InputEventMouseButton`|Mouse clicks/wheel|`button_index`, `pressed`, `double_click`, `position`|
-|`InputEventMouseMotion`|Mouse movement|`relative`, `velocity`, `position`|
+Keep this file as a link hub only. Put each input concept in its own note.
 |`InputEventJoypadButton`|Gamepad buttons|`button_index`, `pressed`, `pressure`|
 |`InputEventJoypadMotion`|Gamepad sticks/triggers|`axis`, `axis_value`|
 |`InputEventScreenTouch`|Touch start/end|`index`, `position`, `pressed`|
