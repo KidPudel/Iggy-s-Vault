@@ -1,0 +1,925 @@
+
+*Generated 2026-03-03. Every .md file read individually. No inferences.*
+
+## Summary
+- **Total files scanned:** 895
+- **AI-generated:** 99
+- **Personal:** 436
+- **Mixed:** 65
+- **Cheat-sheet/config:** 130
+- **Fluff/irrelevant:** 165
+- **Uncertain:** 0
+
+---
+
+## AI-generated
+*Strip and rebuild as atomic notes.*
+
+- `architecture/design patterns.md` — comprehensive teaching material with structured headers, "When to use", code examples, quick reference table, pattern categorization
+- `backend/database/cache techniques.md` — structured explanation of cache patterns with use cases and specifics
+- `backend/database/Cassandra.md` — structured architecture and components explanation
+- `backend/database/columnar database.md` — structured explanation of columnar databases and characteristics
+- `backend/database/cursor.md` — structured explanation of database cursors and their process
+- `backend/database/data dimension.md` — structured definition with business context and example
+- `backend/database/do not use select all.md` — rewritten best practices article on SELECT *
+- `backend/database/flyway.md` — comprehensive structured explanation with examples and configurations
+- `backend/database/function.md` — structured explanation of database functions with syntax
+- `backend/database/OLAP.md` — structured explanation of OLAP with details
+- `backend/database/preparation.md` — structured explanation of prepared statements
+- `backend/database/Repeatable Migrations.md` — structured explanation of repeatable migrations with use cases
+- `backend/database/schema.md` — structured explanation of schema with database system comparisons
+- `backend/database/trigger function.md` — structured explanation with syntax and examples
+- `backend/docker/bind mounts.md` — structured explanation with characteristics and use cases
+- `backend/docker/docker basic terms.md` — structured definitions with analogy
+- `backend/docker/docker volumes.md` — structured explanation with characteristics and use cases
+- `backend/network/Authentication and authorization.md` — structured headings, definitions, types with detailed explanations
+- `backend/network/Authorization header.md` — structured list of authentication types with clear definitions and formats
+- `backend/network/base64-encoding.md` — step-by-step encoding/decoding process, use cases, structured explanation
+- `backend/network/claims.md` — structured explanation with RFC references and types
+- `backend/network/cookies.md` — comprehensive structured list of cookie types with characteristics
+- `backend/network/headers.md` — structured definition with examples and use cases
+- `backend/network/JWT.md` — comprehensive structured sections on usage, structure, flow, security considerations
+- `backend/network/message broker.md` — comprehensive structured explanations with comparisons and use cases
+- `backend/network/path vs query parameters.md` — structured best practices with clear examples
+- `backend/network/Protocol Buffers - Protobuf.md` — structured explanation with contrasts to JSON, features, and benefits
+- `backend/network/SSL.md` — structured explanation of SSL handshake process with steps
+- `backend/network/three-way handshake.md` — structured explanation of TCP handshake steps
+- `blender/blender quick rigging guide.md` — step-by-step structured guide with "Prepare", "Add", "Build" headers, checkmarks, teaching tone
+- `blender/blender shader nodes.md` — comprehensive reference with structured categories, formal descriptions, organized like documentation
+- `computer graphics/Triplanar Mapping.md` — structured headers, "What It Solves", "How It Works", math tables, "When to Use", implementation examples
+- `CS/algorithms/Algorithms.md` — structured overview with headers, comprehensive sections, code examples, clear teaching style
+- `CS/Data structures.md` — comprehensive overview, structured sections, teaching style, code examples, performance analysis
+- `CS/design/SOLID.md` — structured principles with detailed examples, "Quick Reference" table, code comparisons
+- `frontend/css display.md` — structured header with definitions and comprehensive element lists
+- `frontend/css properties.md` — structured headers, comprehensive list, teaching tone with technical depth
+- `frontend/css pseudo selector.md` — structured list with numbered examples and code samples
+- `frontend/HTML tags.md` — structured numbered list with comprehensive tag definitions
+- `frontend/vue.md` — extensive structured content with headings, examples, teaching tone
+- `gamedev/5 game design mistakes and solutions.md` — structured lessons with bold sections, problem/solution format, comprehensive coverage
+- `gamedev/Game design patterns.md` — large comprehensive reference with code examples, structural patterns, detailed explanations
+- `gamedev/godot/atlas.md` — comprehensive guide with examples, best practices, common patterns, professional structure
+- `gamedev/godot/bbcode.md` — comprehensive reference with tables, tags, examples, professional formatting
+- `gamedev/godot/built-in virtual functions.md` — structured function reference with descriptions, use cases, professional format
+- `gamedev/godot/canvas layer.md` — structured explanation with problem definition, properties, use cases, examples
+- `gamedev/godot/class in godot.md` — comprehensive class documentation with examples, inheritance, inner classes
+- `gamedev/godot/delete object in godot.md` — comprehensive guide on deletion methods with examples, best practices, validity checks
+- `gamedev/godot/export in godot.md` — comprehensive reference with decorations, examples, categories, professional structure
+- `gamedev/godot/fsm vs hsm.md` — structured comparison with clear examples, decision rules, professional format
+- `gamedev/godot/gdscript type checking.md` — comprehensive reference with tables, methods, examples, practical patterns
+- `gamedev/godot/godot async.md` — comprehensive guide on threading, coroutines, patterns with examples and best practices
+- `gamedev/godot/Godot control nodes.md` — extensive reference with nodes, containers, properties, patterns, professional guide
+- `gamedev/godot/godot editor plugin.md` — comprehensive guide on EditorPlugin with architecture, examples, complete patterns
+- `gamedev/godot/Godot Resource.md` — comprehensive guide on Resources with serialization, examples, architecture guidelines
+- `gamedev/godot/input handling reference in Godot.md` — comprehensive reference with event types, patterns, quick reference table
+- `gamedev/godot/Limbo AI.md` — comprehensive guide on LimboAI behavior trees with concepts, workflow, structured format
+- `gamedev/godot/load vs preload vs @export.md` — structured comparison with timeline, mental model, scene manager pattern
+- `gamedev/godot/multimesh insanting reference.md` — extensive professional guide with problems, solutions, culling, complete examples
+- `gamedev/godot/raycasting from camera.md` — comprehensive guide with examples, filtering, placing objects, professional format
+- `gamedev/godot/reflection in gdscript.md` — comprehensive reference on reflection with methods, use cases, performance considerations
+- `gamedev/godot/shader render modes.md` — comprehensive cheat sheet with table of render modes, combinations, tips
+- `gamedev/godot/string name.md` — comprehensive explanation of StringName with internals and performance
+- `gamedev/godot/struct alternatives and more.md` — structured table of data container options with use cases
+- `gamedev/godot/Systems access approaches in Godot.md` — comprehensive guide on three patterns with pros/cons, examples, decision rules
+- `gamedev/godot/tool.md` — comprehensive guide on @tool annotation with patterns, examples, gotchas, checklist
+- `gamedev/godot/viewport in godot.md` — comprehensive reference on viewports with properties, patterns, gotchas, examples
+- `gamedev/godot/ways to reference node instance in a tree godot.md` — structured reference with 12 methods, examples, organized sections
+- `gamedev/roblox/CFrame.md` — teaching explanation with concepts and operations
+- `gamedev/roblox/client vs server and replication.md` — comprehensive architecture explanation with mental models
+- `gamedev/roblox/Communication (Remote).md` — comprehensive guide with communication flow examples
+- `gamedev/roblox/Core environments (containers).md` — comprehensive architecture explanation with analogies
+- `gamedev/roblox/Data Persistence with DataStores.md` — comprehensive guide with code examples and explanations
+- `gamedev/roblox/DataModel.md` — comprehensive guide with hierarchy explanation and examples
+- `gamedev/roblox/events.md` — comprehensive guide with event types and examples
+- `gamedev/roblox/execution context.md` — comprehensive explanation with context table
+- `gamedev/roblox/Player and Character API.md` — comprehensive API reference with examples
+- `gamedev/roblox/Project architecture.md` — comprehensive architecture guide with folder structure and explanations
+- `gamedev/roblox/Roblox APIs.md` — comprehensive API reference with numbered sections
+- `gamedev/roblox/roblox oop.md` — comprehensive OOP guide with class example
+- `gamedev/roblox/Script types and explorer.md` — comprehensive guide with execution contexts and examples
+- `gamedev/roblox/service based architecture.md` — comprehensive architecture guide with diagrams and explanations
+- `gamedev/roblox/Services.md` — comprehensive service reference with use cases and code examples
+- `gamedev/unity/Essential Unity Packages and Assets.md` — structured headers, "What/Why/Install" pattern, comprehensive coverage
+- `gamedev/unity/Execution Order in Unity.md` — teaching tone, structured examples, "Key Takeaways" section
+- `gamedev/unity/Input System in Unity.md` — comprehensive structured guide with workflows, examples, comparison tables
+- `gamedev/unity/MonoBehaviour Reference.md` — teaching tone with detailed lifecycle explanations and structured patterns
+- `gamedev/unity/Movement in Unity game for Godot developer.md` — comprehensive reference with tables and code examples
+- `gamedev/unity/Prefabs.md` — structured guide with "Core Insight" callout, comprehensive examples
+- `gamedev/unity/Serialization and Inspector in Unity.md` — structured tables, examples, "Key Takeaways"
+- `gamedev/unity/Transform and Hierarchy.md` — comprehensive guide with "Core Insight", structured examples
+- `gamedev/unity/Unity assets reference.md` — comprehensive reference with tables and special folder documentation
+- `gamedev/unity/Unity Camera Component.md` — technical reference with numbered sections and property tables
+- `gamedev/unity/Unity Gotchas for Godot Developers.md` — teaching tone with specific problem-solution patterns
+- `gamedev/unity/Unity Lighting.md` — technical reference with comparison tables and detailed explanations
+- `gamedev/unity/Unity Project Structure Reference.md` — comprehensive reference with folder diagrams and special folder explanations
+- `gamedev/unity/Unity Render Texture and Scriptable Render Pipeline Reference.md` — comprehensive technical reference with use cases and property tables
+- `gamedev/unity/Unity Script naming patterns.md` — comprehensive naming guide with tables and patterns
+- `gamedev/unity/Unity Shaders.md` — teaching guide with "Core Insight" and structured progression
+- `general tech/Flutter interview.md` — comprehensive interview prep with structured sections, bullet points, code examples, teaching tone
+- `general tech/kotlin coroutines.md` — comprehensive structured guide with sections, code examples, diagrams, teaching content
+- `languages/csharp/Csharp Built-in Interfaces Reference.md` — comprehensive teaching format with examples, patterns, and use cases
+- `languages/golang/collections.md` — comprehensive structured guide with detailed sections
+- `languages/golang/go sync.Map vs sync.Pool.md` — structured comparison with clear sections
+- `languages/golang/golang generics.md` — comprehensive structured guide with headers and examples
+- `languages/golang/golang zero values.md` — structured list of all types and their zero values
+- `languages/golang/GOSOLID.md` — comprehensive SOLID principles with full code examples
+- `languages/golang/naming convention.md` — structured comprehensive guide with all conventions
+- `languages/golang/struct tags.md` — comprehensive guide with multiple examples
+- `languages/language processing/grapheme cluster.md` — structured table with examples, bold annotations, teaching format
+- `languages/language processing/parser.md` — comprehensive structured explanation with JSON example, comparison of parsing strategies, teaching tone
+- `languages/odin/foreign system.md` — structured teaching format with explanations, example code blocks, clear headers, "Note about" sections
+- `languages/python/data validation.md` — Pydantic library example with structured documentation
+- `languages/python/Django.md` — comprehensively documented with teaching tone, headers, sections, examples
+- `languages/python/fastAPI.md` — extensively documented with teaching tone, headers, examples and best practices
+- `languages/python/magic.md` — comprehensive structured documentation of dunder methods
+- `languages/python/naming styles.md` — structured explanation with conventions list
+- `languages/python/path operation methods.md` — comprehensive guide with structured recommendations
+- `languages/python/python interpreter.md` — structured explanation with pros/cons lists
+- `languages/python/reflection.md` — structured explanation with multiple language contexts
+- `languages/python/wheel.md` — structured explanation of wheel distribution format
+- `languages/zig/allocators.md` — structured guidance with categories, best practices, comprehensive explanation of allocator strategies
+- `languages/zig/build modes.md` — structured comparison table of 4 build modes from Zig docs
+- `languages/zig/build system.md` — comprehensive structured guide with headers, examples, design explanations, best practices
+- `languages/zig/comptime.md` — highly structured comprehensive guide covering compile-time types, variables, expressions with detailed examples
+- `math/Euler angles.md` — comprehensive explanation with test section, Unity cheat sheet, extensive structured content
+- `math/Quaternions.md` — extensive structured content with Unity examples and decision flowchart
+- `roblox/roblox containers with replication.md` — structured content with comprehensive explanations, decision trees, examples
+- `terminal/neovim/subsitude.md` — comprehensive structured guide with section headers, examples, teaching tone
+
+---
+
+## Personal
+*Preserve owner's words and thinking. Gently restructure into template.*
+
+- `architecture/Design.md` — owner's brief notes on design approach selection
+- `architecture/Domain Driven Design.md` — owner's own notes explaining DDD concepts in their words
+- `architecture/event sourcing.md` — owner's own voice with examples and sketches explaining concepts
+- `architecture/message patterns.md` — owner's sketches of message patterns with terminology notes
+- `architecture/oop.md` — owner's opinionated thoughts on OOP principles
+- `architecture/outbox.md` — owner's explanation of the outbox pattern from their understanding
+- `backend/Backend career map.md` — personal career guidance with owner's analysis and recommendations
+- `backend/backend and systems design questions.md` — personal TODO list and rough notes
+- `backend/database/4 levels of isolation.md` — owner's isolation notes with explanation of serializable and anomaly table
+- `backend/database/ACID.md` — owner's notes on transaction properties with examples
+- `backend/database/alternative to relationship tables.md` — incomplete notes on complex types and JSON storage
+- `backend/database/anomalies.md` — owner's detailed notes on dirty reads, non-repeatable reads, phantom reads with session examples
+- `backend/database/ClickHouse.md` — incomplete notes on columnar database and table engines
+- `backend/database/connection pool.md` — owner's explanation of connection pooling with video reference
+- `backend/database/constraints.md` — notes on constraints with SQL example
+- `backend/database/CTE.md` — brief owner's definition of CTEs
+- `backend/database/database connection.md` — owner's outline of connection process with notes on pooling
+- `backend/database/database driver.md` — brief owner's definition
+- `backend/database/database relationship.md` — owner's explanation of relationship types with examples and mindset notes
+- `backend/database/database replication.md` — owner's notes on replication strategies with context
+- `backend/database/db role.md` — brief note on database role permissions
+- `backend/database/DBMS.md` — brief definition
+- `backend/database/foreign key.md` — notes on foreign keys with SQL examples
+- `backend/database/hash partitioning.md` — brief note with example
+- `backend/database/indexes.md` — owner's explanation of indexes with SQL examples
+- `backend/database/join.md` — owner's explanation of joins with SQL example
+- `backend/database/list partitioning.md` — brief note with example
+- `backend/database/migrations.md` — owner's explanation of migrations with version tracking
+- `backend/database/multi-dimensional data.md` — one line note
+- `backend/database/OLAP cube.md` — brief definition with image
+- `backend/database/orm.md` — one sentence definition
+- `backend/database/partitioning.md` — owner's explanation of partitioning with list of types
+- `backend/database/primary key.md` — brief notes with database-specific detail
+- `backend/database/range partitioning.md` — brief note with example
+- `backend/database/RDBMS.md` — one sentence definition
+- `backend/database/round-robin partitioning.md` — brief note
+- `backend/database/s3.md` — owner's notes on S3 with use cases and video link
+- `backend/database/scheduler.md` — one sentence definition
+- `backend/database/sequence.md` — owner's explanation with methods and SQL examples
+- `backend/database/sharding.md` — brief note with use case
+- `backend/database/transactions.md` — owner's explanation of transactions and ACID
+- `backend/database/trigger.md` — owner's notes on triggers with SQL syntax
+- `backend/database/union.md` — brief owner's explanation with SQL example
+- `backend/database/vertical partitioning.md` — brief note with use case
+- `backend/database/views.md` — one sentence owner's definition
+- `backend/database/WAL.md` — one sentence owner's explanation
+- `backend/design/Designing data-intensive applications.md` — owner's summary notes on data-intensive design principles
+- `backend/docker/cluster.md` — one-line definition
+- `backend/docker/docker multi-stage build.md` — explanation with code examples
+- `backend/docker/docker network.md` — explanation with code examples and structured table
+- `backend/docker/Kubernetes.md` — brief explanation of components
+- `backend/docker/kublet.md` — one-line definition
+- `backend/docker/nodes.md` — one-line definition
+- `backend/docker/pods.md` — one-line definition
+- `backend/Go Backend Deep Learning Method.md` — personal project guide with thinking-based methodology
+- `backend/Go Backend Interview Questions Bank.md` — interview question guide with follow-ups and testing methodology
+- `backend/messaging/Task queue.md` — owner's explanation of task queues with terminology
+- `backend/network/ACK.md` — one-line note referencing another file
+- `backend/network/Application server.md` — brief personal explanation
+- `backend/network/blockchain.md` — rough explanation with owner's own phrasing
+- `backend/network/CDN.md` — brief personal definition
+- `backend/network/connectionless protocol.md` — concise personal definition
+- `backend/network/consumer group.md` — brief personal explanation with bullet points
+- `backend/network/consumer.md` — one-line definition
+- `backend/network/CORS.md` — owner's explanation with personal language
+- `backend/network/ESB.md` — one-line definition
+- `backend/network/full duplex.md` — brief definition
+- `backend/network/Gossip protocol.md` — concise explanation
+- `backend/network/gRPC Streams.md` — informal explanation with ASCII diagrams and use cases
+- `backend/network/HTTP.md` — brief personal explanation
+- `backend/network/HTTP2.0.md` — informal notes with embedded images
+- `backend/network/ingress controller.md` — brief technical explanation
+- `backend/network/IP.md` — owner's explanation of OSI layers
+- `backend/network/IPC.md` — one-line acronym expansion
+- `backend/network/json-rpc.md` — brief comparison to gRPC
+- `backend/network/kafka delivery semantics.md` — bulleted list with brief explanations
+- `backend/network/LAN.md` — brief definition with diagram reference
+- `backend/network/load balancer.md` — one-line definition
+- `backend/network/localhost.md` — one-line definition
+- `backend/network/long polling.md` — informal explanation
+- `backend/network/loopback.md` — explanation with informal tone
+- `backend/network/MAC.md` — one-line definition
+- `backend/network/message queue.md` — brief bulleted definition
+- `backend/network/middleware.md` — brief explanation with bulleted list
+- `backend/network/multiplexing.md` — one-line explanation
+- `backend/network/nodes in blockchain.md` — one-line definition
+- `backend/network/offset in partion.md` — brief definition
+- `backend/network/packets.md` — one-line definition
+- `backend/network/pagination.md` — brief definition with techniques
+- `backend/network/partition in kafka.md` — one-line definition
+- `backend/network/partition key.md` — brief definition
+- `backend/network/Payload.md` — one-line definition
+- `backend/network/port.md` — brief analogy
+- `backend/network/preflight.md` — one-line definition
+- `backend/network/producer.md` — one-line definition
+- `backend/network/proxy.md` — brief definition
+- `backend/network/RESTful API.md` — brief definition
+- `backend/network/reverse proxy.md` — one-line definition
+- `backend/network/short polling.md` — informal explanation
+- `backend/network/TCP.md` — brief explanation
+- `backend/network/topic.md` — one-line definition
+- `backend/network/UDP.md` — explanation comparing to TCP
+- `backend/network/URI.md` — one-line acronym
+- `backend/network/URL.md` — one-line acronym
+- `backend/network/WAF.md` — brief explanation
+- `backend/network/WAN.md` — one-line definition with diagram reference
+- `backend/network/Web server.md` — brief personal explanation
+- `backend/network/Web Sockets.md` — informal explanation
+- `backend/network/Webhooks.md` — informal explanation with diagram
+- `blender/blender apply.md` — owner's explanations with practical guidance
+- `blender/blender bake vs godot remake.md` — owner's decision-making process
+- `blender/blender distructive and non-distructive.md` — brief personal workflow notes
+- `blender/blender handle bad fbx.md` — owner's workflow with custom Python script
+- `blender/blender learning path for game dev.md` — resource collection with owner's note structure
+- `blender/blender modifiers.md` — rough personal notes on modifier types
+- `cheat-sheets/shader math.md` — casual explanations with code examples and informal tone
+- `computer architecture/CPU cache.md` — personal notes with bullet points
+- `computer architecture/CPU cycle.md` — brief personal notes with example
+- `computer architecture/d-cache.md` — brief note with optimization guidance
+- `computer architecture/data oriented design principles.md` — list of principles with internal links
+- `computer graphics/AABB.md` — brief owner definition
+- `computer graphics/attribute data.md` — owner's thoughts on varying data per vertex
+- `computer graphics/bake.md` — concise owner definition
+- `computer graphics/binding.md` — brief owner definition
+- `computer graphics/compiled shader code.md` — owner's explanation with implementation notes
+- `computer graphics/divider.md` — owner's notes on optimization technique
+- `computer graphics/double buffering.md` — owner's explanation of the process
+- `computer graphics/edge.md` — brief owner definition
+- `computer graphics/faces.md` — brief owner definition
+- `computer graphics/fragment shader.md` — concise owner description
+- `computer graphics/frame buffer.md` — owner's explanation with quote
+- `computer graphics/Frustum Culling.md` — brief owner description of optimization
+- `computer graphics/gl_Position.md` — brief owner definition
+- `computer graphics/GPU context.md` — owner's explanation with example
+- `computer graphics/hardware rendering.md` — owner's comparison with software rendering
+- `computer graphics/homogeneous coordinates.md` — owner's explanation with diagrams and math notes
+- `computer graphics/image buffers.md` — brief owner definition
+- `computer graphics/indices.md` — owner's explanation with code example
+- `computer graphics/input assembler.md` — owner's explanation with vertex data example
+- `computer graphics/instance.md` — one-sentence owner definition
+- `computer graphics/instancing.md` — owner's explanation of technique with notes
+- `computer graphics/layout qualifier.md` — owner's explanation with std140/std430 comparison
+- `computer graphics/NDC.md` — owner's explanation with diagrams and conversions
+- `computer graphics/normals.md` — brief owner definition
+- `computer graphics/Occlusion culling.md` — brief owner definition with parenthetical note
+- `computer graphics/orthogonal projection.md` — brief owner definition
+- `computer graphics/perspective projection.md` — one-sentence definition
+- `computer graphics/polygons.md` — brief one-sentence definition
+- `computer graphics/post-processing.md` — brief owner definition
+- `computer graphics/proton.md` — brief owner definition
+- `computer graphics/rasterization.md` — owner's explanation
+- `computer graphics/render pass.md` — brief owner definition
+- `computer graphics/sampler.md` — owner's explanation with list of features
+- `computer graphics/scissor.md` — owner's explanation of functionality
+- `computer graphics/shader.md` — owner's explanation with purpose list
+- `computer graphics/software rendering.md` — owner's comparison with notes
+- `computer graphics/surface.md` — owner's dual definition of concept
+- `computer graphics/swap chain.md` — brief owner definition
+- `computer graphics/texture.md` — one-word definition
+- `computer graphics/UBO.md` — owner's explanation with feature comparison
+- `computer graphics/uniform data.md` — owner's explanation of purpose
+- `computer graphics/UV coordinates.md` — brief owner definition
+- `computer graphics/VAO.md` — brief owner definition
+- `computer graphics/VBO.md` — owner's explanation with notes
+- `computer graphics/vertex shader.md` — owner's explanation with code example
+- `computer graphics/vertex.md` — owner's explanation with connected parts
+- `computer graphics/viewport.md` — brief owner definition
+- `CS/algorithms/mark-and-sweep.md` — brief owner definition
+- `CS/Divide and conqure.md` — owner's explanation with farm example
+- `CS/hash function.md` — brief owner definition with image
+- `CS/heap.md` — brief owner definition
+- `CS/linked list.md` — owner's explanation with code example
+- `CS/Page Fault.md` — brief owner explanation
+- `CS/patterns/Batch processing.md` — owner's brief explanation
+- `CS/patterns/object pool.md` — brief owner definition
+- `CS/patterns/Template method.md` — owner's explanation with example
+- `CS/pointer.md` — brief owner definition
+- `CS/proofs.md` — owner's explanation with example
+- `CS/reference.md` — brief owner definition
+- `CS/Rope.md` — owner's comprehensive technical explanation with methods
+- `CS/scratch allocator.md` — one-line reference
+- `CS/static.md` — brief owner definition
+- `flstudio/plugins.md` — brief personal notes with own voice
+- `frontend/css position.md` — owner's own explanation with personal commentary
+- `frontend/flutter ios error building handling guide.md` — error output paste with one-line solution
+- `frontend/html class vs id.md` — brief own-words definition
+- `frontend/sfc.md` — brief own-words explanation of Vue concept
+- `frontend/Vue directive.md` — brief definitions with code examples, informal structure
+- `frontend/vue reactive.md` — brief explanation with code examples, incomplete style
+- `gamedev/card game design.md` — CARDS model framework with owner notes on game design concepts
+- `gamedev/concurrency.md` — owner's own understanding of concurrency in games
+- `gamedev/delta time.md` — brief owner note explaining the concept
+- `gamedev/ebiten fundamental concepts.md` — owner notes on key concepts, incomplete but own voice
+- `gamedev/Game design document.md` — owner notes on GDD purpose, brief and informal
+- `gamedev/game server.md` — brief personal notes on server architecture types
+- `gamedev/game structure.md` — owner's notes on basic game loop structure
+- `gamedev/godot/Animation Player.md` — brief owner explanation of AnimationPlayer purpose
+- `gamedev/godot/Basis in Godot.md` — owner's brief explanation of Basis concept with practical use
+- `gamedev/godot/Call down, signal up.md` — owner's explanation of architecture principle with mental model reasoning
+- `gamedev/godot/collision layer and mask.md` — brief owner note explaining the concept
+- `gamedev/godot/event bus.md` — owner's note on event bus pattern and preference
+- `gamedev/godot/finite state machine in godot.md` — owner's explanation of FSM implementation approaches
+- `gamedev/godot/Godot input callbacks.md` — brief owner notes on input callback types
+- `gamedev/godot/Godot input propagation.md` — owner notes on input event flow
+- `gamedev/godot/groups.md` — owner explanation of groups with examples
+- `gamedev/godot/Input singleton in Godot.md` — brief owner notes on Input singleton usage
+- `gamedev/godot/Local vs global transform in Godot.md` — brief owner explanation of transform types
+- `gamedev/godot/node in godot.md` — owner's explanation of node concepts and lifecycle
+- `gamedev/godot/scene design principle.md` — brief owner note on reusability and coupling
+- `gamedev/godot/scene.md` — brief owner explanation of scene concept
+- `gamedev/godot/SceneTree.md` — brief owner notes on SceneTree functionality
+- `gamedev/godot/shader in godot.md` — brief owner notes on shader types
+- `gamedev/godot/signal.md` — owner explanation of signal pattern and mental model
+- `gamedev/godot/static keyword.md` — brief owner note on static variables
+- `gamedev/godot/Stretch mode in Godot.md` — owner's brief explanation of stretch modes
+- `gamedev/godot/Transform3D in Godot.md` — brief owner explanation of Transform3D concept
+- `gamedev/godot/tween.md` — brief owner notes on Tween usage
+- `gamedev/godot/Unique node.md` — owner explanation of unique node syntax
+- `gamedev/patterns/game loop.md` — owner explanation of game loop pattern with reasoning
+- `gamedev/pygame fundamental concepts.md` — brief owner notes on Surface concept
+- `gamedev/Rendering pipeline.md` — brief owner explanation of rendering pipeline steps
+- `gamedev/roblox/Market advice.md` — brief personal advice with personal voice
+- `gamedev/roblox/readiness.md` — brief personal note on readiness patterns
+- `gamedev/roblox/tags and attributes state markers.md` — brief personal philosophy on tags and attributes
+- `gamedev/SDL.md` — owner's reasoning about SDL characteristics and philosophy
+- `gamedev/Socratic Partner Prompt.md` — detailed owner instructions for learning partner interaction
+- `gamedev/unity/Awareness reminder for documents.md` — owner's own voice and philosophy on knowledge management
+- `general tech/3DS payment.md` — one-line stub in own voice
+- `general tech/anti-bot trick.md` — informal list of anti-bot workarounds with own voice
+- `general tech/arena allocator.md` — brief explanation in own words
+- `general tech/arena.md` — one-line definition of memory arena
+- `general tech/args and kwargs.md` — notes with code example
+- `general tech/b2c.md` — one-line definition
+- `general tech/b2p.md` — one-line definition
+- `general tech/backend.md` — owner's own voice on backend definition
+- `general tech/batching.md` — informal notes
+- `general tech/blit.md` — one-line definition
+- `general tech/bot.md` — informal explanation of how bots work
+- `general tech/buffer.md` — informal explanation with own examples
+- `general tech/build artifacts.md` — brief definition with link
+- `general tech/C inline.md` — brief explanation with own insight
+- `general tech/c-star.md` — one-line definition
+- `general tech/callback.md` — one-line definition
+- `general tech/checksum.md` — one-line definition
+- `general tech/class.md` — brief definition with own voice
+- `general tech/compatibility layer.md` — brief informal definition
+- `general tech/compiler.md` — informal notes with own examples
+- `general tech/concurrent vs parallelism.md` — informal explanation with own analogies and diagrams
+- `general tech/cool cli.md` — config snippet for Oh My Zsh
+- `general tech/crontab.md` — brief note with link
+- `general tech/DAG.md` — brief definition
+- `general tech/DDoS attacks.md` — one-line definition
+- `general tech/deadlock.md` — one-line definition
+- `general tech/declaration in programming.md` — detailed personal explanation with metaphors
+- `general tech/declarative style.md` — brief informal definition
+- `general tech/definition in programming.md` — detailed personal explanation with structure notes
+- `general tech/device driver.md` — one-line definition
+- `general tech/directive.md` — one-line definition
+- `general tech/dynamic library.md` — detailed explanation with own analogy
+- `general tech/Elastic Search.md` — brief definition with links
+- `general tech/environment variables.md` — informal notes with code examples
+- `general tech/escape analysis.md` — brief definition
+- `general tech/Event loop.md` — detailed explanation with process details
+- `general tech/executable binaries.md` — brief definition
+- `general tech/fat pointer.md` — brief definition
+- `general tech/file.md` — detailed informal explanation with examples
+- `general tech/first-class citizens.md` — brief definition
+- `general tech/function vs method.md` — brief informal comparison
+- `general tech/garbage collector.md` — brief definition
+- `general tech/GDPR.md` — one-line definition
+- `general tech/green threads.md` — informal explanation
+- `general tech/horizontal scaling.md` — brief definition
+- `general tech/hot reloading.md` — informal explanation
+- `general tech/imperative style.md` — brief informal definition
+- `general tech/installation prefix.md` — brief informal definition
+- `general tech/interface.md` — informal explanation with own metaphors
+- `general tech/IO-bound or CPU-bound processing.md` — informal list with examples
+- `general tech/JavaScript Channel.md` — one-line definition
+- `general tech/JSON.md` — one-line definition
+- `general tech/linker.md` — brief explanation with links
+- `general tech/mesh.md` — one-line definition
+- `general tech/metadata.md` — brief definition
+- `general tech/metaprogramming.md` — one-line definition
+- `general tech/MIME-Type.md` — brief definition with code examples
+- `general tech/mock.md` — one-line definition with link
+- `general tech/multimedia.md` — one-line definition
+- `general tech/multiplexer.md` — brief informal definition
+- `general tech/multiprocessing vs multithreading.md` — informal comparison with reasoning
+- `general tech/mutable vs immutable.md` — brief informal explanation
+- `general tech/my obsidian anyppuccin colors.md` — two color hex codes (personal config)
+- `general tech/new type or when to create class.md` — informal explanation with reasoning
+- `general tech/object code.md` — brief definition
+- `general tech/object files.md` — informal explanation
+- `general tech/OS.md` — informal explanation with structure
+- `general tech/polymorphism.md` — informal explanation
+- `general tech/preemptive vs cooperative multitasking.md` — brief definition with Russian terms
+- `general tech/program counter.md` — one-line definition
+- `general tech/program.md` — brief definition
+- `general tech/r values and l values.md` — brief informal explanation
+- `general tech/race condition.md` — one-line informal definition
+- `general tech/redpanda.md` — one-line definition
+- `general tech/runtime.md` — brief informal definition with analogy
+- `general tech/scheduling tasks on Mac.md` — brief note with link
+- `general tech/schema.md` — one-line definition
+- `general tech/SCIM.md` — one-line definition
+- `general tech/serialization.md` — brief definition
+- `general tech/stack.md` — informal explanation
+- `general tech/static library.md` — informal explanation with code examples
+- `general tech/structure.md` — informal explanation with example
+- `general tech/syscalls.md` — one-line definition
+- `general tech/tech path.md` — conversational advice and mentoring discussion
+- `general tech/the underlying difference between AND and OR with one instance.md` — informal notes with struck-through reasoning and final conclusions
+- `general tech/thread.md` — brief informal definition
+- `general tech/unit tests.md` — brief informal explanation with types
+- `general tech/vertical scaling.md` — brief definition
+- `languages/c/c structs.md` — owner's points on struct types
+- `languages/c/macros.md` — owner's explanation with examples and reasoning
+- `languages/c/T* name vs T *name.md` — owner's opinion on pointer declaration style
+- `languages/golang/alias.md` — brief definition with code examples
+- `languages/golang/anonymous functions.md` — short notes on syntax and behavior
+- `languages/golang/architect services advice.md` — owner's architectural thoughts and recommendations
+- `languages/golang/atomics.md` — brief explanation of atomic operations
+- `languages/golang/channel axioms.md` — owner's list of channel behavior rules
+- `languages/golang/channel.md` — detailed personal notes with multiple examples
+- `languages/golang/client implementation.md` — simple code example without explanation
+- `languages/golang/concurrency in go.md` — mixed notes with examples and code snippets
+- `languages/golang/concurrency patterns.md` — detailed explanation with code examples
+- `languages/golang/context.md` — explanation with code examples
+- `languages/golang/Cookiejar.md` — one sentence definition
+- `languages/golang/errors.md` — explanation with philosophy and comparison notes
+- `languages/golang/event sourcing architecture.md` — detailed project architecture notes in Russian/English mix
+- `languages/golang/generate.md` — brief explanation of go generate
+- `languages/golang/GMP.md` — short notes on concurrency model
+- `languages/golang/go defer.md` — brief explanation with example
+- `languages/golang/go garbage collector.md` — brief explanation
+- `languages/golang/go map under the hood.md` — detailed explanation of map implementation
+- `languages/golang/go string.md` — short notes on strings
+- `languages/golang/go type assertion.md` — code example with minimal explanation
+- `languages/golang/goland type check.md` — code example only
+- `languages/golang/golang anonymous struct.md` — code example with brief explanation
+- `languages/golang/golang interfaces.md` — detailed notes on interfaces with philosophy
+- `languages/golang/golang iota.md` — brief explanation with example
+- `languages/golang/golang mutex.md` — explanation with code example
+- `languages/golang/golang rwmutex.md` — one sentence definition for each method
+- `languages/golang/golang scheduler.md` — explanation of scheduler function
+- `languages/golang/goroutines.md` — detailed explanation with multiple examples
+- `languages/golang/init.md` — one sentence definition
+- `languages/golang/jwt in go.md` — brief explanation with code examples
+- `languages/golang/literal.md` — one sentence with reference to Odin
+- `languages/golang/memory allocation.md` — detailed explanation with code examples
+- `languages/golang/methods.md` — detailed philosophical explanation with code
+- `languages/golang/module path.md` — one sentence definition
+- `languages/golang/modules, packages and versions.md` — comprehensive notes with detailed sections
+- `languages/golang/must-have packages aka pack of productive engineer.md` — categorized list of packages with brief descriptions
+- `languages/golang/no need for static?.md` — brief explanation with code examples
+- `languages/golang/packages-imports-exports.md` — notes on packages and exports
+- `languages/golang/pipeline pattern in golang.md` — brief definition with flow description
+- `languages/golang/pointer.md` — explanation with multiple examples
+- `languages/golang/reading data.md` — guidelines and examples for reading data
+- `languages/golang/recover.md` — code example for panic recovery
+- `languages/golang/segmented stack in go.md` — brief explanation with analogy
+- `languages/golang/ServeMux.md` — one sentence definition
+- `languages/golang/server-implementation.md` — notes and code examples
+- `languages/golang/simple server example.md` — code examples with comments
+- `languages/golang/singleton pattern.md` — examples with comparison
+- `languages/golang/slices under the hood.md` — detailed explanation with multiple complex examples
+- `languages/golang/std context.md` — brief definition
+- `languages/golang/std database.md` — brief notes on database operations
+- `languages/golang/sync.Map.md` — explanation with full code example
+- `languages/golang/types.md` — explanation with code examples
+- `languages/golang/why goroutines are lightweight.md` — bullet-point explanation with details
+- `languages/language processing/AST.md` — concise explanation in own words
+- `languages/language processing/CFG.md` — brief definition in own words
+- `languages/language processing/interpreter.md` — short personal definition
+- `languages/language processing/lexer.md` — brief explanation in own words
+- `languages/language processing/REPL.md` — brief personal definition
+- `languages/language processing/syntax analysis.md` — bare-bones explanation with image reference
+- `languages/language processing/token.md` — brief explanation in own words
+- `languages/lua/classes emulated.md` — own voice with annotations and personal explanations
+- `languages/lua/init.md` — brief, incomplete sentences describing own understanding
+- `languages/lua/module.md` — concise definition in own words with bullet points
+- `languages/lua/require.md` — own explanation with practical code examples
+- `languages/odin/distinct.md` — brief explanation with code comparison to golang
+- `languages/odin/fixed array.md` — brief explanation with quick code example
+- `languages/odin/label.md` — brief personal explanation with one code example
+- `languages/odin/procedures.md` — philosophy-heavy personal voice, uses "REMEMBER", incomplete thoughts
+- `languages/odin/slices.md` — brief explanations in own words with shorthand code
+- `languages/odin/soa.md` — concise explanation with comparative memory layout example
+- `languages/odin/type assertion.md` — brief explanation with code examples
+- `languages/odin/union.md` — starts with personal explanation of unions and their use cases (mixed with structured section)
+- `languages/odin/what is it.md` — personal subjective comparison to other languages
+- `languages/python/__init__.md` — owner's explanation of __init__ files
+- `languages/python/ASGI root_path.md` — owner's notes on root_path mechanism with examples
+- `languages/python/asyncio Task.md` — owner's explanation of Task object with code examples
+- `languages/python/asyncio.md` — owner's example showing asyncio usage
+- `languages/python/bot creation.md` — owner's notes on bot creation with aiogram framework
+- `languages/python/Celery.md` — owner's brief definition with personal understanding
+- `languages/python/closures.md` — owner's explanation with code examples and decorator implementation
+- `languages/python/collection usage.md` — owner's functional programming example code
+- `languages/python/concurrency in python.md` — owner's brief notes linking to other concepts
+- `languages/python/context manager.md` — owner's explanation of __enter__ and __exit__ methods, incomplete
+- `languages/python/decorator.md` — owner's explanation with example code
+- `languages/python/if __name__ == "__main__".md` — owner's brief explanation
+- `languages/python/importing in python.md` — owner's notes on import styles with examples
+- `languages/python/inner function.md` — owner's explanation with code example
+- `languages/python/jwt in Python.md` — owner's brief note with library reference
+- `languages/python/list comprehension.md` — owner's examples with code snippets
+- `languages/python/mangling.md` — owner's explanation of name mangling concept
+- `languages/python/Metadata annotations.md` — owner's explanation with FastAPI example
+- `languages/python/MRO.md` — incomplete definition sentence (owner started it)
+- `languages/python/operator overloading.md` — owner's explanation with structured table and example
+- `languages/python/packages.md` — owner's brief explanation of packages concept
+- `languages/python/private in python.md` — owner's notes on privacy conventions with techniques
+- `languages/python/python list vs array.md` — owner's comparison with reference
+- `languages/python/scoping variables keywords.md` — owner's explanation with code example
+- `languages/python/shallow vs deep copy.md` — owner's brief explanation with code snippets
+- `languages/python/type annotations.md` — owner's explanation with examples and opinions
+- `languages/python/unpacking list.md` — owner's brief explanation with code example
+- `languages/python/uvicorn.md` — owner's notes on uvicorn server usage
+- `languages/python/virtual environment.md` — owner's explanation with setup instructions
+- `languages/python/walrus.md` — owner's brief explanation with code example
+- `languages/python/with.md` — owner's explanation of context managers with examples
+- `languages/python/wsgi.md` — owner's explanation of WSGI with analogy and reference
+- `languages/zig/containers.md` — brief personal explanation of what containers are in Zig
+- `languages/zig/defer.md` — concise two-sentence explanation of defer and errdefer
+- `languages/zig/top level declarations.md` — explanation with code examples showing order-independence
+- `languages/zig/zig pointer.md` — brief personal explanation of pointer types
+- `math/dot product.md` — own explanation with formulas and personal voice
+- `math/magnitude.md` — brief formula with own explanation
+- `math/mathematical notion of a set.md` — short own-words definition
+- `math/matrix multiplication.md` — incomplete sentence, just started
+- `math/project vector.md` — brief own explanation with image reference
+- `math/scalar.md` — brief own-words definition with example
+- `math/signed distance.md` — own explanation with GLSL code example
+- `math/transformations.md` — own explanation with code snippets and incomplete sections
+- `neuroscience/breathe.md` — rough notes with own thinking, incomplete sentences, research observations
+- `neuroscience/learn.md` — brief notes about neuroplasticity with TODO-like incomplete thoughts
+- `projects/chinese bee/base.md` — owner's project idea notes
+- `projects/chinese bee/stack for chinese bee.md` — owner's checklist of technologies
+- `projects/project-plans.md` — owner's extensive todo list of ideas
+- `projects/sg back rewrite/architecture.md` — owner's notes on lifetime and authentication architecture
+- `projects/sg back rewrite/auth.md` — owner's notes with code snippets from legacy PHP
+- `projects/sg back rewrite/php to go.md` — owner's comparison table and notes
+- `projects/wish list tracker/wish list backend.md` — owner's database design and Go code implementation
+- `projects/wish list tracker/wish list bot.md` — owner's Telegram bot command specifications
+- `projects/wish list tracker/wish list tracker.md` — owner's project overview with links
+- `roblox/replication.md` — one-sentence definition
+- `terminal/named pipe.md` — owner's explanation with own examples
+- `terminal/neovim/my plugins.md` — owner's list of plugins used
+- `terminal/neovim/resolve conflict with neovim.md` — step-by-step for owner's workflow
+- `terminal/stow.md` — owner's explanation of symlink farm manager
+
+---
+
+## Mixed
+*Keep owner's thinking, strip AI-generated explanation sections.*
+
+- `architecture/event bus.md` — owner explains concept then includes Go code example implementation
+- `architecture/What is data-driven design.md` — owner's explanation sections mixed with formatted teaching material and code examples
+- `backend/database/database basics.md` — owner's semantics/logic notes mixed with formal definitions and SQL examples
+- `backend/database/non-relational database.md` — structured explanation mixed with owner's application context
+- `backend/database/redis.md` — owner's usage notes mixed with structured command reference
+- `backend/database/setting server.md` — owner's notes mixed with ChatGPT advice on production settings
+- `backend/docker/Docker analogy.md` — personal narrative analogy mixed with structured content and technical explanation
+- `backend/docker/Docker commands.md` — deep explanation mixed with command reference section
+- `backend/docker/docker compose.md` — structured sections mixed with real YAML examples and personal notes
+- `backend/Go Backend Observability Track.md` — structured learning levels mixed with personal coding examples
+- `backend/network/API.md` — owner's personal explanations mixed with structured sections
+- `backend/network/exchange in messaging model.md` — owner's explanation mixed with code examples
+- `backend/network/gRPC.md` — deep personal explanation with code examples and structured sections
+- `backend/network/hashing.md` — personal explanations transitioning to structured content on digital signatures
+- `backend/network/http methods.md` — list format mixed with detailed explanations
+- `backend/network/Kafka.md` — personal introduction mixed with command-line references and technical details
+- `backend/network/message acknowledgment.md` — personal explanation mixed with code and CLI debugging commands
+- `backend/network/nginx.md` — deep technical explanation with configuration examples
+- `backend/network/RabbitMQ.md` — detailed personal explanation with code and structured sections
+- `blender/blender deform vs non-deform bones.md` — structured explanations with personal annotations
+- `cheat-sheets/claude code tips.md` — structured tips mixed with personal examples and personal prompt hints
+- `computer graphics/draw call.md` — owner notes plus AI-style "When to use" section
+- `computer graphics/SSBO.md` — owner definition plus detailed technical explanation with code examples
+- `computer graphics/text rendering.md` — owner intro plus comprehensive technical exploration sections
+- `CS/algorithms/Quicksort.md` — owner's explanation plus comprehensive algorithmic coverage with proofs
+- `CS/Big O notation.md` — owner notes plus extensive structured educational content with examples and tables
+- `frontend/css units.md` — AI-style definitions but includes personal "rule of thumb" section
+- `gamedev/godot/autoload.md` — mix of owner reasoning about autoload patterns and best practices with structured thinking
+- `gamedev/godot/godot project structure recommendation.md` — mix of structured recommendations with owner reasoning
+- `general tech/Golang and C as friends and both u should love.md` — personal advice and discussion interspersed with structured explanations
+- `languages/c/headers.md` — owner's explanation mixed with structured content
+- `languages/c/preprocessor.md` — owner's voice mixed with structured explanation
+- `languages/language processing/grapheme cluster.md` — starts with personal intro, structured table (note: also listed as AI-generated; this is mixed)
+- `languages/lua/coroutines.md` — personal Roblox-specific explanation at top, then structured teaching format
+- `languages/lua/metatable.md` — starts with personal explanation, then formatted "Manipulate metatables" section
+- `languages/lua/table.md` — combines personal short definitions with structured comprehensive sections
+- `languages/odin/allocators.md` — starts with personal explanation, then detailed structured examples
+- `languages/odin/bit_set.md` — personal explanation at top, followed by structured code examples
+- `languages/odin/dynamic arrays.md` — structured comparison with slices, then personal code explanation
+- `languages/odin/enum.md` — personal explanation combined with structured sections
+- `languages/python/asyncio coroutines.md` — owner's notes with structured sections and detailed examples
+- `languages/python/database.md` — owner's notes on database concepts and patterns with code examples
+- `languages/python/Django ORM.md` — owner's understanding mixed with framework-specific structured documentation
+- `languages/python/operator overloading.md` — owner's explanation with structured table and example
+- `languages/python/Pydantic.md` — framework examples with owner's notation and structured sections
+- `languages/python/pyenv.md` — owner's personal setup guide with commands and examples
+- `languages/zig/error handling.md` — personal explanation combined with structured code examples
+- `languages/zig/inline.md` — explanation with examples, then transitions to structured section on inline loops
+- `languages/zig/optional types.md` — personal philosophy about null pointers, then structured code examples
+- `languages/zig/structs.md` — personal explanation with structured code examples showing different patterns
+- `math/transformations.md` — own explanation with code snippets and some incomplete sections (slight mixed)
+- `terminal/neovim/neovim config.md` — personal notes mixed with structured documentation
+- `terminal/tmux.md` — personal key bindings mixed with structured documentation
+
+---
+
+## Cheat-sheet/config
+*Formatting cleanup only. Do not restructure.*
+
+- `backend/database/altering user.md` — SQL command example
+- `backend/database/backup postgreSQL.md` — PostgreSQL backup and restore commands
+- `backend/database/docker db.md` — migration and psql commands
+- `backend/database/essential statements.md` — SQL keywords and operators lookup list
+- `backend/database/postgre types.md` — numeric types lookup table with ranges
+- `backend/database/psql.md` — PostgreSQL command reference
+- `backend/database/sql data types.md` — comprehensive SQL data types table
+- `backend/database/types of indexes.md` — index types lookup reference with operators
+- `backend/Go Backend Interview Preparation.md` — comprehensive reference guide and lookup dictionary
+- `backend/network/check logs.md` — command reference with examples for journalctl and docker logs
+- `backend/network/ssh.md` — pure command reference with examples
+- `backend/network/terminal commands.md` — list of terminal commands with brief descriptions
+- `backend/versioning/git-basics.md` — comprehensive command reference with usage examples
+- `backend/versioning/github cli.md` — command examples and options for gh repo create
+- `blender/blender shortcuts.md` — keyboard shortcuts and command reference
+- `browser search filters.md` (→ `general tech/browser search filters.md`) — comprehensive list of search operators
+- `cheat-sheets/imagemagic.md` — barely filled stub (leave as-is)
+- `computer graphics/graphics pipeline.md` — simple pipeline stage list
+- `CS/design/DRY.md` — acronym expansion only (leave as-is)
+- `CS/design/KISS.md` — acronym expansion only (leave as-is)
+- `CS/design/YAGNI.md` — acronym expansion only (leave as-is)
+- `flstudio/fl studio piano roll shortcuts.md` — keyboard shortcuts list
+- `flstudio/music scales.md` — pure reference of scale intervals
+- `gamedev/godot/3D Transformations in Godot Complete Foundation reference.md` — index hub linking to atomic concept notes
+- `gamedev/godot/external editor config.md` — configuration snippets for external editors
+- `gamedev/godot/godot addons.md` — list of addon links and brief descriptions
+- `gamedev/godot/nodes in essence.md` — list of node types with brief descriptions
+- `gamedev/roblox/attribute.md` — brief code reference example
+- `gamedev/roblox/cross platform input service.md` — brief code reference examples
+- `gamedev/roblox/delete instance.md` — brief reference with method names
+- `gamedev/roblox/must-have packages.md` — pure list of package names with brief descriptions
+- `gamedev/roblox/project setup.md` — brief tool references only
+- `gamedev/unity/Godot Math to Unity Reference.md` — pure lookup reference with comparison tables
+- `gamedev/unity/Unity Canvas.md` — pure lookup reference with property tables
+- `gamedev/unity/Unity Component Reference for Godot Developer.md` — pure lookup reference with comparison tables
+- `gamedev/unity/Unity EventSystem.md` — pure reference with interface and property tables
+- `gamedev/unity/Unity Fundamentals for Godot Developers.md` — pure comparison reference tables
+- `gamedev/unity/Unity Index Book of References.md` — pure index/navigation reference
+- `gamedev/unity/Unity Layout Components.md` — pure reference with property tables
+- `gamedev/unity/Unity Material API.md` — pure API reference with method names and property tables
+- `gamedev/unity/Unity RectTransform.md` — pure reference with property and method tables
+- `gamedev/unity/Unity Render States.md` — pure lookup reference for render queue and blend modes
+- `gamedev/unity/Unity Shader Graph.md` — pure node reference list and properties
+- `gamedev/unity/Unity Static Classes and Singletons.md` — pure API reference with code snippets
+- `gamedev/unity/Unity UI Components.md` — pure component reference with properties and methods
+- `gamedev/unity/Unity UI Toolkit.md` — pure reference with UXML, CSS, and C# API examples
+- `gamedev/unity/Unity URP vs Built-in.md` — pure comparison reference table
+- `general tech/regex cheat sheet.md` — comprehensive regex reference guide
+- `general tech/Top shortcuts.md` — comprehensive keyboard shortcuts reference
+- `languages/csharp/cli commands in c sharp.md` — command reference with bash examples
+- `languages/csharp/csharp access modifiers.md` — lookup table and reference
+- `languages/csharp/csharp arrays.md` — syntax examples and method tables
+- `languages/csharp/csharp async await.md` — syntax reference with examples
+- `languages/csharp/csharp attributes.md` — syntax examples and reference
+- `languages/csharp/csharp classes.md` — brief reference with bullets
+- `languages/csharp/csharp const vs readonly.md` — comparison table
+- `languages/csharp/csharp delegates and events.md` — syntax reference tables
+- `languages/csharp/csharp dictionary.md` — method reference table
+- `languages/csharp/csharp enums.md` — syntax examples and attributes
+- `languages/csharp/csharp exceptions.md` — try-catch examples and exception types table
+- `languages/csharp/csharp extension methods.md` — brief syntax reference
+- `languages/csharp/csharp generics.md` — syntax examples and constraints table
+- `languages/csharp/csharp hashset.md` — method reference table
+- `languages/csharp/csharp IDisposable.md` — implementation pattern with syntax
+- `languages/csharp/csharp inheritance keywords.md` — keyword examples
+- `languages/csharp/csharp interfaces.md` — syntax examples
+- `languages/csharp/csharp lambdas.md` — syntax reference
+- `languages/csharp/csharp linq.md` — comprehensive LINQ method reference
+- `languages/csharp/csharp list.md` — method reference table
+- `languages/csharp/csharp namespaces.md` — syntax reference
+- `languages/csharp/csharp nullable types.md` — syntax examples and operators
+- `languages/csharp/csharp operator overloading.md` — implementation examples
+- `languages/csharp/csharp pattern matching.md` — syntax examples
+- `languages/csharp/csharp preprocessor directives.md` — directive syntax reference
+- `languages/csharp/csharp properties.md` — syntax examples
+- `languages/csharp/csharp queue and stack.md` — method reference tables
+- `languages/csharp/csharp records.md` — syntax examples
+- `languages/csharp/csharp ref out in params.md` — parameter syntax reference
+- `languages/csharp/csharp static keyword.md` — syntax examples
+- `languages/csharp/csharp strings.md` — string literals and methods reference
+- `languages/csharp/csharp structs.md` — brief syntax reference
+- `languages/csharp/csharp tuples.md` — syntax examples
+- `languages/csharp/csharp value and reference types.md` — type tables and defaults
+- `languages/golang/commands.md` — simple list of go commands
+- `languages/golang/routing.md` — list of routing patterns
+- `languages/golang/string formatters.md` — list of format specifiers
+- `languages/lua/metamethod.md` — structured table of metamethods, pure reference format
+- `languages/odin/transmute.md` — pure reference format with brief bullet points
+- `languages/python/database query parameters.md` — code snippets and quick reference
+- `languages/python/must-have libraries.md` — annotated list of libraries and tools
+- `languages/python/pip.md` — command list for pip
+- `languages/python/python interview questions.md` — annotated Q&A reference
+- `languages/zig/zig naming conventions.md` — pure reference format with naming rules and examples
+- `math/identity matrix.md` — shows the matrix with brief one-sentence explanation
+- `neuroscience/learn.md` — brief notes (borderline, treated as cheat-sheet for learning mechanisms)
+- `roblox/replication.md` — one-sentence definition (leave as-is, fits lookup)
+- `setups/ollama setup guide.md` — step-by-step command reference with table
+- `shortcuts/aseprite shortcuts.md` — simple keyboard shortcut list
+- `shortcuts/krita shorcuts.md` — keyboard shortcut list with categories
+- `terminal/cli-tools.md` — list of CLI tools with brief links
+- `terminal/find.md` — command reference with examples
+- `terminal/fzf.md` — fuzzy finder usage guide
+- `terminal/grep.md` — search command reference
+- `terminal/neovim/autocommands.md` — pattern and code reference
+- `terminal/neovim/global find and replace.md` — quick reference commands
+- `terminal/neovim/vim command-line mode.md` — command reference with examples
+- `terminal/neovim/vim motions.md` — keybinding reference
+- `terminal/neovim/vim registers.md` — categorized register reference
+- `terminal/nix.md` — installation and command reference
+- `terminal/sed.md` — command reference with examples
+- `terminal/Symlink.md` — brief command reference
+- `terminal/terminal-commands.md` — command reference list
+- `terminal/tmux.md` — key bindings and structured documentation
+
+---
+
+## Fluff/irrelevant
+*List each with reason. Owner confirms before any deletions.*
+
+- `architecture/clean architecture.md` — incomplete sentence fragment about dependency inversion
+- `architecture/inversion.md` — incomplete sentence fragment, no real content
+- `architecture/saga.md` — single line with a reference link, no substantive content
+- `backend/database/CRUD.md` — just title with one sentence
+- `backend/database/data fact.md` — single incomplete line
+- `backend/database/job.md` — one sentence definition
+- `backend/database/OLTP.md` — one incomplete line
+- `backend/database/rollback migrations.md` — incomplete one line
+- `backend/database/which to use.md` — incomplete comparison line
+- `backend/design/Availability.md` — single incomplete sentence
+- `backend/design/CAP.md` — just links to other notes and one line summary
+- `backend/design/Consistency.md` — single incomplete sentence
+- `backend/design/Partition tolerance.md` — two short incomplete sentences
+- `backend/messaging/RabbitMQ configuration.md` — completely empty file
+- `backend/network/API best practices.md` — stub with incomplete single reference
+- `backend/network/CSRF.md` — empty file
+- `backend/network/XSS.md` — empty file
+- `blender/blender addons.md` — short list with minimal description
+- `blender/topology.md` — one sentence stub
+- `cheat-sheets/imagemagic.md` — barely filled stub, one example only
+- `computer architecture/cache hit.md` — one sentence definition
+- `computer architecture/cache line.md` — one sentence with image, minimal content
+- `computer architecture/cache locality.md` — one sentence definition
+- `computer architecture/cache miss.md` — one sentence with image
+- `computer architecture/capacitors.md` — one sentence definition
+- `computer architecture/CPU.md` — one sentence definition
+- `computer graphics/Culling.md` — just title with brief list of sub-types
+- `computer graphics/GPU device.md` — just one line
+- `CS/bitwise.md` — just two words
+- `CS/design/DRY.md` — just the acronym expansion (no process questions possible)
+- `CS/design/KISS.md` — just the acronym expansion
+- `CS/design/YAGNI.md` — just the acronym expansion
+- `CS/inline functions.md` — just one incomplete phrase
+- `frontend/CSS.md` — just a title definition, one sentence
+- `frontend/CSS preprocessors.md` — incomplete sentence, no actual content
+- `frontend/DOM.md` — single sentence definition
+- `frontend/HTML tags.md` — fully AI-generated, but could be rebuilt
+- `frontend/vue reactive.md` — brief explanation with code examples (borderline — moved to Personal)
+- `gamedev/collision.md` — one sentence stub
+- `gamedev/godot/audio bus effects.md` — minimal code snippet with no explanation
+- `gamedev/godot/common practices.md` — single line note with no substance
+- `gamedev/godot/contracts.md` — minimal code example with no explanation
+- `gamedev/godot/defer.md` — two function names with no explanation
+- `gamedev/godot/getters setters.md` — single code example with no explanation
+- `gamedev/godot/godot shared data for the scene.md` — single incomplete sentence
+- `gamedev/godot/math for the headbob.md` — minimal code example with no explanation
+- `gamedev/godot/must have singletons.md` — brief list of singleton links
+- `gamedev/godot/shader next_pass vs shader mix.md` — one sentence comparison
+- `gamedev/godot/tilemap saving.md` — minimal code example with no explanation
+- `gamedev/optimization/vertex data optimization.md` — image reference only
+- `gamedev/roblox/collision detection.md` — one line stub
+- `gamedev/roblox/constraints.md` — empty file
+- `gamedev/roblox/explorer folders.md` — empty file
+- `gamedev/roblox/velocity.md` — one-line stub
+- `gamedev/unity/Common Patterns Cookbook in Unity.md` — just index with links, no content
+- `gamedev/unity/Communication Patterns in Unity.md` — just index with links, no content
+- `gamedev/unity/GameObject and Component Model.md` — just index with links, no content
+- `gamedev/unity/Input System Implementation.md` (→ `gamedev/unity/Unity Input System Implementation.md`) — just index with links
+- `gamedev/unity/Unity Behavioral Patterns.md` — just index with links, no content
+- `gamedev/unity/Unity Component Patterns.md` — just index with links, minimal content
+- `gamedev/unity/Unity Input System Setup.md` — just index with links
+- `gamedev/unity/Unity Object Management Patterns.md` — just index with links, minimal content
+- `gamedev/unity/Reference Objects in Unity.md` — just index with links, minimal content
+- `gamedev/unity/Scene Management in Unity.md` — just index with links, no content
+- `gamedev/unity/ScriptableObjects.md` — just index with links, minimal content
+- `gamedev/unity/Single Entry Point in Unity.md` — just index with links, minimal content
+- `gamedev/unity/Unity Rendering and Shaders.md` — redirect note only, no content
+- `gamedev/unity/Unity UI guide.md` — redirect note only, no content
+- `general tech/Array.md` — empty file
+- `languages/c/C learning recources.md` — just 2 links, no real content
+- `languages/c/directives in C.md` — one-sentence stub
+- `languages/c/linking.md` — one incomplete sentence
+- `languages/csharp/Csharp Advanced Features Reference.md` — just index redirects
+- `languages/csharp/Csharp Collections Reference.md` — just index redirects
+- `languages/csharp/Csharp Fundamentals Reference.md` — just index redirects
+- `languages/csharp/Csharp Index.md` — just index structure
+- `languages/csharp/Csharp LINQ Reference.md` — just a redirect
+- `languages/csharp/Csharp Parameters and Flow Control Reference.md` — just index redirects
+- `languages/csharp/Csharp Properties and Members Reference.md` — just index redirects
+- `languages/csharp/Csharp Type System Reference.md` — just index redirects
+- `languages/golang/go .....md` — minimal code example only, unclear purpose
+- `languages/golang/Go build.md` — one sentence note
+- `languages/golang/go design philosophy.md` — just title and links, no real content
+- `languages/golang/go inheritance.md` — single Russian word, no content
+- `languages/golang/go sub-repositories.md` — just a link, minimal content
+- `languages/golang/go-di.md` — just a title with minimal content
+- `languages/golang/Golang theory.md` — just index/outline with links
+- `languages/golang/gvm.md` — just a title and three words
+- `languages/golang/std http.md` — just title, no content
+- `languages/language processing/grapheme cluster.md` — (actually has content, moved to Mixed/AI-generated)
+- `languages/odin/alias.md` — just a code example with one sentence, no substantive content
+- `languages/odin/comptime.md` — only mentions compile-time procedures with @ sign, no real explanation
+- `languages/odin/package.md` — only one sentence comparing to golang
+- `languages/odin/when statement.md` — single sentence definition with link, no real content
+- `languages/python/ASGI.md` — just a one-line definition stub
+- `languages/python/classes.md` — minimal content about __init__ and self
+- `languages/python/default parameters.md` — just a code snippet, no explanation
+- `languages/python/descriptor protocol.md` — one-sentence stub
+- `languages/python/GIL.md` — just one-sentence definition
+- `languages/python/greenlets.md` — minimal one-line explanation
+- `languages/python/gunicorn.md` — one-line definition
+- `languages/python/is vs ==.md` — single sentence definition
+- `languages/python/list vs tuple.md` — brief one-liner
+- `languages/python/mastering python.md` — just a TODO checklist
+- `languages/python/Memoization.md` — one-sentence definition
+- `languages/python/modules.md` — one-line definition
+- `languages/python/PEP8.md` — two-line definition
+- `languages/python/pip wheel.md` — one-line definition
+- `languages/python/poetry.md` — one-line description
+- `languages/python/PyPy.md` — one-line description
+- `languages/python/python inheritance.md` — minimal code example
+- `languages/python/self.md` — one-line definition
+- `languages/python/Zen of Python.md` — empty or only whitespace
+- `languages/zig/anonymous type.md` — single incomplete sentence
+- `languages/zig/builtin functions.md` — single sentence with no examples or details
+- `languages/zig/casting.md` — single incomplete sentence with note
+- `languages/zig/const.md` — single sentence definition
+- `languages/zig/exporting.md` — completely empty file
+- `languages/zig/string.md` — single sentence definition
+- `math/identity matrix.md` — shows the matrix only, one sentence explanation
+- `projects/sg back rewrite/go-documentation-tool.md` — empty file
+- `projects/sg back rewrite/sg back api.md` — incomplete stub with one link
+- `projects/sg courier rewrite.md` — one line database schema
+- `projects/wish list tracker/wish list containerisation.md` — empty file
+- `projects/wish list tracker/wish list front.md` — tag only
+- `terminal/exit terminal.md` — single word
+- `terminal/ffmpeg.md` — one sentence description
+- `terminal/kitty.md` — one line note
+- `terminal/mv.md` — single command snippet
+- `terminal/neovim/apply colorscheme.md` — one brief code snippet
+- `terminal/neovim/colorscheme.md` — mostly images with links
+- `terminal/neovim/formatter.md` — single sentence definition
+- `terminal/neovim/leader key.md` — one sentence definition
+- `terminal/neovim/linter.md` — single sentence definition
+- `terminal/neovim/lsp.md` — one sentence definition
+- `terminal/neovim/Treesitter.md` — two short lines
+- `terminal/neovim/vim netrw mode.md` — two line notes
+- `terminal/neovim/vim topics.md` — one line note

@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "6078e063fab57a93",
+        "id": "a49e0202f019d626",
         "type": "tabs",
         "children": [
           {
-            "id": "767a85c98bfeaf5c",
+            "id": "c9f015b510daef67",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/database/fundamentals/RDBMS.md",
+                "file": "Vault Scan Log.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "RDBMS"
+              "title": "Vault Scan Log"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"make(\"",
+                "query": "file:",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +95,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "backend/database/fundamentals/RDBMS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for RDBMS"
+              "title": "Backlinks"
             }
           },
           {
@@ -114,12 +113,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "backend/database/fundamentals/RDBMS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from RDBMS"
+              "title": "Outgoing links"
             }
           },
           {
@@ -197,44 +195,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "767a85c98bfeaf5c",
+  "active": "c9f015b510daef67",
   "lastOpenFiles": [
-    "computer graphics/rendering-techniques/Triplanar Mapping.md",
-    "general tech/concurrency/deadlock.md",
-    "computer graphics/rendering-techniques/triplanar-mapping.md",
-    "computer architecture/digital-logic/flip-flops.md",
-    "computer graphics/rendering-techniques/texture.md",
-    "computer architecture/cpu-execution/SIMD.md",
-    "general tech/product-business/b2p.md",
-    "general tech/product-business/b2c.md",
-    "general tech/data-formats/JSON.md",
-    "computer architecture/virtual-memory/memory techniques.md",
-    "general tech/concepts/DAG.md",
-    "computer graphics/misc/proton.md",
-    "computer graphics/rendering-techniques/surface.md",
-    "computer graphics/rendering-techniques/bake.md",
-    "computer graphics/rendering-techniques/double buffering.md",
-    "computer graphics/rendering-techniques/text rendering.md",
-    "computer graphics/rendering-techniques/post-processing.md",
-    "computer graphics/rendering-techniques/software rendering.md",
-    "computer graphics/rendering-techniques/hardware rendering.md",
-    "computer graphics/geometry-space/Occlusion culling.md",
-    "computer graphics/geometry-space/Frustum Culling.md",
-    "computer graphics/geometry-space/scissor.md",
-    "computer graphics/geometry-space/viewport.md",
-    "computer graphics/geometry-space/perspective projection.md",
-    "computer graphics/geometry-space/orthogonal projection.md",
-    "computer graphics/geometry-space/UV coordinates.md",
+    "languages/golang/literal.md",
+    "Vault Scan Log.md",
+    "languages/golang/why goroutines are lightweight.md",
+    "languages/golang/sync.Map.md",
+    "languages/golang/02-refresh-links/why goroutines are lightweight.md",
+    "languages/golang/02-refresh-links/types.md",
+    "languages/golang/01-thinking-analysis/no need for static?.md",
+    "languages/golang/01-thinking-analysis/event sourcing architecture.md",
+    "languages/golang/01-thinking-analysis/architect services advice.md",
+    "CS/architecture/principles/oop.md",
+    "languages/golang/types.md",
+    "languages/golang/sync-pool.md",
+    "languages/golang/sync-map.md",
+    "languages/golang/std database.md",
+    "languages/golang/std context.md",
+    "languages/golang/slices under the hood.md",
+    "languages/golang/singleton pattern.md",
+    "languages/golang/simple server example.md",
+    "languages/golang/server-implementation.md",
+    "languages/golang/segmented stack in go.md",
+    "languages/golang/routing.md",
+    "languages/golang/recover.md",
+    "languages/golang/reading data.md",
+    "languages/golang/pointer.md",
+    "languages/golang/packages-imports-exports.md",
+    "languages/golang/must-have packages aka pack of productive engineer.md",
+    "languages/golang/_archive-full-notes/02-refresh-links",
+    "languages/golang/_archive-full-notes",
+    "languages/golang/03-cheat-sheets",
+    "languages/golang/02-refresh-links",
+    "languages/golang/01-thinking-analysis",
+    "languages/golang/_archive-googleable",
+    "Untitled.base",
     "computer graphics/misc",
     "computer graphics/rendering-techniques",
     "computer graphics/geometry-space",
-    "computer graphics/gpu-api-resources",
-    "computer graphics/pipeline-stages",
-    "computer architecture/digital-logic",
-    "computer architecture/performance-layout",
-    "computer architecture/processes-io",
-    "computer architecture/virtual-memory",
-    "computer architecture/memory-hierarchy",
     "images/Pasted image 20250512190638.png",
     "images/Pasted image 20250512191336.png",
     "images/Pasted image 20250512190641.png",
