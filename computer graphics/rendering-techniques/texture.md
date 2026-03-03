@@ -1,1 +1,0 @@
-2D image. array of pixels
