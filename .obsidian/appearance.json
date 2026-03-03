@@ -2,7 +2,7 @@
   "accentColor": "",
   "theme": "system",
   "cssTheme": "Minimal",
-  "translucency": true,
+  "translucency": false,
   "interfaceFontFamily": "",
   "textFontFamily": "Georgia,Avenir,Apple Symbols",
   "baseFontSize": 22,

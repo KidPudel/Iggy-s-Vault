@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/unity/ScriptableObjects.md",
+                "file": "backend/Go Backend Deep Learning Method.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "ScriptableObjects"
+              "title": "Go Backend Deep Learning Method"
             }
           }
         ]
@@ -99,7 +99,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "right": {
     "id": "e3ab15d3880a5c2d",
@@ -170,15 +170,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "064c3c9695bc3a4a",
+  "active": "9056e12a9391e05c",
   "lastOpenFiles": [
+    "gamedev/unity/Awareness reminder for documents.md",
+    "backend/Go Backend Observability Track.md",
+    "gamedev/unity/ScriptableObjects.md",
     "gamedev/Data-Driven Design.md",
     "gamedev/unity/GameObject and Component Model.md",
     "gamedev/unity/Component-Based Design in Unity.md",
     "gamedev/unity/Unity Index Book of References.md",
     "architecture/design patterns.md",
     "gamedev/unity/Communication Patterns in Unity.md",
-    "gamedev/unity/ScriptableObjects.md",
     "languages/c_sharp/Csharp Quick Reference for Polyglot Programmers.md",
     "gamedev/unity/Unity Fundamentals for Godot Developers.md",
     "gamedev/godot/Layered architecture in Godot.md",
@@ -195,8 +197,6 @@
     "languages/language processing/syntax analysis.md",
     "gamedev/godot/godot project structure recommendation.md",
     "gamedev/godot/SceneTree.md",
-    "architecture/data-driven design.md",
-    "architecture/data-driven architecture.md",
-    "computer graphics/draw call.md"
+    "architecture/data-driven design.md"
   ]
 }

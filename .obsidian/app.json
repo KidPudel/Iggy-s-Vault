@@ -2,7 +2,7 @@
   "vimMode": true,
   "promptDelete": false,
   "showLineNumber": false,
-  "readableLineLength": true,
+  "readableLineLength": false,
   "strictLineBreaks": false,
   "alwaysUpdateLinks": true,
   "mobileToolbarCommands": [

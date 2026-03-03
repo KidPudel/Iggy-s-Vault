@@ -4,25 +4,104 @@
     "type": "split",
     "children": [
       {
-        "id": "5f111bf078b66f45",
+        "id": "62182501d6b2d9b4",
         "type": "tabs",
         "children": [
           {
-            "id": "9cf7fa69b00f9241",
+            "id": "270ec356c4dc6e2a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Pasted image 20250512190638.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250512190638"
+            }
+          },
+          {
+            "id": "fddddcef5d32f99a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Pasted image 20250512191336.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250512191336"
+            }
+          },
+          {
+            "id": "0ed72a4877fdb96a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Pasted image 20250512190641.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250512190641"
+            }
+          },
+          {
+            "id": "5787d015f7a2e299",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Pasted image 20250512190638.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250512190638"
+            }
+          },
+          {
+            "id": "655e9e7db0efdf43",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gamedev/unity/Single Entry Point in Unity.md",
+                "file": "computer architecture/rule of CPU vs GPU computation.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Single Entry Point in Unity"
+              "title": "rule of CPU vs GPU computation"
+            }
+          },
+          {
+            "id": "8a1e93e098ae8a36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "computer architecture/CPU.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "CPU"
+            }
+          },
+          {
+            "id": "a0790c9b9c3f8079",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "languages/language processing/grapheme cluster.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "grapheme cluster"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -54,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"pattern matchi\"",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,8 +158,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5124969482422,
-    "collapsed": true
+    "width": 357.5124969482422
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -96,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gamedev/unity/Layered Architecture in Unity.md",
+                "file": "languages/language processing/grapheme cluster.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +184,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Layered Architecture in Unity"
+              "title": "Backlinks for grapheme cluster"
             }
           },
           {
@@ -115,12 +193,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gamedev/unity/Single Entry Point in Unity.md",
+                "file": "backend/Go Backend Interview Preparation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Single Entry Point in Unity"
+              "title": "Outgoing links from Go Backend Interview Preparation"
             }
           },
           {
@@ -144,13 +222,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gamedev/unity/Single Entry Point in Unity.md",
+                "file": "backend/Go Backend Interview Preparation.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Single Entry Point in Unity"
+              "title": "Outline of Go Backend Interview Preparation"
             }
           },
           {
@@ -177,12 +255,12 @@
               "title": "All properties"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,57 +276,57 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9cf7fa69b00f9241",
+  "active": "039133efe5b78d25",
   "lastOpenFiles": [
-    "gamedev/unity/Unity Index Book of References.md",
-    "architecture/design patterns.md",
-    "gamedev/unity/Single Entry Point in Unity.md",
-    "gamedev/Game design patterns.md",
-    "gamedev/unity/Scene Management in Unity.md",
-    "backend/database/indexes.md",
-    "gamedev/Socratic Partner Prompt.md",
-    "gamedev/unity/Common Patterns Cookbook in Unity.md",
-    "gamedev/unity/Awareness reminder for documents.md",
-    "gamedev/Layered Architecture.md",
-    "gamedev/Data-Driven Design.md",
-    "gamedev/Data Assets.md",
-    "gamedev/unity/ScriptableObjects.md",
-    "gamedev/unity/Prefabs.md",
-    "gamedev/unity/Component-Based Design in Unity.md",
-    "gamedev/unity/GameObject and Component Model.md",
-    "gamedev/godot/Data-Driven Design in Godot.md",
-    "gamedev/unity/Data-Driven Design in Unity.md",
-    "architecture/What is data-driven design.md",
-    "gamedev/godot/Layered architecture in Godot.md",
-    "gamedev/unity/Layered Architecture in Unity.md",
-    "Movement in Unity game for Godot developer.md",
-    "gamedev/unity/Unity Shaders.md",
-    "gamedev/unity/Unity Camera Component.md",
-    "gamedev/godot/shader in godot.md",
-    "Godot Shaders.md",
-    "Untitled 4.base",
-    "unity",
-    "languages/c_sharp",
-    "gamedev/unity",
-    "Untitled 3.base",
-    "Untitled 1.canvas",
-    "Untitled 2.base",
-    "godot",
-    "flstudio",
-    "Untitled 1.base",
-    "Untitled.base",
-    "test canvas.canvas",
-    "Untitled.canvas",
-    "Pasted image 20250510180227.png",
-    "Pasted image 20250512190641.png",
-    "Pasted image 20250512191336.png",
-    "Pasted image 20250728120935.png",
+    "computer architecture/data oriented design principles.md",
+    "languages/language processing/CFG.md",
+    "regular node.md",
+    "flstudio/music scales.md",
+    "CS/static.md",
+    "computer architecture/Memory fragmentation.md",
+    "general tech/hot reloading.md",
+    "computer architecture/One task at a time, many repetitions.md",
+    "computer architecture/Efficient layout and storage.md",
+    "languages/language processing/grapheme cluster.md",
+    "computer architecture/Do work ahead of time.md",
+    "CS/patterns/object pool.md",
+    "computer architecture/flip-flops.md",
+    "CS/heap.md",
+    "computer architecture/Out of band.md",
+    "blender/blender apply.md",
+    "blender/blender learning path for game dev.md",
+    "general tech/mock.md",
+    "CS/scratch allocator.md",
+    "shader map.md",
+    "computer architecture/register.md",
+    "computer architecture/Memory-storage concepts.md",
+    "CS/Page Fault.md",
+    "CS/bitwise.md",
+    "CS/Rope.md",
+    "CS/all computer can do (programming).md",
+    "CS/design",
+    "cheat-sheets",
+    "lookups",
+    "setups",
+    "shortcuts",
+    "computer architecture",
+    "blender",
+    "images/Pasted image 20250512185907.png",
+    "images/Pasted image 20250512191336.png",
+    "images/Pasted image 20250512190638.png",
+    "images/Pasted image 20250512190641.png",
+    "images/Pasted image 20250420201052.png",
+    "images/Pasted image 20250510180227.png",
+    "images/Pasted image 20250512185320.png",
     "Pasted image 20251006004155.png",
-    "Pasted image 20250708184512.png",
-    "Pasted image 20250512190638.png",
-    "Pasted image 20250512185907.png",
-    "Pasted image 20250512185611.png",
-    "Pasted image 20250512185320.png",
+    "Untitled.base",
+    "Untitled 1.base",
+    "Untitled.canvas",
+    "test canvas.canvas",
+    "Untitled 1.canvas",
+    "Untitled 4.base",
+    "images/Pasted image 20250728120935.png",
+    "images/Pasted image 20250708184512.png",
     "gamedev/Untitled.canvas"
   ]
 }

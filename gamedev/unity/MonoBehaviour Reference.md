@@ -446,6 +446,16 @@ void OnDrawGizmos() { }   // Draw debug visuals (editor only)
 void Reset() { }          // Component added or Reset clicked (editor only)
 ```
 
+**Input**
+
+- `OnMouseDown` — mouse button pressed over collider/GUIElement
+- `OnMouseUp` — mouse button released
+- `OnMouseEnter` — mouse cursor enters collider bounds
+- `OnMouseExit` — mouse cursor leaves collider bounds
+- `OnMouseOver` — mouse hovers over collider each frame
+- `OnMouseDrag` — mouse held down while moving over collider
+
+
 ---
 
 ## Coroutines: Spreading Work Over Time
