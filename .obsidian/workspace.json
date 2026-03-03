@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/network/replication.md",
+                "file": "general tech/concepts/DAG.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "replication"
+              "title": "DAG"
             }
           }
         ]
@@ -95,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "general tech/concepts/DAG.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for DAG"
             }
           },
           {
@@ -113,11 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "general tech/concepts/DAG.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from DAG"
             }
           },
           {
@@ -195,52 +197,52 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "767a85c98bfeaf5c",
+  "active": "039133efe5b78d25",
   "lastOpenFiles": [
-    "vault-scan-log.md",
-    "backend/network/replication.md",
-    "setups/ollama setup guide.md",
-    "CS/Divide and conqure.md",
-    "CS/linked list.md",
-    "CS/heap.md",
-    "languages/golang/concurrency patterns.md",
-    "languages/golang/pipeline pattern in golang.md",
-    "gamedev/godot/Godot input callbacks.md",
-    "gamedev/godot/Godot input propagation.md",
-    "gamedev/godot/Local vs global transform in Godot.md",
-    "gamedev/godot/input handling reference in Godot.md",
-    "gamedev/godot/3D Transformations in Godot Complete Foundation reference.md",
-    "gamedev/godot/godot project structure recommendation.md",
-    "gamedev/godot/Godot Resource.md",
-    "gamedev/godot/atlas.md",
-    "gamedev/godot/reflection in gdscript.md",
-    "gamedev/godot/godot addons.md",
-    "gamedev/godot/tool.md",
-    "backend/interview/Go Backend Deep Learning Method.md",
-    "cheat-sheets/blender shortcuts.md",
-    "backend/interview",
-    "backend/database/union.md",
-    "backend/database/alternative to relationship tables.md",
-    "backend/database/cache techniques.md",
-    "backend/database/mark-and-sweep.md",
-    "CS/architecture/strategy.md",
-    "Untitled.base",
+    "computer graphics/misc/proton.md",
+    "computer graphics/rendering-techniques/surface.md",
+    "computer graphics/rendering-techniques/bake.md",
+    "computer graphics/rendering-techniques/double buffering.md",
+    "computer graphics/rendering-techniques/triplanar-mapping.md",
+    "computer graphics/rendering-techniques/Triplanar Mapping.md",
+    "computer graphics/rendering-techniques/texture.md",
+    "computer graphics/rendering-techniques/text rendering.md",
+    "computer graphics/rendering-techniques/post-processing.md",
+    "computer graphics/rendering-techniques/software rendering.md",
+    "computer graphics/rendering-techniques/hardware rendering.md",
+    "computer graphics/geometry-space/Occlusion culling.md",
+    "computer graphics/geometry-space/Frustum Culling.md",
+    "computer graphics/geometry-space/scissor.md",
+    "computer graphics/geometry-space/viewport.md",
+    "computer graphics/geometry-space/perspective projection.md",
+    "computer graphics/geometry-space/orthogonal projection.md",
+    "computer graphics/geometry-space/UV coordinates.md",
+    "computer graphics/geometry-space/NDC.md",
+    "computer graphics/geometry-space/homogeneous coordinates.md",
+    "computer graphics/geometry-space/AABB.md",
+    "computer graphics/geometry-space/normals.md",
+    "computer graphics/geometry-space/polygons.md",
+    "computer graphics/geometry-space/edge.md",
+    "computer graphics/geometry-space/faces.md",
+    "computer graphics/geometry-space/indices.md",
+    "computer graphics/misc",
+    "computer graphics/rendering-techniques",
+    "computer graphics/geometry-space",
+    "computer graphics/gpu-api-resources",
+    "computer graphics/pipeline-stages",
+    "computer architecture/digital-logic",
+    "computer architecture/performance-layout",
+    "computer architecture/processes-io",
+    "computer architecture/virtual-memory",
+    "computer architecture/memory-hierarchy",
     "images/Pasted image 20250512190638.png",
     "images/Pasted image 20250512191336.png",
     "images/Pasted image 20250512190641.png",
-    "CS/architecture/design",
-    "cheat-sheets",
-    "lookups",
-    "setups",
-    "shortcuts",
-    "computer architecture",
-    "blender",
     "images/Pasted image 20250512185907.png",
     "images/Pasted image 20250420201052.png",
     "images/Pasted image 20250510180227.png",
     "images/Pasted image 20250512185320.png",
     "Pasted image 20251006004155.png",
-    "Untitled 1.base",
     "Untitled.canvas",
     "test canvas.canvas",
     "Untitled 1.canvas",
