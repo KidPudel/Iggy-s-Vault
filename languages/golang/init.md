@@ -1,1 +1,5 @@
-This is a package-scoped function that will be executed before the program starts executing (main function)
+# init
+
+Package-level function that runs automatically before `main`, after all variable declarations. Multiple `init` functions are allowed per file and per package.
+
+https://go.dev/doc/effective_go#init

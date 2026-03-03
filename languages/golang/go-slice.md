@@ -38,14 +38,3 @@ slices.Equal(s1, s2)
 - https://go.dev/tour/moretypes/7
 - https://go.dev/blog/slices-intro
 
-## Related
-
-- [[go-array]]
-- [[go-map]]
-- [[slices under the hood]]
-
-## Process
-
-- What is the difference between length and capacity in a Go slice?
-- What happens to the backing array when `append` exceeds the slice's current capacity?
-- How does slicing a slice affect the underlying array shared between the original and derived slice?

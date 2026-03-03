@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Vault Scan Log.md",
+                "file": "general tech/concurrency/green threads.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Vault Scan Log"
+              "title": "green threads"
             }
           }
         ]
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5124969482422
+    "width": 357.5124969482422,
+    "collapsed": true
   },
   "right": {
     "id": "020bdedbef58b978",
@@ -197,32 +198,32 @@
   },
   "active": "c9f015b510daef67",
   "lastOpenFiles": [
-    "languages/golang/literal.md",
-    "Vault Scan Log.md",
-    "languages/golang/why goroutines are lightweight.md",
-    "languages/golang/sync.Map.md",
-    "languages/golang/02-refresh-links/why goroutines are lightweight.md",
-    "languages/golang/02-refresh-links/types.md",
-    "languages/golang/01-thinking-analysis/no need for static?.md",
-    "languages/golang/01-thinking-analysis/event sourcing architecture.md",
-    "languages/golang/01-thinking-analysis/architect services advice.md",
-    "CS/architecture/principles/oop.md",
-    "languages/golang/types.md",
-    "languages/golang/sync-pool.md",
-    "languages/golang/sync-map.md",
-    "languages/golang/std database.md",
-    "languages/golang/std context.md",
-    "languages/golang/slices under the hood.md",
-    "languages/golang/singleton pattern.md",
-    "languages/golang/simple server example.md",
-    "languages/golang/server-implementation.md",
-    "languages/golang/segmented stack in go.md",
-    "languages/golang/routing.md",
-    "languages/golang/recover.md",
-    "languages/golang/reading data.md",
-    "languages/golang/pointer.md",
-    "languages/golang/packages-imports-exports.md",
+    "general tech/concurrency/multiprocessing vs multithreading.md",
+    "cheat-sheets/shader math.md",
+    "cheat-sheets/git-basics.md",
+    "cheat-sheets/anti-bot trick.md",
+    "cheat-sheets/claude code tips.md",
+    "languages/golang/concurrency patterns.md",
     "languages/golang/must-have packages aka pack of productive engineer.md",
+    "CS/memory/static.md",
+    "general tech/media-graphics/blit.md",
+    "general tech/concurrency/thread.md",
+    "general tech/concurrency/batching.md",
+    "general tech/concurrency/Event loop.md",
+    "languages/odin/dynamic arrays.md",
+    "languages/odin/soa.md",
+    "languages/odin/fixed array.md",
+    "languages/odin/enum.md",
+    "languages/odin/procedures.md",
+    "languages/language processing/parser.md",
+    "languages/language processing/grapheme-cluster.md",
+    "languages/language processing/lexer.md",
+    "languages/language processing/REPL.md",
+    "languages/golang/std database.md",
+    "languages/golang/atomics.md",
+    "languages/golang/go-map.md",
+    "languages/golang/go-array.md",
+    "languages/golang/go-slice.md",
     "languages/golang/_archive-full-notes/02-refresh-links",
     "languages/golang/_archive-full-notes",
     "languages/golang/03-cheat-sheets",

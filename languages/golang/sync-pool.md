@@ -26,13 +26,3 @@ pool.Put(buf)      // return for reuse
 
 - https://pkg.go.dev/sync#Pool
 
-## Related
-
-- [[sync-map]]
-- [[goroutine]]
-
-## Process
-
-- Why does `sync.Pool` not guarantee that `Get` returns an object that was previously `Put`?
-- What is the consequence of storing objects with finalizers in a sync.Pool?
-- How does using sync.Pool affect garbage collection behavior compared to allocating new objects every time?

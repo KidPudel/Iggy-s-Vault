@@ -1,12 +1,10 @@
-Type alias is an alternative name for an existing type, it is used for a **reference** or **compatibility**, so alias and type are fully interchangeable
+# Type Alias
+
+Alternative name for an existing type — fully interchangeable, not a new distinct type.
+
+https://go.dev/ref/spec#Type_declarations
 
 ```go
-type MetadataAlias = mo.Option[Metadata]
-```
-> NOTE: type alias does not create a new distinct/separate type, it is a reference - **alternative way to access the memory**
-
-if you want to create a separate type just use
-```go
-type NewType OldType
-type MyInt int
+type MetadataAlias = mo.Option[Metadata] // alias — same type, no conversion needed
+type MyInt int                            // new distinct type — requires explicit conversion
 ```

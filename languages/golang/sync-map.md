@@ -30,14 +30,3 @@ m.Range(func(k, v any) bool {
 
 - https://pkg.go.dev/sync#Map
 
-## Related
-
-- [[go-map]]
-- [[sync-pool]]
-- [[goroutine]]
-
-## Process
-
-- How does sync.Map achieve concurrent safety without a traditional mutex on every operation?
-- What does `Range` guarantee about consistency when concurrent modifications happen during iteration?
-- When would a regular map with an explicit `sync.RWMutex` be preferable over `sync.Map`?

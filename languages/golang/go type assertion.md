@@ -1,13 +1,17 @@
-```go
-func main() {
-    n := 12
-    var x interface{} = n // Assign n to an interface{} type variable
+# Type Assertion
 
-    if num, ok := x.(int); ok {
-        fmt.Printf("x is an int with value %d\n", num)
-    } else {
-        fmt.Println("x is not an int")
-    }
+Extracts the concrete value from an interface. Safe two-value form returns `(value, ok)` — use this to avoid panics.
+
+https://go.dev/ref/spec#Type_assertions
+
+```go
+if num, ok := x.(int); ok {
+	fmt.Printf("x is an int: %d\n", num)
 }
 
+// type switch
+switch v := x.(type) {
+case int:
+case string:
+}
 ```

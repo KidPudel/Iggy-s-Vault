@@ -1,3 +1,8 @@
-**Lock()**: only one go routine read/write at a time by acquiring the lock.
+# sync.RWMutex
 
-**RLock()**: multiple go routine can read(not write) at a time by acquiring the lock.
+Reader/writer lock. Multiple goroutines can hold `RLock` simultaneously; only one can hold `Lock`.
+
+- `Lock` / `Unlock` — exclusive write access
+- `RLock` / `RUnlock` — shared read access
+
+https://pkg.go.dev/sync#RWMutex

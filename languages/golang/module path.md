@@ -1,1 +1,0 @@
-A path that identifies a module and acts like a prefix for for package import paths with the module.

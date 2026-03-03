@@ -1,4 +1,8 @@
-- Goroutines are smartly managed by [[runtime]] on fewer OS threads and controlled by [[golang scheduler]] with its cooperative scheduling model, this makes it optimized on a system 
-- Goroutines are using [[segmented stack in go]], which lets them to start small and grow/shrink
-- They are share memory ([[concurrency in go]]), which reduces memory usage and context switch time
-- Goroutine yield control at well-defined points via channel operations and function calls ([[concurrency in go]]). Which makes it predictable and efficient scheduling behavior. Cooperative scheduling. 
+# Why Goroutines Are Lightweight
+
+- Start with a small stack (~2–8 KB) that grows and shrinks as needed
+- Runtime-managed — not mapped 1:1 to OS threads
+- Context switch happens in user space, no kernel involvement
+- Cooperative scheduling at channel ops and function calls
+
+https://go.dev/doc/faq#goroutines

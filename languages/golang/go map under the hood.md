@@ -1,16 +1,13 @@
-similar to [[slices under the hood]], it contains pointer to the map, but with maps doesn't store `len` and `cap` like slices, as well as maps doesn't have operations like `append()`, that exposes that it is a copy and lead to unwanted behavior.
-In Golang maps are implemented using [[hash function]] that are called "hash tables"
+# Go Map Under the Hood
 
-Map is an **array of buckets**. Each bucket can hold multiple key-value pairs, using [[linked list]] under the hood. 
-Hash function is used to hash a key to determine to which bucket they belong
+Map is an array of buckets. Each bucket holds multiple key-value pairs using a linked list. A hash function maps keys to buckets.
 
-Collisions are happening when another pair is gone to the bucket
-Over time, map dynamically grows to reduce collisions
+Collision: multiple keys landing in the same bucket → linked list grows.
 
-Growth strategy
-When the load factor (ration of elements to buckets) exceeds a threshold, the map resizes by doubling the number of buckets and redistributing elements using a rehashes
+Growth: when load factor (elements/buckets) exceeds threshold, map doubles buckets and rehashes everything.
 
-Iteration
-In map iteration is in pseudo-random order, due to internal implementation on how Go's runtime randomizes the hash seed when the program starts.
+Iteration order is pseudo-random — Go runtime randomizes the hash seed on startup by design.
 
+Unlike slices, maps don't expose length and capacity separately, and have no append — so the copy-on-write footgun doesn't apply.
 
+https://go.dev/blog/maps

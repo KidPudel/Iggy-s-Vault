@@ -37,14 +37,3 @@ func sum[N Number](nums []N) N {
 - https://go.dev/doc/faq#generics
 - https://go.dev/blog/intro-generics
 
-## Related
-
-- [[go-slice]]
-- [[go-map]]
-- [[golang theory]]
-
-## Process
-
-- What is the difference between `T int` and `T ~int` as a type constraint?
-- How does type inference work when calling a generic function without explicit type arguments?
-- What does a type set define, and how does it differ from a method set?

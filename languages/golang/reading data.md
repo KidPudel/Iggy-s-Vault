@@ -1,42 +1,21 @@
-> Reader is a stream of data, from which you can read
+# IO Package Guide
 
-# Guidelines
-
-- `os` is for general OS-agonistic wrappers of operating system functionality, such as interacting with the filesystem.
-- `io` is for generalized I/O interface definitions and a few utility functions that don't fit elsewhere, such as `io.Copy()` and i`o.LimitedReader`.
-- `fmt` if you want to something from fmt `fmt.Scan`
-- `bufio` is for automatic buffering of I/O operations, plus additional functionality enabled by that buffering, such as `bufio.Scanner` and all the extra methods of `bufio.Reader`.
-- `bytes` is for generalized operations on `[]bytes.` It tries to maintain parity with strings. bytes.Buffer is defined where it is because its purpose is to allow you to treat a `[]byte` as an `io.Writer`.
-
-
-# Bufio
-bufio is the convenient package for reading data
+Which package for what:
+- `os` — filesystem and process I/O (`os.Open`, `os.Stdin`)
+- `io` — core interfaces (`io.Reader`, `io.Writer`) and utilities (`io.Copy`)
+- `bufio` — buffered reading + `Scanner` for line-by-line
+- `bytes` — operations on `[]byte`, mirrors `strings`
+- `fmt` — formatted scan/print (`fmt.Fscan`, `fmt.Fprintf`)
 
 ```go
-// read from input
+scanner := bufio.NewScanner(file)
+for scanner.Scan() {
+    fmt.Println(scanner.Text())
+}
+
 reader := bufio.NewReader(os.Stdin)
-	// getting number of lines
-	strNum, err := reader.ReadString('\n')
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	num, err := strconv.Atoi(strNum[:len(strNum)-1])
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	results := make([]string, num)
-	for i := 0; i < num; i++ {
-		// getting line by line
-		line, _, err := reader.ReadLine()
-		if err != nil {
-			break
-		}
+line, _ := reader.ReadString('\n')
 ```
 
-```go
-// read from api response
-apiReader := bufio.NewReader(response.Body)
-```
+https://pkg.go.dev/bufio
+https://pkg.go.dev/io

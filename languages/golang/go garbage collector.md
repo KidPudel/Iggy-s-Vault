@@ -1,7 +1,5 @@
-Go's [[garbage collector]] is *concurrent*, so cleaning will take *much*  less time.
+# Go Garbage Collector
 
-Go's GC doesn't work with reference counter, instead it uses **tracing reachable objects GC** strategy, which allows to avoid cyclic problems
-Go collects unreachable objects via  [[mark-and-sweep]] algorithm
-GC works concurrently which minimizes risks of "**stop the world**", but costs extra power
+Concurrent tri-color mark-and-sweep GC. Runs concurrently with the program to minimize stop-the-world pauses. Triggered when heap reaches a size threshold.
 
-It calls when it reaches the limit of the systems
+https://go.dev/doc/gc-guide

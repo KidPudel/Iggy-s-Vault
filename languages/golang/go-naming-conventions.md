@@ -21,13 +21,3 @@ Go uses capitalization to control export visibility. An identifier starting with
 
 - https://go.dev/doc/effective_go#names
 
-## Related
-
-- [[golang theory]]
-- [[go-generics]]
-
-## Process
-
-- How does Go use capitalization to replace access modifiers found in other languages?
-- What is the naming convention for a single-method interface and what does it signal?
-- Why does Go discourage long abbreviations in identifiers?

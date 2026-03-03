@@ -1,8 +1,13 @@
-If the panic is happens, then recover function could catch that panic and convert into an error
+# recover
+
+Stops a panicking goroutine and returns the panic value. Only works inside a deferred function.
+
+https://go.dev/blog/defer-panic-and-recover
+
 ```go
-defer func(){
-	if recover() != nil {
-		err = errors.New("got panic durring execution, most likely reading empty page")
+defer func() {
+	if r := recover(); r != nil {
+		err = fmt.Errorf("panic: %v", r)
 	}
 }()
 ```

@@ -1,2 +1,5 @@
-In go string is actually an array of **bytes**, so if it uses utf8 then it could give the amount of bytes if using `len()`, so use `utf8` package
-we can convert to slice or runes which are int32 alias
+# Go String
+
+A read-only slice of bytes. `len()` returns byte count, not rune count. Use `utf8.RuneCountInString` or convert to `[]rune` for Unicode-aware operations.
+
+https://go.dev/blog/strings

@@ -1,4 +1,5 @@
-Functutions that are launched inside anothrr and without a name
+# Anonymous Functions
 
-All outer scoped variables by default of the language is automatically passed by reference 
-But since 1.22 loop variables are now iteration scoped
+Functions defined inline without a name. Outer-scoped variables are captured by reference. Since Go 1.22, loop variables are iteration-scoped (no more closure-over-loop-var footgun).
+
+https://go.dev/ref/spec#Function_literals

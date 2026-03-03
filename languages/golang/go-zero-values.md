@@ -26,15 +26,3 @@ Every type in Go has a zero value. When a variable is declared without an assign
 
 - https://go.dev/ref/spec#The_zero_value
 
-## Related
-
-- [[go-slice]]
-- [[go-map]]
-- [[go-array]]
-- [[golang theory]]
-
-## Process
-
-- What is the practical difference between a nil slice and a nil map when you try to use them?
-- How does Go's zero value for structs eliminate the need for explicit field initialization in many cases?
-- What distinguishes a nil pointer from a zero-valued struct in Go?

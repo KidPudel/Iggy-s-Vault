@@ -1,12 +1,15 @@
-`iota` in Go's way of creating successive (enumerable) integer 1, 2, 3... like `enum`
+# iota
+
+Auto-incrementing integer counter in `const` blocks, reset to 0 at each new `const` block.
+
+https://go.dev/ref/spec#Iota
 
 ```go
-// optional ideomatic/contextual integer
 type Direction int
 const (
-	North Direction = iota
-	South
-	West
-	East
+	North Direction = iota // 0
+	South                  // 1
+	West                   // 2
+	East                   // 3
 )
 ```

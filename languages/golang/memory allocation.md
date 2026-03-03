@@ -1,30 +1,17 @@
-All memory allocations together are just a ***lifetime***, this is the best way of thinking about memory management, think of allocations per lifetime of some part.
+# Memory Allocation
 
+Think in lifetimes — allocations per lifetime of a part of the program, not per line.
 
-In Golang memory allocation happening when:
-- declare variables
-- call `new` function
-- call `make` function
-- convert
-	- `int` -> `string`
-	- `string` -> `[]byte` and vice versa
-	- `string` -> `[]rune`
-	- box values (non-interface) -> interfaces
-- concatenate strings with `+`
-- convert between strings and byte slices and vice versa
-- append to the slice that causing to extend `cap` [[slices under the hood]]
-- in map if the underlying array in map is not enough to store the value
+Go allocates when:
+- `var` declarations (stack or heap — escape analysis decides)
+- `new(T)` — zero-allocates T, returns `*T`
+- `make(T)` — allocates and initializes, returns T (slice/map/chan)
+- type conversions: `int`→`string`, `string`→`[]byte`/`[]rune`, value→interface
+- string `+` concatenation
+- `append` exceeds cap
+- map grows past load factor
 
+`new` → pointer to zeroed value
+`make` → initialized value (not a pointer)
 
-# new
-`new` function allocates the memory for the type and returns the pointer to that type
-```go
-p := new(Point) // returns *Pointer
-```
-
-# make
-`make` function allocates the memory for the type and returns the object itself
-```go
-s := make([]int, 0, 6) // []int
-```
-returns the the array with the memory allocated for it
+https://go.dev/doc/faq#stack_or_heap

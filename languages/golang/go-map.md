@@ -40,14 +40,3 @@ val, ok := m["alice"]
 
 - https://go.dev/tour/moretypes/19
 
-## Related
-
-- [[go-slice]]
-- [[go-array]]
-- [[sync-map]]
-
-## Process
-
-- What happens when you read a key from a Go map that does not exist?
-- Why must a map be initialized with `make` before inserting values?
-- How does a nil map differ from an empty map in Go?

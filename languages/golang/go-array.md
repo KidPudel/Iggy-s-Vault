@@ -29,13 +29,3 @@ fmt.Println(len(matches)) // 10
 
 - https://go.dev/tour/moretypes/6
 
-## Related
-
-- [[go-slice]]
-- [[go-map]]
-
-## Process
-
-- What is the difference between an array and a slice in Go in terms of their type definition?
-- How does passing an array to a function differ from passing a slice?
-- What does it mean that array size is part of the type in Go?

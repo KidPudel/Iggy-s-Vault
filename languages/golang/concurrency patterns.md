@@ -1,78 +1,33 @@
-# Go concurrency patterns
+# Go Concurrency Patterns
 
-Use this note as a reminder, not a full tutorial.
+Patterns: `pipeline`, `fan-out/fan-in`, `worker pool`, `cancellation with context`.
 
-- Main patterns: `pipeline`, `fan-out/fan-in`, `worker pool`, `cancellation with context`.
-- Core safety rule: every goroutine must have a clear stop path (close channel or cancel context).
-
-Minimal shape:
+Core rule: every goroutine must have a clear exit path — close a channel or cancel a context.
 
 ```go
 ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 ```
 
-Official references:
-
-- https://go.dev/blog/pipelines
-- https://pkg.go.dev/context
-- https://go.dev/doc/effective_go#concurrency
-
+Each pipeline stage: receive from upstream via `<-chan`, send downstream via `chan<-`, respect `ctx.Done()`:
 ```go
-// top stage
-func gen(nums ...int) <-chan int {
-	out := make(chan int, len(nums))
-	for _, num := range nums {
-		out <- num
-	}
-	close(out)
-	return out
-}
-
-// next stage
-func sq(ctx context.Context, in <-chan int) <-chan int {
-	out := make(chan int)
-	go func() {
-		defer close(out)
-		for num := range in {
-			select {
-			case out <- num * num:
-			case <-ctx.Done():
-				return
-			}
-		}
-	}()
-	return out
-}
-
-func merge(ctx context.Context, ins ...<-chan int) <-chan int {
-	outMultiplexer := make(chan int)
-
-	wg := sync.WaitGroup{}
-	wg.Add(len(ins))
-	// eat. one by one
-	eat := func(in <-chan int) {
-		defer wg.Done()
-		for num := range in {
-			select {
-			case outMultiplexer <- num:
-			case <-ctx.Done():
-				return
-			}
-		}
-	}
-	for _, ch := range ins {
-		go eat(ch)
-	}
-
-	// synchronize
-	go func() {
-		wg.Wait()
-		close(outMultiplexer)
-	}()
-
-	return outMultiplexer
+func stage(ctx context.Context, in <-chan int) <-chan int {
+    out := make(chan int)
+    go func() {
+        defer close(out)
+        for v := range in {
+            select {
+            case out <- process(v):
+            case <-ctx.Done():
+                return
+            }
+        }
+    }()
+    return out
 }
 ```
 
-now, even that we haven't read all values, we've closed channels, and not wasted resources
+Fan-in (merge): one goroutine per input, WaitGroup closes output when all done.
+
+https://go.dev/blog/pipelines
+https://go.dev/doc/effective_go#concurrency

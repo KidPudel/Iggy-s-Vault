@@ -34,13 +34,3 @@ out, _ := json.MarshalIndent(u, "", "  ")
 - https://pkg.go.dev/reflect#StructTag
 - https://go.dev/blog/laws-of-reflection
 
-## Related
-
-- [[golang theory]]
-- [[go-naming-conventions]]
-
-## Process
-
-- How does the `encoding/json` package read struct tags at runtime?
-- What does the `omitempty` option in a json struct tag do?
-- What is the relationship between struct tags and Go's reflection system?

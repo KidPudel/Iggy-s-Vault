@@ -1,39 +1,29 @@
-# synchronization
-- `errgroup`: provides error handling mechanism for [[goroutines]]. Derived [[context]] is canceled the first time a function passed to Go returns error and Wait returns that error. Must have for golang services
-- `workerpool`: manage pools of worker groups. [[concurrency in go]]
-# utility
-- `godotenv`: parse dotenv file
-# architecture/flow
-- `goeventbus`: go implementation of [[CS/architecture/event bus]]
-# logging
-- `zap`: fast alternative to default `log`
-- `zerolog`: very high performance JSON logger
+# Must-Have Go Packages
 
-# database
-- `gorm`: [[orm]]
+**Sync**
+- `errgroup` — WaitGroup + error propagation + context cancellation for goroutine groups https://pkg.go.dev/golang.org/x/sync/errgroup
 
-# HTTP/Web
-2 types
-- http handler function signature
-- context with an error return, which allows you to clean handlers, and centralize error handling
+**Config**
+- `godotenv` — parse `.env` files https://pkg.go.dev/github.com/joho/godotenv
 
-- `gin` good performance
-- `chi`: lightweight
-- `echo`: high-performance
+**Logging**
+- `zap` — fast structured logger https://pkg.go.dev/go.uber.org/zap
+- `zerolog` — zero-allocation JSON logger https://pkg.go.dev/github.com/rs/zerolog
 
+**Database**
+- `gorm` — ORM https://pkg.go.dev/gorm.io/gorm
 
-# Serialization
-- `protobuf`: [[Protocol Buffers - Protobuf]] [[gRPC]]
-- `easyjson`
+**HTTP / Router**
+- `gin` — fast, good middleware ecosystem https://pkg.go.dev/github.com/gin-gonic/gin
+- `chi` — lightweight, stdlib-compatible https://pkg.go.dev/github.com/go-chi/chi/v5
+- `echo` — high performance https://pkg.go.dev/github.com/labstack/echo/v4
 
-# Errors
-- `errors`: extended error handling with stack traces
+**Serialization**
+- `protobuf` — Protocol Buffers https://pkg.go.dev/google.golang.org/protobuf
+- `easyjson` — code-generated fast JSON https://pkg.go.dev/github.com/mailru/easyjson
 
-# Testing
-- `gomock`: [[mock]]ing service by Google that generates mock implementations from intefaces.o
+**Testing**
+- `gomock` — generates mock implementations from interfaces https://pkg.go.dev/go.uber.org/mock/gomock
 
-# Services
-
-
-# Distributed
-- DTM framework for distributed transactions like [[saga]] [DTM](https://en.dtm.pub/)
+**Distributed**
+- `dtm` — distributed transactions (saga, TCC, 2PC) https://pkg.go.dev/github.com/dtm-labs/dtm
